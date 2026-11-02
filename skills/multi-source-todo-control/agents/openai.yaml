@@ -1,0 +1,4 @@
+interface:
+  display_name: "多源待办总控"
+  short_description: "汇总学生群、私聊和协作聊天待办，标注覆盖范围与缺口"
+  default_prompt: "使用 $multi-source-todo-control 汇总学生群、私聊和协作聊天中的待办，并标注覆盖范围与待核实缺口。"

@@ -36,6 +36,8 @@ Every visual node or series must carry one of these meanings:
 - `Knowledge supplement`: teaching or domain knowledge, not personal experience;
 - `Open`: unresolved, planned, or awaiting evidence.
 
+The formal categories belong in the internal evidence ledger. Student-facing nodes, captions and prose may use natural Chinese source and uncertainty cues; the meaning must remain clear without mechanically displaying internal English labels or generation steps.
+
 Do not merge these categories through layout or color. A team result cannot become a personal result, a public business flow cannot become an internal product architecture, and a project plan cannot appear as completed work.
 
 ## Data-chart gate

@@ -1,0 +1,7 @@
+interface:
+  display_name: "综合个人待办总控"
+  short_description: "从聊天、飞书和本地资料提炼可执行的综合待办与次日简报"
+  default_prompt: "使用 $personal-todo-control 汇总当前真实来源，生成一份明早可直接执行的综合待办；默认只读，不发送消息或修改外部数据。"
+
+policy:
+  allow_implicit_invocation: true

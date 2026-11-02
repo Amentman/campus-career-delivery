@@ -25,6 +25,11 @@ class RepositoryContractTests(unittest.TestCase):
             "student-interview-review-delivery",
             "student-job-content",
             "visual-document-delivery",
+            "job-sales-advisor",
+            "job-content-publisher",
+            "xiaohongshu-image-renderer",
+            "multi-source-todo-control",
+            "personal-todo-control",
         }
         actual = {path.name for path in SKILLS.iterdir() if (path / "SKILL.md").is_file()}
         self.assertEqual(expected, actual)
@@ -44,16 +49,18 @@ class RepositoryContractTests(unittest.TestCase):
         for markdown in SKILLS.rglob("*.md"):
             text = markdown.read_text(encoding="utf-8")
             for target in link_pattern.findall(text):
+                if "://" in target:
+                    continue
                 self.assertFalse(target.startswith("/"), f"absolute link in {markdown}: {target}")
                 self.assertTrue((markdown.parent / target).resolve().is_file(), f"missing link in {markdown}: {target}")
 
-    def test_interview_review_requests_route_to_the_integrated_mock_skill(self):
+    def test_interview_review_requests_route_to_the_dedicated_review_skill(self):
         mock_text = (SKILLS / "student-mock-interview-delivery" / "SKILL.md").read_text(encoding="utf-8")
         role_text = (SKILLS / "student-role-interview-prep" / "SKILL.md").read_text(encoding="utf-8")
         recording = (SKILLS / "recording-processing" / "SKILL.md").read_text(encoding="utf-8")
-        self.assertIn("通用模拟与实际面试复盘继续由本 Skill 处理", mock_text)
+        self.assertIn("student-interview-review-delivery", mock_text)
         self.assertIn("student-mock-interview-delivery", role_text)
-        self.assertIn("student-mock-interview-delivery", recording)
+        self.assertIn("student-interview-review-delivery", recording)
 
     def test_project_contract_defines_feishu_student_delivery_lifecycle(self):
         project_rules = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
@@ -66,8 +73,8 @@ class RepositoryContractTests(unittest.TestCase):
             "专岗准备｜公司｜岗位",
             "面试复盘｜公司｜日期",
             "正式、可归档的学生材料默认写入唯一飞书页面",
-            "飞书原生画板",
-            "no_visual_reason",
+            "正文图片",
+            "学生端",
         )
         for term in required_terms:
             self.assertIn(term, contract, term)
@@ -90,13 +97,16 @@ class RepositoryContractTests(unittest.TestCase):
     def test_feishu_interview_visuals_require_native_whiteboard_contract(self):
         reference_paths = (
             SKILLS / "student-mock-interview-delivery" / "references" / "feishu-delivery-contract.md",
-            SKILLS / "student-role-interview-prep" / "references" / "feishu-boundary-and-acceptance.md",
             SKILLS / "student-interview-review-delivery" / "references" / "feishu-boundary-and-acceptance.md",
         )
         for path in reference_paths:
             text = path.read_text(encoding="utf-8")
             self.assertIn("飞书原生画板", text, path)
             self.assertIn("no_visual_reason", text, path)
+        role_text = (SKILLS / "student-role-interview-prep" / "references" / "feishu-boundary-and-acceptance.md").read_text(encoding="utf-8")
+        self.assertIn("图片嵌入正文对应章节", role_text)
+        self.assertIn("逐图", role_text)
+        self.assertIn("不能代替正文图片", role_text)
         quality_text = (SKILLS / "student-mock-interview-delivery" / "references" / "interview-quality-contract.md").read_text(encoding="utf-8")
         self.assertNotIn("真实流程图或飞书画板", quality_text)
 
@@ -133,9 +143,8 @@ class RepositoryContractTests(unittest.TestCase):
         stories = (SKILLS / "building-resume-interview-stories" / "SKILL.md").read_text(encoding="utf-8")
         mock_contract = (SKILLS / "student-mock-interview-delivery" / "references" / "interview-content-contract.md").read_text(encoding="utf-8")
 
-        self.assertIn("实际面试转写稿", mock_ui)
-        self.assertIn("可选复盘", mock_ui)
-        self.assertIn("student-mock-interview-delivery", recording)
+        self.assertIn("模拟面试", mock_ui)
+        self.assertIn("student-interview-review-delivery", recording)
         self.assertIn("student-role-interview-prep", stories)
         self.assertIn("student-mock-interview-delivery", stories)
         self.assertNotIn("有真实公司与 JD 时才增加", mock_contract)
@@ -165,6 +174,9 @@ class RepositoryContractTests(unittest.TestCase):
             r"gh[pousr]_[A-Za-z0-9]{20,}",
             r"xox[baprs]-[A-Za-z0-9-]{10,}",
             r"Bearer\s+[A-Za-z0-9._-]{20,}",
+            r"\bou_[A-Za-z0-9]{16,}\b",
+            r"\bcli_[A-Za-z0-9]{12,}\b",
+            r"\b(?:tbl|rec)[A-Za-z0-9]{12,}\b",
             r"https://[^\s)]+(?:feishu\.cn|larksuite\.com)/(?:wiki|docx|docs|base|drive)/[^\s)]+",
         )
         for pattern in forbidden:
@@ -204,13 +216,22 @@ class RepositoryContractTests(unittest.TestCase):
         )
 
     def test_source_prompt_snapshots_are_present(self):
-        expected = {
-            "global-AGENTS.md": "4510de771fbf41d65ff6601c5d0f2b82fee991bafde4e675c869cc19de3f0bf4",
-            "project-AGENTS.md": "b76c4e76b696a23b5e8aa5e79337305b06ab47bbcee9fdb626ef45eca1042157",
-        }
+        manifest = json.loads((ROOT / "docs" / "SYNC_MANIFEST.json").read_text())
+        expected = manifest["prompt_sha256"]
         for filename, digest in expected.items():
             content = (ROOT / "prompts" / filename).read_bytes()
             self.assertEqual(digest, hashlib.sha256(content).hexdigest())
+
+    def test_synced_skill_trees_match_the_release_manifest(self):
+        manifest = json.loads((ROOT / "docs" / "SYNC_MANIFEST.json").read_text())
+        actual = {
+            str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in SKILLS.rglob("*")
+            if path.is_file() and "__pycache__" not in path.parts and path.name != ".DS_Store" and path.suffix != ".pyc"
+        }
+        self.assertEqual(manifest["files_sha256"], actual)
+        self.assertEqual(manifest["skill_count"], len(manifest["skills"]))
+        self.assertEqual(set(manifest["skills"]), {path.name for path in SKILLS.iterdir() if (path / "SKILL.md").is_file()})
 
 
 if __name__ == "__main__":

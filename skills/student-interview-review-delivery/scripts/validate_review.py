@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate a local Markdown draft for a real-interview review."""
+"""Check review structure and answer coverage, not factual or answer quality."""
 
 import argparse
 import json
@@ -29,7 +29,9 @@ QUESTION_FIELDS = (
     "面试官／导师反馈",
     "问题与根因",
     "应掌握知识",
+    "答题逻辑",
     "更稳妥的表达",
+    "追问与应对",
     "训练任务",
 )
 
@@ -53,7 +55,16 @@ def question_cards(text):
     return cards
 
 
-def validate(text, resume_name, transcript_name):
+def field_value(card, field):
+    match = re.search(
+        rf"^\*\*{re.escape(field)}：\*\*[ \t]*(.*?)(?=^\*\*[^*\n]+：\*\*|\Z)",
+        card,
+        re.MULTILINE | re.DOTALL,
+    )
+    return match.group(1).strip() if match else ""
+
+
+def validate(text, resume_name, transcript_name, english_questions=()):
     errors = []
 
     for section in REQUIRED_SECTIONS:
@@ -69,10 +80,18 @@ def validate(text, resume_name, transcript_name):
     cards = question_cards(text)
     if not cards:
         errors.append("逐题复盘至少需要一张 Qxx 题卡")
+    english_questions = set(english_questions)
+    found_questions = set()
     for title, card in cards:
+        question_id = re.match(r"^###\s+(Q\d+)｜", title).group(1)
+        found_questions.add(question_id)
         for field in QUESTION_FIELDS:
-            if not re.search(rf"\*\*{re.escape(field)}：\*\*\s*\S", card):
+            if not field_value(card, field):
                 errors.append(f"{title} 缺少非空字段：{field}")
+        if question_id in english_questions and not field_value(card, "英文参考答案"):
+            errors.append(f"{title} 缺少非空字段：英文参考答案")
+    for question_id in sorted(english_questions - found_questions):
+        errors.append(f"指定的英文核心题不存在：{question_id}；核对本次题组范围，不自动新增题目")
 
     if re.search(r"(?<!\d)1[3-9]\d{9}(?!\d)", text):
         errors.append("发现未脱敏的中国大陆手机号")
@@ -95,6 +114,13 @@ def main():
     parser.add_argument("--review", required=True, type=Path)
     parser.add_argument("--resume-name", required=True)
     parser.add_argument("--transcript-name", required=True)
+    parser.add_argument(
+        "--english-question",
+        action="append",
+        default=[],
+        metavar="Qxx",
+        help="需检查英文参考答案的现有核心题，可重复指定；由实际岗位语言要求决定",
+    )
     args = parser.parse_args()
 
     try:
@@ -103,7 +129,7 @@ def main():
         print(json.dumps({"status": "error", "errors": [str(exc)]}, ensure_ascii=False))
         return 2
 
-    errors = validate(text, args.resume_name, args.transcript_name)
+    errors = validate(text, args.resume_name, args.transcript_name, args.english_question)
     payload = {"status": "ok" if not errors else "invalid", "errors": errors}
     print(json.dumps(payload, ensure_ascii=False))
     return 0 if not errors else 1

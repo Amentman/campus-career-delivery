@@ -17,6 +17,11 @@
 | `student-mock-interview-delivery` | 通用模拟面试 | 无明确公司/JD 的老师版、学生版和训练工作簿 |
 | `student-role-interview-prep` | 专岗面试准备 | 已有公司、岗位、JD 或邀约的定向准备 |
 | `visual-document-delivery` | 复杂文档验收 | 含流程、关系、时间线、比较或可信数据的文档图解与渲染验收 |
+| `multi-source-todo-control` | 学生多源跟进 | 对齐学生群、私聊、导师协作与服务记录，明确缺口和下一步 |
+| `personal-todo-control` | 综合待办 | 汇总、日结与协作台账，保护人工字段、历史完成和权限 |
+| `job-sales-advisor` | 求职销售咨询 | 依据使用者自己的知识库，整理方向建议、咨询话术与异议回应 |
+| `job-content-publisher` | 内容生产写回 | 确认母稿后连续出图、上传飞书与读回，平台公开发布单独授权 |
+| `xiaohongshu-image-renderer` | 小红书出图 | 保留完整母稿，分页、渲染、校验并交付本地图片包 |
 
 ## 路由顺序
 
@@ -27,6 +32,8 @@
 5. 录音只做整理时使用 recording-processing；它不能替代真实面试复盘。
 6. 作品集需要规划、PRD、UI/UX Demo 或验收标准时进入 designing-student-portfolio-products；规划不等于学生已经完成产品。
 7. 任一主入口产出复杂长文、流程图、时间线、角色交接或可信数据图时调用 visual-document-delivery，并按目标格式验收。
+8. 学生服务查漏用 multi-source-todo-control；综合个人待办与协作台账用 personal-todo-control。默认先只读，更新只在当前授权范围内。
+9. 销售咨询用 job-sales-advisor；正式学生规划仍走独立规划 Skill。已确认的求职母稿需要出图并写回飞书时用 job-content-publisher；仅处理本地图片包时用 xiaohongshu-image-renderer。
 
 ## 岗位匹配的硬限制
 

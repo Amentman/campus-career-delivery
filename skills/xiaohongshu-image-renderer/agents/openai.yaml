@@ -1,0 +1,4 @@
+interface:
+  display_name: "小红书图片生成"
+  short_description: "将确认母稿按原生备忘录视觉生成并校验为小红书长图包"
+  default_prompt: "Use $xiaohongshu-image-renderer to render and validate a Xiaohongshu long-image package from my confirmed master copy."

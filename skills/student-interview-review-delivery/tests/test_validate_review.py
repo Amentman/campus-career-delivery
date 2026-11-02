@@ -32,7 +32,9 @@ def complete_review():
 **面试官／导师反馈：** 未提供。
 **问题与根因：** 结论出现太晚，且职责边界不够清楚。
 **应掌握知识：** 自我介绍先给定位，再给两项证据。
-**更稳妥的表达：** 先说明求职方向，再用已确认的项目动作支撑。
+**答题逻辑：** 先给会计求职定位，再讲已确认的余额核对动作，最后说明希望继续学习的内容。
+**更稳妥的表达：** 训练参考稿，仅使用已确认动作：我希望申请会计相关岗位。我在实习中参与过余额核对，会先比较两份明细，找到差异后再追查原始记录，整理需要复核的事项。这段实践让我认识到，核对不只是找出数字不同，还要说明差异从哪里来，并把依据留给复核人。我希望把这项基本功继续用在会计工作中。具体差异的最终原因还需要本人补充，暂不写入。
+**追问与应对：** 追问：你独立完成了哪些部分？答：我参与的是余额核对、差异追查和资料整理；最后的调整与确认由复核人负责，不能把团队结论全说成我个人决定。
 **训练任务：** 录制 60 秒版本；验收标准为定位、动作、边界均出现且不照读。
 
 ## 答非所问、停顿与追问失守
@@ -62,7 +64,7 @@ def complete_review():
 
 
 class ReviewValidatorTests(unittest.TestCase):
-    def run_validator(self, text):
+    def run_validator(self, text, *extra_args):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "review.md"
             path.write_text(text, encoding="utf-8")
@@ -76,6 +78,7 @@ class ReviewValidatorTests(unittest.TestCase):
                     "测试同学简历.pdf",
                     "--transcript-name",
                     "A公司面试逐字稿.txt",
+                    *extra_args,
                 ],
                 text=True,
                 capture_output=True,
@@ -93,6 +96,53 @@ class ReviewValidatorTests(unittest.TestCase):
         code, payload = self.run_validator(text)
         self.assertEqual(1, code)
         self.assertTrue(any("证据定位" in error for error in payload["errors"]))
+
+    def test_rejects_answer_without_explanation_or_followup(self):
+        for field in ("答题逻辑", "追问与应对"):
+            with self.subTest(field=field):
+                text = "\n".join(
+                    line for line in complete_review().splitlines()
+                    if not line.startswith(f"**{field}：**")
+                )
+                code, payload = self.run_validator(text)
+                self.assertEqual(1, code)
+                self.assertTrue(any("Q01" in error and field in error for error in payload["errors"]))
+
+    def test_rejects_empty_answer_even_when_following_field_is_filled(self):
+        text = "\n".join(
+            "**更稳妥的表达：**" if line.startswith("**更稳妥的表达：**") else line
+            for line in complete_review().splitlines()
+        )
+        code, payload = self.run_validator(text)
+        self.assertEqual(1, code)
+        self.assertTrue(any("更稳妥的表达" in error for error in payload["errors"]))
+
+    def test_requires_english_only_for_selected_question(self):
+        code, payload = self.run_validator(complete_review(), "--english-question", "Q01")
+        self.assertEqual(1, code)
+        self.assertTrue(any("Q01" in error and "英文参考答案" in error for error in payload["errors"]))
+
+    def test_accepts_selected_question_with_english_answer(self):
+        text = complete_review().replace(
+            "**追问与应对：**",
+            "**英文参考答案：** I am interested in accounting roles. During my internship, I helped compare balance records and trace differences to source documents. I organized the evidence for review rather than deciding the final adjustments myself. I would like to build on that experience in this role.\n**追问与应对：**",
+        )
+        code, payload = self.run_validator(text, "--english-question", "Q01")
+        self.assertEqual(0, code, payload["errors"])
+
+    def test_english_answer_in_another_card_does_not_satisfy_selected_question(self):
+        second_card = complete_review().split("### Q01｜", 1)[1].split("\n## 答非所问", 1)[0]
+        second_card = "### Q02｜" + second_card
+        second_card += "\n**英文参考答案：** I helped compare balance records and organized evidence for review.\n"
+        text = complete_review().replace("\n## 答非所问", f"\n{second_card}\n## 答非所问", 1)
+        code, payload = self.run_validator(text, "--english-question", "Q01")
+        self.assertEqual(1, code)
+        self.assertTrue(any("Q01" in error and "英文参考答案" in error for error in payload["errors"]))
+
+    def test_rejects_unknown_english_question_without_expanding_scope(self):
+        code, payload = self.run_validator(complete_review(), "--english-question", "Q99")
+        self.assertEqual(1, code)
+        self.assertTrue(any("Q99" in error and "不存在" in error for error in payload["errors"]))
 
     def test_rejects_missing_source_attachment(self):
         text = complete_review().replace("- [A公司面试逐字稿.txt](A公司面试逐字稿.txt)\n", "")

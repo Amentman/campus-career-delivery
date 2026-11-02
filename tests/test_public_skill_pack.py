@@ -21,6 +21,11 @@ EXPECTED_SKILLS = {
     "student-mock-interview-delivery",
     "student-role-interview-prep",
     "visual-document-delivery",
+    "job-sales-advisor",
+    "job-content-publisher",
+    "xiaohongshu-image-renderer",
+    "multi-source-todo-control",
+    "personal-todo-control",
 }
 
 

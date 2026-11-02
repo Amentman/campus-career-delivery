@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "codex-student-interview-skills",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Portable student job-search skills for campus role matching, career planning, resume evidence, portfolio planning, interview delivery, and Feishu-ready acceptance.",
   "author": {
     "name": "寂辉 Amant",
@@ -27,7 +27,10 @@
         "longDescription": "把学生简历、岗位、JD、面试邀约和真实逐字稿转成证据可追溯、边界清楚、可执行、可训练且可验收的材料。",
         "developerName": "寂辉 Amant",
         "category": "Productivity",
-        "capabilities": ["Read", "Write"],
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
         "defaultPrompt": [
           "为这位学生筛选真实校招岗位并生成投递清单，同一公司最多保留 3 个岗位。",
           "为这位学生制作一份证据可追溯的职业规划，包含方向、公司池、项目补强、简历分版和投递节奏。",

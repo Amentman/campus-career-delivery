@@ -1,0 +1,46 @@
+# 共享岗位池操作
+
+共享池积累公共岗位事实；个人投递表保存学生筛选和进度。实际主库/岗位表/公司表/Wiki 节点从 `~/.codex/campus-job-matching.local.json` 的 `shared_pool` 读取。该文件为私有运行路由，不公开分发。
+
+## 每次选岗
+
+1. 锁定本生当前画像、原简历和个人全量历史。数量按本次“新增/累计目标”计算；每公司3岗限额在个人表上执行。
+2. 用 `snapshot` 读完整共享池；分页必须同一 revision 且到 `has_more=false`，完成时再核对 revision。失败留受阻信息，不把半表当全表。
+3. 用 `search` 按当前画像召回线索，读取原始条件/JD/入口；用当前官网或适用招聘平台重新核验。池内没有某类字段，不代表企业没有限制；泛化分类不能代替全文阅读。
+4. 池内逐岗复核后仍不够，再按缺口上网补搜。记录池内候选、池内合格、外搜数量、最终合格与缺口。
+5. 学生表只追加通过当前画像和证据终审的 `ready`。将新发现岗位的公共事实单独用 `plan` 去重，再用 `append` 回收；`pending/blocked` 可入共享池但状态明确待复核。
+
+```bash
+python3 scripts/shared_pool.py snapshot \
+  --output pool-snapshot.json
+python3 scripts/shared_pool.py search \
+  --snapshot pool-snapshot.json --profile profile.json --output pool-candidates.json
+python3 scripts/shared_pool.py plan \
+  --jobs new-discoveries.json --snapshot pool-snapshot.json --output pool-plan.json
+python3 scripts/shared_pool.py append \
+  --plan pool-plan.json --journal pool-return-YYYYMMDD
+# 审阅 plan 的新增/重复/冲突/缺字段，已在用户授权范围内后执行同一命令并加 --execute
+```
+
+`search` 接受 `cities`、`search_mode`、`target_roles` 和 `excluded_companies`。需要用更宽的职能词召回时可显式给 `directions`，例如 `运营`；这仅扩展候选召回，不改变学生方向和最终资格门槛。结果全部 `requires_revalidation=true`，不是可投清单。池内关键词无命中时先检查别名/细分岗位词，不直接断言没有岗位。
+
+## 回收输入和边界
+
+`plan --jobs` 接受标准候选数组或 `{"jobs":[...]}`；与个人质检的字段一致，例如 company/title/url/cities/search_mode/jd_text。也支持既有中文表的公司、投递岗位、岗位直达链接等字段。真实来源 record_id、表和学生映射只放私有 `source/sources` 日志。
+
+- 必需公司、真实岗位名称及可还原的公共链接。岗位细节未知可入线索池；缺关键身份/链接、非岗位提示行保留异常，不凭相似公司补造岗位。
+- 公司、岗位、城市、完整JD/要求、学历专业、招聘批次、毕业要求、截止原文属于通用事实。只提取单独JD字段或明确“完整JD/JD原文”区段；不整段复制个人备注。
+- 不回收姓名、学生匹配理由、简历、私人备注、人工审核、投递/面试状态或进度截图。公司名中的简历编号去掉。申请回执、简历/个人资料页不是共享岗位入口。
+- Moka 手机/桌面和申请回执还原为同租户同岗位详情；去掉候选人、简历、会话和追踪参数，保留职位ID与企业租户。无法安全还原的链接不入池。
+- 明确详情按稳定岗位身份去重；同ID不同企业租户分别保留。公告、招聘首页、公共申请页按公司+岗位+城市+模式/批次复合键区分，不能用同公告URL把所有岗位合成一条。
+- 公司不一致的同岗链接进入 `conflicts`；只处理有证据的别名。脚本仅识别法律后缀和明确括号别名，不凭模糊名称合并母子公司。
+
+## 写入与恢复
+
+`append` 默认 dry-run；`--execute` 才写。执行前重新读本人身份、主库 owner、原权限、字段及完整存量，再去重。仅新增必要公司和岗位，不更新或删除旧记录，不改变字段/权限/视图，不启用定时任务。
+
+每100条串行写入并按返回 record_id 逐字段回读，原请求、响应、回读和已完成ID保存在 journal。超时或异常不盲目重发创建；先独立重读整个目标与未完成键，再使用同一计划续接。新的重复记录应为零；同一计划完成后重跑 dry-run 不应产生新增。
+
+回收不刷新“最后核验时间”，正向历史状态一律写待核验/需复核；明确历史已截止/下架的保留负向状态。现有选项能承载的城市等字段直接写入；未知选项原文写公共备注，不新建字段、猜选项或丢掉原文。
+
+完成时分开验收：入池一致性、当前可投核验、池内检索可用性。入池成功只证明共享资料已回收。回收异常不影响个人表中已独立验收的交付，但必须报告并保留可续接清单。

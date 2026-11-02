@@ -863,7 +863,7 @@ AI Agent 大厂池包括字节跳动、华为；中小型 AI/垂直场景公司�
 
     def test_rejects_claimed_parent_when_live_tree_observes_another_parent(self):
         self.readback["career_plan"]["observed_parent_node_token"] = (
-            "HlKhwHet9iskqbkgD6ecOXthnxd"
+            "synthetic-other-parent-token"
         )
         self.readback["career_plan"]["observed_parent_title"] = "校招岗位数据库"
         self.readback["career_plan"]["observed_node_pos"] = "4,7,0"

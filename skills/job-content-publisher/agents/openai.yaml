@@ -1,0 +1,4 @@
+interface:
+  display_name: "求职图文自动生产与飞书写回"
+  short_description: "母稿确认后自动完成备忘录风格分页出图并写入飞书平台子表"
+  default_prompt: "Use $job-content-publisher to turn my confirmed manuscript into the complete Xiaohongshu memo-style image set and write it back to the linked Feishu platform record."

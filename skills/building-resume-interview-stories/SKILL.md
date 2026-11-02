@@ -1,6 +1,6 @@
 ---
 name: building-resume-interview-stories
-description: Turn internship, work, project, resume, or JD material into evidence-grounded job-search stories. Use for 简历诊断/优化, JD 定向改写, STAR bullets, project explanation, company research, interview questions, interview scripts, or a consolidated Markdown preparation packet; full mock-interview delivery and real-interview review use student-mock-interview-delivery, while company/JD-specific preparation uses student-role-interview-prep.
+description: Use when a bounded request needs evidence-grounded resume bullets, JD mapping, project explanation, STAR stories, interview questions, interview scripts, company research, or a consolidated Markdown preparation packet; full student mock-interview, role-specific delivery, and real-interview review use their dedicated Skills.
 ---
 
 # Building Resume Interview Stories
@@ -11,7 +11,7 @@ Build the story from evidence outward: facts first, business meaning second, res
 
 ## Route the Request
 
-本 Skill 提供履历证据与表达方法，不抢完整学生交付的主路由：通用模拟面试与实际面试复盘使用 `student-mock-interview-delivery`，明确公司／JD 的面试前准备使用 `student-role-interview-prep`。只有用户明确要求简历、故事或有限题组本身时，才由本 Skill 主导。
+本 Skill 提供履历证据与表达方法，不抢完整学生交付的主路由：通用模拟面试使用 `student-mock-interview-delivery`，明确公司/JD的面试前准备使用 `student-role-interview-prep`，真实已发生面试的逐字稿复盘使用 `student-interview-review-delivery`。只有用户明确要求简历或故事本身时，才由本 Skill 主导。
 
 当本 Skill 的结果面向学生、需要正式归档或作为后续面试训练材料时，正式、可归档的学生材料默认写入唯一飞书页面，具体写入学生唯一飞书主页下的对应页面；通用面试准备对应 `姓名｜面试指导者版（内部）` 与 `姓名｜学生面试准备版`，公司/JD 进入 `专岗准备｜公司｜岗位`，真实面试进入 `面试复盘｜公司｜日期`。不要把完整 Markdown dossier 当作默认终态。明确要求本地 Markdown、聊天回答、导出或只读分析时，才保留这些形式。复杂内容继续图文并茂，简单短答保留具体 `no_visual_reason`。
 
