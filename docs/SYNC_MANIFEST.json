@@ -53,7 +53,7 @@
     "skills/campus-job-matching/scripts/validate_jobs.py": "eb1cf80b88ae862e38b23aec0c51db4089ff33237b5ae4bea86a99ae594f465b",
     "skills/campus-job-matching/tests/test_company_cap.py": "e4fe29516ecfb5ca429330c5104d06c2aae44eeac8dd56884b7e0133c090d038",
     "skills/campus-job-matching/tests/test_job_gate.py": "482a486ba09048d3caafcc757509b36cb2387533dda8c789e10bb41e9b5b8dc7",
-    "skills/campus-job-matching/tests/test_search_modes.py": "d4a68bcbddb0397bebb083e17d74dcd502832b9e2c61a40c6521ba46b4212ee6",
+    "skills/campus-job-matching/tests/test_search_modes.py": "2c1ac9bca4a1e79c7cf4f57cc60fd34b32247825236271ca2cd0b2dde63f34e9",
     "skills/campus-job-matching/tests/test_shared_pool.py": "cead77dcb1cf0e855807014a065a7f0138eea1e4c8a27867f251b6ae58ebd732",
     "skills/campus-recommend/SKILL.md": "7c4788ca82e5b688d5e54233df0bc35ef5d2a22fa6a3bc09bacd1d41cc08658f",
     "skills/campus-recommend/references/feishu-writeback.md": "44d4a58f852e0e429cafcc44477acaf5aaee2092bcd97b3edac21a989f945664",

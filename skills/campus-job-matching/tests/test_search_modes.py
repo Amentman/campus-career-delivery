@@ -198,4 +198,3 @@ class SearchModeTests(unittest.TestCase):
                                        final_url='https://a.example/login?return=J1')
         self.job['application'].pop('recruiter_id')
         self.assertEqual(self.status(), 'pending')
-
