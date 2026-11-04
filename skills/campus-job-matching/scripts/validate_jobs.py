@@ -485,6 +485,8 @@ def main():
     parser.add_argument("--jobs", required=True, type=Path)
     parser.add_argument("--existing", required=True, type=Path, help="标准化历史快照；首次新表显式传入 []")
     parser.add_argument("--mode", choices=["add", "audit"], default="add")
+    parser.add_argument("--max-per-company", type=int, default=3,
+                        help="累计公司上限；默认3，当前任务明确另定时显式传入对应正整数")
     parser.add_argument("--report", type=Path)
     parser.add_argument("--ready-output", type=Path)
     parser.add_argument("--now", help="仅用于可复现测试；实际交付省略")
@@ -492,7 +494,8 @@ def main():
     try:
         load = lambda path: json.loads(path.read_text(encoding="utf-8-sig"))
         report = audit_jobs(load(args.profile), load(args.jobs), load(args.existing),
-                            now=checked_time(args.now) if args.now else None, mode=args.mode)
+                            now=checked_time(args.now) if args.now else None, mode=args.mode,
+                            max_per_company=args.max_per_company)
         ready = report.pop("ready_jobs")
         if args.ready_output:
             args.ready_output.write_text(json.dumps(ready, ensure_ascii=False, indent=2) + "\n")

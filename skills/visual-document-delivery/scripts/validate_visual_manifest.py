@@ -120,7 +120,7 @@ def validate_manifest(data: dict[str, Any]) -> list[str]:
         media = media_by_id.get(str(visual_id))
         if not media:
             errors.append(f"required visual missing from readback: {visual_id}")
-        elif not str(media.get("token", "")).strip():
+        elif not any(str(media.get(key) or "").strip() for key in ("token", "src")):
             errors.append(f"media token is empty: {visual_id}")
 
     render_qa = contract.get("render_qa", {})

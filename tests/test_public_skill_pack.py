@@ -26,6 +26,9 @@ EXPECTED_SKILLS = {
     "xiaohongshu-image-renderer",
     "multi-source-todo-control",
     "personal-todo-control",
+    "jihui-interview",
+    "pengyouquan-copywriting",
+    "tencent-meeting-cloud-export",
 }
 
 
@@ -46,6 +49,8 @@ class PublicSkillPackTests(unittest.TestCase):
     def test_skill_links_resolve(self):
         pattern = re.compile(r"\]\(([^)#]+)(?:#[^)]+)?\)")
         for path in SKILLS.rglob("*.md"):
+            if 'node_modules' in path.parts:
+                continue
             for target in pattern.findall(path.read_text(encoding="utf-8")):
                 if "://" in target or target.startswith("mailto:"):
                     continue
@@ -55,7 +60,7 @@ class PublicSkillPackTests(unittest.TestCase):
         files = [
             p
             for p in ROOT.rglob("*")
-            if p.is_file() and ".git" not in p.parts and "__pycache__" not in p.parts
+            if p.is_file() and ".git" not in p.parts and "__pycache__" not in p.parts and 'node_modules' not in p.parts
         ]
         self.assertFalse(any(p.suffix == ".pyc" for p in files))
         user_prefix = "/" + "Users" + "/"

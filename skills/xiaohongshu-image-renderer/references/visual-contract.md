@@ -1,7 +1,6 @@
 # Original memo visual contract
 
-The only approved references are the supplied original memo cover and body
-screenshots. The renderer must preserve their plain, editorial character.
+The bundled renderer and the dimensions, colors and geometry below define the self-contained memo template. When a user supplies original cover/body screenshots, compare the result against them as additional references. Missing historical screenshots are not a runtime dependency. Preserve the plain, editorial character.
 
 ## Required appearance
 

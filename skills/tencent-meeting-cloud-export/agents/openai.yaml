@@ -1,0 +1,3 @@
+interface:
+  display_name: "腾讯会议云录制导出"
+  short_description: "批量归档当前账号的视频和逐字稿"

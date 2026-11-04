@@ -98,7 +98,7 @@ def visual_has_token(node):
     return False
 
 
-def validate_page_structure(xml, label, expected_title, visual_boundary_title, errors):
+def validate_page_structure(xml, label, expected_title, visual_boundary_title, errors, require_visual=True):
     title, body = parse_document_xml(xml, label, errors)
     if title != expected_title:
         errors.append(f"{label}页面标题应为 {expected_title}，实际为 {title or '缺失'}")
@@ -113,7 +113,7 @@ def validate_page_structure(xml, label, expected_title, visual_boundary_title, e
         node for node in ordered_nodes
         if local_name(node.tag) in {"whiteboard", "image", "img"}
     ]
-    if not visual_nodes:
+    if require_visual and not visual_nodes:
         errors.append(f"{label}至少一张可读项目图缺失")
     for node in visual_nodes:
         if not visual_has_token(node):
@@ -144,6 +144,7 @@ def validate_remote_documents(
     student_xml,
     track,
     forbid_names=(),
+    no_visual_reason=None,
 ):
     errors = []
     internal_title = f"{name}｜面试指导者版（内部）"
@@ -221,6 +222,7 @@ def validate_remote_documents(
         internal_title,
         "模拟面试流程",
         errors,
+        require_visual=not bool(no_visual_reason),
     )
     validate_page_structure(
         student_xml,
@@ -228,6 +230,7 @@ def validate_remote_documents(
         student_title,
         "面试问题与个人逐字稿",
         errors,
+        require_visual=not bool(no_visual_reason),
     )
     return errors
 
@@ -240,7 +243,10 @@ def main():
     parser.add_argument("--student", required=True)
     parser.add_argument("--track", required=True, choices=tuple(TRACK_MARKERS))
     parser.add_argument("--forbid-name", action="append", default=[])
+    parser.add_argument("--no-visual-reason", help="Only for genuinely simple linear content; record the same reason in visual_contract")
     args = parser.parse_args()
+    if args.no_visual_reason is not None and not args.no_visual_reason.strip():
+        parser.error("--no-visual-reason must explain why no visual is needed")
 
     errors = []
     documents = {
@@ -273,6 +279,7 @@ def main():
                 snapshots["student"]["xml"],
                 args.track,
                 args.forbid_name,
+                args.no_visual_reason,
             )
         )
 

@@ -30,6 +30,9 @@ class RepositoryContractTests(unittest.TestCase):
             "xiaohongshu-image-renderer",
             "multi-source-todo-control",
             "personal-todo-control",
+    "jihui-interview",
+    "pengyouquan-copywriting",
+    "tencent-meeting-cloud-export",
         }
         actual = {path.name for path in SKILLS.iterdir() if (path / "SKILL.md").is_file()}
         self.assertEqual(expected, actual)
@@ -47,6 +50,8 @@ class RepositoryContractTests(unittest.TestCase):
     def test_markdown_references_are_local_and_resolvable(self):
         link_pattern = re.compile(r"\[[^\]]+\]\(([^)]+\.md)\)")
         for markdown in SKILLS.rglob("*.md"):
+            if 'node_modules' in markdown.parts:
+                continue
             text = markdown.read_text(encoding="utf-8")
             for target in link_pattern.findall(text):
                 if "://" in target:
@@ -94,14 +99,17 @@ class RepositoryContractTests(unittest.TestCase):
         self.assertIn("独立子页", role_text)
         self.assertIn("独立子页", review_text)
 
-    def test_feishu_interview_visuals_require_native_whiteboard_contract(self):
+    def test_feishu_interview_visuals_preserve_existing_canvases_and_accept_body_images(self):
         reference_paths = (
             SKILLS / "student-mock-interview-delivery" / "references" / "feishu-delivery-contract.md",
             SKILLS / "student-interview-review-delivery" / "references" / "feishu-boundary-and-acceptance.md",
         )
         for path in reference_paths:
             text = path.read_text(encoding="utf-8")
-            self.assertIn("飞书原生画板", text, path)
+            self.assertIn("正文", text, path)
+            self.assertIn("图片", text, path)
+            self.assertNotIn("必须使用**飞书原生画板**", text, path)
+            self.assertNotIn("必须使用飞书原生画板", text, path)
             self.assertIn("no_visual_reason", text, path)
         role_text = (SKILLS / "student-role-interview-prep" / "references" / "feishu-boundary-and-acceptance.md").read_text(encoding="utf-8")
         self.assertIn("图片嵌入正文对应章节", role_text)
@@ -133,7 +141,8 @@ class RepositoryContractTests(unittest.TestCase):
         for text in (visual_text, matrix_text, render_text):
             self.assertIn("目标格式", text)
             self.assertIn("no_visual_reason", text)
-        self.assertIn("飞书原生画板", visual_text)
+        self.assertIn("图片嵌入正文对应章节", visual_text)
+        self.assertIn("保留既有有效画板", visual_text)
         self.assertIn("画板块", render_text)
         self.assertIn("非飞书", visual_text)
 
@@ -154,7 +163,7 @@ class RepositoryContractTests(unittest.TestCase):
         corpus = "\n".join(
             path.read_text(encoding="utf-8")
             for path in SKILLS.rglob("*")
-            if path.is_file() and path.suffix in text_suffixes
+            if path.is_file() and 'node_modules' not in path.parts and path.suffix in text_suffixes
         )
         self.assertIsNone(re.search(r"space_id`?:\s*`?\d{10,}", corpus))
         self.assertNotIn("旧分类父节点", corpus)
@@ -165,7 +174,7 @@ class RepositoryContractTests(unittest.TestCase):
         files = [
             path
             for path in ROOT.rglob("*")
-            if path.is_file() and ".git" not in path.parts and path.suffix in text_suffixes
+            if path.is_file() and ".git" not in path.parts and "node_modules" not in path.parts and path.suffix in text_suffixes
         ]
         corpus = "\n".join(path.read_text(encoding="utf-8") for path in files)
         forbidden = (
@@ -185,7 +194,7 @@ class RepositoryContractTests(unittest.TestCase):
     def test_repository_does_not_embed_absolute_user_paths(self):
         offenders = []
         for path in ROOT.rglob("*"):
-            if not path.is_file() or ".git" in path.parts:
+            if not path.is_file() or ".git" in path.parts or "node_modules" in path.parts:
                 continue
             if path.suffix not in {".md", ".py", ".yaml", ".yml", ".json", ".toml", ".txt"}:
                 continue
@@ -211,7 +220,7 @@ class RepositoryContractTests(unittest.TestCase):
         entry = marketplace["plugins"][0]
         self.assertEqual(portable["name"], entry["name"])
         self.assertEqual(
-            "https://github.com/Amentman/codex-student-interview-skills.git",
+            "https://github.com/Amentman/campus-career-delivery.git",
             entry["source"]["url"],
         )
 
@@ -227,7 +236,7 @@ class RepositoryContractTests(unittest.TestCase):
         actual = {
             str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
             for path in SKILLS.rglob("*")
-            if path.is_file() and "__pycache__" not in path.parts and path.name != ".DS_Store" and path.suffix != ".pyc"
+            if path.is_file() and "__pycache__" not in path.parts and "node_modules" not in path.parts and path.name != ".DS_Store" and path.suffix != ".pyc"
         }
         self.assertEqual(manifest["files_sha256"], actual)
         self.assertEqual(manifest["skill_count"], len(manifest["skills"]))

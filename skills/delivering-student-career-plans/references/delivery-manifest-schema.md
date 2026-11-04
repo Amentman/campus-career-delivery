@@ -2,7 +2,7 @@
 
 `manifest.json` 必须通过 `readback_path` 指向独立的飞书读回 JSON。本地正文和飞书读回是两类证据，不得互相替代。
 
-个人规划必须声明交付模式。默认使用紧凑完整的标准学生版 `standard`；只有用户明确要求深度完整版时使用 `full`，明确要求摘要时使用 `concise`：
+个人规划必须声明交付模式。成熟完整的学生规划默认使用 `standard`；用户说“完整”不自动切换模式。只有明确要求扩展 JD 深度、证据矩阵和研究覆盖时使用 `full`，明确要求摘要时使用 `concise`：
 
 ```json
 {
@@ -79,6 +79,40 @@
 ```
 
 校验器会在正文中查找这些 marker，并验证项目标题位于简历版本和正式投递之前。`expected_project_count` 由用户范围和学生类型决定；应届生通常为 1—2，社招可以为 0，但仍需用既有项目/经历形成岗位证据。
+
+## 岗位—公司—薪资待遇的绑定读回
+
+所有最终交付模式都在读回的 `career_plan.opportunity_checks.rows` 中登记实际正文的具体机会，不能靠上面的分散关键词代替。每条保留路线至少一条完整机会，并有该方向公开或可比薪资依据。以下为格式示例，不是市场数据：
+
+```json
+{
+  "opportunity_checks": {
+    "rows": [{
+      "route_key": "primary_route",
+      "company": "示例科技",
+      "role": "海外产品营销实习生",
+      "city": "深圳",
+      "recruitment_type": "在校实习",
+      "sample_status": "current_sample",
+      "fit": "出海研究可迁移，仍需补产品上市案例",
+      "salary_type": "company_disclosed",
+      "salary_text": "200—250元/天；转正薪资未披露",
+      "benefits_text": "餐补已披露；奖金、工时和外派安排未披露",
+      "source_url": "https://jobs.example.com/marketing-intern",
+      "access_date": "2026-11-03",
+      "evidence_excerpt": "从本轮飞书全文原样截取的一条岗位表格行或岗位小节"
+    }]
+  }
+}
+```
+
+- `evidence_excerpt` 必须是 `text_path` 全文中的原样片段，覆盖同一具体机会的公司、岗位、城市／阶段、匹配差距、薪资和待遇；不要用整篇正文充当片段。日期可在共用核验说明中统一呈现。
+- `sample_status` 为 `current_sample`、`historical_sample` 或 `research_only`。前两者也不自动等于该学生当前可投，正文继续说明届别、状态与条件；研究池不能充当实际薪酬样本。
+- `salary_type` 为 `company_disclosed`、`comparable_sample` 或 `undisclosed`。前两者必须提供数字与单位；“个人目标20—30万”不能冒充薪资证据。未公开待遇如实写清，不补编奖金、福利或工时。
+- 可比样本另填 `salary_route_key`（与本机会路线一致）及 `comparability_note`；后者说明城市、职责、招聘阶段和时间上的可比性，且必须在正文对应小节出现。不得跨方向借用薪资填空。
+- 来源可直接位于机会行，或以 `source_marker`（如 `[S1]`）绑定正文中同时含该标记与来源URL的出处行。不能只在JSON中声明来源。
+- 任何路线全部为 `undisclosed`、没有可比薪酬依据时，校验返回该路线薪资研究未完成。应如实汇报已完成部分和缺口，不修改JSON绕过，也不为通过验收编造数据。
+- 程序检查的是正文绑定、字段和覆盖，不能判断网页真假、职责是否实质相近或福利是否确有依据；交付前仍逐路线人工核对这些语义。
 
 ## 原始简历指纹
 

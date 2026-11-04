@@ -15,7 +15,7 @@ from pathlib import Path
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SKILL_ROOT / "scripts"))
 
-from validate_delivery import validate_manifest  # noqa: E402
+from validate_delivery import validate_career_plan, validate_manifest  # noqa: E402
 
 
 WHITEPAPER_PARENT = "whitepaper-parent-token"
@@ -329,6 +329,40 @@ class ValidateDeliveryTests(unittest.TestCase):
             },
             "readback_path": str(self.readback_path),
         }
+        # Synthetic jobs keep the complete-plan fixture complete under the
+        # linked compensation contract; they are never used as market data.
+        rows = []
+        for route, company, role, slug in (
+            ("technical_ai_product", "测试公司甲", "产品岗 JD1", "product-1"),
+            ("agent_application_development", "测试公司乙", "Agent 岗 JD1", "agent-1"),
+        ):
+            row = {
+                "route_key": route,
+                "company": company,
+                "role": role,
+                "city": "上海",
+                "recruitment_type": "校园招聘",
+                "sample_status": "current_sample",
+                "fit": "已有数据基础，需补齐岗位项目",
+                "salary_type": "company_disclosed",
+                "salary_text": "20—25K×14薪，奖金保证性未披露",
+                "benefits_text": "餐补已披露；工时与外派安排未披露",
+                "source_url": f"https://jobs.example.com/{slug}",
+                "access_date": "2026-09-10",
+            }
+            row["evidence_excerpt"] = "；".join(
+                row[key] for key in (
+                    "company", "role", "city", "recruitment_type", "fit",
+                    "salary_text", "benefits_text", "source_url", "access_date",
+                )
+            )
+            rows.append(row)
+            self.plan_text += "\n\n" + row["evidence_excerpt"]
+        self.plan_path.write_text(self.plan_text, encoding="utf-8")
+        self.readback["career_plan"]["markdown_sha256"] = hashlib.sha256(
+            self.plan_path.read_bytes()
+        ).hexdigest()
+        self.readback["career_plan"]["opportunity_checks"] = {"rows": rows}
 
     def tearDown(self):
         self.temp_dir.cleanup()
@@ -368,6 +402,11 @@ AI Agent 大厂池包括字节跳动、华为；中小型 AI/垂直场景公司�
         ]
         self.manifest["career_plan"]["expected_project_count"] = 2
         self.manifest["career_plan"]["requires_agent_company_split"] = True
+        for row, key in zip(
+            self.readback["career_plan"]["opportunity_checks"]["rows"],
+            self.manifest["career_plan"]["required_route_keys"],
+        ):
+            row["route_key"] = key
         self.manifest["career_plan"]["source_fidelity"] = {
             "authoritative_artifact_path": str(self.rendered_pdf_path),
             "authoritative_artifact_sha256": self.rendered_pdf_sha256,
@@ -832,6 +871,32 @@ AI Agent 大厂池包括字节跳动、华为；中小型 AI/垂直场景公司�
         ).hexdigest()
         self.readback["career_plan"]["full_plan_checks"]["main_section_count"] = 14
         self.assertEqual([], self.validate())
+
+    def test_accepts_tool_names_containing_open(self):
+        plan_text = self.plan_text + "\n技术基础：使用 Open3D、OpenCV 和 OpenAI API。"
+        errors = validate_career_plan(
+            plan_text, self.manifest["career_plan"], self.manifest["expected"], self.root
+        )
+        self.assertEqual([], errors)
+
+    def test_rejects_standalone_open_label(self):
+        errors = validate_career_plan(
+            self.plan_text + "\n到岗时间：Open。",
+            self.manifest["career_plan"], self.manifest["expected"], self.root
+        )
+        self.assertIn(
+            "career_plan: external copy contains internal working language (Open)", errors
+        )
+
+    def test_accepts_explicit_technical_and_nontechnical_comparison_heading(self):
+        plan_text = self.plan_text
+        for marker in ("核心求职方向", "方向优先级", "主攻方向", "保稳方向", "岗位比较"):
+            plan_text = plan_text.replace(marker, "路线")
+        plan_text += "\n# 技术与非技术路线比较\n现有技术经历支撑当前主线；转向产品需要补充需求验证证据。"
+        errors = validate_career_plan(
+            plan_text, self.manifest["career_plan"], self.manifest["expected"], self.root
+        )
+        self.assertEqual([], errors)
 
     def test_rejects_internal_working_language_in_external_plan(self):
         leaked_plan = self.plan_text + "\n" + (

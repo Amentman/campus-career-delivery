@@ -10,3 +10,9 @@ __pycache__/
 tmp/
 rendered/
 *.log
+node_modules/
+.venv/
+.superpowers/
+*.local.json
+team.private.json
+.sync-state/

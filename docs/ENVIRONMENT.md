@@ -1,6 +1,6 @@
 # 环境基线
 
-本仓库在以下本机环境完成打包与自动测试（历史环境记录；本轮同步为2026-11-02，Asia/Shanghai）：
+本仓库在以下本机环境完成打包与自动测试（历史环境记录；本轮团队版为2026-11-04，Asia/Shanghai）：
 
 | 组件 | 验收版本 |
 | --- | --- |
@@ -22,7 +22,7 @@
 ## 路径与命令约定
 
 - Skill 文档中的 `scripts/...` 都相对该 Skill 自己的目录解析；从仓库根目录执行时应使用 `python3 skills/<skill-name>/scripts/<script>.py ...`，不要依赖当前工作目录碰巧位于 Skill 内。
-- `student-mock-interview-delivery/scripts/locate_student.py` 保留了制作者在 macOS 上的默认搜索目录，方便原环境继续使用。迁移到其他机器时必须显式传 `--root <交付根目录>`；可多次传入 `--root`，但不能用默认目录猜测学生身份。
+- `student-mock-interview-delivery/scripts/locate_student.py` 使用本次 --root 或成员配置 workspace.student_root；支持多个 --root。没有有效配置时明确提示，不猜制作者的学生目录。
 - `prompts/` 是审计快照而不是直接覆盖模板，本轮已将私人路径、账号标识与生产节点移除。其他使用者应以根目录 `AGENTS.md` 为入口，并对用户级规则做人工合并。
 
 ## 提示词容量
@@ -31,4 +31,10 @@
 
 ## 内容生产与外部依赖
 
-18 个 Skill 均可按需安装。小红书渲染器需要 Node.js、Playwright 及 Chrome；使用 `npm install playwright` 安装依赖，默认命令使用 macOS Chrome 路径；其他平台需自行适配并验证。其余 Word/PDF 渲染、设计 Skill、聊天连接器、知识库与 lark-cli 由使用者自行提供。本仓库不分发私人微信解析器、聊天数据库或密钥。
+21 个 Skill 均可按需安装。小红书渲染器需要 Node.js、Playwright 及 Chrome；使用 `npm install playwright` 安装依赖，默认命令使用 macOS Chrome 路径；其他平台需自行适配并验证。其余 Word/PDF 渲染、设计 Skill、聊天连接器、知识库与 lark-cli 由使用者自行提供。本仓库不分发私人微信解析器、聊天数据库或密钥。
+
+## 团队版配置工具
+
+根目录 scripts/team_setup.py、sync_public.py、build_team_docs.py、build_manifest.py 仅依赖 Python 标准库，合并同步另需 Git。安装器不调用飞书；bind-user和doctor --live只读现有本人登录态。正式目标仍须按任务回读并验证访问能力。
+
+图片技能在自己的目录执行 npm ci 安装已锁定依赖；不从作者插件缓存猜依赖。源码与安装包排除 node_modules、字节码、私有JSON和生成日志。完整测试命令见README；正式文档Python检查依赖通过uv临时环境提供，不修改系统Python。

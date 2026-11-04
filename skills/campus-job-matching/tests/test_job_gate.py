@@ -82,6 +82,22 @@ class JobGateTests(unittest.TestCase):
     def test_accounting_role_is_allowed_by_this_students_target(self):
         self.assertEqual(self.status(), "ready")
 
+    def test_cli_explicit_company_limit_includes_existing_history(self):
+        paths = {}
+        history = [{"company": "甲公司", "tenant": "a.example", "job_id": "H" + str(i)}
+                   for i in range(3)]
+        for name, value in (("profile", self.profile), ("jobs", [self.job]), ("existing", history)):
+            paths[name] = self.path / (name + ".json")
+            paths[name].write_text(json.dumps(value, ensure_ascii=False))
+        command = [sys.executable, str(SCRIPT), "--profile", str(paths["profile"]),
+                   "--jobs", str(paths["jobs"]), "--existing", str(paths["existing"]),
+                   "--now", NOW.isoformat()]
+        default = subprocess.run(command, text=True, capture_output=True)
+        self.assertEqual(default.returncode, 1)
+        explicit = subprocess.run(command + ["--max-per-company", "4"], text=True, capture_output=True)
+        self.assertEqual(explicit.returncode, 0, explicit.stdout + explicit.stderr)
+        self.assertEqual(json.loads(explicit.stdout)["summary"]["ready"], 1)
+
     def test_200_with_closed_detail_is_rejected(self):
         self.job["availability"].update(http_status=200, text="抱歉，该职位已停止招聘，去看看其他机会吧！")
         self.assertEqual(self.status(), "rejected")

@@ -1,5 +1,9 @@
 # RED baseline: career-plan delivery without the new Skill
 
+Historical test record only. The whitepaper-first behaviors below describe the
+2026-09-02 contract, not the current default. Use the current SKILL.md and its
+references for delivery; later structure regression results are recorded separately.
+
 Date: 2026-09-02
 
 Three fresh-context agents were asked to design the workflow without reading the new Skill or its design spec. The purpose was to capture observable omissions, not to evaluate writing quality.

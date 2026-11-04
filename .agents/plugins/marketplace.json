@@ -1,14 +1,14 @@
 {
   "name": "jihui-student-interview",
   "interface": {
-    "displayName": "寂辉校招面试 Skills"
+    "displayName": "校招交付｜团队 Skills"
   },
   "plugins": [
     {
       "name": "codex-student-interview-skills",
       "source": {
         "source": "url",
-        "url": "https://github.com/Amentman/codex-student-interview-skills.git",
+        "url": "https://github.com/Amentman/campus-career-delivery.git",
         "ref": "main"
       },
       "policy": {

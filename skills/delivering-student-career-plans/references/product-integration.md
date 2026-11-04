@@ -11,7 +11,7 @@
 3. 知识库内与“职业规划、交付 SOP、项目、简历、投递、模拟面试、班主任”相关的 2—5 个最相关提炼文件；
 4. 当前学生行业和目标岗位关键词的检索结果。
 
-同时遵循 `job-sales-advisor/references/knowledge-base-routing.md`、`consultative-planning-playbook.md`、`career-planning-template.md`；技术岗再读 `technical-career-planning.md`。优先读取 `01`—`06` 提炼文件，除非用户点名或提炼层缺证据，不扩大到原始客户材料、合同和真实学员表。
+安装了 `job-sales-advisor` 时，读取其 `references/knowledge-base-routing.md`、`consultative-planning-playbook.md`、`career-planning-template.md`；技术岗再读 `technical-career-planning.md`。只安装本 Skill 时，按下文 Map 字段与成员知识库的来源/版本核对规则完成，不把缺失的辅助文件当作已读。优先读取 `01`—`06` 提炼文件，除非用户点名或提炼层缺证据，不扩大到原始客户材料、合同和真实学员表。
 
 为产品事实保留来源文件、读取时间、支持的具体结论和冲突状态。价格、课次、导师数量、结果保障、背调和资源信息属于动态口径；来源冲突时标为待确认，不选对自己有利的一版。
 

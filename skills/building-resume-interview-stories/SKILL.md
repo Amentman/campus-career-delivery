@@ -5,6 +5,8 @@ description: Use when a bounded request needs evidence-grounded resume bullets, 
 
 # Building Resume Interview Stories
 
+团队首次使用先读 [配置与依赖](references/team-setup.md)；已有配置与本轮明确入口直接复用，不重复索取。
+
 ## Core Principle
 
 Build the story from evidence outward: facts first, business meaning second, resume third, interview preparation last. Never make a candidate sound stronger by making their experience less true.
@@ -26,6 +28,12 @@ Build the story from evidence outward: facts first, business meaning second, res
 Read each selected reference completely before drafting. Do not load unneeded references.
 
 For a complete dossier or a project explanation with three or more dependent stages, actors, components, decisions, or validation paths, **REQUIRED SUB-SKILL:** Use `visual-document-delivery` and create a `visual_contract`. A bullet-only task or simple short answer remains text-only and records a concrete `no_visual_reason`; do not force a visual or render pass into it.
+
+## Setup and dependencies
+
+Use the member's supplied resume/JD and current task destination first. Private configuration `workspace.student_root` may locate local sources; `feishu.students_root_url` may locate the student's existing page. Do not search author-private directories or create a replacement destination when a required target is ambiguous. Missing Feishu access pauses only that write; continue the authorized evidence work and draft without claiming delivery.
+
+Full mock interview, role preparation, real-interview review and complex visual delivery require their named companion Skills. Check availability before routing. A standalone copy can still complete the bounded story/bullet task; if a required companion is unavailable, report that dependency and the remaining formal delivery rather than impersonating its checks.
 
 ## Mandatory Evidence Gate
 

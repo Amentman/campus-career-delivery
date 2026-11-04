@@ -1,0 +1,4 @@
+interface:
+  display_name: "朋友圈文案"
+  short_description: "调用知识库素材，生成带有个人风格和业务辨识度的朋友圈文案"
+  default_prompt: "使用 $pengyouquan-copywriting 调用我的知识库，写一条朋友圈文案。"

@@ -15,6 +15,8 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
+from validate_opportunities import validate_opportunities
+
 
 VISUAL_VALIDATOR_PATH = (
     Path(__file__).resolve().parents[2]
@@ -97,12 +99,12 @@ def _validate_visual_manifest(
         return [f"career_plan visual: cannot read valid JSON ({exc})"]
 
     if not VISUAL_VALIDATOR_PATH.is_file():
-        return ["career_plan visual: shared validator cannot be loaded"]
+        return [f"career_plan visual: shared validator cannot be loaded at {VISUAL_VALIDATOR_PATH}; install visual-document-delivery beside this Skill"]
     spec = importlib.util.spec_from_file_location(
         "visual_document_delivery_validator", VISUAL_VALIDATOR_PATH
     )
     if spec is None or spec.loader is None:
-        return ["career_plan visual: shared validator cannot be loaded"]
+        return [f"career_plan visual: shared validator cannot be loaded at {VISUAL_VALIDATOR_PATH}; install visual-document-delivery beside this Skill"]
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return [
@@ -159,7 +161,7 @@ def validate_career_plan(
         ),
         (
             "direction priorities",
-            ("核心求职方向", "方向优先级", "主攻方向", "保稳方向", "岗位比较"),
+            ("核心求职方向", "方向优先级", "主攻方向", "保稳方向", "岗位比较", "技术与非技术路线比较"),
         ),
         (
             "company-pool boundary",
@@ -231,7 +233,7 @@ def validate_career_plan(
         ("Confirmed", r"(?<![A-Za-z])Confirmed(?![A-Za-z])"),
         ("Externally verified", r"(?<![A-Za-z])Externally\s+verified(?![A-Za-z])"),
         ("Inferred", r"(?<![A-Za-z])Inferred(?![A-Za-z])"),
-        ("Open", r"(?<![A-Za-z])Open(?![A-Za-z])"),
+        ("Open", r"(?<![A-Za-z0-9_])Open(?![A-Za-z0-9_])"),
         ("HC", r"(?<![A-Za-z])HC(?![A-Za-z])"),
         ("非已获机会", r"非已获机会"),
         ("资料边界", r"资料边界"),
@@ -652,6 +654,7 @@ def _validate_full_plan_readback(
                 per_page_valid = False
     if not per_page_valid or observed_page_numbers != expected_page_numbers:
         errors.append("career_plan readback: per-page visual QA is incomplete")
+    errors.extend(validate_opportunities(payload, career_plan.get("required_route_keys"), text))
     return errors
 
 
@@ -798,6 +801,7 @@ def _validate_standard_plan_readback(
         text, ("最小可演示", "进入简历条件", "通过复盘后", "达到可演示")
     ):
         errors.append("career_plan readback: project-to-resume gate is missing")
+    errors.extend(validate_opportunities(payload, route_keys, text))
     return errors
 
 
@@ -1101,6 +1105,8 @@ def _validate_feishu_readback(
                 career_plan_text,
             )
         )
+    elif delivery_mode == expected_delivery_mode == "concise":
+        errors.extend(validate_opportunities(career_plan_rb, career_plan.get("required_route_keys"), career_plan_text))
 
     attachment = career_plan_rb.get("attachment")
     if not isinstance(attachment, dict):

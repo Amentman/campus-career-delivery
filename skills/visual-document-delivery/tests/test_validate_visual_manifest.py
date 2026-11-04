@@ -67,6 +67,20 @@ class VisualManifestTests(unittest.TestCase):
             "media token is empty: business-flow", validate_manifest(data)
         )
 
+    def test_readback_src_is_a_valid_media_identifier(self):
+        data = complete_manifest()
+        media = data["visual_contract"]["readback"]["media_blocks"][0]
+        media.pop("token")
+        media["src"] = "synthetic-rendered-image"
+        self.assertEqual(validate_manifest(data), [])
+
+    def test_whitespace_media_src_is_not_accepted(self):
+        data = complete_manifest()
+        media = data["visual_contract"]["readback"]["media_blocks"][0]
+        media.pop("token")
+        media["src"] = "  "
+        self.assertIn("media token is empty: business-flow", validate_manifest(data))
+
     def test_incomplete_page_review_fails(self):
         data = complete_manifest()
         data["visual_contract"]["render_qa"]["checked_pages"] = [1, 3]

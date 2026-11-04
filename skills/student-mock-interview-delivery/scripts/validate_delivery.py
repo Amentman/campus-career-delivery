@@ -48,8 +48,8 @@ CORE_EXPERIENCE_FIELDS = (
 )
 TRACK_MARKERS = {
     "business": ("业务运营追问路线", "业务流程图", "指标与归因"),
-    "product": ("AI 产品追问路线", "产品体验证据", "指标反推"),
-    "technical": ("Agent 技术追问路线", "系统架构图", "异常与可观测"),
+    "product": ("产品追问路线", "产品体验证据", "指标反推"),
+    "technical": ("技术追问路线", "系统架构图", "异常与可观测"),
 }
 TRACK_MARKERS["mixed"] = TRACK_MARKERS["product"] + TRACK_MARKERS["technical"]
 STUDENT_FORBIDDEN = (

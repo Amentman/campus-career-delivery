@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import os
 import re
 import subprocess
 import time
@@ -11,8 +12,78 @@ from datetime import datetime
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-CONFIG = Path.home() / '.codex/campus-job-matching.local.json'
+TEAM_CONFIG = Path.home() / '.config/jihui-skills/team.json'
+LEGACY_CONFIG = Path.home() / '.codex/campus-job-matching.local.json'
 TRACKING = {'from', 'source', 'ref', 'refer', 'referrer', 'shareid', 'sharecode', 'campussharecode', 'scene', 'spm', 'channel', 'channelid', 'trackingid', 'securityid', 'ka', 'lid', 'pk', 'sessionid', 'share_token', 'sharepageid', 'sourcetoken', 'locale'}
+
+
+def load_config():
+    """Load member settings without contacting Feishu or creating any files."""
+    explicit = os.environ.get('JIHUI_SKILLS_CONFIG')
+    if explicit:
+        path = Path(explicit).expanduser()
+    elif TEAM_CONFIG.exists():
+        path = TEAM_CONFIG
+    elif LEGACY_CONFIG.exists():
+        path = LEGACY_CONFIG
+    else:
+        path = TEAM_CONFIG
+    setup = ('先复制团队配置样例到 ~/.config/jihui-skills/team.json，填写当前成员身份与 shared_pool；'
+             '自选路径用 JIHUI_SKILLS_CONFIG 指定。配置步骤见 references/runtime-config.md。')
+    try:
+        config = json.loads(path.read_text(encoding='utf-8-sig'))
+    except FileNotFoundError:
+        raise ValueError('找不到团队配置。' + setup) from None
+    except (OSError, UnicodeError, json.JSONDecodeError):
+        raise ValueError('团队配置不是可读的 JSON 文件。' + setup) from None
+    if not isinstance(config, dict):
+        raise ValueError('团队配置根节点必须是对象。' + setup)
+    if 'version' in config and (type(config['version']) is not int or config['version'] != 1):
+        raise ValueError('不支持的团队配置 version；当前支持 version=1。')
+    if not str(config.get('expected_user_open_id') or '').strip():
+        raise ValueError('团队配置缺少 expected_user_open_id；绑定当前成员本人账号。' + setup)
+    if config.get('version') == 1 and not str(config.get('expected_profile') or '').strip():
+        raise ValueError('团队配置缺少 expected_profile；填写当前成员的 lark-cli profile。' + setup)
+    route = config.get('shared_pool')
+    if not isinstance(route, dict):
+        raise ValueError('shared_pool 未配置；本轮尚未查询共享池。' + setup)
+    route = dict(route)
+    # Legacy configurations described a personal pool owned by the same user.
+    if 'version' not in config and not route.get('owner_open_id'):
+        route['owner_open_id'] = config['expected_user_open_id']
+    required = ('base_token', 'job_table_id', 'company_table_id', 'wiki_node_token', 'owner_open_id')
+    missing = [key for key in required if not isinstance(route.get(key), str) or not route[key].strip()]
+    if missing:
+        raise ValueError('shared_pool 缺少配置字段：' + ', '.join(missing) + '。' + setup)
+    config['shared_pool'] = route
+    return config
+
+
+def verify_pool_access(config):
+    """Check caller identity separately from the configured shared pool owner.
+
+    Actual record/field reads follow this check and prove the caller's access;
+    ownership never implies access for another team member.
+    """
+    result = subprocess.run(['lark-cli', 'auth', 'status', '--json', '--verify'],
+                            capture_output=True, text=True, check=True)
+    auth = json.loads(result.stdout)
+    user = auth.get('identities', {}).get('user', {})
+    if not user.get('verified') or user.get('openId') != config['expected_user_open_id']:
+        raise RuntimeError('Unexpected or unverified current member identity; check expected_user_open_id')
+    profile = config.get('expected_profile')
+    actual_profiles = {str(value) for value in (
+        auth.get('appId'), auth.get('profile'), auth.get('profileId'),
+        user.get('appId'), user.get('profile'), user.get('profileId')) if isinstance(value, str)}
+    if profile and profile not in actual_profiles:
+        raise RuntimeError('Current member profile differs or is unavailable; check expected_profile')
+    route = config['shared_pool']
+    meta = cli(['wiki', '+node-get', '--node-token', route['wiki_node_token']])
+    if meta.get('obj_token') != route['base_token']:
+        raise RuntimeError('Shared pool target differs from configured base_token')
+    if meta.get('owner') != route['owner_open_id']:
+        raise RuntimeError('Shared pool owner differs from configured owner_open_id')
+    return meta
 
 def text(value):
     if value is None:
@@ -388,15 +459,11 @@ def make_journal(path):
 
 def append_plan(plan, route, journal_dir, *, execute=False):
     """Append-only import. Every run re-reads live identities before planning writes."""
+    config = load_config()
+    if route != config['shared_pool']:
+        raise RuntimeError('Shared pool route changed; reload the plan before continuing')
+    meta = verify_pool_access(config)
     journal = make_journal(journal_dir)
-    config = json.loads(CONFIG.read_text())
-    auth = json.loads(subprocess.run(['lark-cli','auth','status','--json','--verify'], capture_output=True,text=True,check=True).stdout)
-    user = auth['identities']['user']
-    if not user.get('verified') or user['openId'] != config['expected_user_open_id']:
-        raise RuntimeError('Unexpected or unverified user identity')
-    meta = cli(['wiki','+node-get','--node-token',route['wiki_node_token']])
-    if meta.get('obj_token') != route['base_token'] or meta.get('owner') != config['expected_user_open_id']:
-        raise RuntimeError('Pool target or owner differs from the configured user')
     dump(journal/'node-before.json',meta)
     permission = cli(['drive','permission.public','get','--token',route['base_token'],'--type','bitable'])
     dump(journal/'permission-before.json',permission)
@@ -477,7 +544,43 @@ def append_plan(plan, route, journal_dir, *, execute=False):
     dump(journal/'result.json',result)
     return result
 
-def main():
+def run(args):
+    if args.command == 'append':
+        config = load_config()
+        result = append_plan(json.loads(Path(args.plan).read_text()),config['shared_pool'],args.journal,execute=args.execute)
+        if args.execute:
+            print(json.dumps(result,ensure_ascii=False))
+        return 0
+    if args.command == 'snapshot':
+        config = load_config()
+        route = config['shared_pool']
+        verify_pool_access(config)
+        companies = read_all(route['base_token'], route['company_table_id'])
+        lookup = {r['record_id']:text(r.get('公司名称')) for r in companies}
+        rows = read_all(route['base_token'], route['job_table_id'])
+        jobs = [normalize_job(r,lookup) for r in rows]
+        dump(args.output, {'complete':True,'read_at':datetime.now().astimezone().isoformat(),'route':route,'jobs':jobs})
+        print(json.dumps({'complete':True,'pool_checked':True,'count':len(jobs),'output':args.output},ensure_ascii=False))
+        return 0
+    snapshot = json.loads(Path(args.snapshot).read_text())
+    if snapshot.get('complete') is not True:
+        raise ValueError('A complete pool snapshot is required')
+    if args.command == 'search':
+        profile = json.loads(Path(args.profile).read_text())
+        result = search_jobs(snapshot['jobs'], profile)
+        dump(args.output, {'pool_read_at':snapshot.get('read_at'),'count':len(result),'requires_revalidation':True,'jobs':result})
+        print(json.dumps({'pool_candidates':len(result),'output':args.output},ensure_ascii=False))
+    else:
+        jobs = json.loads(Path(args.jobs).read_text())
+        if isinstance(jobs,dict):
+            jobs = jobs.get('jobs',jobs.get('ready', []))
+        result = build_plan(jobs, snapshot['jobs'])
+        dump(args.output,result)
+        print(json.dumps(result['stats'],ensure_ascii=False))
+    return 0
+
+
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='command', required=True)
     snapshot = sub.add_parser('snapshot', help='Read the complete live pool, without changing it')
@@ -494,41 +597,13 @@ def main():
     append.add_argument('--plan',required=True)
     append.add_argument('--journal',required=True)
     append.add_argument('--execute',action='store_true')
-    args = parser.parse_args()
-    if args.command == 'append':
-        config = json.loads(CONFIG.read_text())
-        result = append_plan(json.loads(Path(args.plan).read_text()),config['shared_pool'],args.journal,execute=args.execute)
-        if args.execute:
-            print(json.dumps(result,ensure_ascii=False))
-        return
-    if args.command == 'snapshot':
-        config = json.loads(CONFIG.read_text())
-        route = config['shared_pool']
-        auth = json.loads(subprocess.run(['lark-cli','auth','status','--json','--verify'], capture_output=True,text=True,check=True).stdout)
-        if auth['identities']['user']['openId'] != config['expected_user_open_id']:
-            raise RuntimeError('Unexpected user identity')
-        companies = read_all(route['base_token'], route['company_table_id'])
-        lookup = {r['record_id']:text(r.get('公司名称')) for r in companies}
-        rows = read_all(route['base_token'], route['job_table_id'])
-        jobs = [normalize_job(r,lookup) for r in rows]
-        dump(args.output, {'complete':True,'read_at':datetime.now().astimezone().isoformat(),'route':route,'jobs':jobs})
-        print(json.dumps({'complete':True,'count':len(jobs),'output':args.output},ensure_ascii=False))
-        return
-    snapshot = json.loads(Path(args.snapshot).read_text())
-    if snapshot.get('complete') is not True:
-        raise ValueError('A complete pool snapshot is required')
-    if args.command == 'search':
-        profile = json.loads(Path(args.profile).read_text())
-        result = search_jobs(snapshot['jobs'], profile)
-        dump(args.output, {'pool_read_at':snapshot.get('read_at'),'count':len(result),'requires_revalidation':True,'jobs':result})
-        print(json.dumps({'pool_candidates':len(result),'output':args.output},ensure_ascii=False))
-    else:
-        jobs = json.loads(Path(args.jobs).read_text())
-        if isinstance(jobs,dict):
-            jobs = jobs.get('jobs',jobs.get('ready', []))
-        result = build_plan(jobs, snapshot['jobs'])
-        dump(args.output,result)
-        print(json.dumps(result['stats'],ensure_ascii=False))
+    args = parser.parse_args(argv)
+    try:
+        return run(args)
+    except (OSError, ValueError, KeyError, TypeError, RuntimeError, subprocess.SubprocessError) as exc:
+        print(json.dumps({'status':'blocked','error':str(exc),'pool_checked':False,
+                          'next_step':'补齐并核对团队配置；或由当前任务明确允许不使用共享池后再外搜。'},ensure_ascii=False))
+        return 2
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())

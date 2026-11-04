@@ -5,7 +5,11 @@ description: 用户确认求职内容母稿后，自动完成小红书图文生�
 
 # 母稿确认后自动生产与飞书写回
 
+团队首次使用先读 [配置与依赖](references/team-setup.md)；已有配置与本轮明确入口直接复用，不重复索取。
+
 当前请求或既有约定包含飞书写回时，流程是：`母稿确认 → 锁定源稿 → 图片包 → 飞书子表 → 读回验证`。在已有范围内连续执行；只要本地图片时使用下面的本地模式，不因母稿确认自动扩大到飞书。
+
+**运行依赖：** 图片模式需要同包的 `xiaohongshu-image-renderer`，先完成其 Node、Playwright、Chrome 环境预检。未安装时只保留已确认母稿并说明缺失依赖，不替换渲染器、不把草稿称成图片包。飞书模式还需当前成员本人 `lark-cli --as user`、已授权的内容表和字段映射；本地模式不要求飞书配置。
 
 **REQUIRED SUB-SKILL:** Use xiaohongshu-image-renderer for every pagination, rendering, regeneration, or visual-validation request.
 
@@ -43,7 +47,7 @@ description: 用户确认求职内容母稿后，自动完成小红书图文生�
 
 ### 母稿已经确认且包含飞书流程
 
-1. 按飞书写回规范预检并定位或创建唯一的小红书子记录；读取关联母稿。
+1. 复用任务提供的内容记录或私有配置 `feishu.content_base_url`，按飞书写回规范核对本人身份、母稿表／平台子表及字段语义，再定位或创建唯一小红书子记录；读取关联母稿。缺入口或必需字段时只暂停对应写入，不转向作者历史表。
 2. 锁定母稿标题、正文、`sourceType`、内容 ID、record ID 和标准化正文 SHA-256 `sourceHash`，写入只读 `source.json`。
 3. 调用 `xiaohongshu-image-renderer`；不得在本技能中分页、写布局、渲染或改写源稿。
 4. 仅当返回包的 `validation.json.ok=true`、`final-verification.json.ok=true`、`exactText=true`、`overflowCount=0`、`sourceHash` 与锁定值一致，且 `NN.png` 顺序与 manifest 一致时，继续。

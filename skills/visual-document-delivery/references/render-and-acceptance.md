@@ -15,10 +15,10 @@
 
 ### Feishu
 
-- 飞书目标页中的流程图、架构图、角色协作图、时间线、关系图和指标图必须使用飞书原生画板；简单线性内容可不配图，但写明具体 `no_visual_reason`。
+- 飞书中的讲解图默认以图片嵌入对应正文，紧邻讲解；保留既有有效画板。用户明确选择画板时按其范围处理，完整专岗仍以可见正文图片验收。简单线性内容可不配图，但写明具体 `no_visual_reason`。
 - Use `lark-cli` for structural readback when available.
-- 读回飞书画板块的非空 token、块顺序、标题、图注、父级章节和实际位置；再导出 PDF 或等价学生端渲染，逐页检查可读性。
-- 外部图片或 Mermaid 只能在明确记录降级原因、保留来源且状态为待确认/未完成时使用，除非用户明确接受降级。
+- 读回图片／画板块的非空 token 或 src、块顺序、标题、图注、父级章节和实际位置；再查看实际学生端、导出 PDF 或等价渲染，逐图／逐页检查可读性。非空 src 是有效的结构证据，但不证明图片已实际显示。
+- Mermaid 或源码只能保留为可编辑来源；目标表面需显示清晰可读的成图。链接、附件和首屏预览不代替正文嵌入。
 - Export to PDF or use an equivalent student-facing render for every-page inspection.
 
 ### Word and PDF
@@ -55,7 +55,7 @@
     ],
     "readback": {
       "media_blocks": [
-        {"visual_id": "business-flow", "token": "non-empty-token"}
+        {"visual_id": "business-flow", "token": "non-empty-token", "section": "Business flow"}
       ]
     },
     "render_qa": {
@@ -70,6 +70,10 @@
 
 For a simple artifact without visuals, set `substantial` to `false`, keep `visual_plan` empty, and provide a concrete `no_visual_reason`.
 
+Media readback may use a non-empty `token` or `src`, according to the actual returned block. Preserve the original identifier; do not invent a token for an image returned with `src`. The validator checks the manifest's declared fields only. It does not open media or prove that the stated page review occurred.
+
+For AI-generated figures, inspect the final image at the actual reading width: every Chinese character, number, formula, arrow endpoint, decision branch, loop and terminal state must match the locked source logic. Fix errors before embedding, then inspect the embedded display again. A correct standalone image can still be clipped or too small in the document.
+
 ## Failure conditions
 
-Delivery remains incomplete when any required visual is missing, a token is empty, a caption/source/fact boundary is absent, page review is partial, or render issues remain unresolved. CLI success, HTTP 200, revision changes, syntax validation, or a static source screenshot do not override these failures.
+Delivery remains incomplete when any required visual is missing, both token and src are empty, a caption/source/fact boundary is absent, page review is partial, or render issues remain unresolved. CLI success, HTTP 200, revision changes, syntax validation, or a static source screenshot do not override these failures.

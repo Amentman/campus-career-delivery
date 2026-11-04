@@ -5,6 +5,8 @@ description: Use when creating or substantially revising a durable Feishu, Word,
 
 # Visual Document Delivery
 
+首次供团队成员使用时，先读 [团队配置与依赖](references/team-setup.md)，只配置当前任务所需能力。
+
 ## Overview
 
 Turn complex document content into a readable information system. Use diagrams and compact tables only when they make a real relationship easier to understand; visual polish never changes the evidence status of a claim.
@@ -14,6 +16,12 @@ Turn complex document content into a readable information system. Use diagrams a
 - Read [visual-decision-matrix.md](references/visual-decision-matrix.md) before choosing a visual or deciding that none is needed.
 - Read [layout-and-information-design.md](references/layout-and-information-design.md) when planning a substantial document's hierarchy and reading rhythm.
 - Read [render-and-acceptance.md](references/render-and-acceptance.md) before delivery in the target format.
+
+## First use and available tools
+
+The bundled validator and tests require only Python 3. Rendering, Feishu access, image generation and editable canvases are supplied by the current environment; installing this directory does not connect them. Use available tools according to the target format, and report any missing capability before claiming that surface was inspected.
+
+For a substantial document or figure, apply `impeccable` in Read mode when installed: organize the reading order, hierarchy, typography, alignment, whitespace and color for comprehension. Its upstream package is an external dependency, not part of this directory. Without it, use this directory's layout reference for the authorized work and disclose that the named design tool was unavailable; if the current task explicitly requires that tool, resolve the dependency before claiming compliance.
 
 ## Delivery contract
 
@@ -33,7 +41,7 @@ Resolve `scripts/...` from this Skill's directory; do not assume the caller's cu
 ## Target-format visual contract
 
 - 先锁定读者、决策和**目标格式**。相同内容在不同交付面可以使用不同的视觉载体，但不能跳过目标格式的结构读回和最终渲染验收。
-- 如果目标格式是飞书，流程图、架构图、角色协作图、时间线、关系图和指标图必须使用**飞书原生画板**；写后读回画板块、token、位置和所属章节，并检查学生端渲染。外部图片或 Mermaid 只可作为明确记录的降级例外，不能默认当作完成。
+- 飞书默认把讲解图作为清晰可见的图片嵌入正文对应章节，紧邻讲解；首屏预览、链接、附件或画板不能代替正文图片。保留既有有效画板。用户明确选择可编辑画板时按其范围交付；专岗材料仍需遵守其正文图片要求。读回图片／画板的媒体标识、块顺序与所属章节，再检查实际学生端显示。
 - 如果目标格式是 Word、PDF、Markdown 或 HTML，使用该格式能稳定呈现且可读的图、表或关系结构；不要把飞书画板规则强行套到非飞书输出，也不要用不可渲染的 Mermaid 充当验收证据。
 - 简单线性内容可以没有视觉，但必须在 `visual_contract` 写出具体 `no_visual_reason`；复杂关系即使篇幅很短也不能以“文档短”为理由省略必要图解。
 
@@ -53,7 +61,7 @@ Do not force a diagram into a short answer, one resume bullet, a simple script, 
 
 - Never invent internal architecture, ownership, metrics, company data, or student experience to complete a figure.
 - Label abstractions and inferences inside the figure or caption.
-- Use AI-generated imagery only for a requested cover or illustration; it cannot replace a flow, architecture, evidence matrix, or data chart.
+- Choose the tool from the relationship and required precision. For methodology overviews or teaching infographics, lock the exact wording and reading path first; if native or scripted drawing is visually weak, use available GPT image generation instead of repeatedly polishing a poor box diagram. Use precise native/programmatic tools for real quantitative charts, exact coordinates and editable figures. Check every generated label, number, arrow, branch, loop and terminal state before embedding; never change the logic for appearance. If the tool does not expose the model version, do not claim a verified version.
 - A successful command, valid Mermaid syntax, non-empty token, or HTTP response is not visual acceptance.
 - Unresolved clipping, tiny labels, broken legends, missing captions, empty media, or incomplete page review keeps delivery incomplete.
 

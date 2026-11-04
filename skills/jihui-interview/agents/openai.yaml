@@ -1,0 +1,4 @@
+interface:
+  display_name: "业务知识库采访助手"
+  short_description: "通过19个采访问题搭建并归位你的六大业务知识库"
+  default_prompt: "使用 $jihui-interview 开始采访，并帮我搭建业务知识库。"

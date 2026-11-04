@@ -28,15 +28,17 @@
 2. Base 有可用 CLI 时，不使用浏览器填写表格或上传附件。
 3. 只有 CLI 不可用且用户明确同意时，才考虑界面操作。
 
+先读取任务提供的内容表入口；没有时读取成员私有配置 `feishu.content_base_url`。解析母稿表、平台子表、关联字段、业务唯一键、文本／附件字段和状态选项，记录本轮映射。没有唯一目标时只核对该缺口，不猜作者历史 token、不创建替代 Base。使用当前成员本人账号，所有飞书命令显式带 `--as user`；以 CLI 当前 `--help` 核对参数。
+
 预检命令：
 
 ```bash
-lark-cli whoami
-lark-cli base +field-list --base-token <base> --table-id <table>
-lark-cli base +record-get --base-token <base> --table-id <table> --record-id <record>
+lark-cli whoami --as user
+lark-cli base +field-list --base-token <base> --table-id <table> --as user
+lark-cli base +record-get --base-token <base> --table-id <table> --record-id <record> --as user
 ```
 
-字段名和字段类型必须从 `+field-list` 获取，不能根据记忆猜测。
+字段名和字段类型必须从 `+field-list` 获取，不能根据记忆猜测。写前记录修订状态和已有人工值；写后核创建者／所有者、关联母稿和原权限未变。
 
 ## 4. 目标记录定位
 
@@ -51,7 +53,7 @@ lark-cli base +record-get --base-token <base> --table-id <table> --record-id <re
 母稿记录存在但平台子记录不存在时：
 
 1. 读取平台子表中现有业务编号，计算下一条未占用的平台内容 ID。
-2. 创建唯一平台子记录，并关联到当前母稿。
+2. 创建前重新查询母稿关联与业务唯一键，确认仍无平台子记录且编号未占用；再创建唯一平台子记录并关联当前母稿。并发冲突时读回实际记录后重算，不自动新增第二条。
 3. 读回平台内容 ID、record ID 和关联母稿，确认唯一后继续。
 
 不得猜测编号、复用旧 ID，或因重试创建重复记录。

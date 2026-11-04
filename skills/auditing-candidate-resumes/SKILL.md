@@ -5,6 +5,8 @@ description: Use when 用户从 HR、招聘方或用人经理视角评估、筛�
 
 # Auditing Candidate Resumes
 
+首次供团队成员使用时，先读 [团队配置与依赖](references/team-setup.md)，只配置当前任务所需能力。
+
 ## Core Principle
 
 审查简历能评估“证据强度和待核验风险”，不能仅凭简历证明真实能力或造假。将每个结论分为 **Fact / Inference / Open / External**，并把关键判断连回简历原文。
@@ -17,6 +19,12 @@ description: Use when 用户从 HR、招聘方或用人经理视角评估、筛�
 - 候选人修改简历：转用 `building-resume-interview-stories` 或 `revising-and-delivering-resumes`。
 
 执行审查前，完整阅读 [audit-framework.md](references/audit-framework.md)；起草结果前，完整阅读 [output-contract.md](references/output-contract.md)。若交付 Word、PDF、飞书文档或其他正式报告，还必须完整阅读 [decision-first-report-design.md](references/decision-first-report-design.md)，并使用对应的文档交付 Skill 完成制作与渲染验收。
+
+## 首次使用与交付能力
+
+本目录及 `references/` 足以完成基于已提供文本的审查；不要求连接制作者的学生库、聊天或飞书。Word、PDF、扫描件先用当前可用的文档提取／OCR 能力完整读取，无法读取的页列明缺口，不能据缺页判断候选人不合格。外部核验按当前授权使用公开来源；没有授权或工具时只审材料本身。
+
+正式 Word／PDF 需要相应创建、渲染和逐页看图能力（例如已安装的 Documents／PDF 工具）；飞书交付需要当前成员本人 `lark-cli`、已确认目标与写后可视验收。工具未接通时可按用户范围先交付聊天审查或可读稿，并明确尚未完成正式格式验收；不把未渲染稿报成完成。无需为普通聊天审查安装额外技能或改成员配置。
 
 ## Required Workflow
 

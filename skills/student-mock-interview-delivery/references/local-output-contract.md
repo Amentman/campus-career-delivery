@@ -6,11 +6,11 @@
 
 ## 输入与定位
 
-- 根目录解析：用户明确提供交付根目录时使用 `--root` 并原样尊重；否则检查桌面下有限深度内所有名为“校招交付”的目录。只有一个现存根目录时直接使用；有多个时，仅当其中唯一一个包含该学生同名目录或姓名简历证据时使用。没有根目录返回 `missing_root`；仍有多个候选返回 `ambiguous_root` 并停止，绝不按最近修改时间或旧硬编码路径猜选。
+- 根目录解析：用户明确提供交付根目录时使用 `--root` 并原样尊重；否则读取成员配置 `workspace.student_root`；未选择配置时才检查桌面下有限深度内所有名为“校招交付”的目录。选定配置缺必要字段或无法读取时不回退猜目录。只有一个现存根目录时直接使用；有多个时，仅当其中唯一一个包含该学生同名目录或姓名简历证据时使用。没有根目录返回 `missing_root`；仍有多个候选返回 `ambiguous_root` 并停止，绝不按最近修改时间或旧硬编码路径猜选。
 - 用户给简历：优先采用明确姓名；未给姓名时交叉比对文件名与正文，冲突即停止。先运行定位脚本确定交付根目录，再找完全同名目录；没有才在已确定根目录下新建。复制外部简历到目录，绝不移动或删除原件；不同内容的同名文件不覆盖，保留候选并要求选择主简历。
 - 用户只给姓名：运行 `scripts/locate_student.py --name <姓名>`，先找已确定根目录下完全同名一级文件夹，再找全路径文件名含姓名的简历。唯一才使用，多个则列出候选，无结果则索取简历。
 - 支持 PDF、DOCX。使用格式对应 Skill 解析并检查原始版面。
-- `scripts/locate_student.py` 只读：绝不创建、复制、移动、重命名或删除用户路径。其 JSON 提供 `status`、`student_name`、`delivery_root`、`root_candidates`、`root_resolved_by`、`student_dir`、`resume_candidates`、`primary_resume`、`interview_markdown`，路径为绝对路径；`ok`/0、`ambiguous`/2、`missing`/3、`invalid_name`/4、`missing_root`/5、`ambiguous_root`/6。
+- `scripts/locate_student.py` 只读：绝不创建、复制、移动、重命名或删除用户路径。其 JSON 提供 `status`、`student_name`、`delivery_root`、`root_candidates`、`root_resolved_by`、`student_dir`、`resume_candidates`、`primary_resume`、`interview_markdown`，路径为绝对路径；`ok`/0、`ambiguous`/2、`missing`/3、`invalid_name`/4、`missing_root`/5、`ambiguous_root`/6、`config_error`/7。
 
 ## 更新与校验
 

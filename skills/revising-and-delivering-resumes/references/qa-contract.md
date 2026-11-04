@@ -54,10 +54,16 @@
 
 ## 6. 机器验收
 
-先用 `load_workspace_dependencies` 获取带 `pdfplumber`、`lxml` 和 `pypdf` 的 Python，不假定系统 Python 已安装依赖。运行：
+先确认 Python 的 `pdfplumber`、`lxml`、`pypdf` 可用；若当前运行器提供 `load_workspace_dependencies`，可用其返回的 Python。普通终端使用下面的 `uv run` 临时提供依赖；没有 uv 时在任务虚拟环境中 `python3 -m pip install pdfplumber lxml pypdf`，再用该环境的 Python 运行同一脚本。脚本路径相对本 Skill 目录解析，不依赖当前工作目录。
 
 ```bash
-"/path/from/load_workspace_dependencies/python3" scripts/inspect_delivery.py \
+uv run --with pdfplumber --with lxml --with pypdf python "/abs/path/to/revising-and-delivering-resumes/scripts/inspect_delivery.py" --help
+```
+
+实际检查时将同一解释器或 uv 前缀用于以下参数：
+
+```bash
+"/path/to/verified/python3" "/abs/path/to/revising-and-delivering-resumes/scripts/inspect_delivery.py" \
   --review-docx "/abs/review.docx" \
   --application-pdf "/abs/application.pdf" \
   --clean-docx "/abs/clean-mother.docx" \

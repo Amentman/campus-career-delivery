@@ -104,7 +104,7 @@ Do not produce robotic memorization text. The answer should be speakable and sho
 
 ## 7. Full Package Routing
 
-面向学生的完整故事、项目解释或面试准备材料默认写入学生唯一飞书主页下的对应页面；Markdown 仅在用户明确要求本地导出、聊天输出或作为中间草稿时使用。飞书目标页中的复杂关系图使用飞书原生画板，并在写后读回画板块、位置和渲染；简单线性内容记录具体 `no_visual_reason`。
+面向学生的完整故事、项目解释或面试准备材料默认写入学生唯一飞书主页下的对应页面；Markdown 仅在用户明确要求本地导出、聊天输出或作为中间草稿时使用。飞书目标页中的复杂关系图默认作为图片嵌入正文对应章节，保留既有有效画板，并在写后读回媒体块、位置和实际显示；简单线性内容记录具体 `no_visual_reason`。
 
 When a local Markdown package is explicitly requested, use:
 

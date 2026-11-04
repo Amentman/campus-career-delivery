@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "team_name": "校招交付",
+  "expected_user_open_id": "",
+  "expected_profile": "",
+  "workspace": {"student_root": "", "knowledge_root": "", "output_root": ""},
+  "feishu": {"students_root_url": "", "template_url": "", "content_base_url": "", "service_base_url": "", "todo_url": ""},
+  "wiki": {"route_alias": "", "resolved_space_id": "", "parent_chain": [], "students_parent_node_token": ""},
+  "format_reference": {"base_token": "", "table_id": "", "purpose": "投递表结构参考，不复制学生业务记录"},
+  "shared_pool": {"enabled": true, "url": "", "base_token": "", "job_table_id": "", "company_table_id": "", "wiki_node_token": "", "owner_open_id": ""}
+}

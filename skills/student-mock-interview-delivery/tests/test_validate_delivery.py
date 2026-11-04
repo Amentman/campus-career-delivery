@@ -281,7 +281,7 @@ flowchart LR
 
 
 class DeliveryQualityTests(unittest.TestCase):
-    def run_validator(self, teacher, student=None):
+    def run_validator(self, teacher, student=None, track="business"):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             resume = root / "测试同学简历.pdf"
@@ -291,7 +291,7 @@ class DeliveryQualityTests(unittest.TestCase):
             args = [
                 sys.executable, str(VALIDATOR), "--name", NAME,
                 "--resume", str(resume), "--master", str(teacher_path),
-                "--internal", str(teacher_path), "--track", "business",
+                "--internal", str(teacher_path), "--track", track,
             ]
             if student is not None:
                 student_path = root / "student.md"
@@ -299,6 +299,16 @@ class DeliveryQualityTests(unittest.TestCase):
                 args.extend(["--student", str(student_path)])
             result = subprocess.run(args, text=True, capture_output=True)
             return result.returncode, json.loads(result.stdout)
+
+    def test_accepts_non_ai_product_route(self):
+        teacher = full_teacher().replace("## 业务运营追问路线", "## 产品追问路线").replace("### 业务流程图", "### 产品体验证据").replace("### 指标与归因", "### 指标反推")
+        code, result = self.run_validator(teacher, full_student(), track="product")
+        self.assertEqual(0, code, result["errors"])
+
+    def test_accepts_general_software_technical_route(self):
+        teacher = full_teacher().replace("## 业务运营追问路线", "## 技术追问路线").replace("### 业务流程图", "### 系统架构图").replace("### 指标与归因", "### 异常与可观测")
+        code, result = self.run_validator(teacher, full_student(), track="technical")
+        self.assertEqual(0, code, result["errors"])
 
     def test_accepts_complete_dual_end_delivery(self):
         code, result = self.run_validator(full_teacher(), full_student())

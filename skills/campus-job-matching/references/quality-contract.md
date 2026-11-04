@@ -51,7 +51,7 @@ application.route为form/chat；旧官网输入缺route兼容form，BOSS必须�
 
 只从ready映射写入，先确认指纹仍对应当前输入与新鲜证据；输入变化重跑。城市写selected_cities，不能把未接受城市混入。quality_gate是本地检查记录，不是招聘平台签发的资格凭证。
 
-CLI的--mode add/audit控制新增或存量复核，与profile.search_mode求职模式独立。add默认用历史和本轮累计去重/公司上限；历史超额保留不动，只阻止继续加该公司。audit给当前存量集合生成质检建议，不因“已在历史”把每条判重复；仍报告集合内重复。公司超额在company_over_limit汇总，并给该公司每条结果附company_count_issue（count与limit），便于定位record_id；单条业务资格判定与存量超额提示分开，不擅自删除旧行。均不改源数据或飞书。
+CLI的--mode add/audit控制新增或存量复核，与profile.search_mode求职模式独立。默认公司上限为3；当前任务明确另定正整数上限时，给统一检查与预裁剪脚本传入一致的 `--max-per-company N`，仍按全量历史累计并保留同岗去重。add默认用历史和本轮累计去重/公司上限；历史超额保留不动，只阻止继续加该公司。audit给当前存量集合生成质检建议，不因“已在历史”把每条判重复；仍报告集合内重复。公司超额在company_over_limit汇总，并给该公司每条结果附company_count_issue（count与limit），便于定位record_id；单条业务资格判定与存量超额提示分开，不擅自删除旧行。均不改源数据或飞书。
 
 audit模式的ready子集仅是存量复核结果，不是新增payload，不能再次追加到原表。修正存量按record_id和授权列局部处理。
 

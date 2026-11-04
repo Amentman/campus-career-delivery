@@ -24,6 +24,35 @@ def default_delivery_root_candidates(home=None):
     return list(dict.fromkeys(path.resolve() for path in candidates))
 
 
+def configured_student_root():
+    """Read only the selected member config; never fall back after a config error."""
+    selected = os.environ.get("JIHUI_SKILLS_CONFIG")
+    modern = Path.home() / ".config" / "jihui-skills" / "team.json"
+    legacy = Path.home() / ".codex" / "campus-job-matching.local.json"
+    path = Path(selected).expanduser() if selected else next(
+        (candidate for candidate in (modern, legacy) if candidate.is_file()), None
+    )
+    if path is None:
+        return None, None
+    try:
+        config = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        raise ValueError(f"Cannot read selected member config: {path} ({type(exc).__name__})") from exc
+    if not isinstance(config, dict):
+        raise ValueError(f"Member config must be a JSON object: {path}")
+    if path != legacy and config.get("version") != 1:
+        raise ValueError(f"Member config requires version=1: {path}")
+    workspace = config.get("workspace", {})
+    if not isinstance(workspace, dict):
+        raise ValueError(f"workspace must be an object: {path}")
+    root = workspace.get("student_root")
+    if root is None:
+        return None, path
+    if not isinstance(root, str) or not root.strip():
+        raise ValueError(f"workspace.student_root must be a nonempty path: {path}")
+    return Path(root).expanduser().resolve(), path
+
+
 def root_has_student_evidence(root, name):
     exact_dir = root / name
     if exact_dir.is_dir():
@@ -36,13 +65,13 @@ def root_has_student_evidence(root, name):
 
 def resolve_delivery_root(name, explicit_root=None, candidates=None):
     if explicit_root is not None:
-        root = Path(explicit_root).expanduser().resolve()
-        return {
-            "status": "ok",
-            "root": root,
-            "candidates": [root],
-            "resolved_by": "explicit",
-        }
+        roots = explicit_root if isinstance(explicit_root, (list, tuple)) else [explicit_root]
+        roots = list(dict.fromkeys(Path(root).expanduser().resolve() for root in roots))
+        if len(roots) == 1:
+            return {"status": "ok", "root": roots[0], "candidates": roots, "resolved_by": "explicit"}
+        result = resolve_delivery_root(name, candidates=roots)
+        result["resolved_by"] = "explicit_candidates" if result["status"] == "ok" else None
+        return result
 
     candidates = candidates if candidates is not None else default_delivery_root_candidates()
     existing = sorted(
@@ -134,8 +163,8 @@ def payload(
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--root",
-        help="Explicit delivery root; omit to discover a unique 校招交付 directory",
+        "--root", action="append",
+        help="Explicit student root; repeat for multiple roots. Otherwise use member config before desktop discovery",
     )
     parser.add_argument("--name", required=True, help="Student name")
     args = parser.parse_args()
@@ -143,7 +172,25 @@ def main():
         print(json.dumps(payload("invalid_name", args.name, None, [], None), ensure_ascii=False))
         return 4
 
-    root_result = resolve_delivery_root(args.name, explicit_root=args.root)
+    if args.root:
+        root_result = resolve_delivery_root(args.name, explicit_root=args.root)
+    else:
+        try:
+            configured_root, config_path = configured_student_root()
+        except ValueError as exc:
+            result = payload("config_error", args.name, None, [], None)
+            result["error"] = str(exc)
+            print(json.dumps(result, ensure_ascii=False))
+            return 7
+        if config_path is not None and configured_root is None:
+            print(json.dumps(payload(
+                "missing_root", args.name, None, [], None,
+                root_resolved_by="config_missing_workspace_student_root",
+            ), ensure_ascii=False))
+            return 5
+        root_result = resolve_delivery_root(args.name, explicit_root=configured_root)
+        if configured_root is not None:
+            root_result["resolved_by"] = "team_config"
     if root_result["status"] != "ok":
         print(json.dumps(payload(
             root_result["status"],

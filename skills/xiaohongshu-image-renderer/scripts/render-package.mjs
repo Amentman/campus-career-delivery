@@ -20,7 +20,6 @@ const PAGE_HEIGHT = 1440;
 const CONTENT_BOTTOM_LIMIT = 1376;
 const COVER_TOP = 145;
 const BODY_TOP = 143;
-const CHROME_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const TOOLBAR_CONTROLS = ["back", "undo", "redo", "share", "more"];
 const require = createRequire(import.meta.url);
 
@@ -62,16 +61,38 @@ const memoCss = `
 `;
 
 function loadPlaywright() {
-  const candidates = [
-    "playwright",
-    path.join(os.homedir(), ".cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright"),
-  ];
-  for (const candidate of candidates) {
-    try {
-      return require(candidate);
-    } catch {}
+  try {
+    return require("playwright");
+  } catch (cause) {
+    throw new Error("Playwright is required. Run npm ci in the xiaohongshu-image-renderer Skill directory.", { cause });
   }
-  throw new Error("Playwright is required to measure and render the memo package.");
+}
+
+export function resolveChromePath({ chromePath, env = process.env, platform = process.platform } = {}) {
+  const explicit = chromePath || env.XHS_CHROME_PATH;
+  const executable = candidate => {
+    try { fs.accessSync(candidate, fs.constants.X_OK); return fs.statSync(candidate).isFile(); }
+    catch { return false; }
+  };
+  if (explicit) {
+    const resolved = path.resolve(explicit);
+    if (!executable(resolved)) throw new Error(`Google Chrome is unavailable at ${resolved}. Set --chrome-path or XHS_CHROME_PATH to an executable.`);
+    return resolved;
+  }
+  const names = platform === "win32" ? ["chrome.exe", "chromium.exe"]
+    : ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"];
+  const candidates = (env.PATH || "").split(path.delimiter).filter(Boolean)
+    .flatMap(directory => names.map(name => path.join(directory, name)));
+  if (platform === "darwin") candidates.push(
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    path.join(os.homedir(), "Applications/Google Chrome.app/Contents/MacOS/Google Chrome"),
+    "/Applications/Chromium.app/Contents/MacOS/Chromium");
+  if (platform === "win32") for (const directory of [env.PROGRAMFILES, env["PROGRAMFILES(X86)"], env.LOCALAPPDATA].filter(Boolean)) {
+    candidates.push(path.join(directory, "Google/Chrome/Application/chrome.exe"));
+  }
+  const found = candidates.find(executable);
+  if (!found) throw new Error("Google Chrome is unavailable. Install Chrome/Chromium or set --chrome-path / XHS_CHROME_PATH.");
+  return found;
 }
 
 export function chromeLaunchArguments(profileDirectory) {
@@ -780,8 +801,8 @@ async function clearRenderedPageFiles(directory, workDirectory) {
 export async function renderPackage(outputDirectory, options = {}) {
   const directory = path.resolve(outputDirectory);
   const prepareOnly = options.prepareOnly === true;
-  const chromePath = options.chromePath || CHROME_PATH;
   await clearValidationArtifacts(directory);
+  const chromePath = resolveChromePath({ chromePath: options.chromePath });
   const source = JSON.parse(await fsp.readFile(path.join(directory, "source.json"), "utf8"));
   const { title, body } = readSource(source);
   const sourceHash = crypto.createHash("sha256")
@@ -878,10 +899,15 @@ export async function renderPackage(outputDirectory, options = {}) {
 
 async function runCli() {
   const [directoryArgument, ...flags] = process.argv.slice(2);
-  if (!directoryArgument || flags.some(flag => flag !== "--prepare-only")) {
-    throw new Error("Usage: node render-package.mjs <output-directory> [--prepare-only]");
+  const options = {};
+  const usage = "Usage: node render-package.mjs <output-directory> [--prepare-only] [--chrome-path <executable>]";
+  if (!directoryArgument) throw new Error(usage);
+  for (let index = 0; index < flags.length; index += 1) {
+    if (flags[index] === "--prepare-only") options.prepareOnly = true;
+    else if (flags[index] === "--chrome-path" && flags[index + 1] && !flags[index + 1].startsWith("--")) options.chromePath = flags[++index];
+    else throw new Error(usage);
   }
-  const report = await renderPackage(directoryArgument, { prepareOnly: flags.includes("--prepare-only") });
+  const report = await renderPackage(directoryArgument, options);
   process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
 }
 

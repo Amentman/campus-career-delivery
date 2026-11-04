@@ -5,6 +5,8 @@ description: Use when a user asks to reconcile student-service todos across stud
 
 # 多源待办总控
 
+团队首次使用先读 [配置与依赖](references/team-setup.md)；已有配置与本轮明确入口直接复用，不重复索取。
+
 把学生群、学生私聊、老师／班主任／导师协作聊天和当前服务台账对成一份可执行待办。核心不是“多找几条消息”，而是证明哪些学生、渠道和时间范围已覆盖，哪些仍是缺口。
 
 ## 边界与分流
@@ -15,6 +17,8 @@ description: Use when a user asks to reconcile student-service todos across stud
 - 涉及飞书时优先用当前可用的 `lark-cli` 动态解析和读取；历史 token、截图和旧摘要只作线索。
 
 ## 先锁定本轮合同
+
+来源优先用本次材料；未给入口时按成员私有配置 `feishu.service_base_url` 定位当前服务主表、按 `workspace.student_root` 定位本地交付。聊天连接器或导出由成员提供并授权。缺少来源时保留覆盖缺口，不读取作者历史源。全域个人总控使用 `personal-todo-control`；未安装时只完成本技能学生范围并说明边界。
 
 开工前写清：`资料截止时间`、`计划适用日期`、`学生范围`、`聊天时间窗`、`预期来源`、`缓存／解析截止时间`、`新鲜度缺口`、`写入与刷新权限`。学生范围默认来自当前人工维护的服务主表，再补入聊天中新出现但尚未匹配的身份。
 

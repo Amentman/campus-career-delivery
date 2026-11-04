@@ -78,7 +78,7 @@ def snapshots(
 
 
 class FeishuDeliveryValidationTests(unittest.TestCase):
-    def run_validator(self, payload):
+    def run_validator(self, payload, *extra_arguments):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             snapshot_path = root / "snapshots.json"
@@ -122,6 +122,7 @@ print(json.dumps({
                     "student",
                     "--track",
                     "business",
+                    *extra_arguments,
                 ],
                 text=True,
                 capture_output=True,
@@ -181,6 +182,17 @@ print(json.dumps({
     def test_accepts_a_rendered_image_with_nonempty_src(self):
         code, result = self.run_validator(snapshots(visual_uses_src=True))
         self.assertEqual(0, code, result["errors"])
+
+
+    def test_accepts_explicitly_explained_simple_text_without_visual(self):
+        code, result = self.run_validator(
+            snapshots(omit_visual=True), "--no-visual-reason", "单一线性口述练习，无分支或多角色关系",
+        )
+        self.assertEqual(0, code, result["errors"])
+
+    def test_empty_no_visual_reason_does_not_bypass_visual_gate(self):
+        code, result = self.run_validator(snapshots(omit_visual=True), "--no-visual-reason", "  ")
+        self.assertNotEqual(0, code)
 
 
 if __name__ == "__main__":
