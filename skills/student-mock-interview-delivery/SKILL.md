@@ -5,6 +5,10 @@ description: Use when 用户提供学生姓名或简历，并要求新增、更�
 
 # 学生模拟面试交付
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 ## 团队配置与依赖
 
 先读 [团队配置](references/team-setup.md)。飞书入口优先本轮指定／既有唯一学生页，其次使用成员的 `feishu.students_root_url` 或兼容 `wiki.students_parent_node_token`；不要求团队复制作者的“校招交付／模拟面试”组织树。账号绑定只针对当前成员；原父级、分享范围与手工内容继续保护。按姓名寻找本地材料时，定位器依次使用显式 `--root`（可重复）、私有配置 `workspace.student_root`；两者均未配置才使用有说明的本机桌面有限搜索。已选配置缺必要根目录或格式有误时报告该具体缺口，不退回其他人的目录。

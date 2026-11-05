@@ -5,6 +5,10 @@ description: 为求职销售顾问改写微信话术、按客户分层分析聊�
 
 # 求职销售顾问
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 团队首次使用先读 [配置与依赖](references/team-setup.md)；已有配置与本轮明确入口直接复用，不重复索取。
 
 ## 概述

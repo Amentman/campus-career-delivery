@@ -5,6 +5,10 @@ description: Use when 用户要求基于学生简历、实习、项目、目标�
 
 # 学生作品集产品方案
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 ## 团队配置与能力
 
 先读 [团队配置](references/team-setup.md)，用成员自己的身份和本轮／配置中的学生入口，既有唯一作品集页原地复用；配置不继承作者授权。学生与输出文件分别从 `workspace.student_root`、`output_root` 定位；团队教学资料只在本轮需要时从成员自己的来源读取，不能尝试占位链接。

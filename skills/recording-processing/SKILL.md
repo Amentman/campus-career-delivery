@@ -8,6 +8,10 @@ description: |
 
 # 录音处理（通用版）
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 团队首次使用先读 [配置与依赖](references/team-setup.md)；已有配置与本轮明确入口直接复用，不重复索取。
 
 **路由边界：** 用户要复盘真实公司/正式面试、逐题分析学生回答或生成下一轮训练任务时，使用 `student-interview-review-delivery`。除非用户另行明确要求知识库沉淀，本 Skill 不参与该复盘，也不自动把面试逐字稿写进六大库。

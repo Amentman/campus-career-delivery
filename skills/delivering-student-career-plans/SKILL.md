@@ -5,6 +5,10 @@ description: Use when a user provides a student resume, questionnaire, screensho
 
 # 学生职业规划交付
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 ## 团队配置与依赖
 
 先读 [团队配置](references/team-setup.md)。账号绑定使用当前成员自己的 `expected_user_open_id`／`expected_profile`；学生入口优先本轮明确目标和既有唯一页，再从 `feishu.students_root_url` 或兼容的 `wiki` 映射定位。`workspace.student_root`、`knowledge_root`、`output_root` 均是成员本机路径，配置不是外部写入授权。已有规划原地更新并保留父级；缺少必要入口时只确认该落点，不创建替代组织树。

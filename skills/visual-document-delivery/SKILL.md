@@ -5,6 +5,10 @@ description: Use when creating or substantially revising a durable Feishu, Word,
 
 # Visual Document Delivery
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 首次供团队成员使用时，先读 [团队配置与依赖](references/team-setup.md)，只配置当前任务所需能力。
 
 ## Overview

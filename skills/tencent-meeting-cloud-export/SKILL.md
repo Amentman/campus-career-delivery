@@ -5,6 +5,10 @@ description: Use when the user asks to batch download Tencent Meeting cloud reco
 
 # 腾讯会议云录制导出
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 首次供团队成员使用时，先读 [团队配置与依赖](references/team-setup.md)，只配置当前任务所需能力。
 
 用已登录的腾讯会议**网页版**清点“我的录制”，把当前账号有权限下载的视频和逐字稿保存到桌面单独目录。批量下载授权包含本次下载、状态记录与验收，不包含公开、发送或网盘上传。默认使用已验证不会激活窗口的后台浏览器能力，不切换用户的前台窗口或抢鼠标键盘；不要进入“历史会议”、发起会议或改动录制。

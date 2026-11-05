@@ -5,6 +5,10 @@ description: Use when a user asks to reconcile student-service todos across stud
 
 # 多源待办总控
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 团队首次使用先读 [配置与依赖](references/team-setup.md)；已有配置与本轮明确入口直接复用，不重复索取。
 
 把学生群、学生私聊、老师／班主任／导师协作聊天和当前服务台账对成一份可执行待办。核心不是“多找几条消息”，而是证明哪些学生、渠道和时间范围已覆盖，哪些仍是缺口。

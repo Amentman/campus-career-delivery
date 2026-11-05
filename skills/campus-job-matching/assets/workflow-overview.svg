@@ -1,0 +1,51 @@
+<svg data-artifact-sha256="73851ca08c6a2ee127b4ccb7cec42daa9cf5048e79a6a25fce7d5b97a4ea154c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" role="img" aria-labelledby="title desc" data-definition-sha256="3bf1305f8c6d24f142dfe44459a4549be821f94804afa26ff4f9f388887a7bcb" data-renderer="authored-overview-1">
+<title id="title">选岗工作总览：先查共享库，原表追加，新岗位回收</title>
+<desc id="desc">锁定学生原表和历史，先查共享岗位库，按当前简历及JD重新核验。合格数不足时外搜并返回同样的核验。ready只追加原投递表；外搜新岗位的公共事实清理去重后回收至同一共享库，两端分别读回。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="#71839b" stroke-width="1.5"/></marker></defs>
+<rect width="1200" height="960" fill="white"/>
+<g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#172b42">
+<text x="48" y="52" font-size="31" font-weight="600">选岗：先复用，再补搜，把新岗位留下来</text>
+<text x="48" y="88" font-size="18" fill="#43566e">输入：最新简历、校招／实习／社招模式、方向与城市、本次数量目标</text>
+<g fill="none" stroke="#71839b" stroke-width="2" marker-end="url(#arrow)">
+<path d="M600 224V278"/><path d="M600 356V408"/><path d="M600 494V540"/>
+<path d="M480 594H339"/><path d="M720 594H848"/>
+<path d="M193 548V451H398" stroke="#3c6ca9"/>
+<path d="M1000 664V712"/>
+<path d="M193 637V780" stroke="#3c6ca9"/>
+<path d="M612 834H1174V318H802" stroke="#3c6ca9"/>
+</g>
+<rect x="400" y="148" width="400" height="76" rx="5" fill="#fff" stroke="#b4c1d1" stroke-width="1.4"/>
+<text x="600" y="180" text-anchor="middle" font-size="22" font-weight="600">锁定该生原投递表与全量历史</text>
+<text x="600" y="208" text-anchor="middle" font-size="17" fill="#43566e">后续沿用同一张表、同一个默认视图</text>
+<rect x="400" y="278" width="400" height="78" rx="5" fill="#edf4ff" stroke="#5279b4" stroke-width="1.4"/>
+<text x="600" y="310" text-anchor="middle" font-size="24" font-weight="600">先查团队共享岗位库</text>
+<text x="600" y="338" text-anchor="middle" font-size="18" fill="#43566e">按本次画像找线索；历史命中仍要复核</text>
+<rect x="400" y="408" width="400" height="86" rx="5" fill="#fff" stroke="#b4c1d1" stroke-width="1.4"/>
+<text x="600" y="441" text-anchor="middle" font-size="22" font-weight="600">当前简历 × 完整 JD 重新终审</text>
+<text x="600" y="471" text-anchor="middle" font-size="18" fill="#43566e">在招／入口核验、历史去重、个人公司限额</text>
+<path d="M600 540L720 594L600 648L480 594Z" fill="#fff4db" stroke="#a67c32" stroke-width="1.4"/>
+<text x="600" y="589" text-anchor="middle" font-size="20" font-weight="600">合格数已达标</text>
+<text x="600" y="615" text-anchor="middle" font-size="19">或来源已查尽？</text>
+<rect x="48" y="548" width="290" height="89" rx="5" fill="#fff" stroke="#5279b4" stroke-width="1.4"/>
+<text x="193" y="584" text-anchor="middle" font-size="22" font-weight="600">按剩余缺口上网补搜</text>
+<text x="193" y="613" text-anchor="middle" font-size="18" fill="#43566e">官网／适用招聘平台</text>
+<text x="388" y="576" font-size="17" fill="#43566e">仍不足</text>
+<text x="210" y="433" font-size="17" fill="#3c6ca9">新岗位也走相同核验</text>
+<rect x="850" y="548" width="300" height="116" rx="5" fill="#eaf5ee" stroke="#508267" stroke-width="1.4"/>
+<text x="1000" y="580" text-anchor="middle" font-size="21" font-weight="600">仅 ready 追加原表末尾</text>
+<text x="1000" y="612" text-anchor="middle" font-size="17" fill="#43566e">保留人工状态、备注与权限</text>
+<text x="1000" y="641" text-anchor="middle" font-size="17" fill="#43566e">无合格岗时保留缺口，不凑数</text>
+<text x="740" y="576" font-size="17" fill="#43566e">够数／查尽</text>
+<rect x="850" y="712" width="300" height="79" rx="5" fill="#fff" stroke="#b4c1d1" stroke-width="1.4"/>
+<text x="1000" y="744" text-anchor="middle" font-size="21" font-weight="600">回读原表实际写入结果</text>
+<text x="1000" y="773" text-anchor="middle" font-size="17" fill="#43566e">选岗不代替沟通、发简历或投递</text>
+<text x="65" y="690" font-size="18" fill="#3c6ca9">本轮外搜新发现，另走回收支线</text>
+<text x="65" y="718" font-size="17" fill="#43566e">不受该生是否 ready 限制</text>
+<rect x="48" y="780" width="564" height="112" rx="5" fill="#edf4ff" stroke="#5279b4" stroke-width="1.4"/>
+<text x="72" y="817" font-size="23" font-weight="600">公共岗位事实 → 清理个人信息 → 全库去重</text>
+<text x="72" y="849" font-size="18" fill="#43566e">追加回同一共享岗位库；重复关联原记录</text>
+<text x="72" y="878" font-size="17" fill="#43566e">待核验线索标清状态；回收后读回，异常保留续接</text>
+<text x="650" y="818" font-size="18" fill="#3c6ca9">留给下一次选岗复用</text>
+<path d="M48 916H1152" stroke="#dce3ec"/>
+<text x="48" y="944" font-size="17" fill="#43566e">两端分别验收：个人表实写、共享库回收、剩余缺口。共享库维护使用已明确的授权与本人账号。</text>
+</g></svg>

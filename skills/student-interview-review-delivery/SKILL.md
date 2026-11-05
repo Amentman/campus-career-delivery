@@ -5,6 +5,10 @@ description: Use when 用户提供真实已发生的正式面试、公司面试�
 
 # 学生真实面试复盘交付
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 ## 团队配置与依赖
 
 先读 [团队配置](references/team-setup.md)。使用成员独立绑定的本人身份；本轮明确的同场页和父级优先，其次从 `feishu.students_root_url`／兼容 `wiki` 映射定位学生原入口。配置不是外部写入授权。本地源文件与输出位置使用本轮路径或成员的 `workspace` 配置，不复制作者目录。

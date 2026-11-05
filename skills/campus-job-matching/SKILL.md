@@ -10,6 +10,10 @@ description: >-
 
 # 岗位筛选与复核：校招、实习、社招
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 首次供团队成员使用时，先读 [团队配置与依赖](references/team-setup.md)，只配置当前任务所需能力。
 
 本 Skill 是选岗的唯一维护入口；从本次实际加载的目录解析引用与脚本。方向来自学生本次意向，不内置产运白名单或财务、技术等通用禁选方向。

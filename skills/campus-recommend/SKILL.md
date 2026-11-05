@@ -5,6 +5,10 @@ description: Use when continuing a previous task that explicitly references the 
 
 # 旧入口兼容
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 首次供团队成员使用时，先读 [团队配置与依赖](references/team-setup.md)，只配置当前任务所需能力。
 
 本入口只是旧任务兼容别名，不是独立写回技能。安装时必须同时安装 `campus-job-matching` 完整目录，两者放在同一级 Skills 目录；插件整包安装会包含主技能。只复制本目录不能执行选岗。找不到主技能时说明缺少该依赖，先补齐，不发明旧规则或创建替代表。

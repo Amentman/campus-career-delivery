@@ -5,6 +5,10 @@ description: Use when 用户提供学生姓名或简历及明确公司、岗位�
 
 # 学生专岗面试准备
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 ## 团队配置与依赖
 
 先读 [团队配置](references/team-setup.md)。使用成员自己的身份绑定和已有学生入口；未给入口时先从 `feishu.students_root_url` 或兼容 `wiki` 映射定位，知识库和本地资料只读成员的 `workspace` 路径。配置只指向资源，不扩大用户本轮授权。

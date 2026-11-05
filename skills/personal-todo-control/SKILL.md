@@ -5,6 +5,10 @@ description: Use when the user asks to inspect chats, Feishu, local work records
 
 # 综合个人待办总控
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 团队首次使用先读 [配置与依赖](references/team-setup.md)；已有配置与本轮明确入口直接复用，不重复索取。
 
 把分散在聊天、飞书和本地资料中的真实事项，整理成一份用户可以直接执行、跟进和清理的总控清单。学生辅导通常占主要篇幅，但不要把客户、合同、会议、内容、运营、财务、招聘或个人承诺漏掉。

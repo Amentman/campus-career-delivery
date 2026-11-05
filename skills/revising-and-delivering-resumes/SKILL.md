@@ -5,6 +5,10 @@ description: Use when 用户要求诊断、修改、JD 定向改写或重新排�
 
 # 修改并交付简历
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 ## 团队配置与依赖
 
 先读 [团队配置](references/team-setup.md)。学生、知识库和最终文件分别使用成员的 `workspace.student_root`、`knowledge_root`、`output_root`，本轮给定的文件与输出位置优先。飞书只用当前成员独立绑定的本人身份和已授权入口，不继承作者账号、知识库或写入范围。

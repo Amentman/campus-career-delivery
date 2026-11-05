@@ -10,6 +10,10 @@ description: |
 
 # 寂辉 · 知识库采访机器人（学员版）
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 团队首次使用先读 [配置与依赖](references/team-setup.md)；已有配置与本轮明确入口直接复用，不重复索取。
 
 > 产出：不是一份文档，是一个**能直接用的知识库**——六个文件夹，AI 以后写内容就从这里取料。

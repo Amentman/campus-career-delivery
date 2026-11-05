@@ -5,6 +5,10 @@ description: "Use when generating, regenerating, paginating, rendering, or visua
 
 # Xiaohongshu Image Renderer
 
+<!-- skill-workflow-link -->
+[查看完整流程图与操作说明](references/workflow.md)
+<!-- /skill-workflow-link -->
+
 团队首次使用先读 [配置与依赖](references/team-setup.md)；已有配置与本轮明确入口直接复用，不重复索取。
 
 Read [visual-contract.md](references/visual-contract.md) completely before any image work.
