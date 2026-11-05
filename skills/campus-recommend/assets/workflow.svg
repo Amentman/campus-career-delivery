@@ -1,72 +1,144 @@
-<svg data-artifact-sha256="1831543700669b513d90351e77ecd04d21840814628a906549c7772f5df97858" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920.00 835.00" width="920.00" height="835.00" role="img" aria-labelledby="title desc" data-definition-sha256="aa4847d601710ff70d63eb491ee40120e17bbcf056eeb3d772fad271af639cc6" data-renderer="viz-3.31.0">
-<title id="title">选岗旧入口：转入唯一主流程完整流程图</title><desc id="desc">续接明确引用旧入口的任务；同级已安装完整 campus-job-matching？；说明缺少主 Skill 补齐依赖后再继续；转入当前主 Skill 先查共享库→补搜→原表追加→回收；沿用学生、原表／默认视图 模式、限制与全量历史计数</desc>
+<svg data-artifact-sha256="f273e6355c3347525d3a093354e03b4e612780576719c0bed0c149ea54cfce34" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1152.00 1347.00" width="1152.00" height="1347.00" role="img" aria-labelledby="title desc" data-entry-x="749.01" data-definition-sha256="6ac0238c9e018b7b9fed24d1477da777c67329f84f0e17543832ab29a45360ad" data-renderer="viz-3.31.0">
+<title id="title">选岗旧入口：转入唯一主流程完整流程图</title><desc id="desc">接续明确提到旧入口的历史任务；读已有学生、简历、模式、岗位方向 城市、数量与原投递表／全历史；旧任务关键条件或本轮变化可查明？；先读现有档案；只确认仍缺的关键条件 有补充后回到原上下文核对；保留原入口和待补项 暂停依赖该信息的筛选／写入；同级 campus-job-matching 完整目录存在？；先补齐唯一主技能依赖 不发明旧版规则或替代表；完整读取主技能与对应模式规则 执行主技能输入确认与全过程；主技能分别交付原表与共享库结果 沿用历史公司数与同一默认视图</desc>
 <rect width="100%" height="100%" fill="white"/>
 <g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#172b42"><text x="32" y="43" font-size="29" font-weight="600">选岗旧入口：转入唯一主流程</text><text x="32" y="76" font-size="16" fill="#43566e">从上往下读 · 菱形是判断，分支文字说明下一步</text></g>
-<svg x="164.00" y="100" width="592" height="605" viewBox="0 0 592 605"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(25.2 580.06)">
-<!-- start&#45;&gt;dependency -->
+<svg x="32.00" y="100" width="1088" height="1117" viewBox="0 0 1088 1117"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(25.2 1092.02)">
+<!-- legacy_in&#45;&gt;legacy_read -->
 <g id="edge1" class="edge">
-<title>start&#45;&gt;dependency</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M191.09,-495.66C191.09,-483.48 191.09,-468.75 191.09,-454.16"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="193.54,-454.43 191.09,-447.43 188.64,-454.43 193.54,-454.43"/>
+<title>legacy_in&#45;&gt;legacy_read</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M691.81,-975.49C691.81,-962.59 691.81,-948.18 691.81,-934.04"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="694.26,-934.11 691.81,-927.11 689.36,-934.11 694.26,-934.11"/>
 </g>
-<!-- dependency&#45;&gt;missing -->
+<!-- legacy_read&#45;&gt;legacy_gate -->
 <g id="edge2" class="edge">
-<title>dependency&#45;&gt;missing</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M169.02,-336.33C157.61,-310.37 143.63,-278.58 131.85,-251.78"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="134.22,-251.09 129.16,-245.66 129.74,-253.06 134.22,-251.09"/>
-<polygon fill="white" stroke="none" points="154.12,-271.94 154.12,-304.94 276.12,-304.94 276.12,-271.94 154.12,-271.94"/>
-<text xml:space="preserve" text-anchor="start" x="178.37" y="-282.84" font-family="PingFang SC" font-size="14.00" fill="#43566e">未安装／不完整</text>
+<title>legacy_read&#45;&gt;legacy_gate</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M638.15,-794.45C623.25,-776.57 607.25,-757.36 592.95,-740.21"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="594.89,-738.7 588.52,-734.89 591.12,-741.83 594.89,-738.7"/>
 </g>
-<!-- dependency&#45;&gt;handoff -->
-<g id="edge3" class="edge">
-<title>dependency&#45;&gt;handoff</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M240.4,-345.16C255.25,-332.44 271.47,-318.27 286.09,-304.94 304.06,-288.54 323.21,-270.3 340.53,-253.48"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="342.22,-255.26 345.52,-248.63 338.8,-251.75 342.22,-255.26"/>
-<polygon fill="white" stroke="none" points="320.83,-271.94 320.83,-304.94 386.83,-304.94 386.83,-271.94 320.83,-271.94"/>
-<text xml:space="preserve" text-anchor="start" x="338.08" y="-282.84" font-family="PingFang SC" font-size="14.00" fill="#43566e">已安装</text>
-</g>
-<!-- handoff&#45;&gt;done -->
+<!-- legacy_gate&#45;&gt;legacy_clarify -->
 <g id="edge4" class="edge">
-<title>handoff&#45;&gt;done</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M399.09,-141.63C399.09,-128.21 399.09,-113.73 399.09,-100.21"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="401.54,-100.3 399.09,-93.3 396.64,-100.3 401.54,-100.3"/>
+<title>legacy_gate&#45;&gt;legacy_clarify</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M590.56,-639.91C612.19,-617.71 639.7,-591.36 666.81,-570.63 690.83,-552.25 718.51,-534.59 744.38,-519.38"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="745.6,-521.5 750.41,-515.86 743.13,-517.27 745.6,-521.5"/>
+<polygon fill="white" stroke="none" points="666.81,-570.63 666.81,-603.63 802.81,-603.63 802.81,-570.63 666.81,-570.63"/>
+<text xml:space="preserve" text-anchor="start" x="692.81" y="-581.53" font-family="PingFang SC" font-size="14.00" fill="#43566e">关键缺失／有变化</text>
 </g>
-<!-- start -->
+<!-- legacy_gate&#45;&gt;legacy_dependency -->
+<g id="edge3" class="edge">
+<title>legacy_gate&#45;&gt;legacy_dependency</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M513.48,-638.22C488.31,-604.74 454.44,-559.67 428.2,-524.76"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="430.31,-523.5 424.15,-519.38 426.4,-526.44 430.31,-523.5"/>
+<polygon fill="white" stroke="none" points="487.46,-570.63 487.46,-603.63 567.46,-603.63 567.46,-570.63 487.46,-570.63"/>
+<text xml:space="preserve" text-anchor="start" x="506.46" y="-581.53" font-family="PingFang SC" font-size="14.00" fill="#43566e">信息明确</text>
+</g>
+<!-- legacy_clarify&#45;&gt;legacy_read -->
+<g id="edge5" class="edge">
+<title>legacy_clarify&#45;&gt;legacy_read</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M826.44,-542.87C817.94,-599.46 801.63,-679.29 771.81,-743.83 765.03,-758.49 756.39,-773.29 747.3,-787.17"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="745.37,-785.64 743.52,-792.82 749.45,-788.36 745.37,-785.64"/>
+<polygon fill="white" stroke="none" points="809.92,-669.73 809.92,-702.73 917.92,-702.73 917.92,-669.73 809.92,-669.73"/>
+<text xml:space="preserve" text-anchor="start" x="832.42" y="-680.63" font-family="PingFang SC" font-size="14.00" fill="#43566e">已补齐：重核</text>
+</g>
+<!-- legacy_clarify&#45;&gt;legacy_wait -->
+<g id="edge6" class="edge">
+<title>legacy_clarify&#45;&gt;legacy_wait</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M834.81,-393.84C834.81,-368.6 834.81,-340.89 834.81,-317.25"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="837.26,-317.55 834.81,-310.55 832.36,-317.55 837.26,-317.55"/>
+<polygon fill="white" stroke="none" points="834.81,-336.43 834.81,-369.43 914.81,-369.43 914.81,-336.43 834.81,-336.43"/>
+<text xml:space="preserve" text-anchor="start" x="853.81" y="-347.33" font-family="PingFang SC" font-size="14.00" fill="#43566e">仍需补充</text>
+</g>
+<!-- legacy_dependency&#45;&gt;legacy_missing -->
+<g id="edge8" class="edge">
+<title>legacy_dependency&#45;&gt;legacy_missing</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M337.32,-426.46C298.88,-394.05 245.67,-349.19 204.17,-314.2"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="205.93,-312.48 199,-309.84 202.77,-316.23 205.93,-312.48"/>
+<polygon fill="white" stroke="none" points="263.81,-336.43 263.81,-369.43 329.81,-369.43 329.81,-336.43 263.81,-336.43"/>
+<text xml:space="preserve" text-anchor="start" x="281.06" y="-347.33" font-family="PingFang SC" font-size="14.00" fill="#43566e">缺依赖</text>
+</g>
+<!-- legacy_dependency&#45;&gt;legacy_main -->
+<g id="edge7" class="edge">
+<title>legacy_dependency&#45;&gt;legacy_main</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M406.6,-417.34C417.33,-387.81 430.84,-350.65 442.03,-319.85"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="444.27,-320.88 444.36,-313.46 439.66,-319.2 444.27,-320.88"/>
+<polygon fill="white" stroke="none" points="434.85,-336.43 434.85,-369.43 486.85,-369.43 486.85,-336.43 434.85,-336.43"/>
+<text xml:space="preserve" text-anchor="start" x="450.35" y="-347.33" font-family="PingFang SC" font-size="14.00" fill="#43566e">存在</text>
+</g>
+<!-- legacy_main&#45;&gt;legacy_out -->
+<g id="edge9" class="edge">
+<title>legacy_main&#45;&gt;legacy_out</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M463.81,-206.1C463.81,-193.09 463.81,-178.78 463.81,-164.59"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="466.26,-164.6 463.81,-157.6 461.36,-164.6 466.26,-164.6"/>
+</g>
+<!-- legacy_in -->
 <g id="node1" class="node">
-<title>start</title>
-<ellipse fill="#edf4ff" stroke="#5279b4" stroke-width="1.25" cx="191.09" cy="-525.5" rx="139.24" ry="29.36"/>
-<text xml:space="preserve" text-anchor="middle" x="191.09" y="-519.8" font-family="PingFang SC" font-size="19.00" fill="#172b42">续接明确引用旧入口的任务</text>
+<title>legacy_in</title>
+<ellipse fill="#edf4ff" stroke="#5279b4" stroke-width="1.25" cx="691.81" cy="-1021.34" rx="129.17" ry="45.48"/>
+<text xml:space="preserve" text-anchor="middle" x="691.81" y="-1027.04" font-family="PingFang SC" font-size="19.00" fill="#172b42">接续明确提到旧入口的历</text>
+<text xml:space="preserve" text-anchor="middle" x="691.81" y="-1004.24" font-family="PingFang SC" font-size="19.00" fill="#172b42">史任务</text>
 </g>
-<!-- dependency -->
+<!-- legacy_read -->
 <g id="node2" class="node">
-<title>dependency</title>
-<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="191.09,-445.14 9.65,-387.54 191.09,-329.94 372.53,-387.54 191.09,-445.14"/>
-<text xml:space="preserve" text-anchor="middle" x="191.09" y="-393.24" font-family="PingFang SC" font-size="19.00" fill="#172b42">同级已安装完整</text>
-<text xml:space="preserve" text-anchor="middle" x="191.09" y="-370.44" font-family="PingFang SC" font-size="19.00" fill="#172b42">campus&#45;job&#45;matching？</text>
+<title>legacy_read</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="834.3,-924.86 549.32,-924.86 549.32,-794.83 834.3,-794.83 834.3,-924.86"/>
+<text xml:space="preserve" text-anchor="middle" x="691.81" y="-888.34" font-family="PingFang SC" font-size="19.00" fill="#172b42">读已有学生、简历、模式、岗</text>
+<text xml:space="preserve" text-anchor="middle" x="691.81" y="-865.54" font-family="PingFang SC" font-size="19.00" fill="#172b42">位方向</text>
+<text xml:space="preserve" text-anchor="middle" x="691.81" y="-842.74" font-family="PingFang SC" font-size="19.00" fill="#172b42">城市、数量与原投递表／</text>
+<text xml:space="preserve" text-anchor="middle" x="691.81" y="-819.94" font-family="PingFang SC" font-size="19.00" fill="#172b42">全历史</text>
 </g>
-<!-- missing -->
+<!-- legacy_gate -->
 <g id="node3" class="node">
-<title>missing</title>
-<polygon fill="#fff0ed" stroke="#ad675d" stroke-width="1.25" points="214.18,-174.06 214.18,-214.84 151.45,-243.68 62.73,-243.68 0,-214.84 0,-174.06 62.73,-145.22 151.45,-145.22 214.18,-174.06"/>
-<text xml:space="preserve" text-anchor="middle" x="107.09" y="-200.15" font-family="PingFang SC" font-size="19.00" fill="#172b42">说明缺少主 Skill</text>
-<text xml:space="preserve" text-anchor="middle" x="107.09" y="-177.35" font-family="PingFang SC" font-size="19.00" fill="#172b42">补齐依赖后再继续</text>
+<title>legacy_gate</title>
+<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="548.81,-743.83 346.45,-686.23 548.81,-628.63 751.17,-686.23 548.81,-743.83"/>
+<text xml:space="preserve" text-anchor="middle" x="548.81" y="-691.93" font-family="PingFang SC" font-size="19.00" fill="#172b42">旧任务关键条件或本轮变化可</text>
+<text xml:space="preserve" text-anchor="middle" x="548.81" y="-669.13" font-family="PingFang SC" font-size="19.00" fill="#172b42">查明？</text>
 </g>
-<!-- handoff -->
+<!-- legacy_clarify -->
 <g id="node4" class="node">
-<title>handoff</title>
-<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="541.58,-246.94 256.6,-246.94 256.6,-141.96 541.58,-141.96 541.58,-246.94"/>
-<text xml:space="preserve" text-anchor="middle" x="399.09" y="-211.55" font-family="PingFang SC" font-size="19.00" fill="#172b42">转入当前主 Skill</text>
-<text xml:space="preserve" text-anchor="middle" x="399.09" y="-188.75" font-family="PingFang SC" font-size="19.00" fill="#172b42">先查共享库→补搜→原表追加</text>
-<text xml:space="preserve" text-anchor="middle" x="399.09" y="-165.95" font-family="PingFang SC" font-size="19.00" fill="#172b42">→回收</text>
+<title>legacy_clarify</title>
+<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="834.81,-545.63 632.45,-470.03 834.81,-394.43 1037.17,-470.03 834.81,-545.63"/>
+<text xml:space="preserve" text-anchor="middle" x="834.81" y="-487.13" font-family="PingFang SC" font-size="19.00" fill="#172b42">先读现有档案；只确认仍缺的</text>
+<text xml:space="preserve" text-anchor="middle" x="834.81" y="-464.33" font-family="PingFang SC" font-size="19.00" fill="#172b42">关键条件</text>
+<text xml:space="preserve" text-anchor="middle" x="834.81" y="-441.53" font-family="PingFang SC" font-size="19.00" fill="#172b42">有补充后回到原上下文核对</text>
 </g>
-<!-- done -->
+<!-- legacy_wait -->
 <g id="node5" class="node">
-<title>done</title>
-<ellipse fill="#eaf5ee" stroke="#508267" stroke-width="1.25" cx="399.09" cy="-45.48" rx="139.24" ry="45.48"/>
-<text xml:space="preserve" text-anchor="middle" x="399.09" y="-51.18" font-family="PingFang SC" font-size="19.00" fill="#172b42">沿用学生、原表／默认视图</text>
-<text xml:space="preserve" text-anchor="middle" x="399.09" y="-28.38" font-family="PingFang SC" font-size="19.00" fill="#172b42">模式、限制与全量历史计数</text>
+<title>legacy_wait</title>
+<polygon fill="#fff0ed" stroke="#ad675d" stroke-width="1.25" points="996.43,-238.55 996.43,-279.33 901.76,-308.17 767.86,-308.17 673.19,-279.33 673.19,-238.55 767.86,-209.71 901.76,-209.71 996.43,-238.55"/>
+<text xml:space="preserve" text-anchor="middle" x="834.81" y="-264.64" font-family="PingFang SC" font-size="19.00" fill="#172b42">保留原入口和待补项</text>
+<text xml:space="preserve" text-anchor="middle" x="834.81" y="-241.84" font-family="PingFang SC" font-size="19.00" fill="#172b42">暂停依赖该信息的筛选／写入</text>
+</g>
+<!-- legacy_dependency -->
+<g id="node6" class="node">
+<title>legacy_dependency</title>
+<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="387.81,-527.63 185.45,-470.03 387.81,-412.43 590.17,-470.03 387.81,-527.63"/>
+<text xml:space="preserve" text-anchor="middle" x="387.81" y="-475.73" font-family="PingFang SC" font-size="19.00" fill="#172b42">同级 campus&#45;job&#45;matching</text>
+<text xml:space="preserve" text-anchor="middle" x="387.81" y="-452.93" font-family="PingFang SC" font-size="19.00" fill="#172b42"> 完整目录存在？</text>
+</g>
+<!-- legacy_missing -->
+<g id="node7" class="node">
+<title>legacy_missing</title>
+<polygon fill="#fff0ed" stroke="#ad675d" stroke-width="1.25" points="279.62,-238.55 279.62,-279.33 197.72,-308.17 81.9,-308.17 0,-279.33 0,-238.55 81.9,-209.71 197.72,-209.71 279.62,-238.55"/>
+<text xml:space="preserve" text-anchor="middle" x="139.81" y="-264.64" font-family="PingFang SC" font-size="19.00" fill="#172b42">先补齐唯一主技能依赖</text>
+<text xml:space="preserve" text-anchor="middle" x="139.81" y="-241.84" font-family="PingFang SC" font-size="19.00" fill="#172b42">不发明旧版规则或替代表</text>
+</g>
+<!-- legacy_main -->
+<g id="node8" class="node">
+<title>legacy_main</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="606.3,-311.43 321.32,-311.43 321.32,-206.45 606.3,-206.45 606.3,-311.43"/>
+<text xml:space="preserve" text-anchor="middle" x="463.81" y="-276.04" font-family="PingFang SC" font-size="19.00" fill="#172b42">完整读取主技能与对应模式规</text>
+<text xml:space="preserve" text-anchor="middle" x="463.81" y="-253.24" font-family="PingFang SC" font-size="19.00" fill="#172b42">则</text>
+<text xml:space="preserve" text-anchor="middle" x="463.81" y="-230.44" font-family="PingFang SC" font-size="19.00" fill="#172b42">执行主技能输入确认与全过程</text>
+</g>
+<!-- legacy_out -->
+<g id="node9" class="node">
+<title>legacy_out</title>
+<ellipse fill="#eaf5ee" stroke="#508267" stroke-width="1.25" cx="463.81" cy="-77.73" rx="149.32" ry="77.73"/>
+<text xml:space="preserve" text-anchor="middle" x="463.81" y="-106.23" font-family="PingFang SC" font-size="19.00" fill="#172b42">主技能分别交付原表与共享库</text>
+<text xml:space="preserve" text-anchor="middle" x="463.81" y="-83.43" font-family="PingFang SC" font-size="19.00" fill="#172b42">结果</text>
+<text xml:space="preserve" text-anchor="middle" x="463.81" y="-60.63" font-family="PingFang SC" font-size="19.00" fill="#172b42">沿用历史公司数与同一默</text>
+<text xml:space="preserve" text-anchor="middle" x="463.81" y="-37.83" font-family="PingFang SC" font-size="19.00" fill="#172b42">认视图</text>
 </g>
 </g>
 </svg>
-<path d="M32 729H888" stroke="#dce3ec"/>
-<g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#43566e"><text x="32" y="757" font-size="15">边界：不维护独立匹配、评分或写回规则；未核验线索不计合格岗位。</text><text x="32" y="819" font-size="12">来源：Skill 正文与关联规则 · 可回查的流程说明</text></g></svg>
+<path d="M32 1241H1120" stroke="#dce3ec"/>
+<g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#43566e"><text x="32" y="1269" font-size="15">边界：不维护独立匹配、评分或写回规则；未核验线索不计合格岗位。</text><text x="32" y="1331" font-size="12">来源：Skill 正文与关联规则 · 可回查的流程说明</text></g></svg>

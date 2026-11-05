@@ -1,0 +1,172 @@
+<svg data-artifact-sha256="37dd10b57ed41ca46beb7c5c3d74ec0e10b33b0a659cdb9d57f3245115cd6a84" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920.00 1934.00" width="920.00" height="1934.00" role="img" aria-labelledby="title desc" data-entry-x="319.01" data-definition-sha256="bdb01c33995f2cccf0616adf0cca1229147ea413485b8931af1ee1e12698833a" data-renderer="viz-3.31.0">
+<title id="title">小红书图文制作 · 输入确认完整流程图</title><desc id="desc">已确认完整标题与正文 或已有锁定图片包；完整标题与正文、母稿确认状态 必需：已确认正文才能锁定；唯一图片包目录与现有锁定输入 必需：明确本轮本地产物目标；sourceHash与标题正文对应 必需：小写SHA256一致；锁定备忘录模板与原始截图 必需：现行视觉合同；历史截图可选；Node20+、Playwright、Chrome与中文字体 必需：本机渲染和分页实测条件；先查已有原件与当前记录 保留版本、冲突和缺失；已确认母稿、唯一包与输入来源明确？；已有来源查不清时 只问影响执行的最小问题；等待关键资料／裁决 暂停依赖步骤；独立工作可继续；进入后续流程 完整读取视觉合同 固定1080×1440备忘录样式</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#172b42"><text x="32" y="43" font-size="29" font-weight="600">小红书图文制作 · 输入确认</text><text x="32" y="76" font-size="16" fill="#43566e">从上往下读 · 菱形是判断，分支文字说明下一步</text></g>
+<svg x="38.00" y="100" width="844" height="1704" viewBox="0 0 844 1704"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(25.2 1678.87)">
+<!-- input&#45;&gt;i_master -->
+<g id="edge1" class="edge">
+<title>input&#45;&gt;i_master</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M255.81,-1562.29C255.81,-1549.22 255.81,-1534.72 255.81,-1520.85"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="258.26,-1521.13 255.81,-1514.13 253.36,-1521.13 258.26,-1521.13"/>
+</g>
+<!-- i_master&#45;&gt;i_package -->
+<g id="edge2" class="edge">
+<title>i_master&#45;&gt;i_package</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M255.81,-1406.52C255.81,-1393.13 255.81,-1378.6 255.81,-1364.81"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="258.26,-1365.15 255.81,-1358.15 253.36,-1365.15 258.26,-1365.15"/>
+</g>
+<!-- i_package&#45;&gt;i_hash -->
+<g id="edge3" class="edge">
+<title>i_package&#45;&gt;i_hash</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M255.81,-1250.36C255.81,-1236.78 255.81,-1222.19 255.81,-1208.81"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="258.26,-1209.04 255.81,-1202.04 253.36,-1209.04 258.26,-1209.04"/>
+</g>
+<!-- i_hash&#45;&gt;i_template -->
+<g id="edge4" class="edge">
+<title>i_hash&#45;&gt;i_template</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M255.81,-1119.35C255.81,-1106.48 255.81,-1091.89 255.81,-1077.84"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="258.26,-1077.99 255.81,-1070.99 253.36,-1077.99 258.26,-1077.99"/>
+</g>
+<!-- i_template&#45;&gt;i_runtime -->
+<g id="edge5" class="edge">
+<title>i_template&#45;&gt;i_runtime</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M255.81,-963.51C255.81,-950.3 255.81,-935.86 255.81,-921.81"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="258.26,-921.95 255.81,-914.95 253.36,-921.95 258.26,-921.95"/>
+</g>
+<!-- i_runtime&#45;&gt;i_existing -->
+<g id="edge6" class="edge">
+<title>i_runtime&#45;&gt;i_existing</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M255.81,-782.35C255.81,-768.42 255.81,-753.93 255.81,-740.76"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="258.26,-741.13 255.81,-734.13 253.36,-741.13 258.26,-741.13"/>
+</g>
+<!-- i_existing&#45;&gt;i_ready -->
+<g id="edge7" class="edge">
+<title>i_existing&#45;&gt;i_ready</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M255.81,-651.47C255.81,-638.69 255.81,-624.14 255.81,-609.96"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="258.26,-610.02 255.81,-603.02 253.36,-610.02 258.26,-610.02"/>
+</g>
+<!-- i_ready&#45;&gt;i_clarify -->
+<g id="edge9" class="edge">
+<title>i_ready&#45;&gt;i_clarify</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M231.77,-491.98C211.39,-449.41 182.36,-388.8 162.4,-347.12"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="164.67,-346.2 159.44,-340.94 160.25,-348.32 164.67,-346.2"/>
+<polygon fill="white" stroke="none" points="214.98,-396.06 214.98,-450.06 350.98,-450.06 350.98,-396.06 214.98,-396.06"/>
+<text xml:space="preserve" text-anchor="start" x="240.98" y="-425.86" font-family="PingFang SC" font-size="14.00" fill="#43566e">关键材料缺失／冲</text>
+<text xml:space="preserve" text-anchor="start" x="240.98" y="-409.06" font-family="PingFang SC" font-size="14.00" fill="#43566e">突会改变本轮动作</text>
+</g>
+<!-- i_ready&#45;&gt;continue_contract -->
+<g id="edge8" class="edge">
+<title>i_ready&#45;&gt;continue_contract</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M315.63,-501.96C331.39,-489.76 347.64,-475.58 360.81,-460.56 385.16,-432.79 406.5,-397.8 422.67,-367.57"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="424.72,-368.94 425.82,-361.61 420.39,-366.65 424.72,-368.94"/>
+<polygon fill="white" stroke="none" points="412.71,-385.56 412.71,-460.56 548.71,-460.56 548.71,-385.56 412.71,-385.56"/>
+<text xml:space="preserve" text-anchor="start" x="438.71" y="-434.26" font-family="PingFang SC" font-size="14.00" fill="#43566e">本轮依赖信息已明</text>
+<text xml:space="preserve" text-anchor="start" x="438.71" y="-417.46" font-family="PingFang SC" font-size="14.00" fill="#43566e">确；可选缺项按规</text>
+<text xml:space="preserve" text-anchor="start" x="464.96" y="-400.66" font-family="PingFang SC" font-size="14.00" fill="#43566e">则保留</text>
+</g>
+<!-- i_clarify&#45;&gt;i_wait -->
+<g id="edge10" class="edge">
+<title>i_clarify&#45;&gt;i_wait</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M139.81,-258.37C139.81,-226.57 139.81,-181 139.81,-142.39"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="142.26,-142.57 139.81,-135.57 137.36,-142.57 142.26,-142.57"/>
+<polygon fill="white" stroke="none" points="139.81,-158.36 139.81,-212.36 275.81,-212.36 275.81,-158.36 139.81,-158.36"/>
+<text xml:space="preserve" text-anchor="start" x="165.81" y="-188.16" font-family="PingFang SC" font-size="14.00" fill="#43566e">需要用户补充且尚</text>
+<text xml:space="preserve" text-anchor="start" x="192.06" y="-171.36" font-family="PingFang SC" font-size="14.00" fill="#43566e">未收到</text>
+</g>
+<!-- i_wait&#45;&gt;i_existing -->
+<g id="edge11" class="edge">
+<title>i_wait&#45;&gt;i_existing</title>
+<path fill="none" stroke="#5279b4" stroke-width="1.2" d="M280.01,-74.66C393.66,-88.6 547.25,-128.05 624.81,-237.36 725.54,-379.31 611.48,-488.08 478.81,-600.76 452.48,-623.13 419.88,-640.43 387.81,-653.62"/>
+<polygon fill="#5279b4" stroke="#5279b4" stroke-width="1.2" points="386.94,-651.33 381.35,-656.21 388.76,-655.87 386.94,-651.33"/>
+<polygon fill="white" stroke="none" points="657.67,-396.06 657.67,-450.06 793.67,-450.06 793.67,-396.06 657.67,-396.06"/>
+<text xml:space="preserve" text-anchor="start" x="683.67" y="-425.86" font-family="PingFang SC" font-size="14.00" fill="#43566e">收到答复或来源恢</text>
+<text xml:space="preserve" text-anchor="start" x="694.17" y="-409.06" font-family="PingFang SC" font-size="14.00" fill="#43566e">复后重新核对</text>
+</g>
+<!-- input -->
+<g id="node1" class="node">
+<title>input</title>
+<ellipse fill="#edf4ff" stroke="#5279b4" stroke-width="1.25" cx="255.81" cy="-1608.19" rx="119.09" ry="45.48"/>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-1613.89" font-family="PingFang SC" font-size="19.00" fill="#172b42">已确认完整标题与正文</text>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-1591.09" font-family="PingFang SC" font-size="19.00" fill="#172b42">或已有锁定图片包</text>
+</g>
+<!-- i_master -->
+<g id="node2" class="node">
+<title>i_master</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="398.3,-1511.71 113.32,-1511.71 113.32,-1406.73 398.3,-1406.73 398.3,-1511.71"/>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-1476.32" font-family="PingFang SC" font-size="19.00" fill="#172b42">完整标题与正文、母稿确认状</text>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-1453.52" font-family="PingFang SC" font-size="19.00" fill="#172b42">态</text>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-1430.72" font-family="PingFang SC" font-size="19.00" fill="#172b42">必需：已确认正文才能锁定</text>
+</g>
+<!-- i_package -->
+<g id="node3" class="node">
+<title>i_package</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="398.3,-1355.73 113.32,-1355.73 113.32,-1250.76 398.3,-1250.76 398.3,-1355.73"/>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-1320.34" font-family="PingFang SC" font-size="19.00" fill="#172b42">唯一图片包目录与现有锁定输</text>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-1297.54" font-family="PingFang SC" font-size="19.00" fill="#172b42">入</text>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-1274.74" font-family="PingFang SC" font-size="19.00" fill="#172b42">必需：明确本轮本地产物目标</text>
+</g>
+<!-- i_hash -->
+<g id="node4" class="node">
+<title>i_hash</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="393.55,-1199.76 118.07,-1199.76 118.07,-1119.76 393.55,-1119.76 393.55,-1199.76"/>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-1165.46" font-family="PingFang SC" font-size="19.00" fill="#172b42">sourceHash与标题正文对应</text>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-1142.66" font-family="PingFang SC" font-size="19.00" fill="#172b42">必需：小写SHA256一致</text>
+</g>
+<!-- i_template -->
+<g id="node5" class="node">
+<title>i_template</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="398.3,-1068.76 113.32,-1068.76 113.32,-963.79 398.3,-963.79 398.3,-1068.76"/>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-1033.38" font-family="PingFang SC" font-size="19.00" fill="#172b42">锁定备忘录模板与原始截图</text>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-1010.58" font-family="PingFang SC" font-size="19.00" fill="#172b42">必需：现行视觉合同；历史截</text>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-987.78" font-family="PingFang SC" font-size="19.00" fill="#172b42">图可选</text>
+</g>
+<!-- i_runtime -->
+<g id="node6" class="node">
+<title>i_runtime</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="382.64,-912.79 128.98,-912.79 128.98,-782.76 382.64,-782.76 382.64,-912.79"/>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-876.27" font-family="PingFang SC" font-size="19.00" fill="#172b42">Node20+、Playwright、</text>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-853.47" font-family="PingFang SC" font-size="19.00" fill="#172b42">Chrome与中文字体</text>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-830.67" font-family="PingFang SC" font-size="19.00" fill="#172b42">必需：本机渲染和分页实</text>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-807.87" font-family="PingFang SC" font-size="19.00" fill="#172b42">测条件</text>
+</g>
+<!-- i_existing -->
+<g id="node7" class="node">
+<title>i_existing</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="379.33,-731.76 132.29,-731.76 132.29,-651.76 379.33,-651.76 379.33,-731.76"/>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-697.46" font-family="PingFang SC" font-size="19.00" fill="#172b42">先查已有原件与当前记录</text>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-674.66" font-family="PingFang SC" font-size="19.00" fill="#172b42">保留版本、冲突和缺失</text>
+</g>
+<!-- i_ready -->
+<g id="node8" class="node">
+<title>i_ready</title>
+<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="255.81,-600.76 53.45,-543.16 255.81,-485.56 458.17,-543.16 255.81,-600.76"/>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-548.86" font-family="PingFang SC" font-size="19.00" fill="#172b42">已确认母稿、唯一包与输入来</text>
+<text xml:space="preserve" text-anchor="middle" x="255.81" y="-526.06" font-family="PingFang SC" font-size="19.00" fill="#172b42">源明确？</text>
+</g>
+<!-- i_clarify -->
+<g id="node9" class="node">
+<title>i_clarify</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="263.33,-338.96 16.29,-338.96 16.29,-258.96 263.33,-258.96 263.33,-338.96"/>
+<text xml:space="preserve" text-anchor="middle" x="139.81" y="-304.66" font-family="PingFang SC" font-size="19.00" fill="#172b42">已有来源查不清时</text>
+<text xml:space="preserve" text-anchor="middle" x="139.81" y="-281.86" font-family="PingFang SC" font-size="19.00" fill="#172b42">只问影响执行的最小问题</text>
+</g>
+<!-- i_wait -->
+<g id="node10" class="node">
+<title>i_wait</title>
+<polygon fill="#fff0ed" stroke="#ad675d" stroke-width="1.25" points="279.62,-39.06 279.62,-94.3 197.72,-133.36 81.9,-133.36 0,-94.3 0,-39.06 81.9,0 197.72,0 279.62,-39.06"/>
+<text xml:space="preserve" text-anchor="middle" x="139.81" y="-83.78" font-family="PingFang SC" font-size="19.00" fill="#172b42">等待关键资料／裁决</text>
+<text xml:space="preserve" text-anchor="middle" x="139.81" y="-60.98" font-family="PingFang SC" font-size="19.00" fill="#172b42">暂停依赖步骤；独立工作</text>
+<text xml:space="preserve" text-anchor="middle" x="139.81" y="-38.18" font-family="PingFang SC" font-size="19.00" fill="#172b42">可继续</text>
+</g>
+<!-- continue_contract -->
+<g id="node11" class="node">
+<title>continue_contract</title>
+<ellipse fill="#eaf5ee" stroke="#508267" stroke-width="1.25" cx="454.81" cy="-298.96" rx="149.32" ry="61.6"/>
+<text xml:space="preserve" text-anchor="middle" x="454.81" y="-316.06" font-family="PingFang SC" font-size="19.00" fill="#172b42">进入后续流程</text>
+<text xml:space="preserve" text-anchor="middle" x="454.81" y="-293.26" font-family="PingFang SC" font-size="19.00" fill="#172b42">完整读取视觉合同</text>
+<text xml:space="preserve" text-anchor="middle" x="454.81" y="-270.46" font-family="PingFang SC" font-size="19.00" fill="#172b42">固定1080×1440备忘录样式</text>
+</g>
+</g>
+</svg>
+<path d="M32 1828H888" stroke="#dce3ec"/>
+<g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#43566e"><text x="32" y="1856" font-size="15">边界：只生成本地文件；不写飞书、不打开发布面、不公开发布。</text><text x="32" y="1918" font-size="12">来源：Skill 正文与关联规则 · 可回查的流程说明</text></g></svg>

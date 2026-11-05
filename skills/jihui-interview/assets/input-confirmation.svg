@@ -1,0 +1,175 @@
+<svg data-artifact-sha256="0e1c172a5f014d4bd7028e65751e922a3b72a82cba880a36b5c86c50177612a6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920.00 1895.00" width="920.00" height="1895.00" role="img" aria-labelledby="title desc" data-entry-x="366.68" data-definition-sha256="349011b4ba3896ea5a56216bd9810afce8a320d313a5114c3a6a6dcca0cb1cb9" data-renderer="viz-3.31.0">
+<title id="title">知识库采访 · 输入确认完整流程图</title><desc id="desc">建库请求 业务材料与已知入口；复用已知业务与回答 现有库先查目录和断点；受访者、业务与产品 开场后逐题取得；现有回答与19题覆盖 过程产物：逐题覆盖表；客户原话、案例和卖点 过程目标：如实记录缺口；是否已有知识库及结构 条件：落盘前确认；本地目标或云端连接器 条件：保存采访成果时；当前题号与暂停断点 条件：中途暂停或续接；当前动作需要的信息 能在采访中逐题取得？；只问当前题所缺的关键信息 落盘缺入口时定向询问；等待当前必要补充 不阻塞可继续的采访题；进入后续流程 开场并复用已知回答 按六组建立19题覆盖表</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#172b42"><text x="32" y="43" font-size="29" font-weight="600">知识库采访 · 输入确认</text><text x="32" y="76" font-size="16" fill="#43566e">从上往下读 · 菱形是判断，分支文字说明下一步</text></g>
+<svg x="91.50" y="100" width="737" height="1665" viewBox="0 0 737 1665"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(25.2 1639.97)">
+<!-- request&#45;&gt;intake_lookup -->
+<g id="edge1" class="edge">
+<title>request&#45;&gt;intake_lookup</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M249.98,-1523.51C249.98,-1510.22 249.98,-1495.61 249.98,-1482.11"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="252.43,-1482.24 249.98,-1475.24 247.53,-1482.24 252.43,-1482.24"/>
+</g>
+<!-- intake_lookup&#45;&gt;intake_person -->
+<g id="edge2" class="edge">
+<title>intake_lookup&#45;&gt;intake_person</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M249.98,-1392.41C249.98,-1379.4 249.98,-1364.78 249.98,-1351.19"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="252.43,-1351.24 249.98,-1344.24 247.53,-1351.24 252.43,-1351.24"/>
+</g>
+<!-- intake_person&#45;&gt;intake_answers -->
+<g id="edge3" class="edge">
+<title>intake_person&#45;&gt;intake_answers</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M249.98,-1261.42C249.98,-1248.41 249.98,-1233.79 249.98,-1220.19"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="252.43,-1220.25 249.98,-1213.25 247.53,-1220.25 252.43,-1220.25"/>
+</g>
+<!-- intake_answers&#45;&gt;intake_voice -->
+<g id="edge4" class="edge">
+<title>intake_answers&#45;&gt;intake_voice</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M249.98,-1130.42C249.98,-1117.42 249.98,-1102.8 249.98,-1089.2"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="252.43,-1089.26 249.98,-1082.26 247.53,-1089.26 252.43,-1089.26"/>
+</g>
+<!-- intake_voice&#45;&gt;intake_existing_kb -->
+<g id="edge5" class="edge">
+<title>intake_voice&#45;&gt;intake_existing_kb</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M249.98,-999.43C249.98,-986.43 249.98,-971.81 249.98,-958.21"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="252.43,-958.27 249.98,-951.27 247.53,-958.27 252.43,-958.27"/>
+</g>
+<!-- intake_existing_kb&#45;&gt;intake_save_target -->
+<g id="edge6" class="edge">
+<title>intake_existing_kb&#45;&gt;intake_save_target</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M249.98,-868.35C249.98,-840.57 249.98,-803.23 249.98,-773.75"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="252.43,-774.08 249.98,-767.08 247.53,-774.08 252.43,-774.08"/>
+</g>
+<!-- intake_save_target&#45;&gt;intake_progress -->
+<g id="edge7" class="edge">
+<title>intake_save_target&#45;&gt;intake_progress</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M249.98,-684.45C249.98,-671.44 249.98,-656.82 249.98,-643.23"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="252.43,-643.28 249.98,-636.28 247.53,-643.28 252.43,-643.28"/>
+</g>
+<!-- intake_progress&#45;&gt;intake_ready -->
+<g id="edge8" class="edge">
+<title>intake_progress&#45;&gt;intake_ready</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M249.98,-553.57C249.98,-540.79 249.98,-526.24 249.98,-512.06"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="252.43,-512.11 249.98,-505.11 247.53,-512.11 252.43,-512.11"/>
+</g>
+<!-- intake_ready&#45;&gt;intake_clarify -->
+<g id="edge9" class="edge">
+<title>intake_ready&#45;&gt;intake_clarify</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M222.4,-397.07C203.7,-365.07 179.09,-322.95 160.42,-291"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="162.61,-289.9 156.96,-285.09 158.38,-292.37 162.61,-289.9"/>
+<polygon fill="white" stroke="none" points="201.96,-329.66 201.96,-362.66 323.96,-362.66 323.96,-329.66 201.96,-329.66"/>
+<text xml:space="preserve" text-anchor="start" x="226.21" y="-340.56" font-family="PingFang SC" font-size="14.00" fill="#43566e">缺关键项／冲突</text>
+</g>
+<!-- intake_ready&#45;&gt;continue_known -->
+<g id="edge12" class="edge">
+<title>intake_ready&#45;&gt;continue_known</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M294.57,-402.87C307.6,-390.27 321.64,-376.17 333.98,-362.66 349.82,-345.33 366.19,-325.79 380.84,-307.64"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="382.54,-309.43 385.01,-302.44 378.72,-306.36 382.54,-309.43"/>
+<polygon fill="white" stroke="none" points="361.53,-329.66 361.53,-362.66 497.53,-362.66 497.53,-329.66 361.53,-329.66"/>
+<text xml:space="preserve" text-anchor="start" x="387.53" y="-340.56" font-family="PingFang SC" font-size="14.00" fill="#43566e">适用必需项已具备</text>
+</g>
+<!-- intake_clarify&#45;&gt;intake_wait -->
+<g id="edge10" class="edge">
+<title>intake_clarify&#45;&gt;intake_wait</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M132.98,-202.78C132.98,-175.32 132.98,-138.23 132.98,-107.49"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="135.43,-107.82 132.98,-100.82 130.53,-107.82 135.43,-107.82"/>
+<polygon fill="white" stroke="none" points="132.98,-123.46 132.98,-156.46 212.98,-156.46 212.98,-123.46 132.98,-123.46"/>
+<text xml:space="preserve" text-anchor="start" x="151.98" y="-134.36" font-family="PingFang SC" font-size="14.00" fill="#43566e">仍需补充</text>
+</g>
+<!-- intake_wait&#45;&gt;intake_lookup -->
+<g id="edge11" class="edge">
+<title>intake_wait&#45;&gt;intake_lookup</title>
+<path fill="none" stroke="#5279b4" stroke-width="1.2" d="M259.96,-70.9C376.06,-92.69 535.29,-130.88 572.98,-181.46 729.28,-391.17 516.93,-1121.5 375.98,-1341.82 364.67,-1359.51 348.52,-1374.78 331.55,-1387.47"/>
+<polygon fill="#5279b4" stroke="#5279b4" stroke-width="1.2" points="330.46,-1385.23 326.23,-1391.32 333.33,-1389.2 330.46,-1385.23"/>
+<polygon fill="white" stroke="none" points="578.67,-789.85 578.67,-843.85 686.67,-843.85 686.67,-789.85 578.67,-789.85"/>
+<text xml:space="preserve" text-anchor="start" x="601.17" y="-819.65" font-family="PingFang SC" font-size="14.00" fill="#43566e">收到补充后重</text>
+<text xml:space="preserve" text-anchor="start" x="616.92" y="-802.85" font-family="PingFang SC" font-size="14.00" fill="#43566e">新核对</text>
+</g>
+<!-- request -->
+<g id="node1" class="node">
+<title>request</title>
+<ellipse fill="#edf4ff" stroke="#5279b4" stroke-width="1.25" cx="249.98" cy="-1569.29" rx="109.01" ry="45.48"/>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-1574.99" font-family="PingFang SC" font-size="19.00" fill="#172b42">建库请求</text>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-1552.19" font-family="PingFang SC" font-size="19.00" fill="#172b42">业务材料与已知入口</text>
+</g>
+<!-- intake_lookup -->
+<g id="node2" class="node">
+<title>intake_lookup</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="364,-1472.81 135.97,-1472.81 135.97,-1392.82 364,-1392.82 364,-1472.81"/>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-1438.51" font-family="PingFang SC" font-size="19.00" fill="#172b42">复用已知业务与回答</text>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-1415.71" font-family="PingFang SC" font-size="19.00" fill="#172b42">现有库先查目录和断点</text>
+</g>
+<!-- intake_person -->
+<g id="node3" class="node">
+<title>intake_person</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="354.49,-1341.82 145.48,-1341.82 145.48,-1261.82 354.49,-1261.82 354.49,-1341.82"/>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-1307.52" font-family="PingFang SC" font-size="19.00" fill="#172b42">受访者、业务与产品</text>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-1284.72" font-family="PingFang SC" font-size="19.00" fill="#172b42">开场后逐题取得</text>
+</g>
+<!-- intake_answers -->
+<g id="node4" class="node">
+<title>intake_answers</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="364,-1210.82 135.97,-1210.82 135.97,-1130.83 364,-1130.83 364,-1210.82"/>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-1176.53" font-family="PingFang SC" font-size="19.00" fill="#172b42">现有回答与19题覆盖</text>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-1153.73" font-family="PingFang SC" font-size="19.00" fill="#172b42">过程产物：逐题覆盖表</text>
+</g>
+<!-- intake_voice -->
+<g id="node5" class="node">
+<title>intake_voice</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="373.5,-1079.83 126.47,-1079.83 126.47,-999.84 373.5,-999.84 373.5,-1079.83"/>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-1045.54" font-family="PingFang SC" font-size="19.00" fill="#172b42">客户原话、案例和卖点</text>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-1022.74" font-family="PingFang SC" font-size="19.00" fill="#172b42">过程目标：如实记录缺口</text>
+</g>
+<!-- intake_existing_kb -->
+<g id="node6" class="node">
+<title>intake_existing_kb</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="364,-948.84 135.97,-948.84 135.97,-868.85 364,-868.85 364,-948.84"/>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-914.54" font-family="PingFang SC" font-size="19.00" fill="#172b42">是否已有知识库及结构</text>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-891.74" font-family="PingFang SC" font-size="19.00" fill="#172b42">条件：落盘前确认</text>
+</g>
+<!-- intake_save_target -->
+<g id="node7" class="node">
+<title>intake_save_target</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="364,-764.85 135.97,-764.85 135.97,-684.86 364,-684.86 364,-764.85"/>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-730.55" font-family="PingFang SC" font-size="19.00" fill="#172b42">本地目标或云端连接器</text>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-707.75" font-family="PingFang SC" font-size="19.00" fill="#172b42">条件：保存采访成果时</text>
+</g>
+<!-- intake_progress -->
+<g id="node8" class="node">
+<title>intake_progress</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="364,-633.86 135.97,-633.86 135.97,-553.86 364,-553.86 364,-633.86"/>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-599.56" font-family="PingFang SC" font-size="19.00" fill="#172b42">当前题号与暂停断点</text>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-576.76" font-family="PingFang SC" font-size="19.00" fill="#172b42">条件：中途暂停或续接</text>
+</g>
+<!-- intake_ready -->
+<g id="node9" class="node">
+<title>intake_ready</title>
+<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="249.98,-502.86 88.09,-445.26 249.98,-387.66 411.88,-445.26 249.98,-502.86"/>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-450.96" font-family="PingFang SC" font-size="19.00" fill="#172b42">当前动作需要的信息</text>
+<text xml:space="preserve" text-anchor="middle" x="249.98" y="-428.16" font-family="PingFang SC" font-size="19.00" fill="#172b42">能在采访中逐题取得？</text>
+</g>
+<!-- intake_clarify -->
+<g id="node10" class="node">
+<title>intake_clarify</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="265.97,-283.06 0,-283.06 0,-203.06 265.97,-203.06 265.97,-283.06"/>
+<text xml:space="preserve" text-anchor="middle" x="132.98" y="-248.76" font-family="PingFang SC" font-size="19.00" fill="#172b42">只问当前题所缺的关键信息</text>
+<text xml:space="preserve" text-anchor="middle" x="132.98" y="-225.96" font-family="PingFang SC" font-size="19.00" fill="#172b42">落盘缺入口时定向询问</text>
+</g>
+<!-- intake_wait -->
+<g id="node11" class="node">
+<title>intake_wait</title>
+<polygon fill="#fff0ed" stroke="#ad675d" stroke-width="1.25" points="261.89,-28.84 261.89,-69.62 186.38,-98.46 79.59,-98.46 4.08,-69.62 4.08,-28.84 79.59,0 186.38,0 261.89,-28.84"/>
+<text xml:space="preserve" text-anchor="middle" x="132.98" y="-54.93" font-family="PingFang SC" font-size="19.00" fill="#172b42">等待当前必要补充</text>
+<text xml:space="preserve" text-anchor="middle" x="132.98" y="-32.13" font-family="PingFang SC" font-size="19.00" fill="#172b42">不阻塞可继续的采访题</text>
+</g>
+<!-- continue_known -->
+<g id="node12" class="node">
+<title>continue_known</title>
+<ellipse fill="#eaf5ee" stroke="#508267" stroke-width="1.25" cx="429.98" cy="-243.06" rx="122.45" ry="61.6"/>
+<text xml:space="preserve" text-anchor="middle" x="429.98" y="-260.16" font-family="PingFang SC" font-size="19.00" fill="#172b42">进入后续流程</text>
+<text xml:space="preserve" text-anchor="middle" x="429.98" y="-237.36" font-family="PingFang SC" font-size="19.00" fill="#172b42">开场并复用已知回答</text>
+<text xml:space="preserve" text-anchor="middle" x="429.98" y="-214.56" font-family="PingFang SC" font-size="19.00" fill="#172b42">按六组建立19题覆盖表</text>
+</g>
+</g>
+</svg>
+<path d="M32 1789H888" stroke="#dce3ec"/>
+<g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#43566e"><text x="32" y="1817" font-size="15">边界：采访内容按既有授权归档，不向外部自动发送。</text><text x="32" y="1879" font-size="12">来源：Skill 正文与关联规则 · 可回查的流程说明</text></g></svg>

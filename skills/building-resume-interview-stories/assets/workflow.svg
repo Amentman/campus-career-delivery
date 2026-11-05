@@ -1,350 +1,578 @@
-<svg data-artifact-sha256="3093e7483b71b613dc95ef2485f5ec25c680800d4d79d7aa8b0d348192562ad8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1089.00 2586.00" width="1089.00" height="2586.00" role="img" aria-labelledby="title desc" data-definition-sha256="11ceab4ea614f0bf682ca80435734e684fdf1f803205012a6763643838d7d96f" data-renderer="viz-3.31.0">
-<title id="title">简历与面试故事完整流程图</title><desc id="desc">简历、项目证据、JD 本次产物与交付范围；完整学生面试交付？；转通用模拟／专岗／真实复盘 本 Skill 提供证据表达方法；完整读取选定资料 分类事实、责任与结果；缺项会改变核心故事？；只问一个关键问题 暂停依赖该事实的声称；做 JD 证据映射 按需查公司外部事实；用白话讲问题、输入、本人动作 产物、验证与结果边界；本人能解释关键经历？；先重建业务理解 不提前编面试脚本；本次需要哪类产物？；写证据支持的简历要点 做十秒筛选与版式检查；建立 S 故事／K 知识锚点 按职责生成问答；技术按需；形成项目解释 完整包只纳入所需部分；持久材料有复杂关系？；业务图与 JD 矩阵就地放置 区分个人动作与背景知识；事实、范围与呈现通过？；回到事实或表达修正 不补造数字／责任；正式飞书授权与目标齐备？；写入对应唯一页面 读回媒体、顺序与实际显示；交付本次要点／聊天／导出稿 目标缺失时注明未正式交付；交付正式材料与待确认项 答案不超出履历事实</desc>
+<svg data-artifact-sha256="d342ad759fd5c7743b4dabb3e2a47c3ee8b86b27b323a975457348060a29b6ce" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1703.00 4610.00" width="1703.00" height="4610.00" role="img" aria-labelledby="title desc" data-entry-x="290.52" data-definition-sha256="965a966daa044dc9567a80ba12594e0c0d3fe2df08f272bbcb76993013f3bd5d" data-renderer="viz-3.31.0">
+<title id="title">简历与面试故事完整流程图</title><desc id="desc">简历、项目证据、JD 本次产物与交付范围；完整学生面试交付？；转通用模拟／专岗／真实复盘 本 Skill 提供证据表达方法；完整读取选定资料 分类事实、责任与结果；缺项会改变核心故事？；只问一个关键问题 暂停依赖该事实的声称；做 JD 证据映射 按需查公司外部事实；用白话讲问题、输入、本人动作 产物、验证与结果边界；本人能解释关键经历？；先重建业务理解 不提前编面试脚本；本次需要哪类产物？；写证据支持的简历要点 做十秒筛选与版式检查；建立 S 故事／K 知识锚点 按职责生成问答；技术按需；形成项目解释 完整包只纳入所需部分；持久材料有复杂关系？；业务图与 JD 矩阵就地放置 区分个人动作与背景知识；事实、范围与呈现通过？；回到事实或表达修正 不补造数字／责任；正式飞书授权与目标齐备？；写入对应唯一页面 读回媒体、顺序与实际显示；交付本次要点／聊天／导出稿 目标缺失时注明未正式交付；交付正式材料与待确认项 答案不超出履历事实；本次产物：要点／项目解释／问答／整包 必需：锁定范围与读者；原简历、项目产物与过程材料 必需：要写个人声称的事实来源；目标岗位／JD与版本受众 条件必需：定向筛选与改写时；本人职责、协作、上线状态 必需：使用强责任或上线措辞前；指标、可验产物、个人归因 条件必需：写结果时；输出载体、既有页与授权范围 条件必需：正式归档／写入时；先查已有原件与当前记录 保留版本、冲突和缺失；核心故事与本轮产物已明确？；已有来源查不清时 只问影响执行的最小问题；等待关键资料／裁决 暂停依赖步骤；独立工作可继续；仅按需核公司外部背景 官方来源与动态事实日期；锁定个人动作、协作与产物 规模、验证、上线与结果边界；十秒筛选＋实际布局检查 目标、教育、时间线和最强证据；逐题选亲历／迁移／知识／假设 S／K依据与自然可口述答案；技术深度仅随实际岗位需要 本人实现与系统背景分开</desc>
 <rect width="100%" height="100%" fill="white"/>
 <g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#172b42"><text x="32" y="43" font-size="29" font-weight="600">简历与面试故事</text><text x="32" y="76" font-size="16" fill="#43566e">从上往下读 · 菱形是判断，分支文字说明下一步</text></g>
-<svg x="32.00" y="100" width="1025" height="2356" viewBox="0 0 1025 2356"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(25.2 2330.45)">
+<svg x="32.00" y="100" width="1639" height="4380" viewBox="0 0 1639 4380"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(25.2 4354.65)">
 <!-- in&#45;&gt;route -->
 <g id="edge1" class="edge">
 <title>in&#45;&gt;route</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M566.98,-2213.75C566.98,-2200.39 566.98,-2185.73 566.98,-2172.22"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="569.43,-2172.35 566.98,-2165.35 564.53,-2172.35 569.43,-2172.35"/>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M233.32,-4237.95C233.32,-4224.6 233.32,-4209.93 233.32,-4196.42"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="235.77,-4196.55 233.32,-4189.55 230.87,-4196.55 235.77,-4196.55"/>
 </g>
 <!-- route&#45;&gt;companion -->
 <g id="edge2" class="edge">
 <title>route&#45;&gt;companion</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M553.65,-2087.06C543.24,-2059.23 528.6,-2020.11 516.82,-1988.61"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="519.11,-1987.76 514.37,-1982.06 514.52,-1989.48 519.11,-1987.76"/>
-<polygon fill="white" stroke="none" points="542.34,-2005.09 542.34,-2059.09 636.34,-2059.09 636.34,-2005.09 542.34,-2005.09"/>
-<text xml:space="preserve" text-anchor="start" x="563.09" y="-2034.89" font-family="PingFang SC" font-size="14.00" fill="#43566e">完整模拟／</text>
-<text xml:space="preserve" text-anchor="start" x="563.09" y="-2018.09" font-family="PingFang SC" font-size="14.00" fill="#43566e">专岗／复盘</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M218.11,-4111.74C205.24,-4082.01 186.61,-4038.97 171.99,-4005.18"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="174.3,-4004.36 169.27,-3998.91 169.81,-4006.31 174.3,-4004.36"/>
+<polygon fill="white" stroke="none" points="203.75,-4029.29 203.75,-4083.29 325.75,-4083.29 325.75,-4029.29 203.75,-4029.29"/>
+<text xml:space="preserve" text-anchor="start" x="228" y="-4059.09" font-family="PingFang SC" font-size="14.00" fill="#43566e">完整模拟／专岗</text>
+<text xml:space="preserve" text-anchor="start" x="249" y="-4042.29" font-family="PingFang SC" font-size="14.00" fill="#43566e">／复盘</text>
 </g>
-<!-- route&#45;&gt;ledger -->
-<g id="edge3" class="edge">
-<title>route&#45;&gt;ledger</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M603.7,-2093.46C641.77,-2063.15 701.75,-2015.4 745.78,-1980.35"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="747.06,-1982.46 751.01,-1976.18 744.01,-1978.63 747.06,-1982.46"/>
-<polygon fill="white" stroke="none" points="712.44,-2005.09 712.44,-2059.09 848.44,-2059.09 848.44,-2005.09 712.44,-2005.09"/>
-<text xml:space="preserve" text-anchor="start" x="738.44" y="-2034.89" font-family="PingFang SC" font-size="14.00" fill="#43566e">有边界的故事／要</text>
-<text xml:space="preserve" text-anchor="start" x="764.69" y="-2018.09" font-family="PingFang SC" font-size="14.00" fill="#43566e">点任务</text>
+<!-- route&#45;&gt;i_artifact -->
+<g id="edge22" class="edge">
+<title>route&#45;&gt;i_artifact</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M279.83,-4120.12C297.62,-4109.3 317.83,-4096.32 335.32,-4083.29 365.21,-4061.04 396.42,-4034.13 422.43,-4010.55"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="424.06,-4012.38 427.59,-4005.85 420.76,-4008.76 424.06,-4012.38"/>
+<polygon fill="white" stroke="none" points="398.31,-4029.29 398.31,-4083.29 534.31,-4083.29 534.31,-4029.29 398.31,-4029.29"/>
+<text xml:space="preserve" text-anchor="start" x="424.31" y="-4059.09" font-family="PingFang SC" font-size="14.00" fill="#43566e">有边界的故事／要</text>
+<text xml:space="preserve" text-anchor="start" x="450.56" y="-4042.29" font-family="PingFang SC" font-size="14.00" fill="#43566e">点任务</text>
 </g>
 <!-- ledger&#45;&gt;critical -->
-<g id="edge4" class="edge">
+<g id="edge3" class="edge">
 <title>ledger&#45;&gt;critical</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M755.14,-1894.1C733.06,-1875.48 706.91,-1853.43 685.41,-1835.3"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="687.22,-1833.62 680.29,-1830.99 684.06,-1837.37 687.22,-1833.62"/>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M746.09,-2727.7C787.39,-2689.57 849.43,-2632.29 889.65,-2595.15"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="891.09,-2597.15 894.58,-2590.6 887.77,-2593.55 891.09,-2597.15"/>
 </g>
 <!-- critical&#45;&gt;ask -->
-<g id="edge5" class="edge">
+<g id="edge4" class="edge">
 <title>critical&#45;&gt;ask</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M642.98,-1758.45C642.98,-1731.14 642.98,-1694.23 642.98,-1663.66"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="645.43,-1664.03 642.98,-1657.03 640.53,-1664.03 645.43,-1664.03"/>
-<polygon fill="white" stroke="none" points="642.98,-1679.93 642.98,-1733.93 736.98,-1733.93 736.98,-1679.93 642.98,-1679.93"/>
-<text xml:space="preserve" text-anchor="start" x="663.73" y="-1709.73" font-family="PingFang SC" font-size="14.00" fill="#43566e">核心职责／</text>
-<text xml:space="preserve" text-anchor="start" x="663.73" y="-1692.93" font-family="PingFang SC" font-size="14.00" fill="#43566e">结果仍不明</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M926.32,-2518.07C923.68,-2484.22 919.8,-2434.46 916.79,-2395.92"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="919.25,-2395.98 916.27,-2389.19 914.37,-2396.36 919.25,-2395.98"/>
+<polygon fill="white" stroke="none" points="921.84,-2411.85 921.84,-2465.85 1043.84,-2465.85 1043.84,-2411.85 921.84,-2411.85"/>
+<text xml:space="preserve" text-anchor="start" x="946.09" y="-2441.65" font-family="PingFang SC" font-size="14.00" fill="#43566e">核心职责／结果</text>
+<text xml:space="preserve" text-anchor="start" x="967.09" y="-2424.85" font-family="PingFang SC" font-size="14.00" fill="#43566e">仍不明</text>
 </g>
 <!-- critical&#45;&gt;mapping -->
-<g id="edge6" class="edge">
+<g id="edge5" class="edge">
 <title>critical&#45;&gt;mapping</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M595.82,-1769.92C577.8,-1759.06 557.22,-1746.25 538.98,-1733.93 500.2,-1707.72 457.99,-1676.34 425.21,-1651.31"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="426.85,-1649.48 419.81,-1647.17 423.88,-1653.37 426.85,-1649.48"/>
-<polygon fill="white" stroke="none" points="538.98,-1679.93 538.98,-1733.93 632.98,-1733.93 632.98,-1679.93 538.98,-1679.93"/>
-<text xml:space="preserve" text-anchor="start" x="564.98" y="-1709.73" font-family="PingFang SC" font-size="14.00" fill="#43566e">已确认／</text>
-<text xml:space="preserve" text-anchor="start" x="559.73" y="-1692.93" font-family="PingFang SC" font-size="14.00" fill="#43566e">仅精度缺项</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1005.38,-2536.03C1046.03,-2521.87 1094.52,-2499.42 1128.32,-2465.85 1150.22,-2444.09 1164.9,-2412.68 1174.14,-2386.51"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1176.44,-2387.36 1176.36,-2379.94 1171.8,-2385.78 1176.44,-2387.36"/>
+<polygon fill="white" stroke="none" points="1163.79,-2411.85 1163.79,-2465.85 1271.79,-2465.85 1271.79,-2411.85 1163.79,-2411.85"/>
+<text xml:space="preserve" text-anchor="start" x="1186.29" y="-2441.65" font-family="PingFang SC" font-size="14.00" fill="#43566e">已确认／仅精</text>
+<text xml:space="preserve" text-anchor="start" x="1202.04" y="-2424.85" font-family="PingFang SC" font-size="14.00" fill="#43566e">度缺项</text>
 </g>
-<!-- mapping&#45;&gt;business -->
-<g id="edge7" class="edge">
-<title>mapping&#45;&gt;business</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M366.93,-1565.1C366.53,-1549.72 366.05,-1531.77 365.6,-1514.82"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="368.05,-1514.82 365.41,-1507.89 363.15,-1514.95 368.05,-1514.82"/>
+<!-- ask&#45;&gt;ledger -->
+<g id="edge43" class="edge">
+<title>ask&#45;&gt;ledger</title>
+<path fill="none" stroke="#5279b4" stroke-width="1.2" d="M1009.75,-2370.66C1027.49,-2380.99 1043.71,-2394.44 1054.32,-2411.85 1066.81,-2432.34 1070.81,-2448.4 1054.32,-2465.85 986.43,-2537.66 678.21,-2419.03 610.32,-2490.85 549.38,-2555.31 615.45,-2661.02 663.2,-2721.3"/>
+<polygon fill="#5279b4" stroke="#5279b4" stroke-width="1.2" points="661.2,-2722.72 667.5,-2726.64 665.02,-2719.65 661.2,-2722.72"/>
+<polygon fill="white" stroke="none" points="610.32,-2530.52 610.32,-2584.52 746.32,-2584.52 746.32,-2530.52 610.32,-2530.52"/>
+<text xml:space="preserve" text-anchor="start" x="636.32" y="-2560.32" font-family="PingFang SC" font-size="14.00" fill="#43566e">收到核心事实补充</text>
+<text xml:space="preserve" text-anchor="start" x="652.07" y="-2543.52" font-family="PingFang SC" font-size="14.00" fill="#43566e">后重建账本</text>
 </g>
-<!-- business&#45;&gt;understand -->
-<g id="edge8" class="edge">
-<title>business&#45;&gt;understand</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M363.98,-1400.25C363.98,-1386.57 363.98,-1371.87 363.98,-1358.43"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="366.43,-1358.62 363.98,-1351.62 361.53,-1358.62 366.43,-1358.62"/>
+<!-- mapping&#45;&gt;external_scope -->
+<g id="edge34" class="edge">
+<title>mapping&#45;&gt;external_scope</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1187.32,-2297.01C1187.32,-2281.25 1187.32,-2262.97 1187.32,-2246.46"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1189.77,-2246.82 1187.32,-2239.82 1184.87,-2246.82 1189.77,-2246.82"/>
+</g>
+<!-- business&#45;&gt;story_lock -->
+<g id="edge36" class="edge">
+<title>business&#45;&gt;story_lock</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1201.99,-2001.03C1205.86,-1987.31 1210.03,-1972.58 1213.84,-1959.1"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1216.12,-1960.04 1215.67,-1952.63 1211.41,-1958.7 1216.12,-1960.04"/>
 </g>
 <!-- understand&#45;&gt;teach -->
-<g id="edge9" class="edge">
+<g id="edge6" class="edge">
 <title>understand&#45;&gt;teach</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M323.06,-1279.81C288.93,-1255.56 239.75,-1220.61 200.66,-1192.83"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="202.09,-1190.85 194.97,-1188.79 199.25,-1194.84 202.09,-1190.85"/>
-<polygon fill="white" stroke="none" points="271.23,-1212.29 271.23,-1245.29 337.23,-1245.29 337.23,-1212.29 271.23,-1212.29"/>
-<text xml:space="preserve" text-anchor="start" x="288.48" y="-1223.19" font-family="PingFang SC" font-size="14.00" fill="#43566e">讲不清</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1196.39,-1749.75C1162.26,-1725.49 1113.08,-1690.55 1074,-1662.77"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1075.43,-1660.78 1068.3,-1658.72 1072.59,-1664.78 1075.43,-1660.78"/>
+<polygon fill="white" stroke="none" points="1144.56,-1682.23 1144.56,-1715.23 1210.56,-1715.23 1210.56,-1682.23 1144.56,-1682.23"/>
+<text xml:space="preserve" text-anchor="start" x="1161.81" y="-1693.13" font-family="PingFang SC" font-size="14.00" fill="#43566e">讲不清</text>
 </g>
 <!-- understand&#45;&gt;product -->
-<g id="edge11" class="edge">
+<g id="edge8" class="edge">
 <title>understand&#45;&gt;product</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M377.08,-1273.25C385.9,-1249.24 397.59,-1217.41 406.97,-1191.89"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="409.19,-1192.96 409.3,-1185.54 404.59,-1191.27 409.19,-1192.96"/>
-<polygon fill="white" stroke="none" points="398.77,-1212.29 398.77,-1245.29 464.77,-1245.29 464.77,-1212.29 398.77,-1212.29"/>
-<text xml:space="preserve" text-anchor="start" x="416.02" y="-1223.19" font-family="PingFang SC" font-size="14.00" fill="#43566e">能解释</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1250.41,-1743.19C1259.24,-1719.17 1270.93,-1687.34 1280.31,-1661.82"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1282.52,-1662.89 1282.64,-1655.48 1277.92,-1661.2 1282.52,-1662.89"/>
+<polygon fill="white" stroke="none" points="1272.1,-1682.23 1272.1,-1715.23 1338.1,-1715.23 1338.1,-1682.23 1272.1,-1682.23"/>
+<text xml:space="preserve" text-anchor="start" x="1289.35" y="-1693.13" font-family="PingFang SC" font-size="14.00" fill="#43566e">能解释</text>
 </g>
 <!-- teach&#45;&gt;business -->
-<g id="edge10" class="edge">
+<g id="edge7" class="edge">
 <title>teach&#45;&gt;business</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M137.14,-1187.72C138.16,-1231.34 145.79,-1301.77 180.98,-1349.49 194.17,-1367.37 211.46,-1382.55 230.16,-1395.3"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="228.4,-1397.07 235.59,-1398.89 231.1,-1392.98 228.4,-1397.07"/>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1009,-1657.72C1006.96,-1723.07 1010.54,-1855.87 1064.32,-1950.42 1073.82,-1967.12 1087.16,-1982.28 1101.57,-1995.5"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1099.59,-1997.02 1106.44,-1999.84 1102.84,-1993.36 1099.59,-1997.02"/>
 </g>
 <!-- product&#45;&gt;bullets -->
-<g id="edge12" class="edge">
+<g id="edge9" class="edge">
 <title>product&#45;&gt;bullets</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M468.31,-1119.17C509.4,-1094.58 570.7,-1057.89 618.74,-1029.14"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="619.72,-1031.41 624.47,-1025.71 617.2,-1027.21 619.72,-1031.41"/>
-<polygon fill="white" stroke="none" points="581.58,-1049.3 581.58,-1082.3 703.58,-1082.3 703.58,-1049.3 581.58,-1049.3"/>
-<text xml:space="preserve" text-anchor="start" x="605.83" y="-1060.2" font-family="PingFang SC" font-size="14.00" fill="#43566e">简历要点／优化</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1338.97,-1588.71C1354.44,-1578.02 1371.7,-1565.22 1386.32,-1552.24 1403.73,-1536.78 1421.3,-1518.17 1436.1,-1501.4"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1437.89,-1503.08 1440.65,-1496.19 1434.2,-1499.85 1437.89,-1503.08"/>
+<polygon fill="white" stroke="none" points="1419.66,-1519.24 1419.66,-1552.24 1541.66,-1552.24 1541.66,-1519.24 1419.66,-1519.24"/>
+<text xml:space="preserve" text-anchor="start" x="1443.91" y="-1530.14" font-family="PingFang SC" font-size="14.00" fill="#43566e">简历要点／优化</text>
 </g>
 <!-- product&#45;&gt;qa -->
-<g id="edge13" class="edge">
+<g id="edge10" class="edge">
 <title>product&#45;&gt;qa</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M373.93,-1120.23C352.4,-1108.72 326.88,-1094.95 303.98,-1082.3 272.86,-1065.11 238.75,-1045.85 209.24,-1029.05"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="210.72,-1027.07 203.42,-1025.73 208.29,-1031.32 210.72,-1027.07"/>
-<polygon fill="white" stroke="none" points="303.98,-1049.3 303.98,-1082.3 411.98,-1082.3 411.98,-1049.3 303.98,-1049.3"/>
-<text xml:space="preserve" text-anchor="start" x="326.48" y="-1060.2" font-family="PingFang SC" font-size="14.00" fill="#43566e">问答／完整包</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1216.34,-1598.52C1188.06,-1588.85 1157.93,-1574.2 1136.32,-1552.24 1123.17,-1538.88 1114.6,-1520.37 1109.06,-1503.1"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1111.44,-1502.5 1107.09,-1496.49 1106.74,-1503.89 1111.44,-1502.5"/>
+<polygon fill="white" stroke="none" points="1136.32,-1519.24 1136.32,-1552.24 1244.32,-1552.24 1244.32,-1519.24 1136.32,-1519.24"/>
+<text xml:space="preserve" text-anchor="start" x="1158.82" y="-1530.14" font-family="PingFang SC" font-size="14.00" fill="#43566e">问答／完整包</text>
 </g>
 <!-- product&#45;&gt;explain -->
-<g id="edge14" class="edge">
+<g id="edge11" class="edge">
 <title>product&#45;&gt;explain</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M422.74,-1107.32C422.6,-1085.13 422.43,-1057.13 422.28,-1033.55"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="424.73,-1033.56 422.24,-1026.57 419.83,-1033.59 424.73,-1033.56"/>
-<polygon fill="white" stroke="none" points="422.57,-1049.3 422.57,-1082.3 502.57,-1082.3 502.57,-1049.3 422.57,-1049.3"/>
-<text xml:space="preserve" text-anchor="start" x="441.57" y="-1060.2" font-family="PingFang SC" font-size="14.00" fill="#43566e">项目解释</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1296.06,-1577.06C1296.01,-1559.39 1296.04,-1538.26 1296.32,-1519.24 1296.92,-1478.56 1298.34,-1432.39 1299.51,-1398.6"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1301.96,-1398.75 1299.75,-1391.66 1297.06,-1398.57 1301.96,-1398.75"/>
+<polygon fill="white" stroke="none" points="1296.32,-1519.24 1296.32,-1552.24 1376.32,-1552.24 1376.32,-1519.24 1296.32,-1519.24"/>
+<text xml:space="preserve" text-anchor="start" x="1315.32" y="-1530.14" font-family="PingFang SC" font-size="14.00" fill="#43566e">项目解释</text>
 </g>
-<!-- bullets&#45;&gt;visual -->
-<g id="edge15" class="edge">
-<title>bullets&#45;&gt;visual</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M609.14,-943.85C568.76,-924.62 521.03,-901.88 483.88,-884.19"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="485.13,-882.07 477.75,-881.27 483.02,-886.49 485.13,-882.07"/>
+<!-- bullets&#45;&gt;bullet_qa -->
+<g id="edge38" class="edge">
+<title>bullets&#45;&gt;bullet_qa</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1473.3,-1413.72C1471.74,-1352.65 1468.71,-1234.93 1466.87,-1163.16"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1469.33,-1163.39 1466.7,-1156.46 1464.43,-1163.52 1469.33,-1163.39"/>
 </g>
-<!-- qa&#45;&gt;visual -->
-<g id="edge16" class="edge">
-<title>qa&#45;&gt;visual</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M221.66,-943.85C265.52,-924.33 317.5,-901.2 357.52,-883.39"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="358.3,-885.73 363.69,-880.65 356.3,-881.25 358.3,-885.73"/>
+<!-- qa&#45;&gt;question_modes -->
+<g id="edge40" class="edge">
+<title>qa&#45;&gt;question_modes</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1099.32,-1413.82C1099.32,-1380.31 1099.32,-1331.67 1099.32,-1293.23"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1101.77,-1293.51 1099.32,-1286.51 1096.87,-1293.51 1101.77,-1293.51"/>
 </g>
 <!-- explain&#45;&gt;visual -->
-<g id="edge17" class="edge">
+<g id="edge12" class="edge">
 <title>explain&#45;&gt;visual</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M421.98,-944.02C421.98,-930.94 421.98,-916.21 421.98,-902.55"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="424.43,-902.57 421.98,-895.57 419.53,-902.57 424.43,-902.57"/>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1301.64,-1308.69C1302.37,-1218.86 1304.14,-999.72 1304.93,-902.51"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1307.38,-902.6 1304.99,-895.58 1302.48,-902.56 1307.38,-902.6"/>
 </g>
 <!-- visual&#45;&gt;draw -->
-<g id="edge18" class="edge">
+<g id="edge13" class="edge">
 <title>visual&#45;&gt;draw</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M461.24,-823.13C499.86,-794.03 559.31,-749.24 603.68,-715.8"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="605.1,-717.79 609.22,-711.63 602.15,-713.88 605.1,-717.79"/>
-<polygon fill="white" stroke="none" points="571.16,-735.11 571.16,-789.11 665.16,-789.11 665.16,-735.11 571.16,-735.11"/>
-<text xml:space="preserve" text-anchor="start" x="597.16" y="-764.91" font-family="PingFang SC" font-size="14.00" fill="#43566e">多步骤／</text>
-<text xml:space="preserve" text-anchor="start" x="591.91" y="-748.11" font-family="PingFang SC" font-size="14.00" fill="#43566e">角色／分支</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1306.39,-813.75C1307.15,-786.05 1308.18,-748.68 1309,-719.13"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1311.44,-719.51 1309.18,-712.45 1306.54,-719.38 1311.44,-719.51"/>
+<polygon fill="white" stroke="none" points="1308.41,-735.11 1308.41,-789.11 1416.41,-789.11 1416.41,-735.11 1308.41,-735.11"/>
+<text xml:space="preserve" text-anchor="start" x="1330.91" y="-764.91" font-family="PingFang SC" font-size="14.00" fill="#43566e">多步骤／角色</text>
+<text xml:space="preserve" text-anchor="start" x="1346.66" y="-748.11" font-family="PingFang SC" font-size="14.00" fill="#43566e">／分支</text>
 </g>
 <!-- visual&#45;&gt;gate -->
-<g id="edge19" class="edge">
+<g id="edge14" class="edge">
 <title>visual&#45;&gt;gate</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M399.53,-819.27C371.56,-773.04 331.95,-688.67 370.98,-630.12 395.06,-593.99 436.76,-572.41 477.06,-559.53"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="477.65,-561.91 483.62,-557.52 476.21,-557.22 477.65,-561.91"/>
-<polygon fill="white" stroke="none" points="370.98,-643.11 370.98,-697.11 506.98,-697.11 506.98,-643.11 370.98,-643.11"/>
-<text xml:space="preserve" text-anchor="start" x="396.98" y="-672.91" font-family="PingFang SC" font-size="14.00" fill="#43566e">短答／单要点：记</text>
-<text xml:space="preserve" text-anchor="start" x="412.73" y="-656.11" font-family="PingFang SC" font-size="14.00" fill="#43566e">录无图理由</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1221.06,-834.2C1154.68,-814.94 1065.69,-777.8 1018.32,-710.11 993.31,-674.38 990.78,-623.67 993.15,-587.02"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="995.57,-587.46 993.66,-580.3 990.69,-587.09 995.57,-587.46"/>
+<polygon fill="white" stroke="none" points="1018.32,-643.11 1018.32,-697.11 1154.32,-697.11 1154.32,-643.11 1018.32,-643.11"/>
+<text xml:space="preserve" text-anchor="start" x="1044.32" y="-672.91" font-family="PingFang SC" font-size="14.00" fill="#43566e">短答／单要点：记</text>
+<text xml:space="preserve" text-anchor="start" x="1060.07" y="-656.11" font-family="PingFang SC" font-size="14.00" fill="#43566e">录无图理由</text>
 </g>
 <!-- draw&#45;&gt;gate -->
-<g id="edge20" class="edge">
+<g id="edge15" class="edge">
 <title>draw&#45;&gt;gate</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M639.46,-629.83C630.42,-614.72 620.06,-597.43 610.89,-582.12"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="613.13,-581.08 607.43,-576.33 608.92,-583.59 613.13,-581.08"/>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1214.9,-629.66C1167.49,-610.06 1111.29,-586.82 1068.16,-568.98"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1069.34,-566.82 1061.94,-566.41 1067.47,-571.35 1069.34,-566.82"/>
 </g>
 <!-- gate&#45;&gt;repair -->
-<g id="edge21" class="edge">
+<g id="edge16" class="edge">
 <title>gate&#45;&gt;repair</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M635.45,-510.54C678.76,-486.05 742.41,-450.06 792.47,-421.75"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="793.6,-423.93 798.49,-418.35 791.19,-419.66 793.6,-423.93"/>
-<polygon fill="white" stroke="none" points="753.42,-441.92 753.42,-474.92 819.42,-474.92 819.42,-441.92 753.42,-441.92"/>
-<text xml:space="preserve" text-anchor="start" x="770.67" y="-452.82" font-family="PingFang SC" font-size="14.00" fill="#43566e">未通过</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M948.44,-510.91C903.22,-486.38 836.35,-450.1 783.87,-421.63"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="785.16,-419.53 777.84,-418.35 782.82,-423.84 785.16,-419.53"/>
+<polygon fill="white" stroke="none" points="877.83,-441.92 877.83,-474.92 943.83,-474.92 943.83,-441.92 877.83,-441.92"/>
+<text xml:space="preserve" text-anchor="start" x="895.08" y="-452.82" font-family="PingFang SC" font-size="14.00" fill="#43566e">未通过</text>
 </g>
 <!-- gate&#45;&gt;delivery -->
-<g id="edge23" class="edge">
+<g id="edge18" class="edge">
 <title>gate&#45;&gt;delivery</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M574.41,-502.07C566.94,-478.54 557.16,-447.77 549.22,-422.74"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="551.6,-422.16 547.15,-416.23 546.93,-423.64 551.6,-422.16"/>
-<polygon fill="white" stroke="none" points="565.05,-441.92 565.05,-474.92 659.05,-474.92 659.05,-441.92 565.05,-441.92"/>
-<text xml:space="preserve" text-anchor="start" x="585.8" y="-452.82" font-family="PingFang SC" font-size="14.00" fill="#43566e">通过适用项</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1008.27,-501.67C1013.9,-478.48 1021.21,-448.36 1027.22,-423.65"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1029.58,-424.29 1028.85,-416.91 1024.82,-423.14 1029.58,-424.29"/>
+<polygon fill="white" stroke="none" points="1022.31,-441.92 1022.31,-474.92 1116.31,-474.92 1116.31,-441.92 1022.31,-441.92"/>
+<text xml:space="preserve" text-anchor="start" x="1043.06" y="-452.82" font-family="PingFang SC" font-size="14.00" fill="#43566e">通过适用项</text>
 </g>
 <!-- repair&#45;&gt;ledger -->
-<g id="edge22" class="edge">
+<g id="edge17" class="edge">
 <title>repair&#45;&gt;ledger</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M869.98,-417.52C869.98,-450.02 869.98,-497.25 869.98,-538.52 869.98,-1799.53 869.98,-1799.53 869.98,-1799.53 869.98,-1831 854.89,-1862.58 838.93,-1887.17"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="837.06,-1885.56 835.2,-1892.74 841.13,-1888.28 837.06,-1885.56"/>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M703.32,-417.52C703.32,-450.02 703.32,-497.25 703.32,-538.52 703.32,-2558.52 703.32,-2558.52 703.32,-2558.52 703.32,-2613.49 703.32,-2676.59 703.32,-2718.88"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="700.87,-2718.77 703.32,-2725.77 705.77,-2718.77 700.87,-2718.77"/>
 </g>
 <!-- delivery&#45;&gt;write -->
-<g id="edge24" class="edge">
+<g id="edge19" class="edge">
 <title>delivery&#45;&gt;write</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M506.39,-342.83C480.42,-312.78 441.85,-268.14 412.85,-234.58"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="414.8,-233.09 408.37,-229.4 411.1,-236.3 414.8,-233.09"/>
-<polygon fill="white" stroke="none" points="477.96,-268.42 477.96,-301.42 599.96,-301.42 599.96,-268.42 477.96,-268.42"/>
-<text xml:space="preserve" text-anchor="start" x="502.21" y="-279.32" font-family="PingFang SC" font-size="14.00" fill="#43566e">是：对应唯一页</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M993.45,-346.43C978.87,-336.13 962.95,-324.09 949.32,-311.92 922.78,-288.23 895.9,-258.81 875.12,-234.64"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="877.02,-233.08 870.61,-229.35 873.29,-236.26 877.02,-233.08"/>
+<polygon fill="white" stroke="none" points="949.32,-268.42 949.32,-301.42 1071.32,-301.42 1071.32,-268.42 949.32,-268.42"/>
+<text xml:space="preserve" text-anchor="start" x="973.57" y="-279.32" font-family="PingFang SC" font-size="14.00" fill="#43566e">是：对应唯一页</text>
 </g>
 <!-- delivery&#45;&gt;draft -->
-<g id="edge25" class="edge">
+<g id="edge20" class="edge">
 <title>delivery&#45;&gt;draft</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M574.83,-345.11C586.71,-335.1 599.38,-323.56 609.98,-311.92 630.07,-289.89 649.47,-263.07 664.84,-240.06"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="666.86,-241.44 668.68,-234.25 662.78,-238.74 666.86,-241.44"/>
-<polygon fill="white" stroke="none" points="651.08,-257.92 651.08,-311.92 787.08,-311.92 787.08,-257.92 651.08,-257.92"/>
-<text xml:space="preserve" text-anchor="start" x="677.08" y="-287.72" font-family="PingFang SC" font-size="14.00" fill="#43566e">明确聊天／本地，</text>
-<text xml:space="preserve" text-anchor="start" x="682.33" y="-270.92" font-family="PingFang SC" font-size="14.00" fill="#43566e">或暂缺写入条件</text>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1060.88,-341.53C1079.58,-313.03 1106.43,-272.1 1127.67,-239.73"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1129.6,-241.25 1131.39,-234.06 1125.5,-238.57 1129.6,-241.25"/>
+<polygon fill="white" stroke="none" points="1114.45,-257.92 1114.45,-311.92 1250.45,-311.92 1250.45,-257.92 1114.45,-257.92"/>
+<text xml:space="preserve" text-anchor="start" x="1140.45" y="-287.72" font-family="PingFang SC" font-size="14.00" fill="#43566e">明确聊天／本地，</text>
+<text xml:space="preserve" text-anchor="start" x="1145.7" y="-270.92" font-family="PingFang SC" font-size="14.00" fill="#43566e">或暂缺写入条件</text>
 </g>
 <!-- write&#45;&gt;out -->
-<g id="edge26" class="edge">
+<g id="edge21" class="edge">
 <title>write&#45;&gt;out</title>
-<path fill="none" stroke="#71839b" stroke-width="1.2" d="M372.98,-147.08C372.98,-132.48 372.98,-115.67 372.98,-100.02"/>
-<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="375.43,-100.28 372.98,-93.28 370.53,-100.28 375.43,-100.28"/>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M837.32,-147.08C837.32,-132.48 837.32,-115.67 837.32,-100.02"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="839.77,-100.28 837.32,-93.28 834.87,-100.28 839.77,-100.28"/>
+</g>
+<!-- i_artifact&#45;&gt;i_sources -->
+<g id="edge23" class="edge">
+<title>i_artifact&#45;&gt;i_sources</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M483.32,-3899.1C483.32,-3885.72 483.32,-3871.19 483.32,-3857.39"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="485.77,-3857.73 483.32,-3850.73 480.87,-3857.73 485.77,-3857.73"/>
+</g>
+<!-- i_sources&#45;&gt;i_target -->
+<g id="edge24" class="edge">
+<title>i_sources&#45;&gt;i_target</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M483.32,-3742.95C483.32,-3729.36 483.32,-3714.77 483.32,-3701.4"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="485.77,-3701.62 483.32,-3694.62 480.87,-3701.62 485.77,-3701.62"/>
+</g>
+<!-- i_target&#45;&gt;i_ownership -->
+<g id="edge25" class="edge">
+<title>i_target&#45;&gt;i_ownership</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M483.32,-3611.93C483.32,-3599.07 483.32,-3584.47 483.32,-3570.42"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="485.77,-3570.58 483.32,-3563.58 480.87,-3570.58 485.77,-3570.58"/>
+</g>
+<!-- i_ownership&#45;&gt;i_result -->
+<g id="edge26" class="edge">
+<title>i_ownership&#45;&gt;i_result</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M483.32,-3455.98C483.32,-3442.39 483.32,-3427.81 483.32,-3414.43"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="485.77,-3414.65 483.32,-3407.65 480.87,-3414.65 485.77,-3414.65"/>
+</g>
+<!-- i_result&#45;&gt;i_destination -->
+<g id="edge27" class="edge">
+<title>i_result&#45;&gt;i_destination</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M483.32,-3324.97C483.32,-3311.97 483.32,-3297.35 483.32,-3283.75"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="485.77,-3283.8 483.32,-3276.8 480.87,-3283.8 485.77,-3283.8"/>
+</g>
+<!-- i_destination&#45;&gt;i_existing -->
+<g id="edge28" class="edge">
+<title>i_destination&#45;&gt;i_existing</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M483.32,-3193.98C483.32,-3180.97 483.32,-3166.35 483.32,-3152.76"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="485.77,-3152.81 483.32,-3145.81 480.87,-3152.81 485.77,-3152.81"/>
+</g>
+<!-- i_existing&#45;&gt;i_ready -->
+<g id="edge29" class="edge">
+<title>i_existing&#45;&gt;i_ready</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M483.32,-3063.11C483.32,-3050.02 483.32,-3035.3 483.32,-3021.63"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="485.77,-3021.65 483.32,-3014.65 480.87,-3021.65 485.77,-3021.65"/>
+</g>
+<!-- i_ready&#45;&gt;ledger -->
+<g id="edge30" class="edge">
+<title>i_ready&#45;&gt;ledger</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M541.96,-2944.18C559.59,-2934.29 578.23,-2922.09 593.32,-2908.19 623.15,-2880.71 620.09,-2864.96 645.32,-2833.19 650.05,-2827.25 655.17,-2821.14 660.36,-2815.18"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="662,-2817.02 664.79,-2810.15 658.33,-2813.78 662,-2817.02"/>
+<polygon fill="white" stroke="none" points="645.32,-2833.19 645.32,-2908.19 781.32,-2908.19 781.32,-2833.19 645.32,-2833.19"/>
+<text xml:space="preserve" text-anchor="start" x="671.32" y="-2881.89" font-family="PingFang SC" font-size="14.00" fill="#43566e">本轮依赖信息已明</text>
+<text xml:space="preserve" text-anchor="start" x="671.32" y="-2865.09" font-family="PingFang SC" font-size="14.00" fill="#43566e">确；可选缺项按规</text>
+<text xml:space="preserve" text-anchor="start" x="697.57" y="-2848.29" font-family="PingFang SC" font-size="14.00" fill="#43566e">则保留</text>
+</g>
+<!-- i_ready&#45;&gt;i_clarify -->
+<g id="edge31" class="edge">
+<title>i_ready&#45;&gt;i_clarify</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M465.16,-2936.25C460.58,-2927.13 455.72,-2917.33 451.32,-2908.19 436.68,-2877.81 420.82,-2843.37 408.55,-2816.38"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="410.9,-2815.63 405.78,-2810.27 406.44,-2817.65 410.9,-2815.63"/>
+<polygon fill="white" stroke="none" points="451.32,-2843.69 451.32,-2897.69 587.32,-2897.69 587.32,-2843.69 451.32,-2843.69"/>
+<text xml:space="preserve" text-anchor="start" x="477.32" y="-2873.49" font-family="PingFang SC" font-size="14.00" fill="#43566e">关键材料缺失／冲</text>
+<text xml:space="preserve" text-anchor="start" x="477.32" y="-2856.69" font-family="PingFang SC" font-size="14.00" fill="#43566e">突会改变本轮动作</text>
+</g>
+<!-- i_clarify&#45;&gt;i_wait -->
+<g id="edge32" class="edge">
+<title>i_clarify&#45;&gt;i_wait</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M367.01,-2727.95C353.09,-2701.06 334.2,-2664.57 317.52,-2632.34"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="319.79,-2631.38 314.39,-2626.29 315.44,-2633.64 319.79,-2631.38"/>
+<polygon fill="white" stroke="none" points="352.39,-2649.2 352.39,-2703.2 488.39,-2703.2 488.39,-2649.2 352.39,-2649.2"/>
+<text xml:space="preserve" text-anchor="start" x="378.39" y="-2679" font-family="PingFang SC" font-size="14.00" fill="#43566e">需要用户补充且尚</text>
+<text xml:space="preserve" text-anchor="start" x="404.64" y="-2662.2" font-family="PingFang SC" font-size="14.00" fill="#43566e">未收到</text>
+</g>
+<!-- i_wait&#45;&gt;i_existing -->
+<g id="edge33" class="edge">
+<title>i_wait&#45;&gt;i_existing</title>
+<path fill="none" stroke="#5279b4" stroke-width="1.2" d="M410.62,-2589.69C567.51,-2628.24 812.27,-2693.07 838.32,-2728.2 921.27,-2840.07 817.46,-2928.47 706.32,-3012.39 679.21,-3032.86 646.82,-3049.41 615.23,-3062.46"/>
+<polygon fill="#5279b4" stroke="#5279b4" stroke-width="1.2" points="614.47,-3060.13 608.9,-3065.03 616.31,-3064.67 614.47,-3060.13"/>
+<polygon fill="white" stroke="none" points="865.32,-2843.69 865.32,-2897.69 1001.32,-2897.69 1001.32,-2843.69 865.32,-2843.69"/>
+<text xml:space="preserve" text-anchor="start" x="891.32" y="-2873.49" font-family="PingFang SC" font-size="14.00" fill="#43566e">收到答复或来源恢</text>
+<text xml:space="preserve" text-anchor="start" x="901.82" y="-2856.69" font-family="PingFang SC" font-size="14.00" fill="#43566e">复后重新核对</text>
+</g>
+<!-- external_scope&#45;&gt;business -->
+<g id="edge35" class="edge">
+<title>external_scope&#45;&gt;business</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1187.32,-2156.98C1187.32,-2144.12 1187.32,-2129.52 1187.32,-2115.47"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1189.77,-2115.63 1187.32,-2108.63 1184.87,-2115.63 1189.77,-2115.63"/>
+</g>
+<!-- story_lock&#45;&gt;understand -->
+<g id="edge37" class="edge">
+<title>story_lock&#45;&gt;understand</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1230.37,-1870.14C1231.42,-1856.69 1232.6,-1841.5 1233.69,-1827.51"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1236.11,-1827.97 1234.21,-1820.8 1231.23,-1827.59 1236.11,-1827.97"/>
+</g>
+<!-- bullet_qa&#45;&gt;visual -->
+<g id="edge39" class="edge">
+<title>bullet_qa&#45;&gt;visual</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1431.58,-1048.9C1401.92,-1003.27 1359.32,-937.76 1331.98,-895.72"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1334.09,-894.46 1328.22,-889.93 1329.98,-897.13 1334.09,-894.46"/>
+</g>
+<!-- question_modes&#45;&gt;technical_scope -->
+<g id="edge41" class="edge">
+<title>question_modes&#45;&gt;technical_scope</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1100.59,-1178.71C1101.64,-1135.75 1103.12,-1075.26 1104.14,-1033.42"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1106.59,-1033.66 1104.31,-1026.6 1101.69,-1033.54 1106.59,-1033.66"/>
+</g>
+<!-- technical_scope&#45;&gt;visual -->
+<g id="edge42" class="edge">
+<title>technical_scope&#45;&gt;visual</title>
+<path fill="none" stroke="#71839b" stroke-width="1.2" d="M1166.69,-943.85C1194.6,-925.9 1227.27,-904.89 1253.88,-887.78"/>
+<polygon fill="#71839b" stroke="#71839b" stroke-width="1.2" points="1255.12,-889.9 1259.69,-884.05 1252.47,-885.77 1255.12,-889.9"/>
 </g>
 <!-- in -->
 <g id="node1" class="node">
 <title>in</title>
-<ellipse fill="#edf4ff" stroke="#5279b4" stroke-width="1.25" cx="566.98" cy="-2259.77" rx="113.87" ry="45.48"/>
-<text xml:space="preserve" text-anchor="middle" x="566.98" y="-2265.47" font-family="PingFang SC" font-size="19.00" fill="#172b42">简历、项目证据、JD</text>
-<text xml:space="preserve" text-anchor="middle" x="566.98" y="-2242.67" font-family="PingFang SC" font-size="19.00" fill="#172b42">本次产物与交付范围</text>
+<ellipse fill="#edf4ff" stroke="#5279b4" stroke-width="1.25" cx="233.32" cy="-4283.97" rx="113.87" ry="45.48"/>
+<text xml:space="preserve" text-anchor="middle" x="233.32" y="-4289.67" font-family="PingFang SC" font-size="19.00" fill="#172b42">简历、项目证据、JD</text>
+<text xml:space="preserve" text-anchor="middle" x="233.32" y="-4266.87" font-family="PingFang SC" font-size="19.00" fill="#172b42">本次产物与交付范围</text>
 </g>
 <!-- route -->
 <g id="node2" class="node">
 <title>route</title>
-<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="566.98,-2163.29 418.59,-2123.69 566.98,-2084.09 715.38,-2123.69 566.98,-2163.29"/>
-<text xml:space="preserve" text-anchor="middle" x="566.98" y="-2117.99" font-family="PingFang SC" font-size="19.00" fill="#172b42">完整学生面试交付？</text>
+<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="233.32,-4187.49 84.93,-4147.89 233.32,-4108.29 381.71,-4147.89 233.32,-4187.49"/>
+<text xml:space="preserve" text-anchor="middle" x="233.32" y="-4142.19" font-family="PingFang SC" font-size="19.00" fill="#172b42">完整学生面试交付？</text>
 </g>
 <!-- companion -->
 <g id="node3" class="node">
 <title>companion</title>
-<ellipse fill="#eaf5ee" stroke="#508267" stroke-width="1.25" cx="496.98" cy="-1934.61" rx="149.32" ry="45.48"/>
-<text xml:space="preserve" text-anchor="middle" x="496.98" y="-1940.31" font-family="PingFang SC" font-size="19.00" fill="#172b42">转通用模拟／专岗／真实复盘</text>
-<text xml:space="preserve" text-anchor="middle" x="496.98" y="-1917.51" font-family="PingFang SC" font-size="19.00" fill="#172b42">本 Skill 提供证据表达方法</text>
+<ellipse fill="#eaf5ee" stroke="#508267" stroke-width="1.25" cx="149.32" cy="-3951.8" rx="149.32" ry="45.48"/>
+<text xml:space="preserve" text-anchor="middle" x="149.32" y="-3957.5" font-family="PingFang SC" font-size="19.00" fill="#172b42">转通用模拟／专岗／真实复盘</text>
+<text xml:space="preserve" text-anchor="middle" x="149.32" y="-3934.7" font-family="PingFang SC" font-size="19.00" fill="#172b42">本 Skill 提供证据表达方法</text>
 </g>
 <!-- ledger -->
 <g id="node4" class="node">
 <title>ledger</title>
-<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="916,-1974.6 687.97,-1974.6 687.97,-1894.61 916,-1894.61 916,-1974.6"/>
-<text xml:space="preserve" text-anchor="middle" x="801.98" y="-1940.31" font-family="PingFang SC" font-size="19.00" fill="#172b42">完整读取选定资料</text>
-<text xml:space="preserve" text-anchor="middle" x="801.98" y="-1917.51" font-family="PingFang SC" font-size="19.00" fill="#172b42">分类事实、责任与结果</text>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="817.33,-2808.19 589.31,-2808.19 589.31,-2728.2 817.33,-2728.2 817.33,-2808.19"/>
+<text xml:space="preserve" text-anchor="middle" x="703.32" y="-2773.9" font-family="PingFang SC" font-size="19.00" fill="#172b42">完整读取选定资料</text>
+<text xml:space="preserve" text-anchor="middle" x="703.32" y="-2751.1" font-family="PingFang SC" font-size="19.00" fill="#172b42">分类事实、责任与结果</text>
 </g>
 <!-- critical -->
 <g id="node5" class="node">
 <title>critical</title>
-<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="642.98,-1838.13 481.09,-1798.53 642.98,-1758.93 804.88,-1798.53 642.98,-1838.13"/>
-<text xml:space="preserve" text-anchor="middle" x="642.98" y="-1792.83" font-family="PingFang SC" font-size="19.00" fill="#172b42">缺项会改变核心故事？</text>
+<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="929.32,-2597.12 767.43,-2557.52 929.32,-2517.92 1091.21,-2557.52 929.32,-2597.12"/>
+<text xml:space="preserve" text-anchor="middle" x="929.32" y="-2551.82" font-family="PingFang SC" font-size="19.00" fill="#172b42">缺项会改变核心故事？</text>
 </g>
 <!-- ask -->
 <g id="node6" class="node">
 <title>ask</title>
-<polygon fill="#fff0ed" stroke="#ad675d" stroke-width="1.25" points="771.89,-1585.31 771.89,-1626.09 696.38,-1654.93 589.59,-1654.93 514.08,-1626.09 514.08,-1585.31 589.59,-1556.47 696.38,-1556.47 771.89,-1585.31"/>
-<text xml:space="preserve" text-anchor="middle" x="642.98" y="-1611.4" font-family="PingFang SC" font-size="19.00" fill="#172b42">只问一个关键问题</text>
-<text xml:space="preserve" text-anchor="middle" x="642.98" y="-1588.6" font-family="PingFang SC" font-size="19.00" fill="#172b42">暂停依赖该事实的声称</text>
+<polygon fill="#fff0ed" stroke="#ad675d" stroke-width="1.25" points="1041.22,-2317.23 1041.22,-2358.01 965.71,-2386.85 858.93,-2386.85 783.42,-2358.01 783.42,-2317.23 858.93,-2288.39 965.71,-2288.39 1041.22,-2317.23"/>
+<text xml:space="preserve" text-anchor="middle" x="912.32" y="-2343.32" font-family="PingFang SC" font-size="19.00" fill="#172b42">只问一个关键问题</text>
+<text xml:space="preserve" text-anchor="middle" x="912.32" y="-2320.52" font-family="PingFang SC" font-size="19.00" fill="#172b42">暂停依赖该事实的声称</text>
 </g>
 <!-- mapping -->
 <g id="node7" class="node">
 <title>mapping</title>
-<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="472.49,-1645.69 263.48,-1645.69 263.48,-1565.7 472.49,-1565.7 472.49,-1645.69"/>
-<text xml:space="preserve" text-anchor="middle" x="367.98" y="-1611.4" font-family="PingFang SC" font-size="19.00" fill="#172b42">做 JD 证据映射</text>
-<text xml:space="preserve" text-anchor="middle" x="367.98" y="-1588.6" font-family="PingFang SC" font-size="19.00" fill="#172b42">按需查公司外部事实</text>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="1291.83,-2377.61 1082.81,-2377.61 1082.81,-2297.62 1291.83,-2297.62 1291.83,-2377.61"/>
+<text xml:space="preserve" text-anchor="middle" x="1187.32" y="-2343.32" font-family="PingFang SC" font-size="19.00" fill="#172b42">做 JD 证据映射</text>
+<text xml:space="preserve" text-anchor="middle" x="1187.32" y="-2320.52" font-family="PingFang SC" font-size="19.00" fill="#172b42">按需查公司外部事实</text>
 </g>
 <!-- business -->
 <g id="node8" class="node">
 <title>business</title>
-<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="506.47,-1505.47 221.5,-1505.47 221.5,-1400.49 506.47,-1400.49 506.47,-1505.47"/>
-<text xml:space="preserve" text-anchor="middle" x="363.98" y="-1470.08" font-family="PingFang SC" font-size="19.00" fill="#172b42">用白话讲问题、输入、本人动</text>
-<text xml:space="preserve" text-anchor="middle" x="363.98" y="-1447.28" font-family="PingFang SC" font-size="19.00" fill="#172b42">作</text>
-<text xml:space="preserve" text-anchor="middle" x="363.98" y="-1424.48" font-family="PingFang SC" font-size="19.00" fill="#172b42">产物、验证与结果边界</text>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="1329.81,-2106.4 1044.83,-2106.4 1044.83,-2001.42 1329.81,-2001.42 1329.81,-2106.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1187.32" y="-2071.01" font-family="PingFang SC" font-size="19.00" fill="#172b42">用白话讲问题、输入、本人动</text>
+<text xml:space="preserve" text-anchor="middle" x="1187.32" y="-2048.21" font-family="PingFang SC" font-size="19.00" fill="#172b42">作</text>
+<text xml:space="preserve" text-anchor="middle" x="1187.32" y="-2025.41" font-family="PingFang SC" font-size="19.00" fill="#172b42">产物、验证与结果边界</text>
 </g>
 <!-- understand -->
 <g id="node9" class="node">
 <title>understand</title>
-<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="363.98,-1349.49 202.09,-1309.89 363.98,-1270.29 525.88,-1309.89 363.98,-1349.49"/>
-<text xml:space="preserve" text-anchor="middle" x="363.98" y="-1304.19" font-family="PingFang SC" font-size="19.00" fill="#172b42">本人能解释关键经历？</text>
+<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="1237.32,-1819.43 1075.43,-1779.83 1237.32,-1740.23 1399.21,-1779.83 1237.32,-1819.43"/>
+<text xml:space="preserve" text-anchor="middle" x="1237.32" y="-1774.13" font-family="PingFang SC" font-size="19.00" fill="#172b42">本人能解释关键经历？</text>
 </g>
 <!-- teach -->
 <g id="node10" class="node">
 <title>teach</title>
-<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="232.99,-1187.29 42.98,-1187.29 42.98,-1107.3 232.99,-1107.3 232.99,-1187.29"/>
-<text xml:space="preserve" text-anchor="middle" x="137.98" y="-1153" font-family="PingFang SC" font-size="19.00" fill="#172b42">先重建业务理解</text>
-<text xml:space="preserve" text-anchor="middle" x="137.98" y="-1130.2" font-family="PingFang SC" font-size="19.00" fill="#172b42">不提前编面试脚本</text>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="1106.32,-1657.23 916.32,-1657.23 916.32,-1577.24 1106.32,-1577.24 1106.32,-1657.23"/>
+<text xml:space="preserve" text-anchor="middle" x="1011.32" y="-1622.93" font-family="PingFang SC" font-size="19.00" fill="#172b42">先重建业务理解</text>
+<text xml:space="preserve" text-anchor="middle" x="1011.32" y="-1600.13" font-family="PingFang SC" font-size="19.00" fill="#172b42">不提前编面试脚本</text>
 </g>
 <!-- product -->
 <g id="node11" class="node">
 <title>product</title>
-<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="422.98,-1186.9 274.59,-1147.3 422.98,-1107.7 571.38,-1147.3 422.98,-1186.9"/>
-<text xml:space="preserve" text-anchor="middle" x="422.98" y="-1141.6" font-family="PingFang SC" font-size="19.00" fill="#172b42">本次需要哪类产物？</text>
+<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="1296.32,-1656.83 1147.93,-1617.23 1296.32,-1577.63 1444.71,-1617.23 1296.32,-1656.83"/>
+<text xml:space="preserve" text-anchor="middle" x="1296.32" y="-1611.53" font-family="PingFang SC" font-size="19.00" fill="#172b42">本次需要哪类产物？</text>
 </g>
 <!-- bullets -->
 <g id="node12" class="node">
 <title>bullets</title>
-<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="806,-1024.3 577.97,-1024.3 577.97,-944.31 806,-944.31 806,-1024.3"/>
-<text xml:space="preserve" text-anchor="middle" x="691.98" y="-990" font-family="PingFang SC" font-size="19.00" fill="#172b42">写证据支持的简历要点</text>
-<text xml:space="preserve" text-anchor="middle" x="691.98" y="-967.2" font-family="PingFang SC" font-size="19.00" fill="#172b42">做十秒筛选与版式检查</text>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="1588.33,-1494.24 1360.31,-1494.24 1360.31,-1414.24 1588.33,-1414.24 1588.33,-1494.24"/>
+<text xml:space="preserve" text-anchor="middle" x="1474.32" y="-1459.94" font-family="PingFang SC" font-size="19.00" fill="#172b42">写证据支持的简历要点</text>
+<text xml:space="preserve" text-anchor="middle" x="1474.32" y="-1437.14" font-family="PingFang SC" font-size="19.00" fill="#172b42">做十秒筛选与版式检查</text>
 </g>
 <!-- qa -->
 <g id="node13" class="node">
 <title>qa</title>
-<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="265.97,-1024.3 0,-1024.3 0,-944.31 265.97,-944.31 265.97,-1024.3"/>
-<text xml:space="preserve" text-anchor="middle" x="132.98" y="-990" font-family="PingFang SC" font-size="19.00" fill="#172b42">建立 S 故事／K 知识锚点</text>
-<text xml:space="preserve" text-anchor="middle" x="132.98" y="-967.2" font-family="PingFang SC" font-size="19.00" fill="#172b42">按职责生成问答；技术按需</text>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="1232.3,-1494.24 966.34,-1494.24 966.34,-1414.24 1232.3,-1414.24 1232.3,-1494.24"/>
+<text xml:space="preserve" text-anchor="middle" x="1099.32" y="-1459.94" font-family="PingFang SC" font-size="19.00" fill="#172b42">建立 S 故事／K 知识锚点</text>
+<text xml:space="preserve" text-anchor="middle" x="1099.32" y="-1437.14" font-family="PingFang SC" font-size="19.00" fill="#172b42">按职责生成问答；技术按需</text>
 </g>
 <!-- explain -->
 <g id="node14" class="node">
 <title>explain</title>
-<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="536,-1024.3 307.97,-1024.3 307.97,-944.31 536,-944.31 536,-1024.3"/>
-<text xml:space="preserve" text-anchor="middle" x="421.98" y="-990" font-family="PingFang SC" font-size="19.00" fill="#172b42">形成项目解释</text>
-<text xml:space="preserve" text-anchor="middle" x="421.98" y="-967.2" font-family="PingFang SC" font-size="19.00" fill="#172b42">完整包只纳入所需部分</text>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="1415.33,-1389.24 1187.31,-1389.24 1187.31,-1309.25 1415.33,-1309.25 1415.33,-1389.24"/>
+<text xml:space="preserve" text-anchor="middle" x="1301.32" y="-1354.95" font-family="PingFang SC" font-size="19.00" fill="#172b42">形成项目解释</text>
+<text xml:space="preserve" text-anchor="middle" x="1301.32" y="-1332.15" font-family="PingFang SC" font-size="19.00" fill="#172b42">完整包只纳入所需部分</text>
 </g>
 <!-- visual -->
 <g id="node15" class="node">
 <title>visual</title>
-<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="421.98,-893.31 260.09,-853.71 421.98,-814.11 583.88,-853.71 421.98,-893.31"/>
-<text xml:space="preserve" text-anchor="middle" x="421.98" y="-848.01" font-family="PingFang SC" font-size="19.00" fill="#172b42">持久材料有复杂关系？</text>
+<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="1305.32,-893.31 1143.43,-853.71 1305.32,-814.11 1467.21,-853.71 1305.32,-893.31"/>
+<text xml:space="preserve" text-anchor="middle" x="1305.32" y="-848.01" font-family="PingFang SC" font-size="19.00" fill="#172b42">持久材料有复杂关系？</text>
 </g>
 <!-- draw -->
 <g id="node16" class="node">
 <title>draw</title>
-<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="797.88,-710.11 528.09,-710.11 528.09,-630.12 797.88,-630.12 797.88,-710.11"/>
-<text xml:space="preserve" text-anchor="middle" x="662.98" y="-675.81" font-family="PingFang SC" font-size="19.00" fill="#172b42">业务图与 JD 矩阵就地放置</text>
-<text xml:space="preserve" text-anchor="middle" x="662.98" y="-653.01" font-family="PingFang SC" font-size="19.00" fill="#172b42">区分个人动作与背景知识</text>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="1445.21,-710.11 1175.43,-710.11 1175.43,-630.12 1445.21,-630.12 1445.21,-710.11"/>
+<text xml:space="preserve" text-anchor="middle" x="1310.32" y="-675.81" font-family="PingFang SC" font-size="19.00" fill="#172b42">业务图与 JD 矩阵就地放置</text>
+<text xml:space="preserve" text-anchor="middle" x="1310.32" y="-653.01" font-family="PingFang SC" font-size="19.00" fill="#172b42">区分个人动作与背景知识</text>
 </g>
 <!-- gate -->
 <g id="node17" class="node">
 <title>gate</title>
-<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="585.98,-579.12 410.63,-539.52 585.98,-499.92 761.34,-539.52 585.98,-579.12"/>
-<text xml:space="preserve" text-anchor="middle" x="585.98" y="-533.82" font-family="PingFang SC" font-size="19.00" fill="#172b42">事实、范围与呈现通过？</text>
+<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="999.32,-579.12 823.96,-539.52 999.32,-499.92 1174.68,-539.52 999.32,-579.12"/>
+<text xml:space="preserve" text-anchor="middle" x="999.32" y="-533.82" font-family="PingFang SC" font-size="19.00" fill="#172b42">事实、范围与呈现通过？</text>
 </g>
 <!-- repair -->
 <g id="node18" class="node">
 <title>repair</title>
-<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="974.49,-416.92 765.48,-416.92 765.48,-336.92 974.49,-336.92 974.49,-416.92"/>
-<text xml:space="preserve" text-anchor="middle" x="869.98" y="-382.62" font-family="PingFang SC" font-size="19.00" fill="#172b42">回到事实或表达修正</text>
-<text xml:space="preserve" text-anchor="middle" x="869.98" y="-359.82" font-family="PingFang SC" font-size="19.00" fill="#172b42">不补造数字／责任</text>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="807.83,-416.92 598.81,-416.92 598.81,-336.92 807.83,-336.92 807.83,-416.92"/>
+<text xml:space="preserve" text-anchor="middle" x="703.32" y="-382.62" font-family="PingFang SC" font-size="19.00" fill="#172b42">回到事实或表达修正</text>
+<text xml:space="preserve" text-anchor="middle" x="703.32" y="-359.82" font-family="PingFang SC" font-size="19.00" fill="#172b42">不补造数字／责任</text>
 </g>
 <!-- delivery -->
 <g id="node19" class="node">
 <title>delivery</title>
-<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="534.98,-416.52 346.13,-376.92 534.98,-337.32 723.84,-376.92 534.98,-416.52"/>
-<text xml:space="preserve" text-anchor="middle" x="534.98" y="-371.22" font-family="PingFang SC" font-size="19.00" fill="#172b42">正式飞书授权与目标齐备？</text>
+<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="1038.32,-416.52 849.46,-376.92 1038.32,-337.32 1227.18,-376.92 1038.32,-416.52"/>
+<text xml:space="preserve" text-anchor="middle" x="1038.32" y="-371.22" font-family="PingFang SC" font-size="19.00" fill="#172b42">正式飞书授权与目标齐备？</text>
 </g>
 <!-- write -->
 <g id="node20" class="node">
 <title>write</title>
-<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="505.97,-227.44 240,-227.44 240,-147.45 505.97,-147.45 505.97,-227.44"/>
-<text xml:space="preserve" text-anchor="middle" x="372.98" y="-193.14" font-family="PingFang SC" font-size="19.00" fill="#172b42">写入对应唯一页面</text>
-<text xml:space="preserve" text-anchor="middle" x="372.98" y="-170.34" font-family="PingFang SC" font-size="19.00" fill="#172b42">读回媒体、顺序与实际显示</text>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="970.3,-227.44 704.34,-227.44 704.34,-147.45 970.3,-147.45 970.3,-227.44"/>
+<text xml:space="preserve" text-anchor="middle" x="837.32" y="-193.14" font-family="PingFang SC" font-size="19.00" fill="#172b42">写入对应唯一页面</text>
+<text xml:space="preserve" text-anchor="middle" x="837.32" y="-170.34" font-family="PingFang SC" font-size="19.00" fill="#172b42">读回媒体、顺序与实际显示</text>
 </g>
 <!-- draft -->
 <g id="node21" class="node">
 <title>draft</title>
-<ellipse fill="#eaf5ee" stroke="#508267" stroke-width="1.25" cx="696.98" cy="-187.44" rx="149.32" ry="45.48"/>
-<text xml:space="preserve" text-anchor="middle" x="696.98" y="-193.14" font-family="PingFang SC" font-size="19.00" fill="#172b42">交付本次要点／聊天／导出稿</text>
-<text xml:space="preserve" text-anchor="middle" x="696.98" y="-170.34" font-family="PingFang SC" font-size="19.00" fill="#172b42">目标缺失时注明未正式交付</text>
+<ellipse fill="#eaf5ee" stroke="#508267" stroke-width="1.25" cx="1161.32" cy="-187.44" rx="149.32" ry="45.48"/>
+<text xml:space="preserve" text-anchor="middle" x="1161.32" y="-193.14" font-family="PingFang SC" font-size="19.00" fill="#172b42">交付本次要点／聊天／导出稿</text>
+<text xml:space="preserve" text-anchor="middle" x="1161.32" y="-170.34" font-family="PingFang SC" font-size="19.00" fill="#172b42">目标缺失时注明未正式交付</text>
 </g>
 <!-- out -->
 <g id="node22" class="node">
 <title>out</title>
-<ellipse fill="#eaf5ee" stroke="#508267" stroke-width="1.25" cx="372.98" cy="-45.48" rx="129.17" ry="45.48"/>
-<text xml:space="preserve" text-anchor="middle" x="372.98" y="-51.18" font-family="PingFang SC" font-size="19.00" fill="#172b42">交付正式材料与待确认项</text>
-<text xml:space="preserve" text-anchor="middle" x="372.98" y="-28.38" font-family="PingFang SC" font-size="19.00" fill="#172b42">答案不超出履历事实</text>
+<ellipse fill="#eaf5ee" stroke="#508267" stroke-width="1.25" cx="837.32" cy="-45.48" rx="129.17" ry="45.48"/>
+<text xml:space="preserve" text-anchor="middle" x="837.32" y="-51.18" font-family="PingFang SC" font-size="19.00" fill="#172b42">交付正式材料与待确认项</text>
+<text xml:space="preserve" text-anchor="middle" x="837.32" y="-28.38" font-family="PingFang SC" font-size="19.00" fill="#172b42">答案不超出履历事实</text>
+</g>
+<!-- i_artifact -->
+<g id="node23" class="node">
+<title>i_artifact</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="625.81,-4004.29 340.83,-4004.29 340.83,-3899.31 625.81,-3899.31 625.81,-4004.29"/>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3968.9" font-family="PingFang SC" font-size="19.00" fill="#172b42">本次产物：要点／项目解释／</text>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3946.1" font-family="PingFang SC" font-size="19.00" fill="#172b42">问答／整包</text>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3923.3" font-family="PingFang SC" font-size="19.00" fill="#172b42">必需：锁定范围与读者</text>
+</g>
+<!-- i_sources -->
+<g id="node24" class="node">
+<title>i_sources</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="625.81,-3848.31 340.83,-3848.31 340.83,-3743.34 625.81,-3743.34 625.81,-3848.31"/>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3812.93" font-family="PingFang SC" font-size="19.00" fill="#172b42">原简历、项目产物与过程材料</text>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3790.13" font-family="PingFang SC" font-size="19.00" fill="#172b42">必需：要写个人声称的事</text>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3767.33" font-family="PingFang SC" font-size="19.00" fill="#172b42">实来源</text>
+</g>
+<!-- i_target -->
+<g id="node25" class="node">
+<title>i_target</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="625.81,-3692.34 340.83,-3692.34 340.83,-3612.35 625.81,-3612.35 625.81,-3692.34"/>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3658.04" font-family="PingFang SC" font-size="19.00" fill="#172b42">目标岗位／JD与版本受众</text>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3635.24" font-family="PingFang SC" font-size="19.00" fill="#172b42">条件必需：定向筛选与改写时</text>
+</g>
+<!-- i_ownership -->
+<g id="node26" class="node">
+<title>i_ownership</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="616.3,-3561.35 350.34,-3561.35 350.34,-3456.37 616.3,-3456.37 616.3,-3561.35"/>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3525.96" font-family="PingFang SC" font-size="19.00" fill="#172b42">本人职责、协作、上线状态</text>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3503.16" font-family="PingFang SC" font-size="19.00" fill="#172b42">必需：使用强责任或上线</text>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3480.36" font-family="PingFang SC" font-size="19.00" fill="#172b42">措辞前</text>
+</g>
+<!-- i_result -->
+<g id="node27" class="node">
+<title>i_result</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="616.3,-3405.37 350.34,-3405.37 350.34,-3325.38 616.3,-3325.38 616.3,-3405.37"/>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3371.07" font-family="PingFang SC" font-size="19.00" fill="#172b42">指标、可验产物、个人归因</text>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3348.27" font-family="PingFang SC" font-size="19.00" fill="#172b42">条件必需：写结果时</text>
+</g>
+<!-- i_destination -->
+<g id="node28" class="node">
+<title>i_destination</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="625.81,-3274.38 340.83,-3274.38 340.83,-3194.39 625.81,-3194.39 625.81,-3274.38"/>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3240.08" font-family="PingFang SC" font-size="19.00" fill="#172b42">输出载体、既有页与授权范围</text>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3217.28" font-family="PingFang SC" font-size="19.00" fill="#172b42">条件必需：正式归档／写入时</text>
+</g>
+<!-- i_existing -->
+<g id="node29" class="node">
+<title>i_existing</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="606.84,-3143.39 359.8,-3143.39 359.8,-3063.39 606.84,-3063.39 606.84,-3143.39"/>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3109.09" font-family="PingFang SC" font-size="19.00" fill="#172b42">先查已有原件与当前记录</text>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-3086.29" font-family="PingFang SC" font-size="19.00" fill="#172b42">保留版本、冲突和缺失</text>
+</g>
+<!-- i_ready -->
+<g id="node30" class="node">
+<title>i_ready</title>
+<polygon fill="#fff4db" stroke="#a67c32" stroke-width="1.25" points="483.32,-3012.39 280.96,-2972.79 483.32,-2933.19 685.68,-2972.79 483.32,-3012.39"/>
+<text xml:space="preserve" text-anchor="middle" x="483.32" y="-2967.09" font-family="PingFang SC" font-size="19.00" fill="#172b42">核心故事与本轮产物已明确？</text>
+</g>
+<!-- i_clarify -->
+<g id="node31" class="node">
+<title>i_clarify</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="510.84,-2808.19 263.8,-2808.19 263.8,-2728.2 510.84,-2728.2 510.84,-2808.19"/>
+<text xml:space="preserve" text-anchor="middle" x="387.32" y="-2773.9" font-family="PingFang SC" font-size="19.00" fill="#172b42">已有来源查不清时</text>
+<text xml:space="preserve" text-anchor="middle" x="387.32" y="-2751.1" font-family="PingFang SC" font-size="19.00" fill="#172b42">只问影响执行的最小问题</text>
+</g>
+<!-- i_wait -->
+<g id="node32" class="node">
+<title>i_wait</title>
+<polygon fill="#fff0ed" stroke="#ad675d" stroke-width="1.25" points="419.13,-2529.9 419.13,-2585.14 337.23,-2624.2 221.41,-2624.2 139.51,-2585.14 139.51,-2529.9 221.41,-2490.85 337.23,-2490.85 419.13,-2529.9"/>
+<text xml:space="preserve" text-anchor="middle" x="279.32" y="-2574.62" font-family="PingFang SC" font-size="19.00" fill="#172b42">等待关键资料／裁决</text>
+<text xml:space="preserve" text-anchor="middle" x="279.32" y="-2551.82" font-family="PingFang SC" font-size="19.00" fill="#172b42">暂停依赖步骤；独立工作</text>
+<text xml:space="preserve" text-anchor="middle" x="279.32" y="-2529.02" font-family="PingFang SC" font-size="19.00" fill="#172b42">可继续</text>
+</g>
+<!-- external_scope -->
+<g id="node33" class="node">
+<title>external_scope</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="1310.84,-2237.39 1063.8,-2237.39 1063.8,-2157.4 1310.84,-2157.4 1310.84,-2237.39"/>
+<text xml:space="preserve" text-anchor="middle" x="1187.32" y="-2203.09" font-family="PingFang SC" font-size="19.00" fill="#172b42">仅按需核公司外部背景</text>
+<text xml:space="preserve" text-anchor="middle" x="1187.32" y="-2180.29" font-family="PingFang SC" font-size="19.00" fill="#172b42">官方来源与动态事实日期</text>
+</g>
+<!-- story_lock -->
+<g id="node34" class="node">
+<title>story_lock</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="1369.81,-1950.42 1084.83,-1950.42 1084.83,-1870.43 1369.81,-1870.43 1369.81,-1950.42"/>
+<text xml:space="preserve" text-anchor="middle" x="1227.32" y="-1916.12" font-family="PingFang SC" font-size="19.00" fill="#172b42">锁定个人动作、协作与产物</text>
+<text xml:space="preserve" text-anchor="middle" x="1227.32" y="-1893.32" font-family="PingFang SC" font-size="19.00" fill="#172b42">规模、验证、上线与结果边界</text>
+</g>
+<!-- bullet_qa -->
+<g id="node35" class="node">
+<title>bullet_qa</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="1588.84,-1154.28 1341.8,-1154.28 1341.8,-1049.3 1588.84,-1049.3 1588.84,-1154.28"/>
+<text xml:space="preserve" text-anchor="middle" x="1465.32" y="-1118.89" font-family="PingFang SC" font-size="19.00" fill="#172b42">十秒筛选＋实际布局检查</text>
+<text xml:space="preserve" text-anchor="middle" x="1465.32" y="-1096.09" font-family="PingFang SC" font-size="19.00" fill="#172b42">目标、教育、时间线和最</text>
+<text xml:space="preserve" text-anchor="middle" x="1465.32" y="-1073.29" font-family="PingFang SC" font-size="19.00" fill="#172b42">强证据</text>
+</g>
+<!-- question_modes -->
+<g id="node36" class="node">
+<title>question_modes</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="1241.81,-1284.25 956.83,-1284.25 956.83,-1179.28 1241.81,-1179.28 1241.81,-1284.25"/>
+<text xml:space="preserve" text-anchor="middle" x="1099.32" y="-1248.86" font-family="PingFang SC" font-size="19.00" fill="#172b42">逐题选亲历／迁移／知识／假</text>
+<text xml:space="preserve" text-anchor="middle" x="1099.32" y="-1226.06" font-family="PingFang SC" font-size="19.00" fill="#172b42">设</text>
+<text xml:space="preserve" text-anchor="middle" x="1099.32" y="-1203.26" font-family="PingFang SC" font-size="19.00" fill="#172b42">S／K依据与自然可口述答案</text>
+</g>
+<!-- technical_scope -->
+<g id="node37" class="node">
+<title>technical_scope</title>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="1238.3,-1024.3 972.34,-1024.3 972.34,-944.31 1238.3,-944.31 1238.3,-1024.3"/>
+<text xml:space="preserve" text-anchor="middle" x="1105.32" y="-990" font-family="PingFang SC" font-size="19.00" fill="#172b42">技术深度仅随实际岗位需要</text>
+<text xml:space="preserve" text-anchor="middle" x="1105.32" y="-967.2" font-family="PingFang SC" font-size="19.00" fill="#172b42">本人实现与系统背景分开</text>
 </g>
 </g>
 </svg>
-<path d="M32 2480H1057" stroke="#dce3ec"/>
-<g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#43566e"><text x="32" y="2508" font-size="15">边界：公开公司知识只能补背景，不能改写成本人经历。</text><text x="32" y="2570" font-size="12">来源：Skill 正文与关联规则 · 可回查的流程说明</text></g></svg>
+<path d="M32 4504H1671" stroke="#dce3ec"/>
+<g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#43566e"><text x="32" y="4532" font-size="15">边界：公开公司知识只能补背景，不能改写成本人经历。</text><text x="32" y="4594" font-size="12">来源：Skill 正文与关联规则 · 可回查的流程说明</text></g></svg>

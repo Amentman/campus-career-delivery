@@ -1,4 +1,4 @@
-<svg data-artifact-sha256="df1a881b00d1efd55cc65d5bb5047be2f7722c97766401244308a5beb1ea2f68" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" width="1200" height="960" role="img" aria-labelledby="title desc" data-definition-sha256="3bf1305f8c6d24f142dfe44459a4549be821f94804afa26ff4f9f388887a7bcb" data-renderer="authored-overview-1">
+<svg data-artifact-sha256="7511839d2c4bfc1fda07c399ef036e63c8e1933fea6ad7628b57ddcff999e3c2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" width="1200" height="960" role="img" aria-labelledby="title desc" data-definition-sha256="a3a5c0a4ce40a999ada863e5c1de8c006481e865d85a52525e62b0a2d8c44849" data-renderer="authored-overview-1">
 <title id="title">选岗工作总览：先查共享库，原表追加，新岗位回收</title>
 <desc id="desc">锁定学生原表和历史，先查共享岗位库，按当前简历及JD重新核验。合格数不足时外搜并返回同样的核验。ready只追加原投递表；外搜新岗位的公共事实清理去重后回收至同一共享库，两端分别读回。</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="#71839b" stroke-width="1.5"/></marker></defs>

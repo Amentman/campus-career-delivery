@@ -17,6 +17,8 @@ class SkillWorkflowTests(unittest.TestCase):
                 content=guide.read_text()
                 pictures=re.findall(r'!\[[^\]]*\]\(([^)]+)\)',content)
                 self.assertTrue(pictures)
+                self.assertIn('../assets/input-confirmation.svg',pictures,'input questions must have their own readable diagram')
+                self.assertIn('../assets/workflow.svg',pictures,'the execution diagram remains part of the same guide')
                 self.assertIn('flowchart ',content,'editable source is part of the guide')
                 for picture in pictures:
                     path=(guide.parent/picture).resolve()
