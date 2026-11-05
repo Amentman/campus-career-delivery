@@ -44,11 +44,64 @@ def complete_manifest():
                 "checked_items": ["clipping", "readability", "layout", "caption"],
                 "issues": [],
             },
+            "quality_review": [
+                {
+                    "visual_id": "business-flow",
+                    "reader_question": "Who hands a shipment to whom?",
+                    "target_width_px": 760,
+                    "evidence": ["render/business-flow-at-760.png"],
+                    "checks": {
+                        "meaning": "The three service roles attach to their actual handoff stages.",
+                        "logic": "The failed handoff ends with the dispatcher; success ends with delivery.",
+                        "hierarchy": "The main route is read before the two exception branches.",
+                        "legibility": "All branch labels are readable at the declared width without zooming.",
+                        "visual_utility": "The branching route makes the two different owners visible together.",
+                    },
+                    "verdict": "pass",
+                    "issues": [],
+                }
+            ],
         },
     }
 
 
 class VisualManifestTests(unittest.TestCase):
+    def test_uploaded_and_rendered_is_not_a_quality_review(self):
+        data = complete_manifest()
+        data["visual_contract"].pop("quality_review")
+        self.assertTrue(any("quality review missing" in x for x in validate_manifest(data)))
+
+    def test_unverified_or_failed_figure_prevents_completion(self):
+        for verdict in ("unverified", "revise"):
+            with self.subTest(verdict=verdict):
+                data = complete_manifest()
+                data["visual_contract"]["quality_review"][0]["verdict"] = verdict
+                self.assertTrue(any("quality review not passed" in x for x in validate_manifest(data)))
+
+    def test_quality_review_needs_target_width_and_actual_evidence(self):
+        data = complete_manifest()
+        review = data["visual_contract"]["quality_review"][0]
+        review["target_width_px"] = 0
+        review["evidence"] = []
+        errors = validate_manifest(data)
+        self.assertTrue(any("target_width_px" in x for x in errors))
+        self.assertTrue(any("quality evidence" in x for x in errors))
+
+    def test_pass_cannot_hide_a_known_visual_issue(self):
+        data = complete_manifest()
+        data["visual_contract"]["quality_review"][0]["issues"] = ["Title promises three layers, figure shows five unrelated rows."]
+        self.assertTrue(any("quality review has unresolved issues" in x for x in validate_manifest(data)))
+
+    def test_local_review_covers_all_affected_sections_without_claiming_full_document(self):
+        data = complete_manifest()
+        data["visual_contract"]["render_qa"].update({
+            "scope": "affected_sections", "required_sections": ["Business flow"],
+            "checked_sections": ["Business flow"], "page_count": 12, "checked_pages": [3, 4],
+        })
+        self.assertEqual(validate_manifest(data), [])
+        data["visual_contract"]["render_qa"]["checked_sections"] = []
+        self.assertTrue(any("affected sections" in x for x in validate_manifest(data)))
+
     def test_complete_substantial_document_passes(self):
         self.assertEqual(validate_manifest(complete_manifest()), [])
 

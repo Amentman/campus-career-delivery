@@ -20,6 +20,7 @@ Turn complex document content into a readable information system. Use diagrams a
 - Read [visual-decision-matrix.md](references/visual-decision-matrix.md) before choosing a visual or deciding that none is needed.
 - Read [layout-and-information-design.md](references/layout-and-information-design.md) when planning a substantial document's hierarchy and reading rhythm.
 - Read [render-and-acceptance.md](references/render-and-acceptance.md) before delivery in the target format.
+- Read [figure-quality.md](references/figure-quality.md) before drawing or reviewing substantive figures. It defines the comprehension and design gate, separate from upload/render checks.
 
 ## First use and available tools
 
@@ -33,7 +34,7 @@ For a substantial document or figure, apply `impeccable` in Read mode when insta
 2. Create a visual plan before drafting. Use `no_visual_reason` when the artifact is simple and no visual improves comprehension.
 3. Draft domain content from its authoritative sources. Keep the meanings of `Confirmed`, `Externally verified`, `Inferred`, `Knowledge supplement`, and `Open` distinguishable. Keep formal labels in the internal evidence ledger; student-facing prose and figures use natural Chinese wording, source notes and clear uncertainty cues, without exposing internal audit or generation steps.
 4. Place each visual next to the section it explains. Do not collect unrelated figures at the end.
-5. For a new or substantially revised document, render the actual delivery format, read back structure and media, inspect every rendered page, fix in-scope failures and render again. For a local edit, inspect the changed area and affected reading path, compare protected content/media, and report unrelated existing defects without expanding the edit or claiming whole-document acceptance.
+5. Review figure meaning and design before embedding; after embedding, inspect actual reading width and the affected reading path. For a new or substantially revised document inspect every rendered page. For a local edit compare protected content/media and inspect all affected sections. Batch the observed fixes and confirm them in a second pass; unresolved defects remain explicit rather than entering open-ended polishing.
 6. Record the result in a `visual_contract` manifest and run:
 
 ```bash

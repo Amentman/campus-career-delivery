@@ -118,6 +118,23 @@ def complete_career_visual_manifest(page_count: int = 12):
             "complexity_signals": ["multi_route_comparison", "time_stages"],
             "required_visual_ids": [item[0] for item in specs],
             "visual_plan": visual_plan,
+            # Synthetic review records exercise the shared contract, not real visual QA.
+            "quality_review": [
+                {
+                    "visual_id": item[0], "reader_question": item[4],
+                    "target_width_px": 760,
+                    "evidence": [f"synthetic-render/{item[0]}.png"],
+                    "checks": {
+                        "meaning": f"The figure explains {item[2]} with the stated evidence boundary.",
+                        "logic": "Roles connect to adjacent stages; route choices and time stages remain distinct.",
+                        "hierarchy": "The main route precedes conditional options; milestone labels form the reading path.",
+                        "legibility": "The fixture declares all labels readable at the stated width.",
+                        "visual_utility": "The relationship between roles, choices and time is visible together.",
+                    },
+                    "verdict": "pass", "issues": [],
+                }
+                for item in specs
+            ],
             "readback": {
                 "media_blocks": [
                     {"visual_id": item[0], "token": f"image-{index}"}

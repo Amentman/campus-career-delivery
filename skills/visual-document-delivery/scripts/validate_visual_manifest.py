@@ -123,6 +123,40 @@ def validate_manifest(data: dict[str, Any]) -> list[str]:
         elif not any(str(media.get(key) or "").strip() for key in ("token", "src")):
             errors.append(f"media token is empty: {visual_id}")
 
+    # This validates the review record, not the image's aesthetic quality.
+    reviews = contract.get("quality_review", [])
+    reviews = reviews if isinstance(reviews, list) else []
+    reviews_by_id: dict[str, dict[str, Any]] = {}
+    for review in reviews:
+        if not isinstance(review, dict):
+            errors.append("quality review entries must be objects")
+            continue
+        visual_id = str(review.get("visual_id", "")).strip()
+        if visual_id not in ids or visual_id in reviews_by_id:
+            errors.append(f"quality review id unknown or duplicated: {visual_id}")
+        reviews_by_id[visual_id] = review
+    for visual_id in ids:
+        review = reviews_by_id.get(visual_id)
+        if not review:
+            errors.append(f"quality review missing: {visual_id}")
+            continue
+        if review.get("verdict") != "pass":
+            errors.append(f"quality review not passed: {visual_id}")
+        if review.get("issues") != []:
+            errors.append(f"quality review has unresolved issues: {visual_id}")
+        if not str(review.get("reader_question", "")).strip():
+            errors.append(f"quality reader_question missing: {visual_id}")
+        width = review.get("target_width_px")
+        if type(width) is not int or width <= 0:
+            errors.append(f"quality target_width_px invalid: {visual_id}")
+        evidence = review.get("evidence")
+        if not isinstance(evidence, list) or not evidence or not all(isinstance(x, str) and x.strip() for x in evidence):
+            errors.append(f"quality evidence missing: {visual_id}")
+        checks = review.get("checks", {})
+        for check in ("meaning", "logic", "hierarchy", "legibility", "visual_utility"):
+            if not isinstance(checks, dict) or not str(checks.get(check, "")).strip():
+                errors.append(f"quality observation missing: {visual_id}.{check}")
+
     render_qa = contract.get("render_qa", {})
     if not isinstance(render_qa, dict):
         errors.append("render_qa must be an object")
@@ -132,6 +166,15 @@ def validate_manifest(data: dict[str, Any]) -> list[str]:
     if substantial:
         if not isinstance(page_count, int) or page_count < 1:
             errors.append("substantial document needs a positive rendered page count")
+        elif render_qa.get("scope", "document") == "affected_sections":
+            required = render_qa.get("required_sections", [])
+            checked = render_qa.get("checked_sections", [])
+            if not isinstance(required, list) or not required or not isinstance(checked, list) or not set(required).issubset(checked):
+                errors.append("render QA does not cover all affected sections")
+            if not isinstance(checked_pages, list) or not checked_pages or any(type(p) is not int or p < 1 or p > page_count for p in checked_pages):
+                errors.append("render QA checked_pages invalid for affected sections")
+        elif render_qa.get("scope", "document") != "document":
+            errors.append("render QA scope must be document or affected_sections")
         elif checked_pages != list(range(1, page_count + 1)):
             errors.append("render QA does not cover every page")
         required_checks = {"clipping", "readability", "layout", "caption"}
@@ -158,7 +201,8 @@ def main(argv: list[str] | None = None) -> int:
         )
     print(
         json.dumps(
-            {"status": "invalid" if errors else "ok", "errors": errors},
+            {"status": "invalid" if errors else "ok", "errors": errors,
+             "scope": "manifest fields only; does not inspect images or certify visual quality"},
             ensure_ascii=False,
             indent=2,
         )

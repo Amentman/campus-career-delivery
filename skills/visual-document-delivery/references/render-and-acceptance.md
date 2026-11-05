@@ -6,9 +6,9 @@
 
 1. Render or export the actual target format.
 2. Read back title hierarchy, visual count, visual position, caption, source, fact boundary, and media identifiers.
-3. Inspect every rendered page or equivalent full surface at normal desktop zoom.
-4. Fix clipping, overlap, tiny labels, broken legends, table overflow, bad page breaks, or visual/text separation.
-5. Render again and repeat the full inspection.
+3. Inspect every rendered page for a full document, or every affected section for a local change, at normal desktop zoom. Apply the five figure-quality checks in [figure-quality.md](figure-quality.md) to every in-scope figure.
+4. Batch fixes for observed meaning, logic, design, and display defects.
+5. Render again and confirm the fixes in one further pass; unresolved defects remain incomplete rather than triggering unbounded cosmetic iterations.
 6. Record the final result in `visual_contract` and run the shared validator.
 
 ## Format-specific checks
@@ -63,7 +63,24 @@
       "checked_pages": [1, 2, 3],
       "checked_items": ["clipping", "readability", "layout", "caption"],
       "issues": []
-    }
+    },
+    "quality_review": [
+      {
+        "visual_id": "business-flow",
+        "reader_question": "Who hands the order to whom?",
+        "target_width_px": 760,
+        "evidence": ["render/business-flow-at-760.png"],
+        "checks": {
+          "meaning": "Three service roles attach to their handoff stages.",
+          "logic": "Failure ends with dispatch; success ends with delivery.",
+          "hierarchy": "The main route is read before its two exception branches.",
+          "legibility": "Branch labels are readable at 760px without zooming.",
+          "visual_utility": "The route exposes the different owners of both outcomes."
+        },
+        "verdict": "pass",
+        "issues": []
+      }
+    ]
   }
 }
 ```
@@ -72,8 +89,10 @@ For a simple artifact without visuals, set `substantial` to `false`, keep `visua
 
 Media readback may use a non-empty `token` or `src`, according to the actual returned block. Preserve the original identifier; do not invent a token for an image returned with `src`. The validator checks the manifest's declared fields only. It does not open media or prove that the stated page review occurred.
 
+For a local change, `render_qa.scope` may be `affected_sections`. Record non-empty `required_sections`, all `checked_sections`, actual total `page_count`, and the inspected `checked_pages`; compare protected content separately. Otherwise scope defaults to the full `document` and requires every page. All planned figures still need their own `quality_review` record; a complete manifest is not a visual-quality certificate.
+
 For AI-generated figures, inspect the final image at the actual reading width: every Chinese character, number, formula, arrow endpoint, decision branch, loop and terminal state must match the locked source logic. Fix errors before embedding, then inspect the embedded display again. A correct standalone image can still be clipped or too small in the document.
 
 ## Failure conditions
 
-Delivery remains incomplete when any required visual is missing, both token and src are empty, a caption/source/fact boundary is absent, page review is partial, or render issues remain unresolved. CLI success, HTTP 200, revision changes, syntax validation, or a static source screenshot do not override these failures.
+Delivery remains incomplete when any required visual is missing, both token and src are empty, a caption/source/fact boundary is absent, review does not cover the declared scope, figure-quality evidence is missing, a figure is marked `revise`/`unverified`, or any review issues remain unresolved. CLI success, HTTP 200, revision changes, syntax validation, or a static source screenshot do not override these failures.
