@@ -1,4 +1,4 @@
-<svg data-artifact-sha256="9ae2cd2584f85f571cdec3559b52af9998f8a9148b183ad037373d5f486a63ab" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920.00 835.00" role="img" aria-labelledby="title desc" data-definition-sha256="aa4847d601710ff70d63eb491ee40120e17bbcf056eeb3d772fad271af639cc6" data-renderer="viz-3.31.0">
+<svg data-artifact-sha256="1831543700669b513d90351e77ecd04d21840814628a906549c7772f5df97858" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920.00 835.00" width="920.00" height="835.00" role="img" aria-labelledby="title desc" data-definition-sha256="aa4847d601710ff70d63eb491ee40120e17bbcf056eeb3d772fad271af639cc6" data-renderer="viz-3.31.0">
 <title id="title">选岗旧入口：转入唯一主流程完整流程图</title><desc id="desc">续接明确引用旧入口的任务；同级已安装完整 campus-job-matching？；说明缺少主 Skill 补齐依赖后再继续；转入当前主 Skill 先查共享库→补搜→原表追加→回收；沿用学生、原表／默认视图 模式、限制与全量历史计数</desc>
 <rect width="100%" height="100%" fill="white"/>
 <g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#172b42"><text x="32" y="43" font-size="29" font-weight="600">选岗旧入口：转入唯一主流程</text><text x="32" y="76" font-size="16" fill="#43566e">从上往下读 · 菱形是判断，分支文字说明下一步</text></g>
