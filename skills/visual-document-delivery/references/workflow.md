@@ -239,7 +239,7 @@
 
 下一步：“新建或实质修订整篇” → 渲染实际目标格式；逐页/全表面检查；“局部修改” → 渲染改动与受影响阅读路径；对比保护媒体与原内容。
 
-依据：[SKILL.md](../SKILL.md) 中的“5. For a new or substantially revised document”。
+依据：[SKILL.md](../SKILL.md) 中的“Delivery contract”。
 
 **16. 渲染实际目标格式；逐页/全表面检查**
 
@@ -255,7 +255,7 @@
 
 下一步：能完成目标面结构和视觉检查？。
 
-依据：[SKILL.md](../SKILL.md) 中的“5. For a new or substantially revised document”。
+依据：[SKILL.md](../SKILL.md) 中的“Delivery contract”。
 
 **18. 能完成目标面结构和视觉检查？**
 

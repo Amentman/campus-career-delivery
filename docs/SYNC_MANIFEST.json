@@ -255,7 +255,7 @@
     "skills/visual-document-delivery/references/render-and-acceptance.md": "f3bfa985a8a865987303c54cc3bbc428d861c548a3bc41adeceb1d1f48ae9cf1",
     "skills/visual-document-delivery/references/team-setup.md": "d26b40fcdf521c43eb024ccfad6b247c969e8299cf64b5f7e676bb1c6e6e1b12",
     "skills/visual-document-delivery/references/visual-decision-matrix.md": "1d309e36ff1b9ba0a35ff66f6b74319bec8f50c6bd8be692b6c07d421849d803",
-    "skills/visual-document-delivery/references/workflow.md": "ae3dd620e9bafa6c449b6bb6d49f62d177fbbb32c74e9d71b35742ee595aeb84",
+    "skills/visual-document-delivery/references/workflow.md": "ef3c656b476388060cec912ecedcc69dba66242464791e566cbf43edc2fa5147",
     "skills/visual-document-delivery/scripts/validate_visual_manifest.py": "e0178fd52eedf40cac35efd00d26dafb46abc797d5269740273428f1e9fd39df",
     "skills/visual-document-delivery/tests/test_validate_visual_manifest.py": "eea80781105fe7f35b5179aa7ae9862647eee9caa174a1694dc4aee6a6fb4033",
     "skills/xiaohongshu-image-renderer/SKILL.md": "224c17f4fd8433c164af5a3b096868387c1dd10f0d8cd641b71d71a01981a862",
@@ -279,5 +279,5 @@
     "skills/xiaohongshu-image-renderer/scripts/validate-package.test.mjs": "b85f1e41860166ef12bc89d33589586ad4b98a2fd7d23547f5b62314b3a0d780"
   },
   "version": "0.5.0",
-  "synced_at": "2026-11-06T14:59:19.925965+00:00"
+  "synced_at": "2026-11-06T15:13:44.413331+00:00"
 }
