@@ -15,6 +15,8 @@ description: Use when creating or substantially revising a durable Feishu, Word,
 
 Turn complex document content into a readable information system. Use diagrams and compact tables only when they make a real relationship easier to understand; visual polish never changes the evidence status of a claim.
 
+文档讲解图、流程图、关系图和方法总览默认直接使用 GPT Image 2（`gpt-image-2`）生成，作为图片嵌入对应正文；不再默认用飞书原生画板、SVG／HTML 或脚本框图交付，也不先画一版低质量框图。先锁定文案与关系，再逐字逐线验收；只有用户明确要求可编辑原生图或真实统计图需要精确计算时例外。已有有效画板保留；工具不可用时说明，不静默降级；版本未显示时不声称已确认模型版本。
+
 ## Required references
 
 - Read [visual-decision-matrix.md](references/visual-decision-matrix.md) before choosing a visual or deciding that none is needed.
