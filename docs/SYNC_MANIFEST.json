@@ -249,7 +249,7 @@
     "skills/visual-document-delivery/SKILL.md": "bbf31994589672dd82355746a17d0807be2713044d39b647bbf82ba8a2b47d89",
     "skills/visual-document-delivery/agents/openai.yaml": "fd634f125396646f1709376229097b5ad57015ffcca3baae5f4905444865fc81",
     "skills/visual-document-delivery/assets/input-confirmation.svg": "b437d94c5615ed7fc22a346ffa4f89e4f02ca354c79cfaa345e6458c9ffc248d",
-    "skills/visual-document-delivery/assets/workflow.svg": "ca6476f23938de2273c5a6a75fc86a8bd9cd861598086e2aa1f18583b09bdc69",
+    "skills/visual-document-delivery/assets/workflow.svg": "19deaef5ec4b56a08e1e85afb79d945c87d1b48d08738d5b978d61bcc810cb99",
     "skills/visual-document-delivery/references/figure-quality.md": "34fea475e31945bda4f632c728b464b8059fc0245ac448875849a5242575e67f",
     "skills/visual-document-delivery/references/layout-and-information-design.md": "400115a697a424e687c38e35c72e39f2987933faaffc5653868a1b920b79ca9b",
     "skills/visual-document-delivery/references/render-and-acceptance.md": "f3bfa985a8a865987303c54cc3bbc428d861c548a3bc41adeceb1d1f48ae9cf1",
@@ -279,5 +279,5 @@
     "skills/xiaohongshu-image-renderer/scripts/validate-package.test.mjs": "b85f1e41860166ef12bc89d33589586ad4b98a2fd7d23547f5b62314b3a0d780"
   },
   "version": "0.5.0",
-  "synced_at": "2026-11-06T04:22:50.211614+00:00"
+  "synced_at": "2026-11-06T05:02:40.526034+00:00"
 }
