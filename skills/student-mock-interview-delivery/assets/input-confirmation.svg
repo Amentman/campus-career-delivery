@@ -1,5 +1,5 @@
-<svg data-artifact-sha256="108b7a97a4d9295b69bceea23e6ac7c9e183f03b1ec8448472edbc622969d7f0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920.00 2273.00" width="920.00" height="2273.00" role="img" aria-labelledby="title desc" data-entry-x="507.51" data-definition-sha256="cfa5b2d668ffe87828312197569ac56a34008b34c8158d3a55e16181d50eeae7" data-renderer="viz-3.31.0">
-<title id="title">通用模拟面试 · 输入确认完整流程图</title><desc id="desc">学生身份、原简历与本轮范围 原双端页、岗位意向（如有）；本次属于哪类面试任务？；学生正式姓名与源简历原件 必需：主简历、正文身份可唯一定位；岗位意向、JD与求职阶段 条件必需：实际岗位路线选择时；整册新建／整体重做／局部目标块 必需：锁定本轮修改及验收范围；核心经历口述证据与当前准备度 条件必需：选讲解／训练／模拟模式时；唯一学生主页、老师版与学生版 条件必需：正式飞书写入时；飞书授权、图片/渲染能力与本地例外 条件必需：对应交付面验收时；先查已有原件与当前记录 保留版本、冲突和缺失；学生、简历及本轮范围明确？；已有来源查不清时 只问影响执行的最小问题；等待关键资料／裁决 暂停依赖步骤；独立工作可继续；进入后续流程 转专岗／真实复盘 Skill 分别确定独立交付对象；进入后续流程 整册还是局部？</desc>
+<svg data-artifact-sha256="9c7818b0afa7e1e9e2146e76c6da13f1b378cf483ff6141091102a57667ad0fd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920.00 2273.00" width="920.00" height="2273.00" role="img" aria-labelledby="title desc" data-entry-x="507.51" data-definition-sha256="c2a82178d6812adf9d623b8588ee4100f3e43a537690943c4fc6f6f74bcf6a28" data-renderer="viz-3.31.0">
+<title id="title">通用模拟面试 · 输入确认完整流程图</title><desc id="desc">学生身份、原简历与本轮范围 原双端页、岗位意向（如有）；本次属于哪类面试任务？；学生正式姓名与源简历原件 必需：主简历、正文身份可唯一定位；岗位意向、JD与求职阶段 条件必需：实际岗位路线选择时；整册新建／整体重做／局部目标块 必需：锁定本轮修改及验收范围；核心经历口述证据与当前准备度 条件必需：选讲解／训练／模拟模式时；唯一学生主页、老师版与学生版 条件必需：正式飞书写入时；飞书授权、画板／渲染能力与本地例外 条件必需：对应交付面验收时；先查已有原件与当前记录 保留版本、冲突和缺失；学生、简历及本轮范围明确？；已有来源查不清时 只问影响执行的最小问题；等待关键资料／裁决 暂停依赖步骤；独立工作可继续；进入后续流程 转专岗／真实复盘 Skill 分别确定独立交付对象；进入后续流程 整册还是局部？</desc>
 <rect width="100%" height="100%" fill="white"/>
 <g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#172b42"><text x="32" y="43" font-size="29" font-weight="600">通用模拟面试 · 输入确认</text><text x="32" y="76" font-size="16" fill="#43566e">从上往下读 · 菱形是判断，分支文字说明下一步</text></g>
 <svg x="100.50" y="100" width="719" height="2043" viewBox="0 0 719 2043"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(25.2 2018.07)">
@@ -164,7 +164,7 @@
 <g id="node8" class="node">
 <title>i_format</title>
 <polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="368.3,-819.49 83.32,-819.49 83.32,-714.51 368.3,-714.51 368.3,-819.49"/>
-<text xml:space="preserve" text-anchor="middle" x="225.81" y="-784.1" font-family="PingFang SC" font-size="19.00" fill="#172b42">飞书授权、图片/渲染能力与</text>
+<text xml:space="preserve" text-anchor="middle" x="225.81" y="-784.1" font-family="PingFang SC" font-size="19.00" fill="#172b42">飞书授权、画板／渲染能力与</text>
 <text xml:space="preserve" text-anchor="middle" x="225.81" y="-761.3" font-family="PingFang SC" font-size="19.00" fill="#172b42">本地例外</text>
 <text xml:space="preserve" text-anchor="middle" x="225.81" y="-738.5" font-family="PingFang SC" font-size="19.00" fill="#172b42">条件必需：对应交付面验收时</text>
 </g>

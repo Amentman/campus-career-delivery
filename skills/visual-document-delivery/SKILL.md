@@ -15,7 +15,7 @@ description: Use when creating or substantially revising a durable Feishu, Word,
 
 Turn complex document content into a readable information system. Use diagrams and compact tables only when they make a real relationship easier to understand; visual polish never changes the evidence status of a claim.
 
-文档讲解图、流程图、关系图和方法总览默认直接使用 GPT Image 2（`gpt-image-2`）生成，作为图片嵌入对应正文；不再默认用飞书原生画板、SVG／HTML 或脚本框图交付，也不先画一版低质量框图。先锁定文案与关系，再逐字逐线验收；只有用户明确要求可编辑原生图或真实统计图需要精确计算时例外。已有有效画板保留；工具不可用时说明，不静默降级；版本未显示时不声称已确认模型版本。
+飞书阅读材料中的讲解图、流程图、关系图和方法总览默认使用飞书原生画板，嵌入对应正文并紧邻讲解；不再默认生成讲解图片。先锁定读者问题、准确文案、关系和阅读路径，再实际应用 `impeccable` 的 Read 模式处理信息层级、字体、对齐、间距、留白和配色。图只承担有助理解的关系，不把正文缩写塞进框，不做大字海报或装饰图凑数。逐字逐线检查，并核对原生节点、画板导出及正文实际阅读宽度；非空token、上传成功或导出成功均不替代视觉验收。非飞书文件使用已验收画板的清晰导出或适合该格式的图；真实统计图可用精确计算工具。用户明确要求图片或确需照片、插画时另选图像工具，并保留相同质量门。
 
 ## Required references
 
@@ -48,7 +48,7 @@ Resolve `scripts/...` from this Skill's directory; do not assume the caller's cu
 ## Target-format visual contract
 
 - 先锁定读者、决策和**目标格式**。相同内容在不同交付面可以使用不同的视觉载体，但不能跳过目标格式的结构读回和最终渲染验收。
-- 飞书默认把讲解图作为清晰可见的图片嵌入正文对应章节，紧邻讲解；首屏预览、链接、附件或画板不能代替正文图片。保留既有有效画板。用户明确选择可编辑画板时按其范围交付；专岗材料仍需遵守其正文图片要求。读回图片／画板的媒体标识、块顺序与所属章节，再检查实际学生端显示。
+- 飞书讲解图默认原生画板，直接置于对应正文；既有有效画板、来源截图和用户指定图片保留。读回画板token、块顺序、章节及原生节点，并检查导出与学生实际阅读宽度；链接、附件和源码不能代替可见画板。不能为统一工具删除有效来源或把文字表格全部画图。
 - 如果目标格式是 Word、PDF、Markdown 或 HTML，使用该格式能稳定呈现且可读的图、表或关系结构；不要把飞书画板规则强行套到非飞书输出，也不要用不可渲染的 Mermaid 充当验收证据。
 - 简单线性内容可以没有视觉，但必须在 `visual_contract` 写出具体 `no_visual_reason`；复杂关系即使篇幅很短也不能以“文档短”为理由省略必要图解。
 
@@ -68,7 +68,7 @@ Do not force a diagram into a short answer, one resume bullet, a simple script, 
 
 - Never invent internal architecture, ownership, metrics, company data, or student experience to complete a figure.
 - Label abstractions and inferences inside the figure or caption.
-- Choose the tool from the relationship and required precision. For methodology overviews or teaching infographics, lock the exact wording and reading path first; if native or scripted drawing is visually weak, use available GPT image generation instead of repeatedly polishing a poor box diagram. Use precise native/programmatic tools for real quantitative charts, exact coordinates and editable figures. Check every generated label, number, arrow, branch, loop and terminal state before embedding; never change the logic for appearance. If the tool does not expose the model version, do not claim a verified version.
+- For Feishu explanatory diagrams, use native whiteboards and apply the figure-quality gate. If a board looks weak, redesign the relationship, hierarchy or layout; switching tools alone is not a fix. Use precise computation for quantitative charts. Every label, value, connector, branch, loop and terminal state must match the source. Images are for explicit image requests or content that needs imagery, and require the same checks.
 - A successful command, valid Mermaid syntax, non-empty token, or HTTP response is not visual acceptance.
 - Unresolved clipping, tiny labels, broken legends, missing captions, empty media, or incomplete page review keeps delivery incomplete.
 
@@ -90,4 +90,4 @@ Do not force a diagram into a short answer, one resume bullet, a simple script, 
 - Long prose copied into boxes: shorten nodes and return detail to the body.
 - Tables used as paragraph containers: keep comparison fields in the table and explanation in prose.
 - Figure separated from its explanation: move it to the relevant section.
-- Renderer cannot display the chosen format: export a readable image or use a compact native table instead.
+- Native board cannot be created or read back: preserve finished content, report the specific limitation, and do not silently substitute a generated poster. For non-Feishu exports use a checked board export or a suitable native table.

@@ -99,7 +99,7 @@ class RepositoryContractTests(unittest.TestCase):
         self.assertIn("独立子页", role_text)
         self.assertIn("独立子页", review_text)
 
-    def test_feishu_interview_visuals_preserve_existing_canvases_and_accept_body_images(self):
+    def test_feishu_interview_visuals_default_to_native_boards_and_preserve_media(self):
         reference_paths = (
             SKILLS / "student-mock-interview-delivery" / "references" / "feishu-delivery-contract.md",
             SKILLS / "student-interview-review-delivery" / "references" / "feishu-boundary-and-acceptance.md",
@@ -107,14 +107,16 @@ class RepositoryContractTests(unittest.TestCase):
         for path in reference_paths:
             text = path.read_text(encoding="utf-8")
             self.assertIn("正文", text, path)
-            self.assertIn("图片", text, path)
+            self.assertIn("原生画板", text, path)
+            self.assertIn("impeccable", text, path)
+            self.assertIn("原生节点", text, path)
             self.assertNotIn("必须使用**飞书原生画板**", text, path)
             self.assertNotIn("必须使用飞书原生画板", text, path)
             self.assertIn("no_visual_reason", text, path)
         role_text = (SKILLS / "student-role-interview-prep" / "references" / "feishu-boundary-and-acceptance.md").read_text(encoding="utf-8")
-        self.assertIn("图片嵌入正文对应章节", role_text)
+        self.assertIn("原生画板", role_text)
         self.assertIn("逐图", role_text)
-        self.assertIn("不能代替正文图片", role_text)
+        self.assertIn("不能代替正文可见画板", role_text)
         quality_text = (SKILLS / "student-mock-interview-delivery" / "references" / "interview-quality-contract.md").read_text(encoding="utf-8")
         self.assertNotIn("真实流程图或飞书画板", quality_text)
 
@@ -141,8 +143,10 @@ class RepositoryContractTests(unittest.TestCase):
         for text in (visual_text, matrix_text, render_text):
             self.assertIn("目标格式", text)
             self.assertIn("no_visual_reason", text)
-        self.assertIn("图片嵌入正文对应章节", visual_text)
-        self.assertIn("保留既有有效画板", visual_text)
+        self.assertIn("默认使用飞书原生画板", visual_text)
+        self.assertIn("既有有效画板", visual_text)
+        self.assertIn("原生节点", visual_text)
+        self.assertIn("impeccable", visual_text)
         self.assertIn("画板块", render_text)
         self.assertIn("非飞书", visual_text)
 

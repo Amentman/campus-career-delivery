@@ -13,7 +13,7 @@ description: Use when a user provides a student resume, questionnaire, screensho
 
 先读 [团队配置](references/team-setup.md)。账号绑定使用当前成员自己的 `expected_user_open_id`／`expected_profile`；学生入口优先本轮明确目标和既有唯一页，再从 `feishu.students_root_url` 或兼容的 `wiki` 映射定位。`workspace.student_root`、`knowledge_root`、`output_root` 均是成员本机路径，配置不是外部写入授权。已有规划原地更新并保留父级；缺少必要入口时只确认该落点，不创建替代组织树。
 
-完整图文验收依赖同包 `visual-document-delivery`，单独复制本目录时须把该目录一并安装在相邻的 Skills 目录，脚本才可调用共享视觉校验。`impeccable` 可用于阅读排版；没有该辅助 Skill 时按本目录正文标准检查层级、留白、图文距离和实际阅读宽度，不声称调用过它。扩展研究没有 `deep-research` 时按本目录研究合同完成一手来源检索和证据台账；只有结合服务产品时才需要 `job-sales-advisor` 或成员提供的产品知识库，缺失事实保留待确认。飞书操作先查当前 CLI 版本与相应域 `--help`，有版本匹配指南时再读；PDF 渲染另需可用渲染器，`full` 校验使用 Poppler 的 `pdfinfo`／`pdftoppm`。
+完整图文验收依赖同包 `visual-document-delivery`，单独复制本目录时须把该目录一并安装在相邻的 Skills 目录，脚本才可调用共享视觉校验。`impeccable` 已安装时必须实际应用 Read 模式；没有该辅助 Skill 时按本目录正文标准检查层级、留白、图文距离和实际阅读宽度，不声称调用过它。扩展研究没有 `deep-research` 时按本目录研究合同完成一手来源检索和证据台账；只有结合服务产品时才需要 `job-sales-advisor` 或成员提供的产品知识库，缺失事实保留待确认。飞书操作先查当前 CLI 版本与相应域 `--help`，有版本匹配指南时再读；PDF 渲染另需可用渲染器，`full` 校验使用 Poppler 的 `pdfinfo`／`pdftoppm`。
 
 ## 目标
 
@@ -29,6 +29,8 @@ description: Use when a user provides a student resume, questionnaire, screensho
 - “尚未签单”“姓名忽略”“先做一版”不自动改成方向提纲，也不取消会话已确定的飞书落点；只调整必要的命名、可确认信息和实际授权范围。
 - 薪资目标与市场证据分开。主攻路线只有“期望20—30万”“未披露”时，继续查可比岗位；确实查不到就明确该路线薪资研究未完成，不用其他方向的薪资或图文、章节数量补齐验收。
 - 用户强调薪资待遇是核心时，每路线一条样本只是底线，不能作为研究终点。按同一路线内的多家公司展开报价、保证与浮动部分、福利、新人培养、工作安排和进入条件，解释这些差异怎样影响该学生的选择；不能只增加通用 Offer 常识。
+
+规划先有一张能直接比较的总表，把**优先级、方向／业务场景、有序具体岗位、个人适配与差距、代表企业、应届薪酬及口径**连在一起；招聘报价清单作为下钻证据，不能替代规划总览。待遇是核心时，还要解释同方向不同业务／平台的薪酬差异、本人申请目标、争取更高档位的条件，以及培养和工作安排的取舍。
 
 ## 先判断当前阶段
 
@@ -48,7 +50,7 @@ description: Use when a user provides a student resume, questionnaire, screensho
 - 明确要求行业白皮书时：读取 `references/industry-research-contract.md`；已安装时使用 `deep-research`，否则按本目录合同检索并登记来源。
 - 明确要求结合产品、导师、课次或老板知识库时：读取 `references/product-integration.md`。
 - 写入飞书时：读取 `references/feishu-delivery.md` 和 `references/delivery-manifest-schema.md`。
-- 完整学生规划配合 `visual-document-delivery` 选择图解关系、建立 `visual_contract` 和渲染验收，`impeccable` 已安装时实际应用其 Read 模式，否则按本目录正文标准完成同等阅读检查。职业规划的载体按本领域合同：解释图默认以清晰图片嵌入对应正文，已有有效画板保留；只有用户需要编辑或画板确实更适合时新增画板。通用技能中的原生画板默认不覆盖这里的阅读要求。
+- 完整学生规划配合 `visual-document-delivery` 选择图解关系、建立 `visual_contract` 和渲染验收，`impeccable` 已安装时实际应用其 Read 模式，否则按本目录正文标准完成同等阅读检查。职业规划讲解图默认使用飞书原生画板；优先总览方向、准备与发展关系，细节和薪资比较用原生表格。已有有效媒体保留，缺少独立讲解任务的图删除或不画；实际应用 `impeccable` Read模式并检查正文显示。
 
 ## 核心判断顺序
 
