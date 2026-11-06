@@ -77,16 +77,16 @@
     "skills/campus-recommend/references/feishu-writeback.md": "44d4a58f852e0e429cafcc44477acaf5aaee2092bcd97b3edac21a989f945664",
     "skills/campus-recommend/references/team-setup.md": "b04ecb4f0e35d3301d18431e693741927b68f9624c9722669167d1a508013261",
     "skills/campus-recommend/references/workflow.md": "2574a60d1493ca9904c3e4c8f9a54bdd8c7eaecd88f1ae1e012755ef2c1f2f9d",
-    "skills/delivering-student-career-plans/SKILL.md": "1cdf3db6da5b0dac75ce361d492b716954709ffb53efc6589beadc92a1f907f8",
+    "skills/delivering-student-career-plans/SKILL.md": "6d90098d4179fd130191f773a21b64031f11705c2310a149fd22d5dc1f0f66b4",
     "skills/delivering-student-career-plans/agents/openai.yaml": "6a556b759b74b9f8976d25413933d5d1d6e23e23f48b457b44ee94da382eb9d8",
     "skills/delivering-student-career-plans/assets/input-confirmation.svg": "b05473208dfab7341f5987bd22b38acb7fddc3878c3ac262594087dd87a4c09b",
     "skills/delivering-student-career-plans/assets/workflow.svg": "958eba2af54962efbcd4dbc005b7cdfcbc33c6743d4abd7f049534980b2987d7",
     "skills/delivering-student-career-plans/references/delivery-manifest-schema.md": "c43e37b243c8507ae8bfc9d524f2df638cf443d640c05f4936d170e44fc48a3e",
     "skills/delivering-student-career-plans/references/evidence-and-input-contract.md": "b0d24294c5639f2ec2463891cae584d108b2f34d380e519ce7000c32cb4f3b76",
-    "skills/delivering-student-career-plans/references/external-career-plan-standard.md": "2a78d0c75e6dfe6dc4ee5b4af2beaf6013fd72b3fdb2cea997b3801cb99eb253",
+    "skills/delivering-student-career-plans/references/external-career-plan-standard.md": "7af0df69f44ef4285095d3c25417514f4a306fa9d3a7a30dbee1a3f575b86071",
     "skills/delivering-student-career-plans/references/feishu-delivery.md": "845dcdbeb4964b45660d6a8f5fe180358feda24bf0ecc6e7e2e38260253cc206",
     "skills/delivering-student-career-plans/references/industry-research-contract.md": "ca2d19a32765ccf0fb81fc5c0f332dcf95bcaa2a128c715a77b874bf0e411aa5",
-    "skills/delivering-student-career-plans/references/planning-and-project-contract.md": "5dc8610a2543f362fc7cd5b3ac6ce24721d7a8b4d5a4f80022a8185ef996debc",
+    "skills/delivering-student-career-plans/references/planning-and-project-contract.md": "e86880b109263cc457d94f3970b8b6c9f38e10138a9148f2a1c108ccbbc54d91",
     "skills/delivering-student-career-plans/references/product-integration.md": "e95560d47e178e5614e5a511f95867c1c7a554d18279f5904c0232d436bc68b6",
     "skills/delivering-student-career-plans/references/team-setup.md": "fae8b049e2c81b725a981e70b191179f8aff68c334f746caf1e5bd7d0da719e9",
     "skills/delivering-student-career-plans/references/workflow.md": "f811641f34382e9a78a3f2353c82f0f4ef5da0184aa326cbc2444f2820c9c078",
@@ -279,5 +279,5 @@
     "skills/xiaohongshu-image-renderer/scripts/validate-package.test.mjs": "b85f1e41860166ef12bc89d33589586ad4b98a2fd7d23547f5b62314b3a0d780"
   },
   "version": "0.5.0",
-  "synced_at": "2026-11-06T14:08:08.764669+00:00"
+  "synced_at": "2026-11-06T14:59:19.925965+00:00"
 }
