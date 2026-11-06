@@ -49,20 +49,20 @@
     "skills/building-resume-interview-stories/references/team-setup.md": "3bb65e6f4b4424c3f378fd6d48f337cfe98bd5bd7e833a03b5b42bd10716c001",
     "skills/building-resume-interview-stories/references/visual-story-contract.md": "be79c84bb0493e66a1fce6ca448deb9f938f4645daa80d6943f7e00a266a2410",
     "skills/building-resume-interview-stories/references/workflow.md": "a93d28facf462fb73bef2e783a35583fb758598892327df40f0cd545df61944e",
-    "skills/campus-job-matching/SKILL.md": "8c09decdb229bc17f51a6d67cf0ed46b42da0ec25ada5255be827bb0d69df958",
+    "skills/campus-job-matching/SKILL.md": "52afc2a14ac2a4e56041f28bd4186cfedbf05786e2ea863001299bfa3f76a82a",
     "skills/campus-job-matching/assets/input-confirmation.svg": "0f43d590b1898f06fc713b0215573ab4cebc9b6272d97397fc16dbfc70121284",
     "skills/campus-job-matching/assets/workflow-overview.svg": "d67b8b55075b816e16e084a87594fbaf3a06c9d3ff57df8975ac6908102611b3",
     "skills/campus-job-matching/assets/workflow.svg": "4452ccf049935b7f2f992bd31b45be4b0de0b15466b4ff75c2ecdfccc077ed8d",
-    "skills/campus-job-matching/references/campus-matching.md": "0a341dc648106b8435c469b9d5d633214d5f8ba8f6653f9cef0532b3524830a5",
+    "skills/campus-job-matching/references/campus-matching.md": "e12c84d6b6ccf1f2cd0d053951dba91341c4038ca3039cf126b37d5dd5ede06c",
     "skills/campus-job-matching/references/feishu-delivery.md": "7d6e1ac51678d334bf51b359e390b01d5b61f1981356bd41cc330dda7203582e",
-    "skills/campus-job-matching/references/final-review.md": "a5f89dbf866170936d347a0d5debb8fb2473749e5f4e252f873bd7640638b97c",
-    "skills/campus-job-matching/references/quality-contract.md": "66450dd16db0df150aa5072377ec5accb253001c51e78ecbe011baa064978d42",
+    "skills/campus-job-matching/references/final-review.md": "02383b1e2f03346de13f4f50ee137bd8de2292bc1b5912a7ec898ae6e17459f3",
+    "skills/campus-job-matching/references/quality-contract.md": "f37347295e87fe4a756320449276af762339edf709a95fc526008e2aafe554e7",
     "skills/campus-job-matching/references/runtime-config.md": "8a488410dcd4371c939cf5ceab1b3d9a0c238d3749cbfe08c1042ce22bbe60e9",
     "skills/campus-job-matching/references/search-modes.md": "a2b74be3722d8708bfb4746246e415f6b7d924149437cb4171e8708457382b62",
     "skills/campus-job-matching/references/shared-pool.md": "371f8908a2d8e49b4e4d3566cf454714a4f7e1c63aaf767f3f41703904699194",
     "skills/campus-job-matching/references/source-adapters.md": "9f65609bf4d71e4091d3fb84610a61712235d3ccf061f94f391c85bb367330e5",
     "skills/campus-job-matching/references/team-setup.md": "e1e8531b10cee977c853704cc1362efb40324c500692decae43f6fc200af9c23",
-    "skills/campus-job-matching/references/workflow.md": "d543139e8481c50885a8a395d742e44efce94935baac1a81f084f9075e2b3efd",
+    "skills/campus-job-matching/references/workflow.md": "0d58fd81611395a63c84cd79213dd363b6012a0c0a1f735afa33f9ab6022dd31",
     "skills/campus-job-matching/scripts/enforce_company_cap.py": "e878c481096d833aebef2836629efed60c7d5a93f501bb42d1076e2cc487a0ec",
     "skills/campus-job-matching/scripts/shared_pool.py": "c393e93fbc257fb778995d0ae21263f88ae96b8eccba4624a059a0d80a1bd6ad",
     "skills/campus-job-matching/scripts/validate_jobs.py": "4babd3f1ad19e0e2c0c6173e404cac7b020e657118850c6aeb6f2e658ac077ec",
@@ -279,5 +279,5 @@
     "skills/xiaohongshu-image-renderer/scripts/validate-package.test.mjs": "b85f1e41860166ef12bc89d33589586ad4b98a2fd7d23547f5b62314b3a0d780"
   },
   "version": "0.5.0",
-  "synced_at": "2026-11-06T08:55:11.788818+00:00"
+  "synced_at": "2026-11-06T14:08:08.764669+00:00"
 }
