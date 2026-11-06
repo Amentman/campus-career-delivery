@@ -1,5 +1,5 @@
-<svg data-artifact-sha256="bc0bfb56a9e76d71c06f5fdeaf4581a918f9c8b8efc83e44fc5214e7519cb6af" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920.00 2280.00" width="920.00" height="2280.00" role="img" aria-labelledby="title desc" data-entry-x="463.01" data-definition-sha256="8eae9d0e0bb8bef5a6bedead34afa1a7c8683a9f7a98a000dfe15103a32f53cf" data-renderer="viz-3.31.0">
-<title id="title">专岗面试准备 · 输入确认完整流程图</title><desc id="desc">学生原简历、公司/JD/邀约 本轮轮次、目标与已有材料；面试前专岗还是其他任务？；学生正式身份、原简历与当前材料 必需：有可追溯本人证据；真实公司、岗位全名／职位编号、完整JD 必需：定向对象；未知职称明确待确认；邀约、轮次、形式、时间与语言 条件必需：本轮练习安排时；地点、薪资意向、到岗与轮岗接受度 条件必需：相关问答涉及时；完整专岗／明确短稿／只续图片验收 必需：本轮交付与保护边界；同岗唯一原页、父级与正式交付授权 条件必需：飞书写入时；先查已有原件与当前记录 保留版本、冲突和缺失；定向对象与本轮依赖资料明确？；已有来源查不清时 只问影响执行的最小问题；等待关键资料／裁决 暂停依赖步骤；独立工作可继续；进入后续流程 通用模拟／真实复盘 转对应独立 Skill；进入后续流程 读真实资料与原页版本 核对同公司、同岗位和职位号</desc>
+<svg data-artifact-sha256="ccdf0939836c9e74848c64d2a80f225f469311c4a578a3914bc07f323b2a6f40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920.00 2280.00" width="920.00" height="2280.00" role="img" aria-labelledby="title desc" data-entry-x="463.01" data-definition-sha256="c451aeba835b550a7cc7c4f9e6971485e3a67ec8dafcbe739c1f6c4483282348" data-renderer="viz-3.31.0">
+<title id="title">专岗面试准备 · 输入确认完整流程图</title><desc id="desc">学生原简历、公司/JD/邀约 本轮轮次、目标与已有材料；面试前专岗还是其他任务？；学生正式身份、原简历与当前材料 必需：有可追溯本人证据；真实公司、岗位全名／职位编号、完整JD 必需：定向对象；未知职称明确待确认；邀约、轮次、形式、时间与语言 条件必需：本轮练习安排时；地点、薪资意向、到岗与轮岗接受度 条件必需：相关问答涉及时；完整/短稿/只续验收；单公司或多公司合并 必需：本轮交付与保护边界；用户指定单文档/合并目标、原页与父级 条件必需：飞书写入时；先查已有原件与当前记录 保留版本、冲突和缺失；定向对象与本轮依赖资料明确？；已有来源查不清时 只问影响执行的最小问题；等待关键资料／裁决 暂停依赖步骤；独立工作可继续；进入后续流程 通用模拟／真实复盘 转对应独立 Skill；进入后续流程 读真实资料与原页版本 核对同公司、同岗位和职位号</desc>
 <rect width="100%" height="100%" fill="white"/>
 <g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#172b42"><text x="32" y="43" font-size="29" font-weight="600">专岗面试准备 · 输入确认</text><text x="32" y="76" font-size="16" fill="#43566e">从上往下读 · 菱形是判断，分支文字说明下一步</text></g>
 <svg x="42.00" y="100" width="836" height="2050" viewBox="0 0 836 2050"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(25.2 2025.26)">
@@ -155,17 +155,17 @@
 <!-- i_scope -->
 <g id="node7" class="node">
 <title>i_scope</title>
-<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="391.3,-1007.71 106.32,-1007.71 106.32,-902.73 391.3,-902.73 391.3,-1007.71"/>
-<text xml:space="preserve" text-anchor="middle" x="248.81" y="-972.32" font-family="PingFang SC" font-size="19.00" fill="#172b42">完整专岗／明确短稿／只续图</text>
-<text xml:space="preserve" text-anchor="middle" x="248.81" y="-949.52" font-family="PingFang SC" font-size="19.00" fill="#172b42">片验收</text>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="382.77,-1007.71 114.85,-1007.71 114.85,-902.73 382.77,-902.73 382.77,-1007.71"/>
+<text xml:space="preserve" text-anchor="middle" x="248.81" y="-972.32" font-family="PingFang SC" font-size="19.00" fill="#172b42">完整/短稿/只续验收；单公</text>
+<text xml:space="preserve" text-anchor="middle" x="248.81" y="-949.52" font-family="PingFang SC" font-size="19.00" fill="#172b42">司或多公司合并</text>
 <text xml:space="preserve" text-anchor="middle" x="248.81" y="-926.72" font-family="PingFang SC" font-size="19.00" fill="#172b42">必需：本轮交付与保护边界</text>
 </g>
 <!-- i_destination -->
 <g id="node8" class="node">
 <title>i_destination</title>
-<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="391.3,-851.73 106.32,-851.73 106.32,-746.76 391.3,-746.76 391.3,-851.73"/>
-<text xml:space="preserve" text-anchor="middle" x="248.81" y="-816.34" font-family="PingFang SC" font-size="19.00" fill="#172b42">同岗唯一原页、父级与正式交</text>
-<text xml:space="preserve" text-anchor="middle" x="248.81" y="-793.54" font-family="PingFang SC" font-size="19.00" fill="#172b42">付授权</text>
+<polygon fill="#ffffff" stroke="#b4c1d1" stroke-width="1.25" points="387.05,-851.73 110.57,-851.73 110.57,-746.76 387.05,-746.76 387.05,-851.73"/>
+<text xml:space="preserve" text-anchor="middle" x="248.81" y="-816.34" font-family="PingFang SC" font-size="19.00" fill="#172b42">用户指定单文档/合并目标、</text>
+<text xml:space="preserve" text-anchor="middle" x="248.81" y="-793.54" font-family="PingFang SC" font-size="19.00" fill="#172b42">原页与父级</text>
 <text xml:space="preserve" text-anchor="middle" x="248.81" y="-770.74" font-family="PingFang SC" font-size="19.00" fill="#172b42">条件必需：飞书写入时</text>
 </g>
 <!-- i_existing -->
@@ -215,4 +215,4 @@
 </g>
 </svg>
 <path d="M32 2174H888" stroke="#dce3ec"/>
-<g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#43566e"><text x="32" y="2202" font-size="15">边界：准备一个专岗不授权改通用双端；真实面试转复盘 Skill。</text><text x="32" y="2264" font-size="12">来源：Skill 正文与关联规则 · 可回查的流程说明</text></g></svg>
+<g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#43566e"><text x="32" y="2202" font-size="15">边界：用户指定合并与缩小范围优先；保护通用双端和历史专岗；后台故障不自动升级前台。</text><text x="32" y="2264" font-size="12">来源：Skill 正文与关联规则 · 可回查的流程说明</text></g></svg>
