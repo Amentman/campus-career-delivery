@@ -15,6 +15,7 @@
   "version": 1,
   "expected_user_open_id": "",
   "expected_profile": "",
+  "role_prep_delivery": {"authorization_confirmed": false, "link_share_entity": "preserve"},
   "workspace": {"student_root": "", "knowledge_root": "", "output_root": ""},
   "feishu": {"students_root_url": "", "template_url": "", "content_base_url": "", "service_base_url": "", "todo_url": ""},
   "shared_pool": {"enabled": true, "base_token": "", "job_table_id": "", "company_table_id": "", "owner_open_id": ""}
@@ -24,6 +25,10 @@
 只填写当前任务需要的字段；单纯聊天、读取用户给定材料或生成本地稿，不要求配置无关系统。已有 `wiki` 和 `format_reference` 路由继续保留，不改学生目录或投递表。没有共享岗位库的部署应由使用者明确设 `shared_pool.enabled=false`；不能把配置缺失当作跳过已约定岗位库的理由。
 
 团队负责人私下提供资源路由；成员在本机用自己的 `lark-cli` 登录，静默核对并绑定本人的 `expected_user_open_id`。共享库所有者与操作者是两个对象；有权限的成员可以访问团队负责人名下的库，不需要把资源转给成员。配置文件不携带密码、Cookie、访问令牌、聊天库或学生材料，也不会自动赋予权限。
+
+## 专岗交付分享偏好
+
+`role_prep_delivery` 默认缺省或 `preserve`，不改变分享范围。当前使用者明确要求本人后续学生专岗交付页均为“获得链接的所有人可查看”后，在其私有配置中设 `authorization_confirmed=true`、`link_share_entity=anyone_readable`；按写入边界逐页执行和回读。配置只保存本人已确认偏好，不授予API权限，不适用于老师内部页、学生主页或其他服务记录，也不能复制作者的确认值给其他成员。当前任务限定更窄时采用当前限定。
 
 ## 安装器与诊断
 

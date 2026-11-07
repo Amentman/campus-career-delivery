@@ -22,7 +22,7 @@ RESOURCE_NOTES = {
 
 def reference(name):
     note = RESOURCE_NOTES.get(name, '正式学生材料优先本轮已给的唯一入口；未给时，从 `feishu.students_root_url` 或兼容 `wiki` 路由定位该学生。`workspace.student_root` 用于本机材料搜索，`workspace.output_root` 用于备份。先读现有页、父级和权限，避免建立重复页面。')
-    return f'''# {name}｜团队配置
+    content = f'''# {name}｜团队配置
 
 ## 第一次使用
 
@@ -69,6 +69,12 @@ python3 scripts/team_setup.py doctor --skill {name} --live
 
 任务完成后按实际交付面回读内容、数量、附件、父级和可读性。配置成功、CLI成功和本地测试通过不替代业务验收；没有测试成员账号时不声称已验证该成员访问。
 '''
+
+    if name == 'student-role-interview-prep':
+        content = content.replace('"expected_profile": "",', '"expected_profile": "",\n  "role_prep_delivery": {"authorization_confirmed": false, "link_share_entity": "preserve"},')
+        content = content.replace('## 安装器与诊断', '## 专岗交付分享偏好\n\n`role_prep_delivery` 默认缺省或 `preserve`，不改变分享范围。当前使用者明确要求本人后续学生专岗交付页均为“获得链接的所有人可查看”后，在其私有配置中设 `authorization_confirmed=true`、`link_share_entity=anyone_readable`；按写入边界逐页执行和回读。配置只保存本人已确认偏好，不授予API权限，不适用于老师内部页、学生主页或其他服务记录，也不能复制作者的确认值给其他成员。当前任务限定更窄时采用当前限定。\n\n## 安装器与诊断')
+    return content
+
 
 
 def build():

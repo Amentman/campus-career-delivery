@@ -14,6 +14,7 @@
 | 地点、薪资意向、到岗与轮岗接受度 | 条件必需：相关问答涉及时 | 从本人已确认资料读取硬条件，用于自我介绍/意向回答 | 没有确认不替学生承诺；只追问影响当前表达的关键条件 |
 | 完整/短稿/只续验收；单公司或多公司合并 | 必需：本轮交付与保护边界 | 按用户明确范围定内容和文档组织；五分钟轮次不等于短稿；合并要求不拆页 | 先查本轮原话与目标；仅关键歧义确认，不因模板扩大范围 |
 | 用户指定单文档/合并目标、原页与父级 | 条件必需：飞书写入时 | 优先用户指定及唯一同岗/合并页；读XML修订、媒体和手工内容，记录保护页 | 多个目标先消歧；默认新岗独立仅适用于无指定合并，已有页不迁移 |
+| 目标专岗分享范围与本人偏好 | 条件必需：飞书交付分享时 | 读用户本轮明确要求或本人私有role_prep_delivery已确认偏好；保存目标原权限 | 未授权保留现有权限；不继承作者授权，不索取学生账号 |
 
 ## 输入确认、补齐与返回
 
@@ -91,7 +92,7 @@
 
 优先用户指定及唯一同岗/合并页；读XML修订、媒体和手工内容，记录保护页；缺失处理：多个目标先消歧；默认新岗独立仅适用于无指定合并，已有页不迁移
 
-下一步：先查已有原件与当前记录；保留版本、冲突和缺失。
+下一步：目标专岗分享与本人偏好；本轮要求或本人私有配置。
 
 依据：[references/feishu-boundary-and-acceptance.md](feishu-boundary-and-acceptance.md) 中的“先定位，再写入”。
 
@@ -126,6 +127,14 @@
 下一步：“收到答复或来源恢复后重新核对” → 先查已有原件与当前记录；保留版本、冲突和缺失。
 
 依据：[SKILL.md](../SKILL.md) 中的“1. **读取真实资料。**”。
+
+**13. 目标专岗分享与本人偏好；本轮要求或本人私有配置**
+
+读取本轮明确要求或本人已确认分享偏好；未授权保留原权限，团队成员不继承。
+
+下一步：先查已有原件与当前记录；保留版本、冲突和缺失。
+
+依据：[references/feishu-boundary-and-acceptance.md](feishu-boundary-and-acceptance.md) 中的““所有人可见”的设置与验收”。
 
 ### 执行与核验
 
@@ -341,9 +350,9 @@ DOM能读正文不代表图片显示通过；高层AX包装超时不代表后台
 
 **5. 只写指定单文档或默认专岗页；按块局部更新，分章独立读回**
 
-合并时只写已确认的一份文档，不额外建公司页；默认新岗独立仅适用于无合并指定。保留手工填写、附件、父级和权限。
+合并时只写已确认的一份文档，不额外建公司页；默认新岗独立仅适用于无合并指定。保留手工填写、附件与父级；目标页分享按下一步已授权要求处理。
 
-下一步：CLI清单＋当前后台能力发现；全文与每张图分别取证。
+下一步：本轮或本人偏好已授权；所有人可查看？。
 
 依据：[references/feishu-boundary-and-acceptance.md](feishu-boundary-and-acceptance.md) 中的“正式写入”。
 
@@ -387,14 +396,39 @@ DOM能读正文不代表图片显示通过；高层AX包装超时不代表后台
 
 依据：[references/content-and-expression.md](content-and-expression.md) 中的“专岗图解合同”。
 
+**11. 本轮或本人偏好已授权；所有人可查看？**
+
+所有人可见对应获得链接任何人阅读；只作用目标学生专岗。
+
+下一步：“已明确授权，不重复问” → 底层文档最小权限更新；external_access＋anyone_readable；“未授权：保留原权限” → CLI清单＋当前后台能力发现；全文与每张图分别取证。
+
+依据：[references/feishu-boundary-and-acceptance.md](feishu-boundary-and-acceptance.md) 中的““所有人可见”的设置与验收”。
+
+**12. 底层文档最小权限更新；external_access＋anyone_readable**
+
+写前快照，解析底层obj token/type；当前CLI核参后只改授权阅读字段，超时先读回。
+
+下一步：独立GET读回分享字段；比较其余权限与保护页。
+
+依据：[references/feishu-boundary-and-acceptance.md](feishu-boundary-and-acceptance.md) 中的““所有人可见”的设置与验收”。
+
+**13. 独立GET读回分享字段；比较其余权限与保护页**
+
+回读外部访问与链接阅读，检查平台继承联动；区分字段、本人显示和匿名访问。策略受限报告实际范围，不放宽父级。
+
+下一步：“记录实际权限与限制” → CLI清单＋当前后台能力发现；全文与每张图分别取证。
+
+依据：[references/feishu-boundary-and-acceptance.md](feishu-boundary-and-acceptance.md) 中的““所有人可见”的设置与验收”。
+
 ## 验收
 
 - 公司类型对应的基本面与具体业务有证据
 - 核心职责连到任务、产物、指标和专属案例
 - 合并总览与差异比较；学生事实不冒认
 - 全文回读与后台逐图实际检查；保护范围核对
+- 授权分享字段独立读回；本人显示与匿名/组织外访问分别报告
 
-用户指定合并与缩小范围优先；保护通用双端和历史专岗；后台故障不自动升级前台。
+用户指定合并与缩小范围优先；保护通用双端和历史专岗；后台故障不自动升级前台。 分享偏好只属于当前使用者；只改目标学生专岗，不开放主页或内部页。
 
 ## 对应规则
 
@@ -403,6 +437,7 @@ DOM能读正文不代表图片显示通过；高层AX包装超时不代表后台
 - [references/content-and-expression.md](content-and-expression.md)
 - [references/feishu-boundary-and-acceptance.md](feishu-boundary-and-acceptance.md)
 - [references/feishu-image-browser-recovery.md](feishu-image-browser-recovery.md)
+- [references/team-setup.md](team-setup.md)
 
 <details>
 <summary>可编辑的完整流程源码</summary>
@@ -453,6 +488,10 @@ flowchart TB
   merged["锁定一份目标与共同总览<br/>分公司章节＋差异比较"]
   research_gap{"核心业务有证据且未知已合理补查？"}
   supplement["按事实缺口换有效来源类型<br/>记录已查渠道与未知影响"]
+  i_sharing["目标专岗分享与本人偏好<br/>本轮要求或本人私有配置"]
+  share_rule{"本轮或本人偏好已授权<br/>所有人可查看？"}
+  share_patch["底层文档最小权限更新<br/>external_access＋anyone_readable"]
+  share_verify["独立GET读回分享字段<br/>比较其余权限与保护页"]
   in --> route
   route -->|"通用训练／已发生面试"| companion
   locate --> target
@@ -469,7 +508,7 @@ flowchart TB
   short --> delivery
   delivery -->|"限定聊天／本地／暂缺写入条件"| draft
   delivery -->|"已授权且唯一"| write
-  write --> inventory
+  write --> share_rule
   inventory --> display
   display -->|"全文和全部图片实际覆盖"| gate
   display -->|"AX/DOM/截图具体层故障"| recover
@@ -485,7 +524,7 @@ flowchart TB
   i_interview --> i_conditions
   i_conditions --> i_scope
   i_scope --> i_destination
-  i_destination --> i_existing
+  i_destination --> i_sharing
   i_existing --> i_ready
   i_ready -->|"本轮依赖信息已明确；可选缺项按规则保留"| locate
   i_ready -->|"关键材料缺失／冲突会改变本轮动作"| i_clarify
@@ -508,6 +547,11 @@ flowchart TB
   research_gap -->|"相关渠道尚未查全"| supplement
   supplement -->|"补查后重核；仍未知说明影响"| research_gap
   research_gap -->|"相关渠道已尽；关键业务仍无法解释"| draft
+  i_sharing --> i_existing
+  share_rule -->|"已明确授权，不重复问"| share_patch
+  share_rule -->|"未授权：保留原权限"| inventory
+  share_patch --> share_verify
+  share_verify -->|"记录实际权限与限制"| inventory
 ```
 
 </details>

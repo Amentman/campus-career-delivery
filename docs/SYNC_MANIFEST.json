@@ -227,17 +227,17 @@
     "skills/student-mock-interview-delivery/tests/test_locate_student.py": "09d0d9b4858ca5dbfbee0cb1b1799d83caa8e400cf1f4b081a22eebafcd5d0fa",
     "skills/student-mock-interview-delivery/tests/test_validate_delivery.py": "2637798a93bd3fce516f1c635042b87b9e9915cd54ed40960db11955c685e16c",
     "skills/student-mock-interview-delivery/tests/test_validate_feishu_delivery.py": "00748da5250e8fafd90b52d01d9d583d5f004356451d87e277c8f6ce0441aec4",
-    "skills/student-role-interview-prep/SKILL.md": "98bf624ccd6d7e7a39a14bb3f09fbe5007e90a61f2e1d0ce6b6f5235339534f1",
+    "skills/student-role-interview-prep/SKILL.md": "57a0910fc895ed8346aa8341383be31ee5a7a49c3b103c04d0da285c09cfe596",
     "skills/student-role-interview-prep/agents/openai.yaml": "db3a7e8a744aeddda85242ce37789f2b162136d8c694ed01335f258bf8a3465b",
-    "skills/student-role-interview-prep/assets/input-confirmation.svg": "47ad73c8d4b665c05a6ea5813b55383d48d7f8571bc72a03085465798a3b8e5a",
-    "skills/student-role-interview-prep/assets/workflow.svg": "82c3128fccb354a8ab42b72d15dcd6b735daeeda1069321247f6fc4b71a7543c",
-    "skills/student-role-interview-prep/references/acceptance-scenarios.md": "a45b1fc3c2e932f5038573cd5ed8aecd53218be4dba7b0d1e189d9eaac344ea8",
+    "skills/student-role-interview-prep/assets/input-confirmation.svg": "4a54e163897ae143d951bbc53adb286762ee2c2411be0f59518a1136f170e79c",
+    "skills/student-role-interview-prep/assets/workflow.svg": "490814c9d5d8b04785f4e594a0682ab0e3e88618f2d07e7f2982561229c963ff",
+    "skills/student-role-interview-prep/references/acceptance-scenarios.md": "6722e8f1b4f7170c226f786193476dc9794397d07772219dd57c3957c3ff23e3",
     "skills/student-role-interview-prep/references/company-fundamentals-research.md": "6cc6dff16556897fdd51845fde2870aac7e11e67962fb49b17d0f439cb34ad7e",
     "skills/student-role-interview-prep/references/content-and-expression.md": "69b05b23d0fb4c1f586c2dd720cd294c01c6a295607ef6d292d459e46d980cf7",
-    "skills/student-role-interview-prep/references/feishu-boundary-and-acceptance.md": "7b98e54a8929953ba2c6aef9a7681a0112ed65a46fea1c7412d93f88908a13f0",
+    "skills/student-role-interview-prep/references/feishu-boundary-and-acceptance.md": "bef8b049e2ea9dd8f8261bb8ee97e93ccc16fd48603dacb38d26400de01c86b3",
     "skills/student-role-interview-prep/references/feishu-image-browser-recovery.md": "e483c1e8ffea744c33375afdf56bbdf6e1c6132aa4f3ff42273f71dd3641798a",
-    "skills/student-role-interview-prep/references/team-setup.md": "06d8c8d8b83567277d5b225c170062c5f115fc504bffcb5f909977bb5449064c",
-    "skills/student-role-interview-prep/references/workflow.md": "9b85222203820d3cd676fe2e342798e0c08f92bd1bf96b42a81b4107915e1b76",
+    "skills/student-role-interview-prep/references/team-setup.md": "04f6db1370a24b13e6753a59943971c76c146529ee265de9793796e3021ca8ec",
+    "skills/student-role-interview-prep/references/workflow.md": "9d1ab09a82c212b02a2919bf83ed9b3d2162994c2593c52f5be3f1170a4929fd",
     "skills/tencent-meeting-cloud-export/SKILL.md": "0c461a47a1f97c23a6bc76ae96937583376f225bea3848f5f1a6be68fca38ce6",
     "skills/tencent-meeting-cloud-export/agents/openai.yaml": "22992c231ced0376d514b8207069ef59f4fec34d163c4239e3b422eca2d5a88a",
     "skills/tencent-meeting-cloud-export/assets/input-confirmation.svg": "47811b37aacc140452d7588b166d483c5e3c9b67d97de1703669c0854e2d0ed0",
@@ -279,5 +279,5 @@
     "skills/xiaohongshu-image-renderer/scripts/validate-package.test.mjs": "b85f1e41860166ef12bc89d33589586ad4b98a2fd7d23547f5b62314b3a0d780"
   },
   "version": "0.5.0",
-  "synced_at": "2026-11-06T15:37:43.698355+00:00"
+  "synced_at": "2026-11-07T07:58:21.071491+00:00"
 }
