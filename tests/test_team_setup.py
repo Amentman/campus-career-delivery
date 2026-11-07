@@ -38,6 +38,25 @@ class TeamSetupTests(unittest.TestCase):
             self.assertEqual('team-owner-example', saved['shared_pool']['owner_open_id'])
             self.assertEqual(str(root / 'students'), saved['workspace']['student_root'])
 
+    def test_team_profile_does_not_transfer_the_authors_sharing_authorization(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            profile, target = root / 'team.json', root / 'member.json'
+            profile.write_text(json.dumps({'version': 1, 'role_prep_delivery': {'authorization_confirmed': True, 'link_share_entity': 'anyone_readable'}, 'shared_pool': {'owner_open_id': 'team-owner-example'}}))
+            original_profile = profile.read_bytes()
+            result, _ = self.run_tool('init', '--team-profile', profile, '--output', target)
+            self.assertEqual(0, result.returncode)
+            saved = json.loads(target.read_text())
+            preference = saved.get('role_prep_delivery', {})
+            self.assertFalse(preference.get('authorization_confirmed', False))
+            self.assertEqual('preserve', preference.get('link_share_entity', 'preserve'))
+            self.assertEqual('team-owner-example', saved['shared_pool']['owner_open_id'])
+            self.assertEqual(original_profile, profile.read_bytes())
+            target.write_bytes(original_profile)
+            result, _ = self.run_tool('init', '--team-profile', profile, '--output', target)
+            self.assertEqual(2, result.returncode)
+            self.assertEqual(original_profile, target.read_bytes())
+
     def test_init_rejects_credentials_and_does_not_overwrite_existing_member_config(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
