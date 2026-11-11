@@ -270,7 +270,7 @@
     "skills/writing-readable-documents/references/before-after.md": "bb0c82a874f0ea1e8c0c454bbf5dd0e6d6566aee5d9b4107321b8124eff5dc58",
     "skills/writing-readable-documents/references/editorial-method.md": "913bcec884272f6e1db5990d5d25cb780839f826dc33da210d2e962f47fb4df4",
     "skills/writing-readable-documents/references/feishu-delivery.md": "39fdbf572c31e6ea60059818d7cb130bef94e6951a300a217830b35f8238b3b2",
-    "skills/writing-readable-documents/references/team-setup.md": "c58e25be308242f1811f4a27bbbab7ad9c041153177274d98820352fee6c5b9c",
+    "skills/writing-readable-documents/references/team-setup.md": "87ea14eb980171a8ad5507b42fc903f97598352b749d3d8ed4ac915792189a96",
     "skills/writing-readable-documents/references/upstream-and-adaptation.md": "bb02232c8d4de456ef3a1213de71b0822d29b0c29ae4f1b45beb791a5d9f4070",
     "skills/writing-readable-documents/references/workflow.md": "1382224b7bf1c53a4640244b6cf1108d4c8bb68d03e0e5bc71122ea9b7d754cc",
     "skills/writing-readable-documents/third-party/ai-zixun-humanizer-zh-LICENSE.txt": "609132fb364baa7688c086c5baa267ebb88edf32ea431d2dbf3e745d39576d3f",
@@ -298,5 +298,5 @@
     "skills/xiaohongshu-image-renderer/scripts/validate-package.test.mjs": "b85f1e41860166ef12bc89d33589586ad4b98a2fd7d23547f5b62314b3a0d780"
   },
   "version": "0.5.0",
-  "synced_at": "2026-11-11T12:24:42.506243+00:00"
+  "synced_at": "2026-11-11T13:54:31.374254+00:00"
 }

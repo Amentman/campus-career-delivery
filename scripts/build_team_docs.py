@@ -3,7 +3,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RESOURCE_NOTES = {
-    'writing-readable-documents': '纯写作、聊天改写与本地审阅不要求飞书或团队库配置。读者、来源、参考与目标沿用当前请求；只有实际交付飞书时才读取目标和成员身份。学习私人参考只提炼组织与讲解方法，不公开原文、链接或素材。复杂图文工具按当前格式配置。',
+    'writing-readable-documents': '纯写作、聊天改写与本地审阅不要求飞书或团队库配置，也不需要Python、Node或外部API。读者、来源、参考与目标沿用当前请求；只有实际交付飞书时才读取目标和成员身份。学习私人参考只提炼组织与讲解方法，不公开原文、链接或素材。完整安装时保留 `third-party/` 中四份上游MIT许可证。复杂文档可配合同包 `visual-document-delivery` 与外部上游 `impeccable`；按当前运行器补齐所需能力，不依赖作者插件缓存或私人环境。Word、PDF与图解工具按交付格式配置；业务Skill继续负责必需内容、事实核验与权限检查。',
     'campus-job-matching': '需要团队学生目录 `feishu.students_root_url`（或兼容的 `wiki` 路由）、原投递表、`shared_pool` 的库与两张表ID。先查共享岗位库，再按缺口外搜；缺配置不能当作已查库或库内无岗。资源所有者用 `shared_pool.owner_open_id`，当前成员用 `expected_user_open_id`，两者可以不同。',
     'campus-recommend': '这是旧入口兼容别名，必须同时安装 `campus-job-matching`。完整安装器会补齐依赖；手动复制时复制这两个目录，实际工作流全部交给主Skill。',
     'job-content-publisher': '需要本次内容记录，或团队内容总表 `feishu.content_base_url`；读取真实字段、记录与子表关系。图片依赖 `xiaohongshu-image-renderer`，正式文档排版按实际可用能力选择。公开发布到平台仍按本次明确授权执行。',
