@@ -51,6 +51,9 @@ def student_card(index, title):
 **事实或场景依据：** S01｜项目 A 的数据清洗和方案比较；K01｜业务运营的口径、验证与人工复核方法。
 **参考表达：** 对“{title}”这道题，我没有直接做过完整闭环，但在项目 A 中做过口径核对和方案比较。放到这个岗位，我会先确认目标和指标，再小范围验证，最后保留人工复核。
 **我的版本：**
+**追问练习：**
+问：你能直接认领业务采用后的结果吗？
+答：我能确认本人做过口径核对、方案比较并交付报告，采用范围和业务结果没有证据，不能归到我身上。
 **答题提示：** 先把请补项写实，再录音 2 遍；第二遍不得照读，并检查是否出现具体动作、产物和边界。
 
 """
@@ -320,11 +323,17 @@ class DeliveryQualityTests(unittest.TestCase):
         self.assertEqual(1, code)
         self.assertTrue(any("模拟面试问题与带教指引" in error for error in result["errors"]))
 
-    def test_rejects_student_card_without_fill_area(self):
+    def test_accepts_student_card_without_fill_area(self):
         student = full_student().replace("**我的版本：**\n", "", 1)
         code, result = self.run_validator(full_teacher(), student)
+        self.assertEqual(0, code, result["errors"])
+
+    def test_rejects_student_card_without_practice_response(self):
+        student = full_student().replace(
+            "答：我能确认本人做过口径核对、方案比较并交付报告，采用范围和业务结果没有证据，不能归到我身上。", "", 1)
+        code, result = self.run_validator(full_teacher(), student)
         self.assertEqual(1, code)
-        self.assertTrue(any("我的版本" in error for error in result["errors"]))
+        self.assertTrue(any("追问练习" in error for error in result["errors"]))
 
     def test_accepts_concise_anchored_reference_expression(self):
         code, result = self.run_validator(full_teacher(), full_student())

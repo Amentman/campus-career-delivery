@@ -39,7 +39,7 @@ TEACHER_FIELDS = (
     "继续追问", "常见问题", "反馈建议",
 )
 STUDENT_FIELDS = (
-    "考察点", "表达类型", "你的答题主线", "事实或场景依据", "参考表达", "我的版本", "答题提示",
+    "考察点", "表达类型", "你的答题主线", "事实或场景依据", "参考表达", "追问练习", "答题提示",
 )
 TIER_FIELDS = ("岗位日常", "匹配证据", "差距", "档位原因", "投递建议")
 TIER_CARD_RE = re.compile(r"^###\s+(90%|80%|70%)｜(主投|稳妥拓展|进阶尝试)｜(.+)$")
@@ -131,8 +131,31 @@ def field_value(block, field):
     return match.group(1).strip() if match else None
 
 
-def field_present(block, field):
-    return bool(re.search(rf"\*\*{re.escape(field)}：\*\*", block))
+def validate_practice_followups(value, qid, errors):
+    """Check paired practice questions/answers; content quality needs human review."""
+    lines = (value or "").splitlines()
+    pairs, question, answer = [], None, []
+    for line in lines:
+        clean = re.sub(r"^\s*[-*]\s+", "", line).strip()
+        asked = re.match(r"问[：:]\s*(.*)", clean)
+        replied = re.match(r"答[：:]\s*(.*)", clean)
+        if asked:
+            if question is not None:
+                pairs.append((question, "\n".join(answer)))
+            question, answer = asked.group(1), []
+        elif replied and question is not None:
+            answer.append(replied.group(1))
+        elif answer:
+            answer.append(clean)
+    if question is not None:
+        pairs.append((question, "\n".join(answer)))
+
+    def substantive(text):
+        text = re.sub(r"〔请补[：:][^〕]*〕", "", text)
+        return bool(re.sub(r"[\W_]", "", text))
+
+    if not pairs or any(not substantive(q) or not substantive(a) for q, a in pairs):
+        errors.append(f"学生版 {qid} 的追问练习须用成对的问：/答：提供具体问题与回应，不能只有问题或空白")
 
 
 def parse_question_cards(lines):
@@ -457,10 +480,7 @@ def extract_and_validate_questions(
         fields = TEACHER_FIELDS if side == "老师版" else STUDENT_FIELDS
         missing = []
         for field in fields:
-            if side == "学生版" and field == "我的版本":
-                if not field_present(block, field):
-                    missing.append(field)
-            elif not field_value(block, field):
+            if not field_value(block, field):
                 missing.append(field)
         if missing:
             missing_fields.append(f"{qid}({','.join(missing)})")
@@ -504,6 +524,7 @@ def extract_and_validate_questions(
             if visible_length(field_value(block, "参考回答方向") or "") < 24:
                 errors.append(f"老师版 {qid} 的参考回答方向过短")
         else:
+            validate_practice_followups(field_value(block, "追问练习"), qid, errors)
             reference = field_value(block, "参考表达") or ""
             length = visible_length(reference)
             if length < MIN_STUDENT_REFERENCE:

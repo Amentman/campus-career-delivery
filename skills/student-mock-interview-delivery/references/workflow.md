@@ -2,7 +2,7 @@
 
 先核对具体输入；已有材料能查明的直接读取，关键缺失或冲突才补充确认。沿完整图查看后续处理、失败去向与交付。
 
-交付：老师内部指导版；学生准备与训练版；问题目录、附件与图解。
+交付：老师内部指导版；学生准备与训练版；问题与履历双向对应；主回答和追问回应；问题目录、附件与图解。
 
 ## 执行前确认哪些信息
 
@@ -14,6 +14,7 @@
 | 核心经历口述证据与当前准备度 | 条件必需：选讲解／训练／模拟模式时 | 逐段核场景、输入、动作、输出、结果、Bad Case与职责边界，以最弱关键经历定模式 | 无口述证据明确待训练，不凭学校/公司/流畅度假定已能抗压 |
 | 唯一学生主页、老师版与学生版 | 条件必需：正式飞书写入时 | 按标准与旧标题别名一起找唯一双端，读完整XML、修订、附件与手工内容 | 多页停止依赖写入；已有正确附件保留，不建替代页掩盖失败 |
 | 飞书授权、图片/渲染能力与本地例外 | 条件必需：对应交付面验收时 | 复用已有授权和当前本人能力；明确聊天/只读/导出按其范围 | 无必需能力列未完成；本地副本仅用户明确要求，不成为默认前置 |
+| 已有题目、本人讲解及来源 | 可选：用于更新问题和履历档案 | 读原双端页、已授权相关讲解和已有故事，保留真实问答与后写示范的差别 | 无口述不声称已经会答；按已证实履历出题，不补造失败或数字 |
 
 ## 输入确认、补齐与返回
 
@@ -91,7 +92,7 @@
 
 复用已有授权和当前本人能力；明确聊天/只读/导出按其范围；缺失处理：无必需能力列未完成；本地副本仅用户明确要求，不成为默认前置
 
-下一步：先查已有原件与当前记录；保留版本、冲突和缺失。
+下一步：已有题目、本人讲解及来源；可选：用于更新问题和履历档案。
 
 依据：[SKILL.md](../SKILL.md) 中的“团队配置与依赖”。
 
@@ -126,6 +127,14 @@
 下一步：“收到答复或来源恢复后重新核对” → 先查已有原件与当前记录；保留版本、冲突和缺失。
 
 依据：[SKILL.md](../SKILL.md) 中的“1. 解析输入。”。
+
+**13. 已有题目、本人讲解及来源；可选：用于更新问题和履历档案**
+
+读原双端页、已授权相关讲解和已有故事，保留真实问答与后写示范的差别；无口述不声称已经会答；按已证实履历出题，不补造失败或数字
+
+下一步：先查已有原件与当前记录；保留版本、冲突和缺失。
+
+依据：[references/question-and-evidence-dossiers.md](question-and-evidence-dossiers.md) 中的“问题档案：从来源判断追问重点”。
 
 ### 执行与核验
 
@@ -163,9 +172,9 @@
 
 **5. 最弱关键经历口述等级？**
 
-按岗位最相关核心经历分别用0–3口述等级查场景、动作、输入输出、验证和边界；以最弱关键经历定讲解/训练/模拟，不凭学历或公司名推断掌握。
+按岗位最相关核心经历分别用0–3口述等级查场景、动作、输入输出、验证和边界；以最弱关键经历定讲解/训练/模拟，不凭学历或公司名推断掌握。没有实际口述时记未评估，不判0级；先给可练稿与首次口述任务。
 
-下一步：“0级／关键事实大量缺失” → 0级：履历讲解；先重建事实、术语与项目地图；“1级；有JD也先训练” → 1级：结构化训练；补输入、产出、Bad Case与边界；“2—3级；按JD决定是否定向” → 2级以上：完整模拟；有明确JD可定向；追问证据。
+下一步：“0级／关键事实大量缺失” → 0级：履历讲解；先重建事实、术语与项目地图；“1级；有JD也先训练” → 1级：结构化训练；补输入、产出、Bad Case与边界；“2—3级；按JD决定是否定向” → 2级以上：完整模拟；有明确JD可定向；追问证据；“没有实际口述证据” → 未评估：先给基于事实的可练稿；首次口述后再确定等级与训练模式。
 
 依据：[references/interview-session-contract.md](interview-session-contract.md) 中的“准备度分流”。
 
@@ -221,11 +230,11 @@
 
 90/80/70是结构判断不是算法得分；三张JD卡只在同一章节，两端岗位与顺序一致，保留真实来源/日期或示例标识。
 
-下一步：逐段Pxx项目地图与数值反推；产物、Bad Case、本人／团队边界。
+下一步：个人履历建档：Pxx项目地图与S故事；产物、指标口径、职责与对应题号。
 
 依据：[references/interview-content-contract.md](interview-content-contract.md) 中的“三档匹配 JD”。
 
-**13. 逐段Pxx项目地图与数值反推；产物、Bad Case、本人／团队边界**
+**13. 个人履历建档：Pxx项目地图与S故事；产物、指标口径、职责与对应题号**
 
 核心经历逐段列业务场景、用户、输入、流程、输出、指标来源、产物、职责、异常和取舍；数值核分母、基线、周期、护栏与归因。
 
@@ -245,15 +254,15 @@
 
 S只收已确认事实；K充分教工作方法和例外。亲历S、迁移S+K、知识K、假设K并声明条件；同题两端身份一致。
 
-下一步：同目录出双端四部分题组；基础≥6、八大问8、深挖≥4、专业≥4。
+下一步：问题档案：问法、意图与追问路径；按岗位方向确定重点，不造面试官。
 
 依据：[references/interview-content-contract.md](interview-content-contract.md) 中的“S／K 锚点与四种表达”。
 
 **16. 同目录出双端四部分题组；基础≥6、八大问8、深挖≥4、专业≥4**
 
-题数随真实覆盖，连续题号且两端标题/分类/顺序一致；老师卡给考察/追问/反馈，学生卡给主线/自然表达/我的版本，不泄漏内部标准。
+双端题目目录和顺序一致；老师给判断和带教，学生先有具体主回答及追问回应，改写区可选；不泄漏内部评分与施压脚本。
 
-下一步：选择业务／产品／技术／混合路线；按准备度组织约60分钟课程。
+下一步：逐题给主回答与有答案的追问；核心题沿动作继续问取舍或例外。
 
 依据：[references/interview-content-contract.md](interview-content-contract.md) 中的“双端问题目录”。
 
@@ -264,6 +273,30 @@ S只收已确认事实；K充分教工作方法和例外。亲历S、迁移S+K�
 下一步：用户点图或存在复杂链路？。
 
 依据：[references/interview-session-contract.md](interview-session-contract.md) 中的“岗位追问路线”。
+
+**18. 问题档案：问法、意图与追问路径；按岗位方向确定重点，不造面试官**
+
+复用已有问题与来源，按已确认方向或代表性岗位判断先练什么；每题对应履历或K知识，核心经历反向可查题号。
+
+下一步：同目录出双端四部分题组；基础≥6、八大问8、深挖≥4、专业≥4。
+
+依据：[references/question-and-evidence-dossiers.md](question-and-evidence-dossiers.md) 中的“问题档案：从来源判断追问重点”。
+
+**19. 逐题给主回答与有答案的追问；核心题沿动作继续问取舍或例外**
+
+每题至少一组问答，核心题通常沿两层继续问；缺数字仍可讲实际产物，不能成立的亲历故事保留缺口，改写练习不代替答案。
+
+下一步：选择业务／产品／技术／混合路线；按准备度组织约60分钟课程。
+
+依据：[references/question-and-evidence-dossiers.md](question-and-evidence-dossiers.md) 中的“把档案转成能说出口的答案”。
+
+**20. 未评估：先给基于事实的可练稿；首次口述后再确定等级与训练模式**
+
+没有实际口述记录不等于只能复述；基于已确认动作与产物准备回答，布置首次口述，听到证据后再选择模式。
+
+下一步：按业务／产品／技术／混合路线组织；双端三档JD、指标、S/K及共用题序。
+
+依据：[references/interview-session-contract.md](interview-session-contract.md) 中的“准备度分流”。
 
 ### 交付与验收
 
@@ -366,6 +399,7 @@ S只收已确认事实；K充分教工作方法和例外。亲历S、迁移S+K�
 ## 验收
 
 - 双端目录一致
+- 可用题主回答与追问回应具体；我的版本为可选练习
 - 学生版不含内部备注
 - 手工内容与原图保留
 
@@ -378,6 +412,8 @@ S只收已确认事实；K充分教工作方法和例外。亲历S、迁移S+K�
 - [references/interview-content-contract.md](interview-content-contract.md)
 - [references/interview-quality-contract.md](interview-quality-contract.md)
 - [references/interview-session-contract.md](interview-session-contract.md)
+- [references/local-output-contract.md](local-output-contract.md)
+- [references/question-and-evidence-dossiers.md](question-and-evidence-dossiers.md)
 
 <details>
 <summary>可编辑的完整流程源码</summary>
@@ -419,12 +455,16 @@ flowchart TB
   i_clarify["已有来源查不清时<br/>只问影响执行的最小问题"]
   i_wait(["等待关键资料／裁决<br/>暂停依赖步骤；独立工作可继续"])
   jd_cards["建立三档JD与逐条证据矩阵<br/>岗位日常／证据／差距／原因／建议"]
-  project_cards["逐段Pxx项目地图与数值反推<br/>产物、Bad Case、本人／团队边界"]
+  project_cards["个人履历建档：Pxx项目地图与S故事<br/>产物、指标口径、职责与对应题号"]
   metrics["指标口径扫盲逐项覆盖<br/>至少三张；例子与本人边界"]
   anchors["先建S个人故事与K岗位知识<br/>每题选择一种表达身份"]
   question_catalog["同目录出双端四部分题组<br/>基础≥6、八大问8、深挖≥4、专业≥4"]
   session_route["选择业务／产品／技术／混合路线<br/>按准备度组织约60分钟课程"]
   batch_readback["仅改授权区块、每批局部读回<br/>正确附件媒体保留，疑似超时先查"]
+  question_dossier["问题档案：问法、意图与追问路径<br/>按岗位方向确定重点，不造面试官"]
+  answer_practice["逐题给主回答与有答案的追问<br/>核心题沿动作继续问取舍或例外"]
+  i_question_sources["已有题目、本人讲解及来源<br/>可选：用于更新问题和履历档案"]
+  not_evaluated["未评估：先给基于事实的可练稿<br/>首次口述后再确定等级与训练模式"]
   in --> route
   route -->|"公司/JD定向／真实面后复盘"| companion
   scope -->|"整册：完整双端合同"| precheck
@@ -457,7 +497,7 @@ flowchart TB
   i_scope --> i_readiness
   i_readiness --> i_pages
   i_pages --> i_format
-  i_format --> i_existing
+  i_format --> i_question_sources
   i_existing --> i_ready
   i_ready -->|"本轮依赖信息已明确；可选缺项按规则保留"| scope
   i_ready -->|"关键材料缺失／冲突会改变本轮动作"| i_clarify
@@ -468,12 +508,17 @@ flowchart TB
   project_cards --> level
   body --> metrics
   metrics --> anchors
-  anchors --> question_catalog
-  question_catalog --> session_route
   session_route --> visual
   write --> batch_readback
   batch_readback --> qa
   stop -->|"身份／主版本明确后重核"| i_existing
+  anchors --> question_dossier
+  question_dossier --> question_catalog
+  question_catalog --> answer_practice
+  answer_practice --> session_route
+  i_question_sources --> i_existing
+  level -->|"没有实际口述证据"| not_evaluated
+  not_evaluated --> body
 ```
 
 </details>

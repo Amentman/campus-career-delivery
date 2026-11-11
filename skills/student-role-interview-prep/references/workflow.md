@@ -2,7 +2,7 @@
 
 先核对具体输入；已有材料能查明的直接读取，关键缺失或冲突才补充确认。沿完整图查看后续处理、失败去向与交付。
 
-交付：按用户指定单文档或默认专岗页交付；公司事实→任务/交付/指标/案例；可直接转发的文档标题＋飞书链接；验收说明另段。
+交付：按用户指定单文档或默认专岗页交付；问题来源与提问重点、履历档案及可直接练的主回答和追问回应；公司事实→任务/交付/指标/案例；可直接转发的文档标题＋飞书链接；验收说明另段。
 
 ## 执行前确认哪些信息
 
@@ -15,6 +15,7 @@
 | 完整/短稿/只续验收；单公司或多公司合并 | 必需：本轮交付与保护边界 | 按用户明确范围定内容和文档组织；五分钟轮次不等于短稿；合并要求不拆页 | 先查本轮原话与目标；仅关键歧义确认，不因模板扩大范围 |
 | 用户指定单文档/合并目标、原页与父级 | 条件必需：飞书写入时 | 优先用户指定及唯一同岗/合并页；读XML修订、媒体和手工内容，记录保护页 | 多个目标先消歧；默认新岗独立仅适用于无指定合并，已有页不迁移 |
 | 目标专岗分享范围与本人偏好 | 条件必需：飞书交付分享时 | 读用户本轮明确要求或本人私有role_prep_delivery已确认偏好；保存目标原权限 | 未授权保留现有权限；不继承作者授权，不索取学生账号 |
+| 面经、相关真实问答与原始来源 | 可选：用于判断追问重点，不是开工前提 | 先读已有材料；检索同公司同岗，保留岗位、轮次与日期差异 | 没有同岗证据时按JD推断；不虚构真题或面试官偏好 |
 
 ## 输入确认、补齐与返回
 
@@ -132,9 +133,17 @@
 
 读取本轮明确要求或本人已确认分享偏好；未授权保留原权限，团队成员不继承。
 
-下一步：先查已有原件与当前记录；保留版本、冲突和缺失。
+下一步：面经、相关真实问答与原始来源；可选：用于判断追问重点，不是开工前提。
 
 依据：[references/feishu-boundary-and-acceptance.md](feishu-boundary-and-acceptance.md) 中的““所有人可见”的设置与验收”。
+
+**14. 面经、相关真实问答与原始来源；可选：用于判断追问重点，不是开工前提**
+
+先读已有材料；检索同公司同岗，保留岗位、轮次与日期差异；没有同岗证据时按JD推断；不虚构真题或面试官偏好
+
+下一步：先查已有原件与当前记录；保留版本、冲突和缺失。
+
+依据：[references/question-and-evidence-dossiers.md](question-and-evidence-dossiers.md) 中的“问题档案：从来源判断追问重点”。
 
 ### 执行与核验
 
@@ -206,7 +215,7 @@
 
 多公司同页时先共同总览，各公司展开研究和岗位工作，再差异比较；共用学生故事只写一次，不拼接薄稿或反复免责声明。
 
-下一步：S故事与K知识分开复用；亲历／迁移／知识／假设逐题选。
+下一步：个人履历建档：实际动作、产物与指标；S故事、K知识和题号双向对应。
 
 依据：[SKILL.md](../SKILL.md) 中的“3. **完整组织专岗内容。**”。
 
@@ -262,21 +271,21 @@ DOM能读正文不代表图片显示通过；高层AX包装超时不代表后台
 
 每个高优先级职责都对应代表产品、用户或渠道，讲清动作、交付、指标定义和常见异常，再列真实经历/可迁移/缺口。
 
-下一步：按单文档/多公司组织正文；业务讲解、S/K、表达与案例。
+下一步：问题库建档：问法、来源与追问路径；同岗、相邻参考和推断分开。
 
 依据：[references/content-and-expression.md](content-and-expression.md) 中的“讲清岗位日常与案例”。
 
-**17. S故事与K知识分开复用；亲历／迁移／知识／假设逐题选**
+**17. 个人履历建档：实际动作、产物与指标；S故事、K知识和题号双向对应**
 
-个人故事核背景、动作、结果、职责、失败和取舍；K补通常做法/原因/例外/指标。三段重点示范说得出口，没做过不删知识也不冒认。
+复用已有项目地图与S/K，逐段记录输入、个人动作、产物、指标口径、职责、缺项和可回答的题目；不补造冲突和结果。
 
-下一步：具体产品/用户/市场/渠道案例；追问→原因分支→取舍→检验。
+下一步：给出能开口的主回答与追问回应；缺项集中；改写练习可选。
 
-依据：[references/content-and-expression.md](content-and-expression.md) 中的“岗位知识也要复用，不因“没做过”而删除”。
+依据：[references/question-and-evidence-dossiers.md](question-and-evidence-dossiers.md) 中的“个人履历档案：把简历压缩句展开为可调用事实”。
 
 **18. 具体产品/用户/市场/渠道案例；追问→原因分支→取舍→检验**
 
-每公司核心场景有实际题面、追问、至少两种合理解释、动作与协作方、指标/护栏及学生练习产物；不以题数或通用流程通过。
+按具体产品、用户或渠道给完整假设题面和推荐方案，解释原因分支、取舍、协作、指标与检验，再安排练习；不能只把方案留作作业。
 
 下一步：最前提炼本轮速读与必练；HR五分钟仍保留完整底稿。
 
@@ -313,6 +322,30 @@ DOM能读正文不代表图片显示通过；高层AX包装超时不代表后台
 下一步：“补查后重核；仍未知说明影响” → 核心业务有证据且未知已合理补查？。
 
 依据：[references/company-fundamentals-research.md](company-fundamentals-research.md) 中的“取证顺序与不足时的继续动作”。
+
+**23. 问题库建档：问法、来源与追问路径；同岗、相邻参考和推断分开**
+
+先读已有相关面试与JD，定向查同公司同岗面经；不足时保留相邻来源差异，按JD推导。登记日期、适用轮次与题号，不把搬运算多份来源。
+
+下一步：判断先练什么、会怎样继续问；来源不足时按JD准备，不冒认偏好。
+
+依据：[references/question-and-evidence-dossiers.md](question-and-evidence-dossiers.md) 中的“问题档案：从来源判断追问重点”。
+
+**24. 判断先练什么、会怎样继续问；来源不足时按JD准备，不冒认偏好**
+
+按JD重要性、来源相关性和学生薄弱处确定准备重点；真实问题、准备推演和面试官风格分开，不编命中率。
+
+下一步：按单文档/多公司组织正文；业务讲解、S/K、表达与案例。
+
+依据：[references/question-and-evidence-dossiers.md](question-and-evidence-dossiers.md) 中的“问题档案：从来源判断追问重点”。
+
+**25. 给出能开口的主回答与追问回应；缺项集中；改写练习可选**
+
+每道训练题给具体主回答，核心题沿动作到取舍/例外继续两层并给回应；案例明确条件后给推荐方案，不用填空或框架代替答案。
+
+下一步：具体产品/用户/市场/渠道案例；追问→原因分支→取舍→检验。
+
+依据：[references/question-and-evidence-dossiers.md](question-and-evidence-dossiers.md) 中的“把档案转成能说出口的答案”。
 
 ### 交付与验收
 
@@ -423,6 +456,7 @@ DOM能读正文不代表图片显示通过；高层AX包装超时不代表后台
 ## 验收
 
 - 公司类型对应的基本面与具体业务有证据
+- 偏好判断有来源与适用范围；问题和履历双向对应；答案具体可练
 - 核心职责连到任务、产物、指标和专属案例
 - 合并总览与差异比较；学生事实不冒认
 - 全文回读与后台逐图实际检查；保护范围核对
@@ -437,6 +471,7 @@ DOM能读正文不代表图片显示通过；高层AX包装超时不代表后台
 - [references/content-and-expression.md](content-and-expression.md)
 - [references/feishu-boundary-and-acceptance.md](feishu-boundary-and-acceptance.md)
 - [references/feishu-image-browser-recovery.md](feishu-image-browser-recovery.md)
+- [references/question-and-evidence-dossiers.md](question-and-evidence-dossiers.md)
 - [references/team-setup.md](team-setup.md)
 
 <details>
@@ -481,7 +516,7 @@ flowchart TB
   i_wait(["等待关键资料／裁决<br/>暂停依赖步骤；独立工作可继续"])
   official_sources["官网各业务页＋公司类型相关渠道<br/>不只首页；未知先补查并登记"]
   jd_matrix["逐职责：对象/动作/产物/上下游<br/>判断口径与异常，再映射证据"]
-  story_knowledge["S故事与K知识分开复用<br/>亲历／迁移／知识／假设逐题选"]
+  story_knowledge["个人履历建档：实际动作、产物与指标<br/>S故事、K知识和题号双向对应"]
   cases_tasks["具体产品/用户/市场/渠道案例<br/>追问→原因分支→取舍→检验"]
   image_qc["逐图核业务链与Case<br/>正文原生画板，来源保留"]
   layout{"用户指定合并一份还是默认专岗？"}
@@ -492,6 +527,10 @@ flowchart TB
   share_rule{"本轮或本人偏好已授权<br/>所有人可查看？"}
   share_patch["底层文档最小权限更新<br/>external_access＋anyone_readable"]
   share_verify["独立GET读回分享字段<br/>比较其余权限与保护页"]
+  question_dossier["问题库建档：问法、来源与追问路径<br/>同岗、相邻参考和推断分开"]
+  preference["判断先练什么、会怎样继续问<br/>来源不足时按JD准备，不冒认偏好"]
+  answer_practice["给出能开口的主回答与追问回应<br/>缺项集中；改写练习可选"]
+  i_question_sources["面经、相关真实问答与原始来源<br/>可选：用于判断追问重点，不是开工前提"]
   in --> route
   route -->|"通用训练／已发生面试"| companion
   locate --> target
@@ -533,9 +572,7 @@ flowchart TB
   company --> official_sources
   official_sources --> research_gap
   evidence --> jd_matrix
-  jd_matrix --> body
   body --> story_knowledge
-  story_knowledge --> cases_tasks
   cases_tasks --> round
   images --> image_qc
   image_qc --> delivery
@@ -547,11 +584,17 @@ flowchart TB
   research_gap -->|"相关渠道尚未查全"| supplement
   supplement -->|"补查后重核；仍未知说明影响"| research_gap
   research_gap -->|"相关渠道已尽；关键业务仍无法解释"| draft
-  i_sharing --> i_existing
+  i_sharing --> i_question_sources
   share_rule -->|"已明确授权，不重复问"| share_patch
   share_rule -->|"未授权：保留原权限"| inventory
   share_patch --> share_verify
   share_verify -->|"记录实际权限与限制"| inventory
+  jd_matrix --> question_dossier
+  question_dossier --> preference
+  preference --> body
+  story_knowledge --> answer_practice
+  answer_practice --> cases_tasks
+  i_question_sources --> i_existing
 ```
 
 </details>
