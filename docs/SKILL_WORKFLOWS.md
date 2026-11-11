@@ -25,5 +25,6 @@
 | 通用模拟面试 | [student-mock-interview-delivery](../skills/student-mock-interview-delivery/references/workflow.md) |
 | 专岗面试准备 | [student-role-interview-prep](../skills/student-role-interview-prep/references/workflow.md) |
 | 腾讯会议归档 | [tencent-meeting-cloud-export](../skills/tencent-meeting-cloud-export/references/workflow.md) |
+| 文档写作与飞书正文 | [writing-readable-documents](../skills/writing-readable-documents/references/workflow.md) |
 | 图文文档交付 | [visual-document-delivery](../skills/visual-document-delivery/references/workflow.md) |
 | 小红书图文制作 | [xiaohongshu-image-renderer](../skills/xiaohongshu-image-renderer/references/workflow.md) |

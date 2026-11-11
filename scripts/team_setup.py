@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = Path.home() / '.config/jihui-skills/team.json'
 SECRET_KEYS = {'access_token', 'refresh_token', 'tenant_access_token', 'user_access_token', 'app_secret', 'client_secret', 'api_key', 'password', 'cookie', 'cookies'}
-LOCAL_SKILLS = {'auditing-candidate-resumes', 'building-resume-interview-stories', 'recording-processing', 'student-job-content', 'jihui-interview', 'pengyouquan-copywriting', 'xiaohongshu-image-renderer', 'tencent-meeting-cloud-export', 'job-sales-advisor', 'visual-document-delivery'}
+LOCAL_SKILLS = {'auditing-candidate-resumes', 'building-resume-interview-stories', 'recording-processing', 'student-job-content', 'jihui-interview', 'pengyouquan-copywriting', 'xiaohongshu-image-renderer', 'tencent-meeting-cloud-export', 'job-sales-advisor', 'visual-document-delivery', 'writing-readable-documents'}
 DEPENDENCIES = {'campus-recommend': ['campus-job-matching'], 'job-content-publisher': ['xiaohongshu-image-renderer'], 'delivering-student-career-plans': ['visual-document-delivery']}
 
 

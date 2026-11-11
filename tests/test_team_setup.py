@@ -124,9 +124,11 @@ class TeamSetupTests(unittest.TestCase):
 
     def test_local_only_work_does_not_require_a_feishu_configuration(self):
         with tempfile.TemporaryDirectory() as temp:
-            result, data = self.run_tool('doctor', '--config', Path(temp) / 'absent.json', '--skill', 'auditing-candidate-resumes')
-            self.assertEqual(0, result.returncode)
-            self.assertTrue(data['ready'])
+            for skill in ['auditing-candidate-resumes', 'writing-readable-documents']:
+                with self.subTest(skill=skill):
+                    result, data = self.run_tool('doctor', '--config', Path(temp) / 'absent.json', '--skill', skill)
+                    self.assertEqual(0, result.returncode, data)
+                    self.assertTrue(data['ready'])
 
     def test_unknown_skill_is_not_reported_ready(self):
         with tempfile.TemporaryDirectory() as temp:

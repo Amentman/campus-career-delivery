@@ -33,6 +33,7 @@ class RepositoryContractTests(unittest.TestCase):
     "jihui-interview",
     "pengyouquan-copywriting",
     "tencent-meeting-cloud-export",
+    "writing-readable-documents",
         }
         actual = {path.name for path in SKILLS.iterdir() if (path / "SKILL.md").is_file()}
         self.assertEqual(expected, actual)

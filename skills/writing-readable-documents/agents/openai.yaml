@@ -1,0 +1,4 @@
+interface:
+  display_name: "文档写作与飞书交付"
+  short_description: "写好中文文章、学生讲义与飞书正文，保留讲解深度和真实事实"
+  default_prompt: "使用 $writing-readable-documents 写好这份文档，学习参考文章的组织和讲解方式，减少空话与重复。"

@@ -54,7 +54,7 @@ python3 scripts/team_setup.py doctor --skill campus-job-matching --live
 
 ## 目录
 
-当前随包提供 **21 个业务 Skill**，详见 [用途、依赖与交付面](docs/SKILL_CATALOG.md)。本机另外一项微信能力作为可选私有连接器交接；10 个第三方通用 Skill 保留其上游来源，不重新冠名分发。32 项完整盘点见 [来源清单](docs/SOURCE_INVENTORY.md)。
+当前随包提供 **22 个业务 Skill**，详见 [用途、依赖与交付面](docs/SKILL_CATALOG.md)。本机另外一项微信能力作为可选私有连接器交接；10 个第三方通用 Skill 保留其上游来源，不重新冠名分发。33 项完整盘点（含2026年11月11日新增的文档写作Skill）见 [来源清单](docs/SOURCE_INVENTORY.md)。
 
 聊天整理、录音、朋友圈与候选人审查等有界任务，不因缺少无关飞书配置而停止。正式、可归档的学生材料默认写入唯一飞书页面；用户明确限定聊天、本地、PDF或只读时按该范围执行。
 

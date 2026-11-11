@@ -29,6 +29,7 @@ EXPECTED_SKILLS = {
     "jihui-interview",
     "pengyouquan-copywriting",
     "tencent-meeting-cloud-export",
+    "writing-readable-documents",
 }
 
 

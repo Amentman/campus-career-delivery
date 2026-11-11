@@ -38,6 +38,7 @@
 |30|impeccable|第三方Paul Bakaus，仅记上游|本地scripts/concept-seed.mjs:71,99指impeccable.style；官方LICENSE=Apache2，2025 Paul Bakaus；本地缺许可证|
 |31|jupyter-notebook|第三方OpenAI skill，本地Apache2|本地LICENSE.txt完整Apache2；公开OpenAI来源需精确revision核对；非业务自有|
 |32|ui-ux-pro-max|第三方NextLevelBuilder，仅记上游|官方skill.json声明作者、repo、MIT；官方LICENSE=2024 Next Level Builder；本地无license|
+|33|writing-readable-documents|2026-11-11新增用户维护的配套业务Skill；本包业务Skill现为22项、完整来源33项|Skill内上游来源记录固定提交，四份MIT许可随包保留；私人参考只提炼方法，不携带原文和链接|
 
 
 ## 外部能力怎么接入
