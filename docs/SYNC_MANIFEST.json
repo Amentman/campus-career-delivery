@@ -262,14 +262,14 @@
     "skills/visual-document-delivery/references/workflow.md": "b5ef2b28c2d5639792b51b23a5a24c4fe04e5f9b3bc63d16193d32bbb097d135",
     "skills/visual-document-delivery/scripts/validate_visual_manifest.py": "e0178fd52eedf40cac35efd00d26dafb46abc797d5269740273428f1e9fd39df",
     "skills/visual-document-delivery/tests/test_validate_visual_manifest.py": "eea80781105fe7f35b5179aa7ae9862647eee9caa174a1694dc4aee6a6fb4033",
-    "skills/writing-readable-documents/SKILL.md": "96dc055e5ed09f58aa89e26961c8ec8eb7b114a064a51d98a0f0a6982828f5dc",
+    "skills/writing-readable-documents/SKILL.md": "8fc884f8e67992978b08a5b14a9571a4eb21e8c747315dce7b442dc60f549838",
     "skills/writing-readable-documents/agents/openai.yaml": "190119ccd1fecdfa79911472cd685137a156dd74a8d03e8c1d1bf77b524cffa4",
     "skills/writing-readable-documents/assets/input-confirmation.svg": "df4d10ba9ccf3100d77a9473f5b14b7e03ddcdfacc526b9ca8e9c8fc4b6cc228",
     "skills/writing-readable-documents/assets/workflow.svg": "f3ff0d66d6e26efdb421f3ba8d07a1462f4e327898e6b2204dd82abf119d2772",
-    "skills/writing-readable-documents/references/acceptance-scenarios.md": "b20ab8ece6c805142ccc6e0e8339b07231ca5ace3ff7d9640c5d1f80eda6de49",
+    "skills/writing-readable-documents/references/acceptance-scenarios.md": "5ed5c1bfbc83351b016ef77fcb84eed543865479e741efcc0fefb23b9757fa7c",
     "skills/writing-readable-documents/references/before-after.md": "bb0c82a874f0ea1e8c0c454bbf5dd0e6d6566aee5d9b4107321b8124eff5dc58",
     "skills/writing-readable-documents/references/editorial-method.md": "913bcec884272f6e1db5990d5d25cb780839f826dc33da210d2e962f47fb4df4",
-    "skills/writing-readable-documents/references/feishu-delivery.md": "39fdbf572c31e6ea60059818d7cb130bef94e6951a300a217830b35f8238b3b2",
+    "skills/writing-readable-documents/references/feishu-delivery.md": "91ab435c68eeda9ab54fc2771b5d583e265a240b415b81b93f1e955adabe8775",
     "skills/writing-readable-documents/references/team-setup.md": "87ea14eb980171a8ad5507b42fc903f97598352b749d3d8ed4ac915792189a96",
     "skills/writing-readable-documents/references/upstream-and-adaptation.md": "bb02232c8d4de456ef3a1213de71b0822d29b0c29ae4f1b45beb791a5d9f4070",
     "skills/writing-readable-documents/references/workflow.md": "1382224b7bf1c53a4640244b6cf1108d4c8bb68d03e0e5bc71122ea9b7d754cc",
@@ -298,5 +298,5 @@
     "skills/xiaohongshu-image-renderer/scripts/validate-package.test.mjs": "b85f1e41860166ef12bc89d33589586ad4b98a2fd7d23547f5b62314b3a0d780"
   },
   "version": "0.5.0",
-  "synced_at": "2026-11-11T13:54:31.374254+00:00"
+  "synced_at": "2026-11-12T02:30:09.463171+00:00"
 }
