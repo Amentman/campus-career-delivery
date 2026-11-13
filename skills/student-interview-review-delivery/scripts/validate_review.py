@@ -6,6 +6,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from transcript import validate_coverage
 
 
 REQUIRED_SECTIONS = (
@@ -114,6 +115,9 @@ def main():
     parser.add_argument("--review", required=True, type=Path)
     parser.add_argument("--resume-name", required=True)
     parser.add_argument("--transcript-name", required=True)
+    parser.add_argument('--transcript', type=Path, help='normalized original transcript JSON')
+    parser.add_argument('--inventory', type=Path, help='source-grounded question inventory JSON')
+    parser.add_argument('--structure-only', action='store_true', help='format check only; never full review acceptance')
     parser.add_argument(
         "--english-question",
         action="append",
@@ -130,7 +134,15 @@ def main():
         return 2
 
     errors = validate(text, args.resume_name, args.transcript_name, args.english_question)
-    payload = {"status": "ok" if not errors else "invalid", "errors": errors}
+    if not args.structure_only:
+        if not args.transcript or not args.inventory:
+            errors.append('正式复盘须传入原稿 --transcript 与全量问题索引 --inventory；仅格式检查须显式 --structure-only')
+        else:
+            try:
+                errors.extend(validate_coverage(json.loads(args.transcript.read_text()), json.loads(args.inventory.read_text()), text))
+            except (OSError, ValueError, KeyError, TypeError):
+                errors.append('原稿或问题索引不可读／结构错误')
+    payload = {"status": "ok" if not errors else "invalid", "validation_scope": 'structure_only' if args.structure_only else 'source_coverage_and_structure', "errors": errors}
     print(json.dumps(payload, ensure_ascii=False))
     return 0 if not errors else 1
 

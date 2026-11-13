@@ -17,6 +17,7 @@
 - Codex 能发现 `skills/` 中的 Skill，并支持 `.codex-plugin/plugin.json` 或根目录可移植 `plugin.json`。
 - 岗位、面试和待办校验器主要使用 Python 标准库。简历 Word/PDF 检查及其测试需要 `python-docx`、`pdfplumber`、`lxml`、`pypdf` 和 `reportlab`；Skill Creator 格式验证需要 PyYAML。本仓库验收命令使用 `uv run --with pyyaml python <validator> ...` 临时提供依赖，不要求污染系统 Python。
 - 飞书交付需要已登录的 `lark-cli`、目标文档权限和当前版本的 Wiki/Docs/Drive 使用指南。
+- 真实面试复盘的逐字稿归一化与覆盖校验只需 Python3 标准库；腾讯分页读取器在已授权的后台浏览器执行，离线测试使用 Node.js 内置测试器，不安装 npm 包。腾讯读取需本人的网页登录和目标权限，不随包提供。
 - Word、PDF和页面渲染能力由安装环境提供，本仓库不复制 OpenAI 自带系统 Skill。
 
 ## 路径与命令约定

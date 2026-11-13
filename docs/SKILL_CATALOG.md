@@ -12,7 +12,7 @@
 | `designing-student-portfolio-products` | 作品集规划 | 基于真实业务设计可落地的作品集前置资料、PRD、Demo 与验收 |
 | `recording-processing` | 录音整理 | 会议、课程、咨询或语音备忘的转写整理与获授权知识库分流 |
 | `revising-and-delivering-resumes` | 简历修改交付 | 简历诊断、改写、Word/PDF 版本与投递验收 |
-| `student-interview-review-delivery` | 真实面试复盘 | 已发生面试的逐题分析、纠正、训练任务与复盘页 |
+| `student-interview-review-delivery` | 真实面试复盘 | 飞书妙记／腾讯会议原稿读取、完整性与漏题对照、逐题纠正与训练 |
 | `student-job-content` | 求职内容 | 岗位认知、求职文章、学校与企业差距、项目能力和面试判断 |
 | `student-mock-interview-delivery` | 通用模拟面试 | 无明确公司/JD 的老师版、学生版和训练工作簿 |
 | `student-role-interview-prep` | 专岗面试准备 | 已有公司、岗位、JD 或邀约的定向准备 |

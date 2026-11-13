@@ -78,6 +78,7 @@ class ReviewValidatorTests(unittest.TestCase):
                     "测试同学简历.pdf",
                     "--transcript-name",
                     "A公司面试逐字稿.txt",
+                    "--structure-only",
                     *extra_args,
                 ],
                 text=True,
@@ -90,6 +91,16 @@ class ReviewValidatorTests(unittest.TestCase):
         code, payload = self.run_validator(complete_review())
         self.assertEqual(0, code, payload["errors"])
         self.assertEqual("ok", payload["status"])
+        self.assertEqual('structure_only', payload['validation_scope'])
+
+    def test_default_formal_check_requires_original_evidence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)/'review.md'; path.write_text(complete_review())
+            result = subprocess.run([sys.executable, str(VALIDATOR), '--review', str(path),
+                                     '--resume-name', '测试同学简历.pdf', '--transcript-name', 'A公司面试逐字稿.txt'],
+                                    capture_output=True, text=True)
+            self.assertEqual(1, result.returncode)
+            self.assertTrue(any('原稿' in e for e in json.loads(result.stdout)['errors']))
 
     def test_rejects_missing_evidence_locator(self):
         text = complete_review().replace("**证据定位：** 00:01:12-00:02:06\n", "")
