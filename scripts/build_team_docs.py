@@ -71,6 +71,9 @@ python3 scripts/team_setup.py doctor --skill {name} --live
 任务完成后按实际交付面回读内容、数量、附件、父级和可读性。配置成功、CLI成功和本地测试通过不替代业务验收；没有测试成员账号时不声称已验证该成员访问。
 '''
 
+    if name == 'student-interview-review-delivery':
+        content = content.replace('## 每次任务\n\n', '## 每次任务\n\n逐字稿入口需要 Python3；飞书需本人 `lark-cli`，腾讯在线读取需可执行 JavaScript 的已登录后台浏览器。Node.js 只用于本包腾讯读取器的离线测试，不是获取腾讯登录的工具。没有后台能力时使用已授权原生导出或本地原稿，不安装依赖、不抢占前台。完整 Skill 必须包含 `scripts/transcript.py`、`scripts/read_tencent.js` 和输入指南。\n\n')
+
     if name == 'student-role-interview-prep':
         content = content.replace('"expected_profile": "",', '"expected_profile": "",\n  "role_prep_delivery": {"authorization_confirmed": false, "link_share_entity": "preserve"},')
         content = content.replace('## 安装器与诊断', '## 专岗交付分享偏好\n\n`role_prep_delivery` 默认缺省或 `preserve`，不改变分享范围。当前使用者明确要求本人后续学生专岗交付页均为“获得链接的所有人可查看”后，在其私有配置中设 `authorization_confirmed=true`、`link_share_entity=anyone_readable`；按写入边界逐页执行和回读。配置只保存本人已确认偏好，不授予API权限，不适用于老师内部页、学生主页或其他服务记录，也不能复制作者的确认值给其他成员。当前任务限定更窄时采用当前限定。\n\n## 安装器与诊断')
