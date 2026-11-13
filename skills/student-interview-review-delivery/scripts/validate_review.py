@@ -6,7 +6,7 @@ import json
 import re
 import sys
 from pathlib import Path
-from transcript import validate_coverage
+from transcript import validate_coverage, validate_original_exchanges
 
 
 REQUIRED_SECTIONS = (
@@ -25,7 +25,7 @@ REQUIRED_SECTIONS = (
 
 QUESTION_FIELDS = (
     "证据定位",
-    "学生实际回答",
+    "原始问答",
     "当场表现",
     "面试官／导师反馈",
     "问题与根因",
@@ -139,7 +139,9 @@ def main():
             errors.append('正式复盘须传入原稿 --transcript 与全量问题索引 --inventory；仅格式检查须显式 --structure-only')
         else:
             try:
-                errors.extend(validate_coverage(json.loads(args.transcript.read_text()), json.loads(args.inventory.read_text()), text))
+                doc = json.loads(args.transcript.read_text()); inventory = json.loads(args.inventory.read_text())
+                errors.extend(validate_coverage(doc, inventory, text))
+                errors.extend(validate_original_exchanges(doc, inventory, text))
             except (OSError, ValueError, KeyError, TypeError):
                 errors.append('原稿或问题索引不可读／结构错误')
     payload = {"status": "ok" if not errors else "invalid", "validation_scope": 'structure_only' if args.structure_only else 'source_coverage_and_structure', "errors": errors}

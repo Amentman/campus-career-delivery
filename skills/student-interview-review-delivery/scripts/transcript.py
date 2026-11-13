@@ -176,6 +176,54 @@ def validate_coverage(doc, inventory, review):
     return errors
 
 
+def redact_contacts(text):
+    text = re.sub(r'(?<!\d)1[3-9]\d{9}(?!\d)', '[手机号已隐去]', text)
+    text = re.sub(r'(?<![A-Za-z0-9_.+-])[A-Za-z0-9][\w.+-]*@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+', '[邮箱已隐去]', text)
+    return re.sub(r'(?<!\d)\d{17}[\dXx](?!\d)', '[证件号已隐去]', text)
+
+
+def validate_original_exchanges(doc, inventory, review):
+    """Compare displayed original exchanges with source turns, not summaries."""
+    errors = []
+    turns = doc['turns']; positions = {t['id']: i for i, t in enumerate(turns)}
+    exchanges = inventory.get('exchanges', {})
+    blocks = {m[1]: m[2] for m in re.finditer(r'^###\s+(Q\d+)｜([^\n]*\n.*?)(?=^###\s+Q\d+｜|^##\s|\Z)', review, re.M | re.S)}
+    for rid, block in blocks.items():
+        ranges = exchanges.get(rid)
+        if not ranges:
+            errors.append(f'{rid} 缺少原始问答范围 exchanges'); continue
+        expected = []; previous = -1
+        for bounds in ranges:
+            if (not isinstance(bounds, list) or len(bounds) != 2
+                    or any(tid not in positions for tid in bounds)):
+                errors.append(f'{rid} 原始问答范围无效'); continue
+            start, end = (positions[tid] for tid in bounds)
+            if start > end or start <= previous:
+                errors.append(f'{rid} 原始问答范围倒序或重复'); continue
+            expected.extend(turns[start:end + 1]); previous = end
+        expected_ids = [t['id'] for t in expected]
+        questions = [q for q in inventory.get('questions', [])
+                     if q.get('disposition', 'reviewed') == 'reviewed' and q.get('review_id') == rid]
+        for q in questions:
+            if q['turn_id'] not in expected_ids:
+                errors.append(f'{rid} 原始问答缺少来源问题 {q["id"]}')
+        unanswered = questions and all(q.get('no_answer_reason') for q in questions)
+        if not unanswered and not any(inventory.get('roles', {}).get(t['speaker']) == 'candidate' for t in expected):
+            errors.append(f'{rid} 原始问答未保留候选人发言')
+        field = re.search(r'^\*\*原始问答：\*\*[^\S\n]*(.*?)(?=^\*\*[^*\n]+：\*\*|\Z)', block, re.M | re.S)
+        raw = field[1] if field else ''
+        found = list(re.finditer(r'^> \[(T\d+)\][^\n]*\n(.*?)(?=^> \[T\d+\]|\Z)', raw, re.M | re.S))
+        if [m[1] for m in found] != expected_ids:
+            errors.append(f'{rid} 原始问答段落缺失、倒序或重复')
+        displayed = {m[1]: re.sub(r'^> ?', '', m[2], flags=re.M).strip() for m in found}
+        for turn in expected:
+            actual = re.sub(r'\s+', '', displayed.get(turn['id'], ''))
+            original = re.sub(r'\s+', '', redact_contacts(turn['text']))
+            if actual != original:
+                errors.append(f'{rid} {turn["id"]} 原文不一致；摘要、删句或改写不能代替原答')
+    return errors
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='command', required=True)
@@ -202,7 +250,8 @@ def main():
             if not draft_path.exists():
                 draft_path.write_text(json.dumps(draft, ensure_ascii=False, indent=2)); draft_path.chmod(0o600)
             print(json.dumps({'status':'prepared', 'turns':len(doc['turns']), 'issues':doc['issues'], 'file':str(target)}, ensure_ascii=False)); return 0
-        errors = validate_coverage(json.loads(args.transcript.read_text()), json.loads(args.inventory.read_text()), args.review.read_text())
+        doc = json.loads(args.transcript.read_text()); inventory = json.loads(args.inventory.read_text()); review = args.review.read_text()
+        errors = validate_coverage(doc, inventory, review) + validate_original_exchanges(doc, inventory, review)
         print(json.dumps({'status':'invalid' if errors else 'coverage_checked', 'errors':errors}, ensure_ascii=False)); return int(bool(errors))
     except (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError) as exc:
         print(json.dumps({'status':'error', 'error':type(exc).__name__, 'message':'读取或结构检查失败；保留原件，核对当前来源与本地错误。'}, ensure_ascii=False)); return 2
