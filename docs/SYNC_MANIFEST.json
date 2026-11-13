@@ -195,18 +195,18 @@
     "skills/student-interview-review-delivery/SKILL.md": "16724dbb19f5d9eebd825cd08c4a4bcc8bcc481502b8f700e05a98cd76988244",
     "skills/student-interview-review-delivery/agents/openai.yaml": "1af5f14cdff3f1295cd0654b59cc6364ecb069e49d11a4da1f8eccddf3a57d23",
     "skills/student-interview-review-delivery/assets/input-confirmation.svg": "f17ad24965a301ee2e60b55abeeec57f51347b7f0c83f4fdfbcb2173e750a483",
-    "skills/student-interview-review-delivery/assets/workflow.svg": "8dbff459c4654f1dc84ce0313627e6f6bff0f67b6923e07d43fb5ee2f9b15b07",
+    "skills/student-interview-review-delivery/assets/workflow.svg": "31663fb91f8e8ffd64fbaf7f1e4e30ed6d4c68979e0d9f05df069631f9d1cc11",
     "skills/student-interview-review-delivery/references/acceptance-scenarios.md": "9ef97f26740f54948d9073ce3b2f75ffae0873c721ceca7754f59cd17ce43951",
     "skills/student-interview-review-delivery/references/feishu-boundary-and-acceptance.md": "d7b43593ee13c7b2eb64275a92ccd23fe9c19c90e1c95e8148ddb03f94f07af9",
     "skills/student-interview-review-delivery/references/review-content-contract.md": "0b66a1dff6d76571d21dd779847f2de1712572c5ecbe95ba51cccdcc991cf22c",
     "skills/student-interview-review-delivery/references/team-setup.md": "e9206130d09513a84b7830bce3c4ed40f9d8b16109fa5087c626298fe6d661ae",
-    "skills/student-interview-review-delivery/references/transcript-intake.md": "6fd07e7992c13f9ee56299731d8022c04e6c358c492942f94ad344547edeb547",
-    "skills/student-interview-review-delivery/references/workflow.md": "049d898329b29b810ae6096375cc772614fa6a59a28d385b85c67deedcbd2ac3",
+    "skills/student-interview-review-delivery/references/transcript-intake.md": "5d666b1f2ee6f29b4ebba64dab0ce55fb711e301c6c69df620665203c48529d7",
+    "skills/student-interview-review-delivery/references/workflow.md": "ae25fd24bb7f0a6c06b91595352415495ca225d2ff22cb9668f06a333983dc8a",
     "skills/student-interview-review-delivery/scripts/read_tencent.js": "305abca0eefece3e52602977d853bb1cfb2a510cdc6ffb2e97f31036b6835ccc",
     "skills/student-interview-review-delivery/scripts/read_tencent.test.mjs": "601dec617e00523fb4cfcd08d71d64dfd16f913d4b4b83e2616c21e02e1910c9",
-    "skills/student-interview-review-delivery/scripts/transcript.py": "1f34bd568d8ea25276d2444e231187850cb1bc787c1241f9718d1a3eab4f3924",
+    "skills/student-interview-review-delivery/scripts/transcript.py": "c9717e8cb6564f870a635e5656a25ad8fa6196b62efed9c38006090a8f52dc96",
     "skills/student-interview-review-delivery/scripts/validate_review.py": "e60c28fe950a09d7b2c40c3ccda812376f4b47d221548850b301cfcdd19226ae",
-    "skills/student-interview-review-delivery/tests/test_original_exchanges.py": "7c5daea12363cada758b3ff356d636c892fc2975772e64ed18b3b18a20cc133b",
+    "skills/student-interview-review-delivery/tests/test_original_exchanges.py": "8a96ca983bc89f06c1252943b15e61a2c1617f6eab4ba0b99da9a3b607ad7346",
     "skills/student-interview-review-delivery/tests/test_tencent_reader.cjs": "b01840d011525255b872468f543e82303a69488fc5b447ebf304467931e6de8a",
     "skills/student-interview-review-delivery/tests/test_transcript.py": "b3e792d65d71c99baf80cc731b7322fc531df64fcd1634a133855f0d2b647d00",
     "skills/student-interview-review-delivery/tests/test_validate_review.py": "a991e50060dd34d2dc79ec328d9ac5c91e0cba15c75f2f33954676fe3f044632",
@@ -305,5 +305,5 @@
     "skills/xiaohongshu-image-renderer/scripts/validate-package.test.mjs": "b85f1e41860166ef12bc89d33589586ad4b98a2fd7d23547f5b62314b3a0d780"
   },
   "version": "0.5.0",
-  "synced_at": "2026-11-13T09:26:05.352953+00:00"
+  "synced_at": "2026-11-13T10:23:14.223283+00:00"
 }

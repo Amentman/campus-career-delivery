@@ -16,6 +16,8 @@
 
 ## 执行与异常路径
 
+图按 A「来源与输入」、B「原始问答与纠正」、C「交付与回读」续接。右侧分支保留暂停、补齐返回与停止条件；局部题组不扩大为整场改写。
+
 ![真实面试复盘执行图](../assets/workflow.svg)
 
 1. **分流。** 尚未面试走专岗准备；通用练习走模拟 Skill；本流程处理已发生的真实问答。只补几题时保护其他正文、题号和原答。
@@ -35,28 +37,47 @@
 
 ```mermaid
 flowchart TD
-    start[核对本轮学生、场次与范围] --> real{真实已发生面试？}
-    real -->|尚未面试或通用练习| route[转专岗准备或模拟 Skill]
-    real -->|已有真实记录| source{来源类型}
-    source -->|飞书妙记| lark[本人 CLI 获取并读逐字稿文件]
-    source -->|腾讯会议| tencent[后台详情分页读取或本轮完整导出]
-    source -->|本地文字| local[保留原件并读取全部正文]
-    lark --> check[归一化、通读、核对首尾与双方发言]
-    tencent --> check
-    local --> check
-    check --> input{原稿与说话人可靠？}
-    input -->|缺失或待确认| partial[记录具体缺口、限定范围并补齐]
-    partial -->|来源补齐| check
-    partial -->|仅分析已确认片段| inventory[逐段核对并列全量问题及追问]
-    input -->|可靠| inventory
-    inventory --> cards[原答、纠正、完整参考答案、追问及训练]
-    cards --> validate{原稿、索引、题卡对照通过？}
-    validate -->|漏题、错归因或答案不完整| inventory
-    validate -->|机器与人工均通过| destination{本轮交付范围}
-    destination -->|聊天或本地| limited[交付对应材料与范围说明]
-    destination -->|已授权飞书且唯一目标| write[只更新同场复盘页并保留附件]
-    write --> readback{回读与实际显示通过？}
-    readback -->|本轮可修问题| write
-    readback -->|证据或能力受阻| open[保留具体未验项]
-    readback -->|通过| done[交付唯一链接、训练任务与覆盖统计]
+    subgraph A[来源与输入]
+        start[核对本轮学生、场次与范围] --> real{真实已发生面试？}
+        real -->|尚未面试或通用练习| route[转专岗准备或模拟 Skill；本复盘结束]
+        real -->|已有真实记录| A2[核对学生、场次、题组、同场入口与保护页]
+        A2 --> ready{必需信息与目标明确？}
+        ready -->|冲突或缺项| wait[查原件仍不清才询问；只停依赖步骤]
+        wait -->|补齐后重核| A2
+        ready -->|明确| source{来源类型}
+        source -->|飞书妙记| lark[本人 CLI 获取并读实际逐字稿文件]
+        source -->|腾讯会议| tencent[后台分页至终态或本轮完整原生导出]
+        source -->|本地文字| local[保留原件与发言位置，归一化全部文字]
+        lark --> A5{通读后，原稿与说话人可靠？}
+        tencent --> A5
+        local --> A5
+        A5 -->|可靠| nextB[进入 B：整场或已确认片段]
+        A5 -->|权限、分页、漏录或角色受阻| partial[保存具体缺口与 partial；不作不可靠归因]
+        partial -->|原稿补齐| A5
+        partial -->|有已确认片段| nextB
+        partial -->|无足够文本| missing[等待补充；停止依赖步骤]
+    end
+    subgraph B[原始问答与纠正]
+        nextB --> inventory[逐段核对 T 段，列主问题、同句多问与连续追问]
+        inventory --> original[按题保留完整原始问答；原题、原答与追问按序显示]
+        original --> cards[结合 JD、主题与已知角色：具体点评、逻辑、完整口述答案和追问应对]
+        cards --> tasks[英语按真实需要；两处证据才称稳定能力；列三项重点任务与简历建议]
+        tasks --> validate{原稿、索引、原始问答与题卡全部通过？}
+        validate -->|漏问、删句、顺序失真、归因或答案问题| repair[返回对应原文与题卡；保留原题号和本轮范围]
+        repair --> inventory
+        validate -->|机器通过后再逐题人工审查| nextC[通过后进入 C]
+    end
+    subgraph C[交付与回读]
+        nextC --> destination{已授权飞书且目标唯一？}
+        destination -->|聊天、本地或只读| limited[交付限定材料，说明覆盖与未验项；本次结束]
+        destination -->|授权且唯一| write[只写同场复盘页；默认学生版下，原同场页及指定位置优先]
+        write --> attachments[页首保留原简历和完整逐字稿；分章写入后立即局部读回]
+        attachments --> readback{父级、修订、正文、附件、画板显示与保护页均通过？}
+        readback -->|本轮可修| fix[修正本次缺项后读回]
+        fix --> attachments
+        readback -->|超时或响应不明| uncertain[先独立回读核实，不重复新建]
+        uncertain --> attachments
+        readback -->|证据或能力受阻| open[保留具体未验项；停止依赖步骤]
+        readback -->|通过| done[交付唯一链接、正文与训练任务；分别报告原稿覆盖和验收范围]
+    end
 ```

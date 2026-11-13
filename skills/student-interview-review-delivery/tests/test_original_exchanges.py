@@ -53,5 +53,14 @@ class OriginalExchangeTests(unittest.TestCase):
   m,d,i,r=fixture();d['turns'][1]['text']='联系邮箱是test@example.com，我先核对两份记录。'
   r=r.replace('我先核对两份记录。','联系邮箱是[邮箱已隐去]，我先核对两份记录。')
   self.assertEqual([],m.validate_original_exchanges(d,i,r))
+ def test_wechat_masking_accepts_contact_removal_but_not_answer_rewrites(self):
+  for label in ['微信号：', '微信ID: ', 'WeChat ID: ']:
+   with self.subTest(label=label):
+    m,d,i,r=fixture()
+    d['turns'][1]['text']=label+'training_demo，我先核对两份记录。'
+    shown=label+'[微信号已隐去]，我先核对两份记录。'
+    r=r.replace('我先核对两份记录。',shown)
+    self.assertEqual([],m.validate_original_exchanges(d,i,r))
+    self.assertTrue(m.validate_original_exchanges(d,i,r.replace('，我先核对两份记录。','。')))
 
 if __name__=='__main__':unittest.main()

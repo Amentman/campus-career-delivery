@@ -179,7 +179,9 @@ def validate_coverage(doc, inventory, review):
 def redact_contacts(text):
     text = re.sub(r'(?<!\d)1[3-9]\d{9}(?!\d)', '[手机号已隐去]', text)
     text = re.sub(r'(?<![A-Za-z0-9_.+-])[A-Za-z0-9][\w.+-]*@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+', '[邮箱已隐去]', text)
-    return re.sub(r'(?<!\d)\d{17}[\dXx](?!\d)', '[证件号已隐去]', text)
+    text = re.sub(r'(?<!\d)\d{17}[\dXx](?!\d)', '[证件号已隐去]', text)
+    return re.sub(r'((?:微信(?:号|ID)?|WeChat(?:\s+ID)?)\s*[:：]\s*)[A-Za-z][A-Za-z0-9_-]{5,19}',
+                  r'\1[微信号已隐去]', text, flags=re.IGNORECASE)
 
 
 def validate_original_exchanges(doc, inventory, review):
