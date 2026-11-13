@@ -41,6 +41,19 @@ class TranscriptTests(unittest.TestCase):
         self.assertEqual('我做了核对\n也整理了差异。', doc['turns'][1]['text'])
         self.assertEqual(4000, doc['turns'][1]['timestamp_ms'])
 
+    def test_actual_platform_export_preambles_are_not_speakers(self):
+        m=self.module()
+        cases=[
+            '2025-01-02 10:00:00 CST|1min 5s\n\nKeywords:\n产品、客户、定价\n\n甲 00:00:00.380\n请介绍项目。\n乙 00:00:03.060\n我做了核对。',
+            '会议：合成面试\n时间：2025-02-03 09:00:00\n记录ID：synthetic\n来源：视频\n\n[00:00:01] 甲：请介绍项目。\n[00:00:03] 乙：我做了核对。'
+        ]
+        for text in cases:
+            with self.subTest(text=text[:25]):
+                doc=m.normalize(text,'local',True)
+                self.assertEqual(['甲','乙'],[t['speaker'] for t in doc['turns']])
+                self.assertEqual([],doc['issues'])
+                self.assertTrue(doc['metadata_lines'])
+
     def test_summary_and_unknown_source_are_not_complete(self):
         m = self.module()
         doc = m.normalize('AI 摘要：讨论了项目。', 'local', False)
@@ -138,7 +151,10 @@ class TranscriptTests(unittest.TestCase):
             program = '''#!/usr/bin/env python3
 import json,sys
 from pathlib import Path
-out=Path(sys.argv[sys.argv.index('--output-dir')+1]); out.mkdir(exist_ok=True)
+out=Path(sys.argv[sys.argv.index('--output-dir')+1])
+if out.is_absolute():
+ print(json.dumps({'ok':False,'error':{'subtype':'invalid_argument','message':'output path must be relative'}}),file=sys.stderr);sys.exit(2)
+out.mkdir(exist_ok=True)
 p=out/'transcript.txt';p.write_text('[00:00:01] 面试官：请介绍项目。\\n[00:00:03] 学生：我做了核对。')
 print(json.dumps({'data':{'minutes':[{'minute_token':'synthetic','artifacts':{'transcript_file':str(p)}}]}}))
 '''

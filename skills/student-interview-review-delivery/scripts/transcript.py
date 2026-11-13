@@ -17,12 +17,21 @@ def milliseconds(value):
 
 
 def normalize(text, source, transport_complete=False, duration_ms=None):
-    turns = []
+    turns = []; metadata_lines = []; in_keywords = False
     patterns = [rf'^\[({STAMP})\]\s*([^：:\n]+)[：:]\s*(.*)$',
                 rf'^([^\[\n]+?)\s+({STAMP})\s*[：:]?\s*(.*)$',
                 rf'^\[([^\]]+)\]\s*\[({STAMP})\]\s*(.*)$']
     for line_no, line in enumerate(text.splitlines(), 1):
         if not line.strip(): continue
+        if not turns:
+            is_header = re.match(r'^(?:会议|时间|记录ID|录制文件ID|创建者|来源|Keywords)[：:]', line.strip())
+            is_date_header = re.match(r'^\d{4}-\d{2}-\d{2}[^\n]*\|[^\n]*(?:min|\d+s|分钟|小时)', line.strip())
+            if is_header or is_date_header:
+                metadata_lines.append(line)
+                in_keywords = line.strip().startswith('Keywords:')
+                continue
+            if in_keywords and not any(re.match(pattern, line.strip()) for pattern in patterns):
+                metadata_lines.append(line); continue
         matched = False
         for index, pattern in enumerate(patterns):
             m = re.match(pattern, line.strip())
@@ -39,7 +48,9 @@ def normalize(text, source, transport_complete=False, duration_ms=None):
                 turns.append({'id': f'T{len(turns)+1:04d}', 'speaker': m[1], 'timestamp_ms': None, 'text': m[2], 'line': line_no})
             elif turns: turns[-1]['text'] = (turns[-1]['text'] + '\n' + line).strip()
             else: turns.append({'id': 'T0001', 'speaker': '未知发言人', 'timestamp_ms': None, 'text': line, 'line': line_no})
-    return make_document(turns, text.encode(), source, transport_complete, duration_ms)
+    document = make_document(turns, text.encode(), source, transport_complete, duration_ms)
+    document['metadata_lines'] = metadata_lines
+    return document
 
 
 def make_document(turns, raw, source, complete, duration_ms=None):
@@ -81,14 +92,14 @@ def read_feishu(url, output_dir, cli='lark-cli'):
     Path(output_dir).mkdir(parents=True, exist_ok=True, mode=0o700)
     fetch_dir = Path(tempfile.mkdtemp(prefix='fetch-', dir=output_dir))
     result = subprocess.run([cli, 'minutes', '+detail', '--minute-tokens', parts[1], '--transcript',
-                             '--as', 'user', '--output-dir', str(fetch_dir)], capture_output=True, text=True, timeout=120)
+                             '--as', 'user', '--output-dir', '.'], cwd=fetch_dir, capture_output=True, text=True, timeout=120)
     if result.returncode: raise ValueError('Minutes read failed; inspect CLI permission/login error locally')
     payload = json.loads(result.stdout)
     entries = payload.get('minutes', payload.get('data', {}).get('minutes', []))
     if len(entries) != 1 or entries[0].get('minute_token') != parts[1]: raise ValueError('Minutes target mismatch')
     filename = entries[0].get('artifacts', {}).get('transcript_file')
     if not filename: raise ValueError('No transcript_file; summary is not a transcript')
-    path = Path(filename).resolve()
+    path = (fetch_dir / filename).resolve()
     if not path.is_relative_to(fetch_dir.resolve()): raise ValueError('Transcript file outside requested output directory')
     raw = path.read_bytes()
     doc = normalize(raw.decode('utf-8-sig'), 'feishu', True)

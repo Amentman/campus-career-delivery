@@ -194,8 +194,8 @@
     "skills/revising-and-delivering-resumes/tests/test_inspect_delivery.py": "36a4d761f15efc497ab08288767678642b6ba1542e673d69718a933ea64c2840",
     "skills/student-interview-review-delivery/SKILL.md": "170cc6319155c70b068c3dea980816538b35c6580270018859bd2823f4766c48",
     "skills/student-interview-review-delivery/agents/openai.yaml": "1af5f14cdff3f1295cd0654b59cc6364ecb069e49d11a4da1f8eccddf3a57d23",
-    "skills/student-interview-review-delivery/assets/input-confirmation.svg": "051c636d543aad31db94fcac4491c11e73cbc590d23f3d93f4761f1d65a79881",
-    "skills/student-interview-review-delivery/assets/workflow.svg": "693b76545d3004d02253503974a4d7c8d27e7604acbb5f7ba5a32144819c20cc",
+    "skills/student-interview-review-delivery/assets/input-confirmation.svg": "8b2996b2ecfdb4916fd068c6712d52d349c8a8c1d18c1a19898887ccc166909f",
+    "skills/student-interview-review-delivery/assets/workflow.svg": "d3b619ef444df3cd72e7ecf40fcceb5ab475867ebc7db9fe31ae8af35b763e2e",
     "skills/student-interview-review-delivery/references/acceptance-scenarios.md": "9ef97f26740f54948d9073ce3b2f75ffae0873c721ceca7754f59cd17ce43951",
     "skills/student-interview-review-delivery/references/feishu-boundary-and-acceptance.md": "b4dba42184d34ab0ead1456ef4304a2f856c3ddac70b8c0f2c808995429380a2",
     "skills/student-interview-review-delivery/references/review-content-contract.md": "b56e7de1a5728a9213defe3c3140029eb926d3f8b9f12ce75c180e019dfd9495",
@@ -204,10 +204,10 @@
     "skills/student-interview-review-delivery/references/workflow.md": "b35eb527e9a489c54e572e00a1870355796ab18a7a4969bd91a8f8cd2a7d9964",
     "skills/student-interview-review-delivery/scripts/read_tencent.js": "305abca0eefece3e52602977d853bb1cfb2a510cdc6ffb2e97f31036b6835ccc",
     "skills/student-interview-review-delivery/scripts/read_tencent.test.mjs": "601dec617e00523fb4cfcd08d71d64dfd16f913d4b4b83e2616c21e02e1910c9",
-    "skills/student-interview-review-delivery/scripts/transcript.py": "c391b2a8478095d369d336e3a78e8404d064440bde0071268d792397fe447938",
+    "skills/student-interview-review-delivery/scripts/transcript.py": "6eebe41ea51d09596d454faacdee4142a324ae9a55884e4e6d56da8079ae2425",
     "skills/student-interview-review-delivery/scripts/validate_review.py": "8f88472aabf710a93ed68b31d73d3febe8327d64a1c95362e34e61aa82487f1d",
     "skills/student-interview-review-delivery/tests/test_tencent_reader.cjs": "b01840d011525255b872468f543e82303a69488fc5b447ebf304467931e6de8a",
-    "skills/student-interview-review-delivery/tests/test_transcript.py": "200b8459abf193845244feaff6f40276a6d14494a796553004fec9491902d1ef",
+    "skills/student-interview-review-delivery/tests/test_transcript.py": "b3e792d65d71c99baf80cc731b7322fc531df64fcd1634a133855f0d2b647d00",
     "skills/student-interview-review-delivery/tests/test_validate_review.py": "457aa4796e8c322a95a2edb67f7a5a3395079feb46715920e88180d29b680e18",
     "skills/student-job-content/SKILL.md": "35ddcb0078f415b64978b932e247fca9d52a232bd48bc1bfbbe21844b11cc58a",
     "skills/student-job-content/agents/openai.yaml": "8ccdc5e8fb6e0e36d7461f5ab56ca95d459e393f0b807a859ff1f27bc06143c7",
@@ -304,5 +304,5 @@
     "skills/xiaohongshu-image-renderer/scripts/validate-package.test.mjs": "b85f1e41860166ef12bc89d33589586ad4b98a2fd7d23547f5b62314b3a0d780"
   },
   "version": "0.5.0",
-  "synced_at": "2026-11-13T06:10:23.558206+00:00"
+  "synced_at": "2026-11-13T08:02:23.745153+00:00"
 }
