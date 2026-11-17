@@ -79,6 +79,36 @@ class JobGateTests(unittest.TestCase):
     def status(self):
         return self.audit()["results"][0]["status"]
 
+    def email_entry(self):
+        self.job["application"].update(route="email", status="email_available", clicked=False,
+            entry_method="published_address", recipient="recruit@a.example",
+            instruction_quote="审计助理 J1 简历发送至 recruit@a.example",
+            source_url=self.job["url"], text="审计助理 J1 简历发送至 recruit@a.example")
+
+    def test_published_job_specific_email_is_an_entry_without_sending(self):
+        self.email_entry()
+        self.assertEqual(self.status(), "ready")
+
+    def test_email_requires_valid_recipient_and_matching_public_instruction(self):
+        self.email_entry()
+        original = copy.deepcopy(self.job["application"])
+        for patch in [{"recipient": "r***@a.example"}, {"recipient": "recruit@b.example"},
+                      {"instruction_quote": ""}, {"source_url": "mailto:recruit@a.example"},
+                      {"entry_method": "contact_footer"}, {"text": "generic company contact"}]:
+            with self.subTest(patch=patch):
+                self.job["application"] = dict(original, **patch)
+                self.assertEqual(self.status(), "pending")
+
+    def test_email_does_not_bypass_job_context_freshness_or_closed_posting(self):
+        self.email_entry()
+        original = copy.deepcopy(self.job["application"])
+        for patch, expected in [({"context": "J2"}, "pending"),
+                                ({"checked_at": "2026-10-18T12:00:00+08:00"}, "pending"),
+                                ({"status": "closed"}, "rejected")]:
+            with self.subTest(patch=patch):
+                self.job["application"] = dict(original, **patch)
+                self.assertEqual(self.status(), expected)
+
     def test_screening_defaults_accept_unlisted_basics_without_invented_resume_quotes(self):
         for category, requirement in [("age", "年龄18至30岁"), ("english", "英语CET-6"),
                                       ("common_tools", "熟练使用Figma和PPT"), ("basic_skills", "基础拍摄与图文排版")]:

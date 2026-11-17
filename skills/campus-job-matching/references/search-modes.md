@@ -49,8 +49,9 @@ JD明确允许实习/项目经验替代时，引用该条件，在requirements�
 - 记录source_platform（如boss/liepin）、岗位ID、平台企业ID/招聘主体、招聘者标识、完整JD、城市及当前入口。link_type=recruiter_platform表示招聘平台具体岗位，不冒充企业官网或已获企业指定的平台。
 - 在当前岗位主区域核对招聘主体与招聘者关系。招聘者活跃/在线只是排序信号，不能证明当前在招；公司名、JD标题相同也不能证明是同一岗位。多个招聘者/平台重复挂同一已证实岗位合并入口，不按不同链接凑数；仅相似职责不武断合并。
 - 公开页面足够时直接读；必须登录但本轮未授权的操作不自行登录。已有明确授权的账号可按范围做只读检查，不能切换求职身份或编辑在线简历。飞书本人身份确认不等于招聘平台账号归属或沟通授权。
-- 申请路径分application.route=form/chat。官网表单沿用实际打开/点击且不提交的规则；BOSS使用chat，不能套用官网申请表。优先观察同岗且启用的沟通控件及招聘者，不为证明入口而点击可能发送消息的按钮；状态为chat_available，entry_method=visible_control、control_enabled=true、recruiter_id非空。仍需context、实际text/checked_at/evidence_file，并真实看图。
+- 申请路径分application.route=form/chat/email。官网表单沿用实际打开/点击且不提交的规则；BOSS使用chat，不能套用官网申请表。优先观察同岗且启用的沟通控件及招聘者，不为证明入口而点击可能发送消息的按钮；状态为chat_available，entry_method=visible_control、control_enabled=true、recruiter_id非空。仍需context、实际text/checked_at/evidence_file，并真实看图。
 - 岗位详情和上下文完整、入口指向保留该岗位的登录页时可记录login_required；这仅证明待登录入口，报告不能称已登录可发送。通用登录页、空壳、未识别岗位或招聘者不通过；受限/验证码/渲染失败为blocked，不绕过、不批量判停招。
+- 企业在当前岗位或对应招聘公告中明确写出“简历发送至/投递邮箱”时，可用email入口。逐字核对完整未遮挡的接收地址、适用岗位、材料要求、邮件主题及截止；保存原始页面、时间和实际看过的截图。公司页脚、客服或投诉邮箱不作招聘入口，未证明适用于该岗的通用人才邮箱保留pending。无需打开邮件客户端、测试邮箱、登录或发送；入口可见不等于邮件可送达或企业会回复。数据字段见质量契约。
 - ready只代表本轮条件与指定范围入口核验通过。表内注明“待沟通/登录后继续”等实际边界，不承诺招聘方回复或最终投递资格。quality_gate.delivery_verified固定false，不能据ready自动填已沟通、已发简历或已提交。
 
 ## 沟通与投递状态

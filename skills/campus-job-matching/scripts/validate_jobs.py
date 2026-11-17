@@ -321,8 +321,8 @@ def check_job(profile, job, now, max_age_hours=24, sources=None):
     if job.get("link_type") not in {"detail", "official_list", "employer_platform", "recruiter_platform"}:
         pending.append("链接类型未明确或仅为线索")
     application = job.get("application") or {}
-    if application.get("route", "form") not in ("form", "chat"):
-        pending.append("申请路径必须明确为表单或沟通")
+    if application.get("route", "form") not in ("form", "chat", "email"):
+        pending.append("申请路径必须明确为表单、沟通或公开招聘邮箱")
     if job.get("source_platform") == "boss" and application.get("route") != "chat":
         pending.append("BOSS岗位必须使用沟通入口核验，不能套用官网表单")
     if job.get("link_type") == "recruiter_platform" and not has_text(job.get("source_platform")):
@@ -389,7 +389,8 @@ def check_job(profile, job, now, max_age_hours=24, sources=None):
         elif not is_blocked and (state == "closed" or CLOSED.search(str(observation.get("text") or ""))):
             rejected.append(name + " 明确停止招聘或不存在")
         chat = name == "application" and observation.get("route") == "chat"
-        allowed = {"active"} if name == "availability" else ({"chat_available", "login_required"} if chat else {"form", "login_required", "consent_required"})
+        email = name == "application" and observation.get("route") == "email"
+        allowed = {"active"} if name == "availability" else ({"email_available"} if email else ({"chat_available", "login_required"} if chat else {"form", "login_required", "consent_required"}))
         if state not in allowed and not is_blocked and state != "closed":
             pending.append(name + " 缺少有效状态")
         if name == "application":
@@ -399,7 +400,17 @@ def check_job(profile, job, now, max_age_hours=24, sources=None):
                             and observation.get("control_enabled") is True and has_text(observation.get("recruiter_id")))
             direct_open = (observation.get("entry_method") == "direct_url"
                            and observation.get("opened") is True and web_url(observation.get("final_url")))
-            if not visible_chat and observation.get("clicked") is not True and not direct_open:
+            published_email = False
+            if email:
+                recipient = str(observation.get("recipient") or "")
+                instruction = str(observation.get("instruction_quote") or "")
+                published_email = (state == "email_available" and observation.get("entry_method") == "published_address"
+                                   and re.fullmatch(r"[A-Za-z0-9.!#$%&'+/=?^_`{|}~-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+", recipient) is not None
+                                   and recipient in instruction and instruction.strip() in str(observation.get("text") or "")
+                                   and web_url(observation.get("source_url")))
+                if not published_email:
+                    pending.append("邮箱入口须有同岗公开投递指引、完整接收地址与网页来源；公司通用联系邮箱不算")
+            if not visible_chat and not published_email and observation.get("clicked") is not True and not direct_open:
                 pending.append("application 未记录实际点击或打开申请入口")
             if chat and state == "chat_available" and not visible_chat:
                 pending.append("缺少当前岗位可用沟通控件及招聘者标识；不以发送消息验证")

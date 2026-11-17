@@ -37,7 +37,7 @@ checks共同键：subject、role、degree、major、city、employment。campus�
 
 availability和application均含：
 
-- status：前者active/closed/unknown/blocked/error；后者按route：form用form/login_required/consent_required，chat用chat_available/login_required；均可closed/unknown/blocked/error。contacted/resume_sent/replied/submitted不是入口状态，不通过。
+- status：前者active/closed/unknown/blocked/error；后者按route：form用form/login_required/consent_required，chat用chat_available/login_required，email用email_available；均可closed/unknown/blocked/error。contacted/resume_sent/replied/submitted不是入口状态，不通过。
 - context：官方job_id；确无ID时为该条稳定url原值。不是其他岗位、相关推荐或通用登录页。
 - text：当前岗位主区域/申请上下文实际读到的内容，不拿全站正文替代。
 - checked_at：实际访问的带时区ISO时间；不复制示例日期、不用发布日期代填。
@@ -45,7 +45,9 @@ availability和application均含：
 
 availability另含scope=job_detail/job_listing；可保留http_status/source_url/final_url。单次401/403/405/429是受阻而非岗位下架。application补充实际点击、按钮、最终URL、原/新标签页与上下文来源；仅url_changed=true不通过。不为形成证据登录、发验证码、勾协议、上传或提交。
 
-application.route为form/chat；旧官网输入缺route兼容form，BOSS必须显式chat。表单必须有 `clicked: true` 的实际按钮点击记录；直接打开有依据的申请URL时改为 `entry_method: "direct_url", opened: true, final_url: "实际地址"`。沟通控件可用的chat采用 `status: chat_available, entry_method: visible_control, control_enabled: true, recruiter_id: "当前招聘者标识"`，不需要也不得为核验而发消息。所有chat入口（包括login_required）都要识别当前岗位招聘者，登录回跳不能代替该证据。所有方式都仍需当前岗位context、状态、观察文本、时间与证据文件；控件可见不证明已发送/对方会回复。
+application.route为form/chat/email；旧官网输入缺route兼容form，BOSS必须显式chat。表单必须有 `clicked: true` 的实际按钮点击记录；直接打开有依据的申请URL时改为 `entry_method: "direct_url", opened: true, final_url: "实际地址"`。沟通控件可用的chat采用 `status: chat_available, entry_method: visible_control, control_enabled: true, recruiter_id: "当前招聘者标识"`，不需要也不得为核验而发消息。所有chat入口（包括login_required）都要识别当前岗位招聘者，登录回跳不能代替该证据。所有方式都仍需当前岗位context、状态、观察文本、时间与证据文件；控件可见不证明已发送/对方会回复。
+
+email用 `status: email_available, entry_method: published_address, recipient: "完整公开地址", instruction_quote: "包含该地址的同岗投递指引原文", source_url: "实际公开网页"`，并保留共同观察字段。只核对公开指引，无需clicked、opened，不点击mailto或测试发送。指引必须来自当前岗位或明确涵盖该岗的招聘公告；页脚联系方式、遮挡地址、猜测邮箱和错岗位不通过。脚本检查结构及引文包含关系，原网页、招聘主体与岗位适用性仍须人工审阅。
 
 ## 输出与使用
 
