@@ -22,6 +22,7 @@ TZ = ZoneInfo("Asia/Shanghai")
 COMMON_CHECKS = ("subject", "role", "degree", "major", "city", "employment")
 MODE_CHECKS = {"campus": ("graduation",), "internship": ("student_status", "schedule"),
                "experienced": ("experience", "seniority", "salary")}
+SCREENING_DEFAULTS = {"age", "english", "common_tools", "basic_skills"}
 CLOSED = re.compile(
     r"(?:该|本|此)?(?:职位|岗位)(?:已|已经)?(?:停止招聘|停止投递|停止接受(?:申请|简历)|下线|下架|关闭|不存在|招满|过期|结束)"
     r"|(?:已|已经)(?:停止招聘|停止投递|停止接受(?:申请|简历))"
@@ -237,12 +238,23 @@ def review_issues(profile, job, now, max_age_hours, sources):
                 if positive and jq and jq in jd and rq and rq in resume:
                     supported_duties += 1
             else:
-                if item.get("priority") not in ("mandatory", "preferred") or item.get("assessment") not in ("met", "gap", "unknown"):
+                assumed = item.get("assessment") == "assumed_met"
+                if assumed:
+                    category = item.get("assumption_category")
+                    defaults = profile.get("screening_defaults", {})
+                    if (category not in SCREENING_DEFAULTS or not isinstance(defaults, dict)
+                            or defaults.get(category, True) is not True
+                            or not has_text(item.get("assumption_basis"))
+                            or item.get("resume_quote") != ""):
+                        pending.append("基础条件默认匹配须限定年龄/英语/常见工具及基础技能、披露依据并保留空简历引文")
+                    if item.get("known_conflict") is True:
+                        rejected.append("基础条件已有明确冲突，不能默认满足")
+                if item.get("priority") not in ("mandatory", "preferred") or item.get("assessment") not in ("met", "assumed_met", "gap", "unknown"):
                     pending.append("终审要求未区分必须/优先或匹配状态")
                 if item.get("priority") == "mandatory":
                     if item.get("assessment") == "gap":
                         rejected.append("终审发现必备能力缺口：" + str(item.get("jd_quote") or ""))
-                    elif item.get("assessment") != "met":
+                    elif item.get("assessment") not in ("met", "assumed_met"):
                         pending.append("终审必备要求仍未知")
     if not supported_duties:
         pending.append("终审无核心职责与简历的直接/可迁移证据配对")

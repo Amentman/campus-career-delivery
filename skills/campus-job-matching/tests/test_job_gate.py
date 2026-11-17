@@ -79,6 +79,42 @@ class JobGateTests(unittest.TestCase):
     def status(self):
         return self.audit()["results"][0]["status"]
 
+    def test_screening_defaults_accept_unlisted_basics_without_invented_resume_quotes(self):
+        for category, requirement in [("age", "年龄18至30岁"), ("english", "英语CET-6"),
+                                      ("common_tools", "熟练使用Figma和PPT"), ("basic_skills", "基础拍摄与图文排版")]:
+            with self.subTest(category=category):
+                self.job["jd_text"] += "；" + requirement
+                self.job["final_review"]["source_hashes"]["jd_text"] = hashlib.sha256(self.job["jd_text"].encode()).hexdigest()
+                self.job["final_review"]["requirements"].append({
+                    "jd_quote": requirement, "resume_quote": "", "priority": "mandatory",
+                    "assessment": "assumed_met", "assumption_category": category,
+                    "assumption_basis": "按选岗默认口径筛选，未当作简历已证实事实",
+                    "reason": "简历未写的基础条件不阻断，核心职责仍有本人实践"})
+                self.assertEqual(self.status(), "ready")
+
+    def test_screening_default_can_be_disabled_and_cannot_replace_experience(self):
+        item = self.job["final_review"]["requirements"][0]
+        item.update(assessment="assumed_met", resume_quote="", assumption_category="common_tools",
+                    assumption_basis="选岗基础工具默认口径")
+        self.profile["screening_defaults"] = {"common_tools": False}
+        self.job["final_review"]["source_hashes"]["profile"] = hashlib.sha256(json.dumps(self.profile, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+        self.assertEqual(self.status(), "pending")
+        self.profile["screening_defaults"]["common_tools"] = True
+        self.job["final_review"]["source_hashes"]["profile"] = hashlib.sha256(json.dumps(self.profile, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+        item["assumption_category"] = "formal_work"
+        self.assertEqual(self.status(), "pending")
+
+    def test_screening_assumption_requires_disclosure_and_no_fabricated_quote(self):
+        item = self.job["final_review"]["requirements"][0]
+        item.update(assessment="assumed_met", resume_quote="", assumption_category="common_tools")
+        self.assertEqual(self.status(), "pending")
+        item["assumption_basis"] = "选岗基础工具默认口径"
+        item["resume_quote"] = "精通Figma"
+        self.assertEqual(self.status(), "pending")
+        item["resume_quote"] = ""
+        item["known_conflict"] = True
+        self.assertEqual(self.status(), "rejected")
+
     def test_accounting_role_is_allowed_by_this_students_target(self):
         self.assertEqual(self.status(), "ready")
 

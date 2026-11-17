@@ -27,6 +27,8 @@
 | final_review | 写入前最新简历×完整JD独立终审，必需结构见 [独立终审](final-review.md) |
 | record_id | 存量复核保留，便于定位 |
 
+基础条件采用主入口的默认筛选口径。`final_review.requirements` 中年龄、常规英语条件、常见工具及基础技能可用 `assessment: assumed_met`，并填 `assumption_category`、`assumption_basis`、空 `resume_quote`；不伪造原简历引文。`profile.screening_defaults` 可按 `age/english/common_tools/basic_skills` 设置 false 关闭对应默认值。该口径不改变实际JD原文、其他硬条件或当前岗位/申请证据。
+
 checks共同键：subject、role、degree、major、city、employment。campus加graduation；internship加student_status/schedule；experienced加experience/seniority/salary。每项为 `{status, quote, source_url, reason?}`，status为pass/fail/unknown。pass必须有当前企业/平台原文和http(s)来源，不收只有布尔值的标记。适用的毕业证据明确覆盖本人实际年月；项目范围或海外口径未知则unknown。专业“优先”与“必须”分开，未提不能自动判不限。额外结构化字段experience_requirement、internship_requirement、salary_constraint/salary_range见模式契约，数值冲突可独立拦截假pass。
 
 能提取官方数值毕业窗口时增加 `graduation_window: {start: "YYYY-MM或YYYY-MM-DD", end: "同格式"}`，程序会独立检查与学生年月是否兼容。窗口从月份中途开始/结束而学生只知月份时保留pending，不猜具体日。独立站确无租户/ID时可省略，稳定URL提供唯一键与上下文；已知tenant/ID则必须保留，不能为躲避去重清空。

@@ -9,10 +9,10 @@
 逐岗执行：
 
 1. 先锁定模式：校招比对毕业窗口；实习比对在校身份与出勤/到岗；社招比对正式/相关工作月数、职责层级、薪资及行业要求。学历、专业、城市、用工共同检查。社招/实习不强塞通用毕业届别；JD确有限制仍检查。核对适用范围，未知不猜。键与数值契约见 [模式与平台](search-modes.md)。
-2. 拆开JD的全部核心职责和要求，以业务动作、对象、产出核对简历。逐项记录原文证据：直接经验、可迁移经验、差距或未知；只有兴趣/关键词不算证据。教学知识不能写成学生经验，导师指导的本人实践正常计入。
+2. 拆开JD的全部核心职责和要求，以业务动作、对象、产出核对简历。逐项记录原文证据：直接经验、可迁移经验、差距或未知；年龄、常规英语成绩与常见工具和基础技能按主入口的基础条件默认口径处理，简历未写不作为缺口。只有兴趣/关键词不算核心职责实践证据。教学知识不能写成学生经验，导师指导的本人实践正常计入。
 3. 把“必须/需要/任职条件”与“优先/加分”分开。学历专业等放hard_conditions，能力/经验要求放requirements；全量覆盖JD要求，不只挑容易满足的一项。没有独立技能条件时，可把JD明确的职责能力要求作为mandatory项，保留原文和理由，不凭空添加要求。
 4. 明确结论、支持它的简历/JD原句、主要差距与Open。必备条件明确不符→reject；未知或需补证后才能推荐→conditional；公开资格和核心职责有证据、无阻断未知→recommend。优先项差距本身不否决，但必须真实展示。
-5. 同时保留反对理由。发现名称相近但实际职责不同、简历没有必备技能、岗位偏离意向时剔除/降为待核验，不能靠总分补偿。Agent继续自行追查可解决的问题，只把确需用户判断的冲突提出来。
+5. 同时保留反对理由。发现名称相近但实际职责不同、有证据显示不具备必备能力、岗位偏离意向时剔除/降为待核验，不能靠总分补偿。Agent继续自行追查可解决的问题，只把确需用户判断的冲突提出来。
 
 终审还须对全量历史与本批候选做 [岗位语义去重](quality-contract.md#岗位语义去重优先于公司限额)：同一主体的跨地区/编号同职责模板只保留1条；分别计数必须保存完整JD的实质差异证据。公司限额豁免、银行分地区company_key或离线脚本ready都不能替代该审阅。
 
@@ -26,9 +26,11 @@
 | source_hashes | resume_file、resume_text为两份本地文件原始字节SHA-256；jd_text为完整JD字符串UTF-8字节SHA-256；profile为完整画像JSON指纹 |
 | hard_conditions | degree、major、city、employment，加本模式条件：campus为graduation；internship为student_status/schedule；experienced为experience/seniority/salary。每项含status=pass/fail/unknown和独立reason |
 | duties | 核心职责数组；每项jd_quote、resume_quote、assessment=direct/transferable/gap/unknown、reason |
-| requirements | 必备/优先要求数组；每项jd_quote、resume_quote、priority=mandatory/preferred、assessment=met/gap/unknown、reason |
+| requirements | 必备/优先要求数组；每项jd_quote、resume_quote、priority=mandatory/preferred、assessment=met/assumed_met/gap/unknown、reason |
 | gaps | 实际差距字符串数组；确无差距用[]，不编造待复习项 |
 | open_items | `{item: "具体未知", blocking: true/false}`数组；无Open用[]。资格、核心职责或必备能力未知不能标成非阻断 |
+
+`assumed_met` 仅用于年龄、常规英语条件、常见工具及基础技能，不伪装成简历证据：`resume_quote` 保持空字符串，并填写 `assumption_category: age/english/common_tools/basic_skills`、`assumption_basis` 和具体 `reason`。例如 Figma 未列在简历，可写“按常见工具默认满足筛选，未确认熟练度，不作为学生已证实经历”。已知不符时不能使用默认口径；发现明确冲突记 `known_conflict: true` 并重新判断。其他必备条件、核心职责和工作年限不能用该状态代替核对。筛选默认项只作非阻断提醒，不逐项索要证明。
 
 画像指纹与脚本一致：`sha256(json.dumps(profile, ensure_ascii=False, sort_keys=True).encode()).hexdigest()`。不能先写虚假hash/pass再找材料。正向匹配的resume_quote、所有jd_quote必须逐字来自对应完整正文，允许忽略排版空白；概括和解释放reason。引用命中只是来源检查，不代表语义成立。
 

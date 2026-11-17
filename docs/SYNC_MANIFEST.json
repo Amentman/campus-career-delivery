@@ -50,14 +50,14 @@
     "skills/building-resume-interview-stories/references/team-setup.md": "3bb65e6f4b4424c3f378fd6d48f337cfe98bd5bd7e833a03b5b42bd10716c001",
     "skills/building-resume-interview-stories/references/visual-story-contract.md": "be79c84bb0493e66a1fce6ca448deb9f938f4645daa80d6943f7e00a266a2410",
     "skills/building-resume-interview-stories/references/workflow.md": "a93d28facf462fb73bef2e783a35583fb758598892327df40f0cd545df61944e",
-    "skills/campus-job-matching/SKILL.md": "52afc2a14ac2a4e56041f28bd4186cfedbf05786e2ea863001299bfa3f76a82a",
+    "skills/campus-job-matching/SKILL.md": "ca6848482c7745b65fe01ca52679237a2c732b8c97e03466cb723646664ff616",
     "skills/campus-job-matching/assets/input-confirmation.svg": "0f43d590b1898f06fc713b0215573ab4cebc9b6272d97397fc16dbfc70121284",
     "skills/campus-job-matching/assets/workflow-overview.svg": "d67b8b55075b816e16e084a87594fbaf3a06c9d3ff57df8975ac6908102611b3",
     "skills/campus-job-matching/assets/workflow.svg": "4452ccf049935b7f2f992bd31b45be4b0de0b15466b4ff75c2ecdfccc077ed8d",
-    "skills/campus-job-matching/references/campus-matching.md": "e12c84d6b6ccf1f2cd0d053951dba91341c4038ca3039cf126b37d5dd5ede06c",
+    "skills/campus-job-matching/references/campus-matching.md": "18025b340a386f4030370f14134083c628502723224d19a3527ecd0d0fc73678",
     "skills/campus-job-matching/references/feishu-delivery.md": "7d6e1ac51678d334bf51b359e390b01d5b61f1981356bd41cc330dda7203582e",
-    "skills/campus-job-matching/references/final-review.md": "02383b1e2f03346de13f4f50ee137bd8de2292bc1b5912a7ec898ae6e17459f3",
-    "skills/campus-job-matching/references/quality-contract.md": "f37347295e87fe4a756320449276af762339edf709a95fc526008e2aafe554e7",
+    "skills/campus-job-matching/references/final-review.md": "ca2c912282d6603a76de1f77f7b82f6ab8a4718fd45292d235137d274d49e25c",
+    "skills/campus-job-matching/references/quality-contract.md": "52e68c7c0fa469adf32aef525316939ba66021bc06c360928c0051ea4f5ec724",
     "skills/campus-job-matching/references/runtime-config.md": "8a488410dcd4371c939cf5ceab1b3d9a0c238d3749cbfe08c1042ce22bbe60e9",
     "skills/campus-job-matching/references/search-modes.md": "a2b74be3722d8708bfb4746246e415f6b7d924149437cb4171e8708457382b62",
     "skills/campus-job-matching/references/shared-pool.md": "371f8908a2d8e49b4e4d3566cf454714a4f7e1c63aaf767f3f41703904699194",
@@ -66,9 +66,9 @@
     "skills/campus-job-matching/references/workflow.md": "0d58fd81611395a63c84cd79213dd363b6012a0c0a1f735afa33f9ab6022dd31",
     "skills/campus-job-matching/scripts/enforce_company_cap.py": "e878c481096d833aebef2836629efed60c7d5a93f501bb42d1076e2cc487a0ec",
     "skills/campus-job-matching/scripts/shared_pool.py": "c393e93fbc257fb778995d0ae21263f88ae96b8eccba4624a059a0d80a1bd6ad",
-    "skills/campus-job-matching/scripts/validate_jobs.py": "4babd3f1ad19e0e2c0c6173e404cac7b020e657118850c6aeb6f2e658ac077ec",
+    "skills/campus-job-matching/scripts/validate_jobs.py": "36e42fbc66a137c8c635acf6f11137ea8c38ffb3e1df13c2cbc7fd869a2478ac",
     "skills/campus-job-matching/tests/test_company_cap.py": "e4fe29516ecfb5ca429330c5104d06c2aae44eeac8dd56884b7e0133c090d038",
-    "skills/campus-job-matching/tests/test_job_gate.py": "9022c3bde15c150dc9229c2a3232bb1e4ced74b317cbaf6233665d19ba58bf12",
+    "skills/campus-job-matching/tests/test_job_gate.py": "f66fad6e86c76a9ecfa4f484f3b3a381ad551feb8a1a91ad107b9816056fdf55",
     "skills/campus-job-matching/tests/test_search_modes.py": "2c1ac9bca4a1e79c7cf4f57cc60fd34b32247825236271ca2cd0b2dde63f34e9",
     "skills/campus-job-matching/tests/test_shared_pool.py": "cead77dcb1cf0e855807014a065a7f0138eea1e4c8a27867f251b6ae58ebd732",
     "skills/campus-job-matching/tests/test_team_config.py": "1b2b6cd3eaf26bcab2612e27698cecfed9fd9b7b0e82d250b416fe2f9cae738e",
@@ -305,5 +305,5 @@
     "skills/xiaohongshu-image-renderer/scripts/validate-package.test.mjs": "b85f1e41860166ef12bc89d33589586ad4b98a2fd7d23547f5b62314b3a0d780"
   },
   "version": "0.5.0",
-  "synced_at": "2026-11-13T10:23:14.223283+00:00"
+  "synced_at": "2026-11-17T11:02:51.723765+00:00"
 }
