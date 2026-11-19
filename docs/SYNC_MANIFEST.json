@@ -237,11 +237,11 @@
     "skills/student-mock-interview-delivery/tests/test_locate_student.py": "09d0d9b4858ca5dbfbee0cb1b1799d83caa8e400cf1f4b081a22eebafcd5d0fa",
     "skills/student-mock-interview-delivery/tests/test_validate_delivery.py": "2bdbe59fcb0fb292d22eaade2d767a7aa3904e145b0af0ab8dc7edebeb49311e",
     "skills/student-mock-interview-delivery/tests/test_validate_feishu_delivery.py": "00748da5250e8fafd90b52d01d9d583d5f004356451d87e277c8f6ce0441aec4",
-    "skills/student-role-interview-prep/SKILL.md": "655bf3c49290cbe281eba1dcb947a5d7c1df3563870bc3589f03425452c91004",
+    "skills/student-role-interview-prep/SKILL.md": "789137dfec57453916197913b094b369ccc377fd4f5aeced64f762d42d501a91",
     "skills/student-role-interview-prep/agents/openai.yaml": "db3a7e8a744aeddda85242ce37789f2b162136d8c694ed01335f258bf8a3465b",
     "skills/student-role-interview-prep/assets/input-confirmation.svg": "bee0e520bcd0a8efac57e2171cbb0c199f8bff68ca75a5b5233458cf7526c581",
     "skills/student-role-interview-prep/assets/workflow.svg": "e252a54ffb0fa54cceb3efe53fe353b834677d7ad3ce9df1c66201452d8a965a",
-    "skills/student-role-interview-prep/references/acceptance-scenarios.md": "2b422e2e9eb9e28bb433ef641d9ed5c73d564f849e614ffdc481831e16a77a4f",
+    "skills/student-role-interview-prep/references/acceptance-scenarios.md": "c57d084320f06e8a984f00bed74ba88b3c2bfda7fda31c036264528cdc9c48eb",
     "skills/student-role-interview-prep/references/company-fundamentals-research.md": "6cc6dff16556897fdd51845fde2870aac7e11e67962fb49b17d0f439cb34ad7e",
     "skills/student-role-interview-prep/references/content-and-expression.md": "fbd224013780ac4388d6807a0574fa793db3883daed6557a357c60bc309870bd",
     "skills/student-role-interview-prep/references/feishu-boundary-and-acceptance.md": "a08c6ed820a82e64c56dd08e4f9fc2c0d63e7613a0ff2a2b2d31cf96dd5e2cbf",
@@ -305,5 +305,5 @@
     "skills/xiaohongshu-image-renderer/scripts/validate-package.test.mjs": "b85f1e41860166ef12bc89d33589586ad4b98a2fd7d23547f5b62314b3a0d780"
   },
   "version": "0.5.0",
-  "synced_at": "2026-11-17T16:03:46.567988+00:00"
+  "synced_at": "2026-11-19T04:08:23.696240+00:00"
 }
