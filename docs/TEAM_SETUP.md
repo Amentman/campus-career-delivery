@@ -6,6 +6,7 @@
 
 | 项目 | 配置位置 | 怎么使用 |
 | --- | --- | --- |
+| 飞书交付根 | feishu.delivery_root_url | 存放本人确认的正式文档和授权写回；预检以实际父级链为准 |
 | 学生既有飞书目录 | feishu.students_root_url，或旧 wiki 路由 | 在此定位学生正式姓名唯一页，优先复用原页面和原表 |
 | 投递表结构参考 | feishu.template_url、format_reference | 只在确认学生没有投递表且建表属于当前授权时使用，只复制结构 |
 | 共享岗位库 | shared_pool 的 base_token、job_table_id、company_table_id、owner_open_id | 先全量查库再按学生画像复核，不把入库记录当作当前可投 |

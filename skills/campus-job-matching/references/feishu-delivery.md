@@ -14,7 +14,7 @@ lark-cli auth status --verify --json
 
 ## 对象、字段与保护基线
 
-解析Wiki/Base，核对唯一学生目录、父级、目标表、标题、所有者、权限与修订号。读真实字段ID、类型、选项、视图和全量分页，不混用Wiki/Base/table token。
+解析 Wiki／Base，核对唯一学生目录、目标表、标题、所有者、权限与修订号。用私有配置的交付根逐级核实原 Base 的真实父级；正文嵌入、快捷方式或已知旧链接只用于找对象，不能代替归属证据。读真实字段ID、类型、选项、视图和全量分页，不混用Wiki/Base/table token。
 
 先看当前CLI `--help`，不沿用旧OpenAPI形状。已有唯一投递表则只追加ready子集，不覆盖整表；确无表时按下节创建。写前保存全量记录、字段、权限、元信息快照。
 
@@ -29,26 +29,22 @@ lark-cli auth status --verify --json
 只有当前请求或会话既有授权覆盖创建、且已完整确认学生确无原投递表时，才在已确认父级创建。已授权的同一动作不重复确认；安装 Skill、没有配置或无法读取旧表不构成建表授权。只做流程复盘／Skill维护时不实际创建。
 
 1. 优先读取成员配置中的 `feishu.students_root_url`、兼容的 `wiki` 入口及学生已有链接，重新核对真实父链。“学生目录”是本次唯一学生的飞书页面，不是本地文件夹、团队空间根目录或任意“职业规划”页。成员各自的目录树可以不同；未配置或无权读取时不能猜制作者的路径，也不能因为 space-list 没列出就新建空间。
-2. 分页读完该学生子节点，同时检查学生正文、档案索引和既有交付入口中的外部Base链接。表也可能是Drive Base并未挂为Wiki子节点。按标题、学生归属、原始Base token核对；同一Base多个链接只算一个。唯一表存在则复用，多个不同表或学生节点有实质歧义才解决该冲突；列表未读全、403/404或搜索无命中均不能单独证明缺表。
+2. 分页读完该学生子节点，同时检查学生正文、档案索引和既有交付入口中的外部Base链接。表也可能是Drive Base并未挂为Wiki子节点。按标题、学生归属、原始Base token核对；同一Base多个链接只算一个。唯一表在已确认交付根内则原地复用；目录外或归属未证实的现存表仅按授权读取，暂停写入且不建替代。多个不同表或学生节点有实质歧义时先解决该冲突；列表未读全、403/404或搜索无命中均不能单独证明缺表。
 3. 确认不存在后再找格式：用户指定模板优先，其次已确认的空白标准模板，再次参考同目录既有标准投递表。读取字段名称/类型/选项、列顺序、通用视图/筛选/排序，并保存来源与时间。保留公司、投递岗位、城市、岗位分类、行业/性质、直达链接、审核、投递进度、投递人/时间、笔试/面试状态和附件等原模板实际字段；不要用另造的简版替换原格式。城市/岗位分类选项按本生已确认意向适配，不继承参考学生的意向或把旧选项池当选岗白名单。不同模板冲突先选与本次已确认格式一致者，不能盲目取最近创建的学生表。
 4. **仅复制结构。** 校验来源无自动发送/回写流程和学生专属关联后，干净模板可用 `base +base-copy --without-content --as user`。历史学生表含异常选项、日期批次视图、外部关联、自动化或学生内容时，改为从已读结构白名单建空表/字段/通用视图，不整份克隆。排除串列产生的错误选项，不复制岗位、审核/投递记录、附件、人员默认值、其他学生姓名、批次筛选或协作者权限。保留原模板不动。
-5. 默认标题按现有惯例 `选岗/投递表 【姓名】`。Drive目录用已确认的 `--folder-token`；Wiki学生页用明确的space+parent创建bitable后配置结构，或把已建空Base移动到该学生页。个人库入口通过当前CLI解析，先确认真实space_id；不得把Wiki节点token传给folder-token，也不能省略父级落到根目录。
+5. 默认标题按现有惯例 `选岗/投递表 【姓名】`。Drive目录用已确认的 `--folder-token`；Wiki 学生页用明确的 space 与 parent 直接创建 bitable 后配置结构。个人库入口通过当前CLI解析，先确认真实space_id；不得把Wiki节点token传给folder-token，也不能省略父级落到根目录。
 
 ```bash
 lark-cli base +base-copy --help
 lark-cli base +base-create --help
 lark-cli base +table-create --help
 lark-cli wiki +node-create --help
-lark-cli wiki +move --help
 # 干净模板在Drive目录：所有占位符均先由真实读取解析
 lark-cli base +base-copy --base-token TEMPLATE --name '选岗/投递表 【姓名】' \
   --without-content --folder-token STUDENT_DRIVE_FOLDER --time-zone Asia/Shanghai --as user
 # Wiki目录可直接创建bitable；不能省略space和parent
 lark-cli wiki +node-create --space-id SPACE --parent-node-token STUDENT_NODE \
   --obj-type bitable --title '选岗/投递表 【姓名】' --as user
-# 若先建Drive空Base，则移动已有对象，不重建第二张
-lark-cli wiki +move --obj-type bitable --obj-token NEW_BASE \
-  --target-space-id SPACE --target-parent-token STUDENT_NODE --as user
 ```
 
 创建前再次列目录排除并发新建；创建/复制一返回就保存Base、table、node token及创建响应。超时先搜索/列目录/查询已有任务，确认实际结果后续接同一个对象；不能盲重试新建、不能因挂载失败再建第二张。

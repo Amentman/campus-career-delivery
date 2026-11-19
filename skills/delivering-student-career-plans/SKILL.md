@@ -9,6 +9,12 @@ description: Use when a user provides a student resume, questionnaire, screensho
 [查看完整流程图与操作说明](references/workflow.md)
 <!-- /skill-workflow-link -->
 
+## 飞书交付约定
+
+用户要求写成正式文档且未指定其他格式时，写入飞书正文；聊天短稿、只读和明确指定的文件交付按本轮范围。所有飞书写入先用本人身份核实真实对象或新建父级位于私有配置 `feishu.delivery_root_url` 确认的交付根下。学生材料还须匹配根下的唯一学生页或原表。Wiki 快捷方式追到原对象，Base／表记录、图片和附件追到真实宿主；目录外或归属未证实的目标仅作已授权来源，不新建替代页或表。
+
+飞书交付的回复开头按「姓名（或项目名）｜实际标题」和「完整飞书 HTTPS URL」两行给出可直接复制到微信的内容，姓名已有则不重复。采用真实读回的标题和地址，按交付件逐一给出；内部链接与验收说明另段，保留现有分享及发送授权。配图按正文实际阅读宽度逐张检查文字、连线、裁切与位置，优先后台验收；前台只在本轮明确授权且确实需要时使用，后台受限则标明未验证的范围。
+
 ## 团队配置与依赖
 
 先读 [团队配置](references/team-setup.md)。账号绑定使用当前成员自己的 `expected_user_open_id`／`expected_profile`；学生入口优先本轮明确目标和既有唯一页，再从 `feishu.students_root_url` 或兼容的 `wiki` 映射定位。`workspace.student_root`、`knowledge_root`、`output_root` 均是成员本机路径，配置不是外部写入授权。已有规划原地更新并保留父级；缺少必要入口时只确认该落点，不创建替代组织树。
