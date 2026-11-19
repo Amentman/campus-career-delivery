@@ -65,6 +65,7 @@ def init_config(args):
     data['expected_profile'] = ''
     # Sharing consent belongs to each member, not to a team resource profile.
     data.pop('role_prep_delivery', None)
+    data.pop('student_delivery', None)
     # A team profile must not transfer another person's local directories.
     data['workspace'] = {'student_root': str(args.student_root or ''), 'knowledge_root': str(args.knowledge_root or ''), 'output_root': str(args.output_root or '')}
     write_private(args.output, data, exclusive=True)

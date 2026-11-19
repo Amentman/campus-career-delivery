@@ -19,6 +19,8 @@ description: Use when a user asks to reconcile student-service todos across stud
 
 飞书交付的回复开头按「姓名（或项目名）｜实际标题」和「完整飞书 HTTPS URL」两行给出可直接复制到微信的内容，姓名已有则不重复。采用真实读回的标题和地址，按交付件逐一给出；内部链接与验收说明另段，保留现有分享及发送授权。配图按正文实际阅读宽度逐张检查文字、连线、裁切与位置，优先后台验收；前台只在本轮明确授权且确实需要时使用，后台受限则标明未验证的范围。
 
+学生可见的正式成品按当前使用者已确认的分享偏好执行。私有配置 `student_delivery.authorization_confirmed=true` 且 `link_share_entity=anyone_readable` 时，仅对交付根内供学生阅读的成品设为“获得链接的所有人可查看”，不授予编辑权限；写前保存权限快照，写后独立回读 `external_access=true`、`link_share_entity=anyone_readable`，并核对正文内画板与附件的访问范围。老师内部稿、私人备注和来源材料保留原权限。当前任务更窄的限制优先；其他成员须自行确认，不继承作者授权。
+
 ## 边界与分流
 
 - 默认只读：不发消息、不改聊天、不更新飞书、不替用户承诺服务或恢复服务。

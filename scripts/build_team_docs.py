@@ -29,9 +29,13 @@ def reference(name):
 
 整个Skill目录一起安装，保留 `references/`、`scripts/`、`assets/`、`agents/` 和随包测试，不只复制 `SKILL.md`。本目录内容是工作方法；团队实际资源位置在各成员本机私有配置中。
 
-配置查找顺序：环境变量 `JIHUI_SKILLS_CONFIG` 指定的JSON；未设置时使用 `~/.config/jihui-skills/team.json`。岗位Skill兼容既有 `~/.codex/campus-job-matching.local.json`。当前任务明确给出的来源、目标和限制优先于配置。
+配置查找顺序：环境变量 `JIHUI_SKILLS_CONFIG` 指定的JSON；未设置时使用 `~/.config/jihui-skills/team.json`。岗位Skill兼容既有 `~/.codex/campus-job-matching.local.json`。当前任务明确给出的来源、目标和限制优先用于定位；实际写入仍须核实交付根归属。
 
 {note}
+
+实际写入飞书前，配置并核实 `feishu.delivery_root_url` 指向当前使用者确认的交付根。沿真实父级链核对既有目标或新建父级，快捷方式追到原对象，表、记录与附件追到宿主；根缺失、目录外或归属未证实则只暂停该写入，不建替代对象。聊天、只读与本地文件任务不因缺少此字段停止。
+
+学生可见的正式成品按当前使用者已确认的分享偏好执行。私有配置 `student_delivery.authorization_confirmed=true` 且 `link_share_entity=anyone_readable` 时，仅对交付根内供学生阅读的成品设为“获得链接的所有人可查看”，不授予编辑权限；写前保存权限快照，写后独立回读 `external_access=true`、`link_share_entity=anyone_readable`，并核对正文内画板与附件的访问范围。老师内部稿、私人备注和来源材料保留原权限。当前任务更窄的限制优先；其他成员须自行确认，不继承作者授权。
 
 ## 私有配置结构
 
@@ -40,8 +44,9 @@ def reference(name):
   "version": 1,
   "expected_user_open_id": "",
   "expected_profile": "",
+  "student_delivery": {{"authorization_confirmed": false, "link_share_entity": "preserve"}},
   "workspace": {{"student_root": "", "knowledge_root": "", "output_root": ""}},
-  "feishu": {{"students_root_url": "", "template_url": "", "content_base_url": "", "service_base_url": "", "todo_url": ""}},
+  "feishu": {{"delivery_root_url": "", "students_root_url": "", "template_url": "", "content_base_url": "", "service_base_url": "", "todo_url": ""}},
   "shared_pool": {{"enabled": true, "base_token": "", "job_table_id": "", "company_table_id": "", "owner_open_id": ""}}
 }}
 ```
@@ -75,7 +80,7 @@ python3 scripts/team_setup.py doctor --skill {name} --live
         content = content.replace('## 每次任务\n\n', '## 每次任务\n\n逐字稿入口需要 Python3；飞书需本人 `lark-cli`，腾讯在线读取需可执行 JavaScript 的已登录后台浏览器。Node.js 只用于本包腾讯读取器的离线测试，不是获取腾讯登录的工具。没有后台能力时使用已授权原生导出或本地原稿，不安装依赖、不抢占前台。完整 Skill 必须包含 `scripts/transcript.py`、`scripts/read_tencent.js` 和输入指南。\n\n')
 
     if name == 'student-role-interview-prep':
-        content = content.replace('"expected_profile": "",', '"expected_profile": "",\n  "role_prep_delivery": {"authorization_confirmed": false, "link_share_entity": "preserve"},')
+        content = content.replace('"student_delivery": {"authorization_confirmed": false, "link_share_entity": "preserve"},', '"student_delivery": {"authorization_confirmed": false, "link_share_entity": "preserve"},\n  "role_prep_delivery": {"authorization_confirmed": false, "link_share_entity": "preserve"},')
         content = content.replace('## 安装器与诊断', '## 专岗交付分享偏好\n\n`role_prep_delivery` 默认缺省或 `preserve`，不改变分享范围。当前使用者明确要求本人后续学生专岗交付页均为“获得链接的所有人可查看”后，在其私有配置中设 `authorization_confirmed=true`、`link_share_entity=anyone_readable`；按写入边界逐页执行和回读。配置只保存本人已确认偏好，不授予API权限，不适用于老师内部页、学生主页或其他服务记录，也不能复制作者的确认值给其他成员。当前任务限定更窄时采用当前限定。\n\n## 安装器与诊断')
     return content
 

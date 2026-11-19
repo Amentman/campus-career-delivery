@@ -42,14 +42,15 @@ class TeamSetupTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             profile, target = root / 'team.json', root / 'member.json'
-            profile.write_text(json.dumps({'version': 1, 'role_prep_delivery': {'authorization_confirmed': True, 'link_share_entity': 'anyone_readable'}, 'shared_pool': {'owner_open_id': 'team-owner-example'}}))
+            profile.write_text(json.dumps({'version': 1, 'role_prep_delivery': {'authorization_confirmed': True, 'link_share_entity': 'anyone_readable'}, 'student_delivery': {'authorization_confirmed': True, 'link_share_entity': 'anyone_readable'}, 'shared_pool': {'owner_open_id': 'team-owner-example'}}))
             original_profile = profile.read_bytes()
             result, _ = self.run_tool('init', '--team-profile', profile, '--output', target)
             self.assertEqual(0, result.returncode)
             saved = json.loads(target.read_text())
-            preference = saved.get('role_prep_delivery', {})
-            self.assertFalse(preference.get('authorization_confirmed', False))
-            self.assertEqual('preserve', preference.get('link_share_entity', 'preserve'))
+            for key in ['role_prep_delivery', 'student_delivery']:
+                preference = saved.get(key, {})
+                self.assertFalse(preference.get('authorization_confirmed', False))
+                self.assertEqual('preserve', preference.get('link_share_entity', 'preserve'))
             self.assertEqual('team-owner-example', saved['shared_pool']['owner_open_id'])
             self.assertEqual(original_profile, profile.read_bytes())
             target.write_bytes(original_profile)

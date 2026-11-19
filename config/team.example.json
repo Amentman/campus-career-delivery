@@ -3,6 +3,7 @@
   "team_name": "校招交付",
   "expected_user_open_id": "",
   "expected_profile": "",
+  "student_delivery": {"authorization_confirmed": false, "link_share_entity": "preserve"},
   "workspace": {"student_root": "", "knowledge_root": "", "output_root": ""},
   "feishu": {"delivery_root_url": "", "students_root_url": "", "template_url": "", "content_base_url": "", "service_base_url": "", "todo_url": ""},
   "wiki": {"route_alias": "", "resolved_space_id": "", "parent_chain": [], "students_parent_node_token": ""},

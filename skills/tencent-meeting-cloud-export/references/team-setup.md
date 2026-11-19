@@ -4,9 +4,13 @@
 
 整个Skill目录一起安装，保留 `references/`、`scripts/`、`assets/`、`agents/` 和随包测试，不只复制 `SKILL.md`。本目录内容是工作方法；团队实际资源位置在各成员本机私有配置中。
 
-配置查找顺序：环境变量 `JIHUI_SKILLS_CONFIG` 指定的JSON；未设置时使用 `~/.config/jihui-skills/team.json`。岗位Skill兼容既有 `~/.codex/campus-job-matching.local.json`。当前任务明确给出的来源、目标和限制优先于配置。
+配置查找顺序：环境变量 `JIHUI_SKILLS_CONFIG` 指定的JSON；未设置时使用 `~/.config/jihui-skills/team.json`。岗位Skill兼容既有 `~/.codex/campus-job-matching.local.json`。当前任务明确给出的来源、目标和限制优先用于定位；实际写入仍须核实交付根归属。
 
 使用成员自己的腾讯会议网页版登录态及获授权的下载范围。浏览器必须具备所需能力；当前旧脚本会激活标签页，未获前台操作授权时不得运行它。媒体与状态留在成员本机，不分发账号、录制链接或密码。
+
+实际写入飞书前，配置并核实 `feishu.delivery_root_url` 指向当前使用者确认的交付根。沿真实父级链核对既有目标或新建父级，快捷方式追到原对象，表、记录与附件追到宿主；根缺失、目录外或归属未证实则只暂停该写入，不建替代对象。聊天、只读与本地文件任务不因缺少此字段停止。
+
+学生可见的正式成品按当前使用者已确认的分享偏好执行。私有配置 `student_delivery.authorization_confirmed=true` 且 `link_share_entity=anyone_readable` 时，仅对交付根内供学生阅读的成品设为“获得链接的所有人可查看”，不授予编辑权限；写前保存权限快照，写后独立回读 `external_access=true`、`link_share_entity=anyone_readable`，并核对正文内画板与附件的访问范围。老师内部稿、私人备注和来源材料保留原权限。当前任务更窄的限制优先；其他成员须自行确认，不继承作者授权。
 
 ## 私有配置结构
 
@@ -15,8 +19,9 @@
   "version": 1,
   "expected_user_open_id": "",
   "expected_profile": "",
+  "student_delivery": {"authorization_confirmed": false, "link_share_entity": "preserve"},
   "workspace": {"student_root": "", "knowledge_root": "", "output_root": ""},
-  "feishu": {"students_root_url": "", "template_url": "", "content_base_url": "", "service_base_url": "", "todo_url": ""},
+  "feishu": {"delivery_root_url": "", "students_root_url": "", "template_url": "", "content_base_url": "", "service_base_url": "", "todo_url": ""},
   "shared_pool": {"enabled": true, "base_token": "", "job_table_id": "", "company_table_id": "", "owner_open_id": ""}
 }
 ```
