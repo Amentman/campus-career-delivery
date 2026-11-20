@@ -216,18 +216,19 @@
     "skills/student-job-content/assets/workflow.svg": "4807587fe2b2b01da3fa6627bd0f291c557b0bc337047bfdb8d63f7c290af639",
     "skills/student-job-content/references/team-setup.md": "9ffbd4a3eecaeeb26a945c419a8273b52bf136e788ca268ef475751d75f26c46",
     "skills/student-job-content/references/workflow.md": "513ebc0e910984b9647c9c7b962ce14f6231d5f3a7c83144f4693ca8e312b8fb",
-    "skills/student-mock-interview-delivery/SKILL.md": "19352ac7efe0c772b3db601c53cb9311c1be18bc2f2139b4d69dc73cc254d92e",
-    "skills/student-mock-interview-delivery/agents/openai.yaml": "5e697c5975cd969bab412cbb26a63d57e0fa31816b0220e03e254cd68952f1a0",
-    "skills/student-mock-interview-delivery/assets/input-confirmation.svg": "e2ee460295c762c4143940ad57fd8025744e93c643f365acc7f6eff0cfbb9ef0",
-    "skills/student-mock-interview-delivery/assets/workflow.svg": "037a90bbdec49f0fa2397d5aabe453c38607eda907563359de1beeb28fa76885",
-    "skills/student-mock-interview-delivery/references/feishu-delivery-contract.md": "d131ad40f125bab0b6b173f4747ffb6069d859e8f1b6f4d750653fb7b36b31a9",
+    "skills/student-mock-interview-delivery/SKILL.md": "a173d331647a05b3efd496c119d0ad4157ddd1dfbf48d4eeb240a8ddb02edd19",
+    "skills/student-mock-interview-delivery/agents/openai.yaml": "05c54735ab2dcca6c2e89932825d82c95baa45bd245b8e10bac92b38360d61bc",
+    "skills/student-mock-interview-delivery/assets/input-confirmation.svg": "c1d45f3df2a88d122f9518cbb5ac387f8a701f1de6eae02cbdb34155707fd985",
+    "skills/student-mock-interview-delivery/assets/workflow.svg": "f47d58a41e5a33573aa3bd5bdbfd2f3c6e4aec6879d8e02213af98ca6abfc8f1",
+    "skills/student-mock-interview-delivery/references/feishu-delivery-contract.md": "2b85f7c810c1653a2192518b6eaebf25849baf26d6473919d091a690b305cd87",
     "skills/student-mock-interview-delivery/references/interview-content-contract.md": "05f2a8132ba77d444bd71cd54eadaa10b05dbae62a2164c3979b29794a94962c",
-    "skills/student-mock-interview-delivery/references/interview-quality-contract.md": "dd1fd9fcd6f6c95e12917a7bf56c4cd16d7c94ed5df600582c030f5ec4cd7c3e",
+    "skills/student-mock-interview-delivery/references/interview-quality-contract.md": "2bb0ae1025998f98073992e55d9efc740320869baaedd19f38bd6a562341071f",
     "skills/student-mock-interview-delivery/references/interview-session-contract.md": "80e43ab136ee057e83743d9cca34353fa17d1c406166cbc1960bf350cc12cc9b",
     "skills/student-mock-interview-delivery/references/local-output-contract.md": "3cf6483e316dd19e5e3219cf9ab02614a3f61351ce809a3b4b1195a6c6bb70e2",
+    "skills/student-mock-interview-delivery/references/project-deep-preparation.md": "6ad9c7802ae6feac1a6dbdd46a3e008779012aa118d62b8cdb23c410575d9414",
     "skills/student-mock-interview-delivery/references/question-and-evidence-dossiers.md": "41cce12025b9b9911f985631750d3c3a7d6622c24d48810f67535b34ad150319",
     "skills/student-mock-interview-delivery/references/team-setup.md": "919cd091022bc06f5c37d61b7cc919a6718d08b777a81e64a3d6058bf0b53619",
-    "skills/student-mock-interview-delivery/references/workflow.md": "8e3007feb7efb51b5771313f1fe11957844c8deea43dad4c1597ce2477307409",
+    "skills/student-mock-interview-delivery/references/workflow.md": "f7673fa70854c548c9da9f986d0eaf2e3a5d2988b3802fdb5e0f1642e80eba59",
     "skills/student-mock-interview-delivery/scripts/feishu_page_titles.py": "450a1227c171069d4cfc298cb85bff1af16c00e6680e007ddd949bc47c871213",
     "skills/student-mock-interview-delivery/scripts/locate_student.py": "0a631bfb0a0ee0b07d3150535bdccbe8c8349b4756d5939a21e1f91e4cae4a9b",
     "skills/student-mock-interview-delivery/scripts/test_answer_practice.py": "c151487822cf897cf55f65d626a9d55580f4cc3f7c48e9a75b41570273971fe3",
@@ -305,5 +306,5 @@
     "skills/xiaohongshu-image-renderer/scripts/validate-package.test.mjs": "b85f1e41860166ef12bc89d33589586ad4b98a2fd7d23547f5b62314b3a0d780"
   },
   "version": "0.5.0",
-  "synced_at": "2026-11-20T03:05:19.640445+00:00"
+  "synced_at": "2026-11-20T06:06:29.009047+00:00"
 }

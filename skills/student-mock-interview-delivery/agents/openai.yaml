@@ -1,4 +1,4 @@
 interface:
   display_name: "学生模拟面试交付"
-  short_description: "基于简历与JD证据，直接交付可教、可练、可验收的飞书双版本"
-  default_prompt: "使用 $student-mock-interview-delivery 基于学生简历交付通用模拟面试双端材料，并按已有授权及本次范围写入、验收；专岗准备和真实复盘使用各自入口。"
+  short_description: "依据简历与项目材料，交付通用模拟面试或进阶项目训练手册"
+  default_prompt: "使用 $student-mock-interview-delivery 根据这份简历和已有项目材料，按本轮范围准备学生面试材料，并核对事实、追问和训练任务。"
