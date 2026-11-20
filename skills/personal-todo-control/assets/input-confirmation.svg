@@ -1,4 +1,4 @@
-<svg data-artifact-sha256="889e9d1fbd178d2241fd3d77edec50ce8e6fa4b658ec50bc96c885209e6387bf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920.00 2073.00" width="920.00" height="2073.00" role="img" aria-labelledby="title desc" data-entry-x="348.01" data-definition-sha256="19f4eb672329b8d0dbe4350b0b38d1f2c1aa0d36d819c5162749a2462f06d838" data-renderer="viz-3.31.0">
+<svg data-artifact-sha256="d741a449f9b27aad9ab83bee80bb02a4ac38f8d9e15d572dd6f590900f027727" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920.00 2073.00" width="920.00" height="2073.00" role="img" aria-labelledby="title desc" data-entry-x="348.01" data-definition-sha256="f4ffcb005cec497f7855d2dceed4ec212cb3ac2f0e52e27a095935b80ca9a575" data-renderer="viz-3.31.0">
 <title id="title">个人待办与跟进 · 输入确认完整流程图</title><desc id="desc">待办整理、日结或更新请求 本轮时间窗与已给入口；先锁模式、适用日与领域 再读当前来源和人工历史；汇总／日结／更新／协作台账 必需：按用户动词定权限；资料截止、适用日和时间窗 必需：统一计划口径；学生／协作／事务／其他项目 必需：范围内事项覆盖；当前入口、聊天快照及历史基线 必需：可访问证据支撑；服务主表／学员索引／协作台账 条件：实际写入时；历史人工值、完成ID、字段白名单 条件：更新和协作模式；本人身份、父级、权限和私有注册 条件：外部写入和续接时；本轮必需信息已明确？ 条件项只在适用时检查；只核对写入目标或身份歧义 缺来源按覆盖缺口报告；暂停歧义对象的写入 其他来源与只读清单继续；进入后续流程 注明资料截止与适用日 锁定允许读取和写入对象</desc>
 <rect width="100%" height="100%" fill="white"/>
 <g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#172b42"><text x="32" y="43" font-size="29" font-weight="600">个人待办与跟进 · 输入确认</text><text x="32" y="76" font-size="16" fill="#43566e">从上往下读 · 菱形是判断，分支文字说明下一步</text></g>
@@ -189,4 +189,4 @@
 </g>
 </svg>
 <path d="M32 1967H888" stroke="#dce3ec"/>
-<g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#43566e"><text x="32" y="1995" font-size="15">边界：整理不授权对外发送；同步仅限已授权对象和字段。</text><text x="32" y="2057" font-size="12">来源：Skill 正文与关联规则 · 可回查的流程说明</text></g></svg>
+<g font-family="-apple-system,BlinkMacSystemFont,PingFang SC,sans-serif" fill="#43566e"><text x="32" y="1995" font-size="15">边界：整理不授权对外发送；同步仅限已授权对象和字段。飞书交付先核目录归属。交付回复带姓名或项目名及完整链接。</text><text x="32" y="2057" font-size="12">来源：Skill 正文与关联规则 · 可回查的流程说明</text></g></svg>

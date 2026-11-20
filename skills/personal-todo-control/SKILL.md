@@ -1,6 +1,6 @@
 ---
 name: personal-todo-control
-description: Use when the user asks to inspect chats, Feishu, local work records, meeting information, promises, delegated work, or waiting items and turn them into a comprehensive personal todo list, daily control board, next-morning briefing, communication-time refresh, or completion cleanup; student delivery is usually the largest domain but must not exclude clients, contracts, content, operations, finance, recruiting, or personal commitments.
+description: Use when the user asks to inspect chats, Feishu, local work records, meeting information, promises, delegated work, or waiting items and turn them into a comprehensive personal todo list, daily control board, next-morning briefing, communication-time refresh, or completion cleanup; includes student delivery, clients, contracts, content, operations, finance, and recruiting. Actionable private matters stay in the current chat.
 ---
 
 # 综合个人待办总控
@@ -11,7 +11,7 @@ description: Use when the user asks to inspect chats, Feishu, local work records
 
 团队首次使用先读 [配置与依赖](references/team-setup.md)；已有配置与本轮明确入口直接复用，不重复索取。
 
-把分散在聊天、飞书和本地资料中的真实事项，整理成一份用户可以直接执行、跟进和清理的总控清单。学生辅导通常占主要篇幅，但不要把客户、合同、会议、内容、运营、财务、招聘或个人承诺漏掉。
+把分散在聊天、飞书和本地资料中的真实事项，整理成一份用户可以直接执行、跟进和清理的总控清单。学生辅导通常占主要篇幅，同时检查客户、合同、工作会议、内容、运营、财务和招聘。需要处理的私事只在当前对话提醒。
 
 ## 飞书交付约定
 
@@ -28,7 +28,7 @@ description: Use when the user asks to inspect chats, Feishu, local work records
 - **汇总模式（默认）**：读取和整理；不修改飞书，不发送消息，不替用户接受合同、报价或其他外部承诺。
 - **更新模式**：用户明确要求“更新待办／沟通时间／表格”时，才写入指定对象；写后必须回读。
 - **日结模式**：用户说“一天走完了／重新梳理／明早要用”时，以当前截止时点重算，清理已完成项并生成次日执行版。
-- **每日协作台账模式**：只在当前使用者明确配置的时间或手动请求时运行（例如北京时间每晚22:00），在“日常待办”下生成次日 `YYYY-MM-DD｜协同台账` Base子页；同日期重跑复用。先完整读取 [协作待办合同](references/maintained-collaboration.md)，按“本人执行顺序（积压优先）／协作负责人推进／等别人”展示全部未完，默认视图无筛选。核历史人工勾选，未完与新请求合并，已勾项不再带入次日；当天仍显示勾选结果。新日继承原负责人/状态/备注等人工值。已有记录的六个人工字段受保护，每个自动补丁先通过 `scripts/collaboration_guard.py`。权限仅限每日台账及缓存，不扩大到学生表、索引、消息或改权限。该合同优先于下方通用简报和旧摘要模式；不再创建独立摘要文档。
+- **每日协作台账模式**：只在当前使用者明确配置的时间或手动请求时运行（例如北京时间每晚22:00），在“日常待办”下生成次日 `YYYY-MM-DD｜协同台账` Base子页；同日期重跑复用。先完整读取 [协作待办合同](references/maintained-collaboration.md)，按“本人执行顺序（积压优先）／协作负责人推进／等别人”展示全部未完工作事项，默认视图无筛选。新旧事项入表前都按合同核工作关联，私事只留在当前对话。核历史人工勾选，未完工作与新工作请求合并，已勾项不再带入次日；当天仍显示勾选结果。新日继承工作事项的原负责人/状态/计划等人工值，备注仅带工作所需内容。已有记录的六个人工字段受保护，每个自动补丁先通过 `scripts/collaboration_guard.py`。权限仅限每日台账及缓存，不扩大到学生表、索引、消息或改权限。该合同优先于下方通用简报和旧摘要模式；不再创建独立摘要文档。
 - **脱敏模式**：用户说“外发／脱敏版”时，移除姓名、群名、联系方式、会议号、公司内部标识、链接 token、金额等敏感信息；模拟内容必须显式标成模拟。
 
 先写清楚：`资料截止时间`、`计划适用日期`、`本轮读取范围`、`本轮是否允许写入`。不能读取的来源列为缺口，不假装已经覆盖。
@@ -69,7 +69,7 @@ description: Use when the user asks to inspect chats, Feishu, local work records
 
 | 字段 | 要求 |
 |---|---|
-| 领域 | 学生／客户／合同／内容／运营／财务／招聘／个人等 |
+| 领域 | 学生／客户／合同／内容／运营／财务／招聘等；私人提醒单列在当前对话 |
 | 事项 | 用动词开头，描述下一步，不复述聊天 |
 | 责任人 | 用户亲自做、已委派给谁、正在等谁 |
 | 时间 | 硬时间、承诺截止或建议检查点；无证据时写 `Open` |
@@ -83,7 +83,7 @@ description: Use when the user asks to inspect chats, Feishu, local work records
 |---|---|---|
 | **1. 学生交付的导师沟通** | 学生群、学生私聊、协作负责人或导师围绕某位学生的简历、面试、课程、作品集、投递、进度和反馈 | 与具体学生无关的内部管理、员工事务或其他项目交付 |
 | **2. 内部员工沟通协作** | 与员工、班主任、导师、协作负责人、同事的排班、分工、招聘、离职、工资手续费、内部流程和结果盯办 | 已经落到某位学生具体交付动作的事项；这类事项归第 1 类，但可附“协作方” |
-| **3. 其他工作事务** | 客户、合同、付款、报价、会议、内容、运营、招聘、行政和个人工作承诺 | 有独立项目目标、里程碑和交付包的长期项目 |
+| **3. 其他工作事务** | 客户、合同、付款、报价、会议、内容、运营、招聘、行政和本人负责的工作承诺 | 纯私人事项；有独立项目目标、里程碑和交付包的长期项目 |
 | **4. 其他项目的工作** | 业务方案、CRM、产品、知识库、案例库、自动化、研究等独立项目的任务、里程碑和验收 | 一次性的普通沟通；普通事务归第 3 类 |
 
 分类依据是“下一步动作服务的对象”，不是聊天发生在哪个群。一个事项只能有一个主类型；需要协作的人写入“协作方”，不能复制成两条。协作负责人若是在处理具体学生交付，归第 1 类；若是在做团队流程、通用材料或人员协作，归第 2 类。
@@ -309,7 +309,7 @@ description: Use when the user asks to inspect chats, Feishu, local work records
 
 交付前确认：
 
-- 是否覆盖了学生之外的客户、合同、会议、内容、运营、财务、招聘和个人承诺。
+- 是否覆盖了学生之外的客户、合同、工作会议、内容、运营、财务及招聘；需要处理的私事是否仅出现在当前对话。
 - 是否先把每条事项归入四类主工作类型，并按 P0–P3 排序；学生具体交付与内部协作是否没有重复计数。
 - 是否把硬时间、建议时间、承诺截止分开。
 - 是否对未完成事项保留首次计划日、迁移次数、连续未完成天数和延误标签；是否把等待、受阻、已改期与真正逾期／持续拖延区分开。

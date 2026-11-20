@@ -163,14 +163,14 @@
     "skills/pengyouquan-copywriting/references/风格E-方法论拆解体.md": "09dd79bfb9686ea01e47d1acb9012c500ba63d0995f3947cfa89a13a8247cacb",
     "skills/pengyouquan-copywriting/references/风格F-类比观察体.md": "fad4bcb50c89396b1550fb245d4c52f067eb9596b53c40bd4792522180b32455",
     "skills/pengyouquan-copywriting/references/风格G-口语叙事体.md": "a4ca3acd168c9753ba85b70acea4d9519af9c6225cdcbac2444643c8e5b4bdf6",
-    "skills/personal-todo-control/SKILL.md": "1e0df09679c5ae339816bb4a0a7733fcfdfb2d7a94f84d74ef2cd312e106445d",
+    "skills/personal-todo-control/SKILL.md": "db39803195492f3041b62b12d690a289ac3e8eba089fb93e310f225cbe6bec5c",
     "skills/personal-todo-control/agents/openai.yaml": "a39f8ca7736d6bc441a5e80f32da5136579f1f296d4e3dbc0f775111fe4d0b0a",
-    "skills/personal-todo-control/assets/input-confirmation.svg": "1c6a1d9ae91d72033ea55efd283ce080fff48fe855b8e91e2985737c135b1c74",
-    "skills/personal-todo-control/assets/workflow.svg": "3c7c14d3b10e0e5c9e8b9eaf4970178022ee4ce20c74b70c7802407e21fd389a",
-    "skills/personal-todo-control/references/maintained-collaboration.md": "aeb8dcadf9e1a0dd2e335775ebea76a3c819782f85185884b28a63b344083fb2",
+    "skills/personal-todo-control/assets/input-confirmation.svg": "c1f34c2defdacd029368df5d424d270c363a99decbda23f3d51dd2a87031a422",
+    "skills/personal-todo-control/assets/workflow.svg": "dd723b94159bda2e5bf30aad6dac7a1fc262841c5b642a331a535a274a815fbc",
+    "skills/personal-todo-control/references/maintained-collaboration.md": "b95103b114b37e9984e47fde7072bcd90f324c6b647eb8d7336b6e3f155ca1a8",
     "skills/personal-todo-control/references/maintained-todo-document.md": "677e295cefe41d28d88a927ced3e9933e102b8ab88778311773705db6619abaa",
     "skills/personal-todo-control/references/team-setup.md": "e9e5f8ef4ed5f7ffee4f0a9de3599feca0acf4e5d2bf1eb2f940b54721229dc9",
-    "skills/personal-todo-control/references/workflow.md": "8d85da3ed2bda24cb8cf81ba0d2af70225218d9fe64e72fffd096aeb2e158a3c",
+    "skills/personal-todo-control/references/workflow.md": "d2913772658e7f698eafeb570da5457202d485465567aa7dee6558506aff4a5e",
     "skills/personal-todo-control/scripts/collaboration_guard.py": "4e2cab07b126f2be4856a0116266c7041058e1f6afb137d2d7554e8b0025775d",
     "skills/personal-todo-control/scripts/test_collaboration_guard.py": "180581e9e5e99495fcb94041ccbb08672103ed1d0ff439ece5f0285c04b2f376",
     "skills/recording-processing/SKILL.md": "9f03816ea1bdb5c2a98e66641db46c6638dbd6bfef1cd24bb19fd79ec5d7f7cc",
@@ -305,5 +305,5 @@
     "skills/xiaohongshu-image-renderer/scripts/validate-package.test.mjs": "b85f1e41860166ef12bc89d33589586ad4b98a2fd7d23547f5b62314b3a0d780"
   },
   "version": "0.5.0",
-  "synced_at": "2026-11-19T08:01:26.842390+00:00"
+  "synced_at": "2026-11-20T03:05:19.640445+00:00"
 }
